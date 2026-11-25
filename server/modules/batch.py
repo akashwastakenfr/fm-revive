@@ -1,3 +1,7 @@
+import zlib
+
+BATCH_CHECKSUM_SECRET = bytes.fromhex("22ecd02d437fdc88")
+
 _first_response_pending = True
 
 
@@ -138,9 +142,11 @@ def handle_batch(raw: bytes) -> tuple[bytes, dict]:
             payload = payload + (b"\x00" * 14)
             _first_response_pending = False
 
+        checksum = zlib.crc32(payload + BATCH_CHECKSUM_SECRET) & 0xFFFFFFFF
         resp_msg = (
             encode_field_varint(1, 200)
             + encode_field_bytes(2, payload)
+            + encode_field_varint(3, checksum)
         )
         collection.extend(encode_group(1, resp_msg))
 

@@ -76,3 +76,9 @@ Mapped in `server/config/routes.json` (JSON stubs; live Stage 2/3 client behavio
 - `user/age/get`, `user/login`, `user/load`, `user/settings`, `user/roster`, `user/inventory`, `user/isVeteran`, `user/lineup/`
 - `unlockkey/getallkeys`, `stats/get`, `loginvideo/getCurrentVideo`, `loginbonus/status`
 - Nimble/Synergy (`Java`): `/director/api/android/getDirectionByPackage`, `/user/api/android/getDeviceID`, `/user/api/android/validateDeviceID`, `/user/api/android/getAnonUid`
+---
+
+### `BatchResponse` Field 3 Checksum (Confirmed)
+- **Field `3` (varint, `int32`):** `checksum` (`0x4b14050` -> `0x4b13a48`, `get_checksum` at `0x4b139f8`).
+- **Algorithm (`0x57015c0`):** `zlib.crc32(raw_payload + BATCH_CHECKSUM_SECRET) & 0xFFFFFFFF`, where `BATCH_CHECKSUM_SECRET = bytes.fromhex("22ecd02d437fdc88")` (`0x719f110`, masked `& 0xff`).
+- **Status:** Implementing this in `server/modules/batch.py` resolved Stage 2 (`Error_RpcTimeout`) and advanced the client past the age-gate into Stage 3 (`RESOURCE DOWNLOAD ERROR`).

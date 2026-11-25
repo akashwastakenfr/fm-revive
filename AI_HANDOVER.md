@@ -35,3 +35,11 @@ Even with `server/modules/batch.py` returning `status=200` and `SystemSettings` 
    - Whether `SystemSettings` expects wire type 3/4 groups (`0x0b..0x0c`) or wire type 2 messages (`0x0a`),
    - Whether `0x56f3a24..0x56f3af8` accepted the `b"\x00" * 14` trailer cleanly on `id=1`,
    - Which keys/values `SettingsService` requires before moving on to `system/getServerTime`, `content/init`, and `user/login`.
+---
+
+## 4. Additive Update (Stage 2 Checksum Resolved -> Stage 3 Reached)
+- **Confirmed (`0x57017cc`, `0x57015c0`, `0x719f110`):** `BatchResponse` field `3` (`checksum`) is a 32-bit varint (`wire type 0`, not double). `RpcService._validateResponse` requires `CRC32(raw_payload + bytes.fromhex("22ecd02d437fdc88")) & 0xFFFFFFFF` whenever `[x19, #0xf8]` (`batch_checksum_enabled`) is `1`.
+- **Live Result:** With `field 3` added in `server/modules/batch.py`, the client passed `game/system/settings`, showed and accepted the birthdate age-gate, and reached `0KB/0KB GETTING WARMED UP.....` (`RESOURCE DOWNLOAD ERROR`).
+- **Next Steps (Stage 3):**
+  1. Fix/neutralize the `b"\x00" * 14` first-response trailer so `0x4e68fdc` does not obfuscate `id=1+` request endpoints (notice `id=1` arrived as `\x00\x00...` when seed was all-zeros, or `0x4e69764`-encoded bytes).
+  2. Inspect the latest `server/data/captures/*.json` from this run and implement `content/init` / resource download responses.
