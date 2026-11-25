@@ -2,7 +2,7 @@
 
 Research, reverse-engineering, and independent local server preservation project for **FIFA Mobile 23 Android** (`com.ea.gp.fifamobile`, v18.1.03, versionCode `40214`).
 
-> **For AIs starting with 0 context:** Read `AI_HANDOVER.md` first, then `docs/PROTOCOL_SPEC.md`, `docs/BINARY_MAP.md`, and `discoveries/`.
+> **For 0 context agents:** Read `AI_HANDOVER.md` first, then `docs/PROTOCOL_SPEC.md`, `docs/BINARY_MAP.md`, and `discoveries/`.
 
 ## Current Status (2026-11-25)
 - **Stage 1 (Bootstrap Config Fetch):** **RESOLVED.** Client connects to `http://127.0.0.1:8080`, fetches `/config/Android/18.1.03/config.ini`, passes `_config_verifyFifaMobileHostNameFetch`, and clears `Error_HostName_Message`.
