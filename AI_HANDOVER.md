@@ -43,3 +43,17 @@ Even with `server/modules/batch.py` returning `status=200` and `SystemSettings` 
 - **Next Steps (Stage 3):**
   1. Fix/neutralize the `b"\x00" * 14` first-response trailer so `0x4e68fdc` does not obfuscate `id=1+` request endpoints (notice `id=1` arrived as `\x00\x00...` when seed was all-zeros, or `0x4e69764`-encoded bytes).
   2. Inspect the latest `server/data/captures/*.json` from this run and implement `content/init` / resource download responses.
+
+---
+
+## 5. Additive Update (Stage 2 Codec Fixed -> Stage 3 `GET /assets/manifest.db` Triggered)
+- **Codec Fix (`0x56f3a54`, `0x56f3a78..0x56f3aec`):** `batch.py` now consumes `_first_response_pending` only when `len(payload) > 0` and sends `b"\x00"*5 + b"\x00\x00\x00\x01" + b"\x00"*5` (`w2=1` identity multiplier). All `id=1+` RPC endpoints now decode in clean plaintext (`game/loginvideo/getCurrentVideo`, etc.).
+- **Stage 3 Trigger (`0x711f7f3`, `0x686cb5f`):** Adding `pf_config_assets_manifest_url_db` / `_xml` pointing to `http://127.0.0.1:8080/assets/manifest.db` triggered the Content Update dialog and a live `GET /assets/manifest.db` request. Binary queries `SELECT src,length,crc FROM resources WHERE name = ?`.
+- **Next:** Configure `GET /assets/manifest.db` in `server/config/routes.json` with a SQLite DB containing `resources(name, src, length, crc)` (check `Unz` / gzip if needed).
+
+---
+
+## 5. Additive Update (Stage 2 Codec Fixed -> Stage 3 `GET /assets/manifest.db` Triggered)
+- **Codec Fix (`0x56f3a54`, `0x56f3a78..0x56f3aec`):** `batch.py` now consumes `_first_response_pending` only when `len(payload) > 0` and sends `b"\x00"*5 + b"\x00\x00\x00\x01" + b"\x00"*5` (`w2=1` identity multiplier). All `id=1+` RPC endpoints now decode in clean plaintext (`game/loginvideo/getCurrentVideo`, etc.).
+- **Stage 3 Trigger (`0x711f7f3`, `0x686cb5f`):** Adding `pf_config_assets_manifest_url_db` / `_xml` pointing to `http://127.0.0.1:8080/assets/manifest.db` triggered the Content Update dialog and a live `GET /assets/manifest.db` request. Binary queries `SELECT src,length,crc FROM resources WHERE name = ?`.
+- **Next:** Configure `GET /assets/manifest.db` in `server/config/routes.json` with a SQLite DB containing `resources(name, src, length, crc)` (check `Unz` / gzip if needed).

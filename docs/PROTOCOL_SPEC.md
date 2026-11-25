@@ -82,3 +82,15 @@ Mapped in `server/config/routes.json` (JSON stubs; live Stage 2/3 client behavio
 - **Field `3` (varint, `int32`):** `checksum` (`0x4b14050` -> `0x4b13a48`, `get_checksum` at `0x4b139f8`).
 - **Algorithm (`0x57015c0`):** `zlib.crc32(raw_payload + BATCH_CHECKSUM_SECRET) & 0xFFFFFFFF`, where `BATCH_CHECKSUM_SECRET = bytes.fromhex("22ecd02d437fdc88")` (`0x719f110`, masked `& 0xff`).
 - **Status:** Implementing this in `server/modules/batch.py` resolved Stage 2 (`Error_RpcTimeout`) and advanced the client past the age-gate into Stage 3 (`RESOURCE DOWNLOAD ERROR`).
+
+---
+
+### First-Response Trailer Identity (`w2 = 1`) & Stage 3 Asset Manifest (Confirmed)
+- **14-Byte Trailer Layout (`0x56f3a78..0x56f3aec`):** `[5 bytes] + [4-byte big-endian uint32 w2] + [5 bytes]`. Setting `w2 = 1` keeps `0x4e69764` as identity (`1 * byte == byte`) on `id=1+` batches. Client only strips/parses the trailer when `len(payload) > 14`.
+- **Asset Manifest (`0x711f7f3`, `0x686cb5f`):** `pf_config_assets_manifest_url_db` triggers `GET /assets/manifest.db` (`Accept: application/xml,image/png`). Client queries `SELECT src,length,crc FROM resources WHERE name = ?`.
+
+---
+
+### First-Response Trailer Identity (`w2 = 1`) & Stage 3 Asset Manifest (Confirmed)
+- **14-Byte Trailer Layout (`0x56f3a78..0x56f3aec`):** `[5 bytes] + [4-byte big-endian uint32 w2] + [5 bytes]`. Setting `w2 = 1` keeps `0x4e69764` as identity (`1 * byte == byte`) on `id=1+` batches. Client only strips/parses the trailer when `len(payload) > 14`.
+- **Asset Manifest (`0x711f7f3`, `0x686cb5f`):** `pf_config_assets_manifest_url_db` triggers `GET /assets/manifest.db` (`Accept: application/xml,image/png`). Client queries `SELECT src,length,crc FROM resources WHERE name = ?`.

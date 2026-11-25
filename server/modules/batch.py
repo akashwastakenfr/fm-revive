@@ -125,6 +125,8 @@ def build_rpc_payload(endpoint: str) -> bytes:
             "obfuscation_enabled": "false",
             "batch_checksum_enabled": "false",
             "http_keepalive_enabled": "false",
+            "pf_config_assets_manifest_url_db": "http://127.0.0.1:8080/assets/manifest.db",
+            "pf_config_assets_manifest_url_xml": "http://127.0.0.1:8080/assets/manifest.xml",
         })
     return b""
 
@@ -138,8 +140,8 @@ def handle_batch(raw: bytes) -> tuple[bytes, dict]:
     for item in items:
         endpoint = item.get("endpoint", "")
         payload = build_rpc_payload(endpoint)
-        if _first_response_pending:
-            payload = payload + (b"\x00" * 14)
+        if _first_response_pending and len(payload) > 0:
+            payload = payload + (b"\x00" * 5 + b"\x00\x00\x00\x01" + b"\x00" * 5)
             _first_response_pending = False
 
         checksum = zlib.crc32(payload + BATCH_CHECKSUM_SECRET) & 0xFFFFFFFF
