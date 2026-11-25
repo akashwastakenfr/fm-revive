@@ -5,6 +5,11 @@ from pathlib import Path
 import json
 import uuid
 
+try:
+    from modules.batch import handle_batch, reset_session
+except ImportError:
+    from server.modules.batch import handle_batch, reset_session
+
 HOST = "127.0.0.1"
 PORT = 8080
 
@@ -107,7 +112,15 @@ class RevivalServer(BaseHTTPRequestHandler):
         filename = CAPTURE_DIR / f"{capture_id}.json"
         filename.write_text(json.dumps(record, indent=2), encoding="utf-8")
 
-        route_key = f"{self.command} {parsed.path}"
+        if self.command == "POST" and parsed.path == "/g/game/batch":
+            resp_bytes, _ = handle_batch(raw)
+            self.send_bytes(200, "application/x.binary", resp_bytes)
+            return
+
+        if self.command == "GET" and parsed.path.startswith("/config/Android/") and parsed.path.endswith("/config.ini"):
+            reset_session()
+
+        route_key = f"{self.command} {parsed.path}" 
         routes = load_routes()
         route = routes.get(route_key)
         if not route and self.command == "GET" and parsed.path.startswith("/config/Android/") and parsed.path.endswith("/config.ini"):
