@@ -180,5 +180,10 @@
     "file": "batch-empty.bin",
     "status": 200,
     "content_type": "application/x.binary"
+  },
+  "GET /assets/manifest.db": {
+    "status": 200,
+    "content_type": "application/x.binary",
+    "file": "manifest.db"
   }
 }

@@ -57,3 +57,10 @@ Even with `server/modules/batch.py` returning `status=200` and `SystemSettings` 
 - **Codec Fix (`0x56f3a54`, `0x56f3a78..0x56f3aec`):** `batch.py` now consumes `_first_response_pending` only when `len(payload) > 0` and sends `b"\x00"*5 + b"\x00\x00\x00\x01" + b"\x00"*5` (`w2=1` identity multiplier). All `id=1+` RPC endpoints now decode in clean plaintext (`game/loginvideo/getCurrentVideo`, etc.).
 - **Stage 3 Trigger (`0x711f7f3`, `0x686cb5f`):** Adding `pf_config_assets_manifest_url_db` / `_xml` pointing to `http://127.0.0.1:8080/assets/manifest.db` triggered the Content Update dialog and a live `GET /assets/manifest.db` request. Binary queries `SELECT src,length,crc FROM resources WHERE name = ?`.
 - **Next:** Configure `GET /assets/manifest.db` in `server/config/routes.json` with a SQLite DB containing `resources(name, src, length, crc)` (check `Unz` / gzip if needed).
+
+---
+
+## 6. Additive Update (`manifest.db` Parsed -> `12KB/12KB KICKING OFF.....`)
+- **Confirmed (`0x128c5a4..0x128c678`):** `GET /assets/manifest.db` expects a raw SQLite3 database with `resources(name TEXT PRIMARY KEY, src TEXT, length INTEGER, crc INTEGER)`.
+- **Live Result:** Serving an empty `manifest.db` via `routes.json` (`content_type: application/x.binary`) downloaded `12KB/12KB` and advanced to `KICKING OFF.....`, then failed with `RESOURCE DOWNLOAD ERROR` because `resources` has 0 rows and no v18.1.03 `.big` / `DynamicAssets` cache exists on device or in the repo.
+- **Next:** Either source an archived FIFA Mobile `v18.1.03` `DynamicAssets` / `.big` asset pack to populate `manifest.db` + serve over HTTP, or inspect what specific startup resource `name`s `0x128c514` queries in `resources`.

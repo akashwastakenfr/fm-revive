@@ -18,3 +18,11 @@
   - Adding `pf_config_assets_manifest_url_db=http://127.0.0.1:8080/assets/manifest.db` and `pf_config_assets_manifest_url_xml=http://127.0.0.1:8080/assets/manifest.xml` to `default-config.ini` and `SystemSettings` (`batch.py`) triggered the in-game `"Note : Client requires a Content Update..."` prompt.
   - Tapping **CONFIRM DOWNLOAD** made the client send `GET /assets/manifest.db` (`Accept: application/xml,image/png`, `User-Agent: ProtoHttp 1.3/DS 15.1.3.0.4 (Android)`) to `127.0.0.1:8080`.
 - **Next Step:** Serve a valid SQLite `manifest.db` with table `resources(name, src, length, crc)` on `GET /assets/manifest.db` (and check if `Unz` means gzip/zip-wrapped).
+
+## 3. `manifest.db` Live Test & SQLite Schema (`0x128c514..0x128c678`)
+- **Confirmed (`0x128c5a4..0x128c678`):**
+  - Client downloads `GET /assets/manifest.db` and opens it directly via `sqlite3_open_v2` (`0x128c5c4`, raw SQLite—not gzipped).
+  - Prepares `SELECT src,length,crc FROM resources WHERE name = ?` (`0x686cb5f` -> `0x128c514..0x128c570`).
+- **Live Result:**
+  - Created `server/data/responses/manifest.db` with `CREATE TABLE resources (name TEXT PRIMARY KEY, src TEXT, length INTEGER, crc INTEGER)` and mapped `GET /assets/manifest.db` (`content_type: application/x.binary`) in `server/config/routes.json`.
+  - Client downloaded `12KB/12KB` (100% green bar) and advanced from `GETTING WARMED UP.....` to `KICKING OFF.....`, then threw `RESOURCE DOWNLOAD ERROR` because `resources` has 0 rows and no `.big` / `DynamicAssets` files exist on device (`/sdcard/Android/data/com.ea.gp.fifamobile/files/external` only) or in the workspace.

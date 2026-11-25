@@ -94,3 +94,10 @@ Mapped in `server/config/routes.json` (JSON stubs; live Stage 2/3 client behavio
 ### First-Response Trailer Identity (`w2 = 1`) & Stage 3 Asset Manifest (Confirmed)
 - **14-Byte Trailer Layout (`0x56f3a78..0x56f3aec`):** `[5 bytes] + [4-byte big-endian uint32 w2] + [5 bytes]`. Setting `w2 = 1` keeps `0x4e69764` as identity (`1 * byte == byte`) on `id=1+` batches. Client only strips/parses the trailer when `len(payload) > 14`.
 - **Asset Manifest (`0x711f7f3`, `0x686cb5f`):** `pf_config_assets_manifest_url_db` triggers `GET /assets/manifest.db` (`Accept: application/xml,image/png`). Client queries `SELECT src,length,crc FROM resources WHERE name = ?`.
+
+---
+
+### `manifest.db` SQLite Schema (`GET /assets/manifest.db`) — Confirmed
+- **Format:** Raw SQLite3 database (served with `Content-Type: application/x.binary` in `routes.json`).
+- **Table (`0x686cb5f`, `0x128c514`):** `resources(name TEXT PRIMARY KEY, src TEXT, length INTEGER, crc INTEGER)` — queried via `SELECT src,length,crc FROM resources WHERE name = ?`.
+- **Live Status:** Client downloads `12KB/12KB` and advances to `KICKING OFF.....` before failing on missing asset rows/files.
