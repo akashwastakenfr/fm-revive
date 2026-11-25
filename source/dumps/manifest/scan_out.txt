@@ -1,0 +1,526 @@
+=== manifest_queue_dl.asm 0x556e740..0x556e7d0 ===
+ 556e740: b9402efb     	ldr	w27, [x23, #0x2c]
+ 556e744: 14000002     	b	0x556e74c <_ZNK18glucentralservices15AttributeUpdate7to_jsonEv+0x2e98b08>
+ 556e748: aa1903f8     	mov	x24, x25
+ 556e74c: f9001af8     	str	x24, [x23, #0x30]
+ 556e750: d10323a8     	sub	x8, x29, #0xc8
+ 556e754: f83bdb08     	str	x8, [x24, w27, sxtw #3]
+ 556e758: b9402ee8     	ldr	w8, [x23, #0x2c]
+ 556e75c: 11000508     	add	w8, w8, #0x1
+ 556e760: b9002ee8     	str	w8, [x23, #0x2c]
+ 556e764: d000bdc8     	adrp	x8, 0x6d28000
+ 556e768: 912f5d08     	add	x8, x8, #0xbd7
+ 556e76c: d10363a0     	sub	x0, x29, #0xd8
+ 556e770: 91002101     	add	x1, x8, #0x8
+ 556e774: 32000be2     	orr	w2, wzr, #0x7
+ 556e778: 96fee2bf     	bl	0x1527274 <Java_com_ea_fuel_video_PlayerAndroid_OnErrorNativeImpl+0xbc12c>
+ 556e77c: f9402e88     	ldr	x8, [x20, #0x58]
+ 556e780: b40000a8     	cbz	x8, 0x556e794 <_ZNK18glucentralservices15AttributeUpdate7to_jsonEv+0x2e98b50>
+ 556e784: f9400908     	ldr	x8, [x8, #0x10]
+ 556e788: b9400d08     	ldr	w8, [x8, #0xc]
+ 556e78c: 7100011f     	cmp	w8, #0x0
+ 556e790: 540030ec     	b.gt	0x556edac <_ZNK18glucentralservices15AttributeUpdate7to_jsonEv+0x2e99168>
+ 556e794: 90017068     	adrp	x8, 0x837a000
+ 556e798: f9421508     	ldr	x8, [x8, #0x428]
+ 556e79c: f9400108     	ldr	x8, [x8]
+ 556e7a0: a9317fa8     	stp	x8, xzr, [x29, #-0xf0]
+ 556e7a4: d10383a8     	sub	x8, x29, #0xe0
+ 556e7a8: d103a3a0     	sub	x0, x29, #0xe8
+ 556e7ac: d103c3a1     	sub	x1, x29, #0xf0
+ 556e7b0: 320003e2     	orr	w2, wzr, #0x1
+ 556e7b4: 9438b992     	bl	0x639cdfc <_ZNK18glucentralservices15AttributeUpdate7to_jsonEv+0x3cc71b8>
+ 556e7b8: f85203b7     	ldur	x23, [x29, #-0xe0]
+ 556e7bc: 9000e0a8     	adrp	x8, 0x7182000 <_ZN18glucentralservices16TAG_PRELOAD_NAMEE+0x2dcb76>
+ 556e7c0: 91164108     	add	x8, x8, #0x590
+ 556e7c4: d10403a0     	sub	x0, x29, #0x100
+ 556e7c8: 91002101     	add	x1, x8, #0x8
+ 556e7cc: 528002a2     	mov	w2, #0x15               // =21
+ 556e7d0: 96fee2a9     	bl	0x1527274 <Java_com_ea_fuel_video_PlayerAndroid_OnErrorNativeImpl+0xbc12c>
+=== manifest_queue_dl.asm 0x556ed30..0x556ee50 ===
+ 556ed30: d102a3a1     	sub	x1, x29, #0xa8
+ 556ed34: 96feed9e     	bl	0x152a3ac <Java_com_ea_fuel_video_PlayerAndroid_OnErrorNativeImpl+0xbf264>
+ 556ed38: 910243e0     	add	x0, sp, #0x90
+ 556ed3c: d101a3a1     	sub	x1, x29, #0x68
+ 556ed40: 96fed02f     	bl	0x1522dfc <Java_com_ea_fuel_video_PlayerAndroid_OnErrorNativeImpl+0xb7cb4>
+ 556ed44: 321f03e1     	orr	w1, wzr, #0x2
+ 556ed48: 910263e2     	add	x2, sp, #0x98
+ 556ed4c: 320003e3     	orr	w3, wzr, #0x1
+ 556ed50: 910243e4     	add	x4, sp, #0x90
+ 556ed54: aa1703e0     	mov	x0, x23
+ 556ed58: 97f586e6     	bl	0x52d08f0 <_ZNK18glucentralservices15AttributeUpdate7to_jsonEv+0x2bfacac>
+ 556ed5c: aa1703e0     	mov	x0, x23
+ 556ed60: 97f58a3b     	bl	0x52d164c <_ZNK18glucentralservices15AttributeUpdate7to_jsonEv+0x2bfba08>
+ 556ed64: a977a7a8     	ldp	x8, x9, [x29, #-0x88]
+ 556ed68: a976afaa     	ldp	x10, x11, [x29, #-0x98]
+ 556ed6c: a906a7e8     	stp	x8, x9, [sp, #0x68]
+ 556ed70: a905afea     	stp	x10, x11, [sp, #0x58]
+ 556ed74: f94002c8     	ldr	x8, [x22]
+ 556ed78: a904a3ff     	stp	xzr, x8, [sp, #0x48]
+ 556ed7c: 9101a3e0     	add	x0, sp, #0x68
+ 556ed80: 910163e1     	add	x1, sp, #0x58
+ 556ed84: 910143e2     	add	x2, sp, #0x50
+ 556ed88: 910123e3     	add	x3, sp, #0x48
+ 556ed8c: 97c95f13     	bl	0x47c69d8 <_ZNK18glucentralservices15AttributeUpdate7to_jsonEv+0x20f0d94>
+ 556ed90: 320003e8     	orr	w8, wzr, #0x1
+ 556ed94: 390103e8     	strb	w8, [sp, #0x40]
+ 556ed98: 3900e3e8     	strb	w8, [sp, #0x38]
+ 556ed9c: 910103e1     	add	x1, sp, #0x40
+ 556eda0: 9100e3e2     	add	x2, sp, #0x38
+ 556eda4: aa1703e0     	mov	x0, x23
+ 556eda8: 97f58b7f     	bl	0x52d1ba4 <_ZNK18glucentralservices15AttributeUpdate7to_jsonEv+0x2bfbf60>
+ 556edac: f9402288     	ldr	x8, [x20, #0x40]
+ 556edb0: b5000188     	cbnz	x8, 0x556ede0 <_ZNK18glucentralservices15AttributeUpdate7to_jsonEv+0x2e9919c>
+ 556edb4: 90017068     	adrp	x8, 0x837a000
+ 556edb8: f9424108     	ldr	x8, [x8, #0x480]
+ 556edbc: f9400108     	ldr	x8, [x8]
+ 556edc0: a902ffe8     	stp	x8, xzr, [sp, #0x28]
+ 556edc4: d101a3a8     	sub	x8, x29, #0x68
+ 556edc8: 9100c3e0     	add	x0, sp, #0x30
+ 556edcc: 9100a3e1     	add	x1, sp, #0x28
+ 556edd0: 320003e2     	orr	w2, wzr, #0x1
+ 556edd4: 9438b80a     	bl	0x639cdfc <_ZNK18glucentralservices15AttributeUpdate7to_jsonEv+0x3cc71b8>
+ 556edd8: f85983a8     	ldur	x8, [x29, #-0x68]
+ 556eddc: f9002288     	str	x8, [x20, #0x40]
+ 556ede0: f0017068     	adrp	x8, 0x837d000
+ 556ede4: f941b508     	ldr	x8, [x8, #0x368]
+ 556ede8: f9400108     	ldr	x8, [x8]
+ 556edec: f81983a8     	stur	x8, [x29, #-0x68]
+ 556edf0: d101a3a1     	sub	x1, x29, #0x68
+ 556edf4: aa1503e0     	mov	x0, x21
+ 556edf8: 94009899     	bl	0x559505c <_ZNK18glucentralservices15AttributeUpdate7to_jsonEv+0x2ebf418>
+ 556edfc: 36000200     	tbz	w0, #0x0, 0x556ee3c <_ZNK18glucentralservices15AttributeUpdate7to_jsonEv+0x2e991f8>
+ 556ee00: f9404a94     	ldr	x20, [x20, #0x90]
+ 556ee04: a9405a77     	ldp	x23, x22, [x19]
+ 556ee08: 2941a295     	ldp	w21, w8, [x20, #0xc]
+ 556ee0c: 93407eb5     	sxtw	x21, w21
+ 556ee10: 6b15011f     	cmp	w8, w21
+ 556ee14: 110006b3     	add	w19, w21, #0x1
+ 556ee18: 5400008c     	b.gt	0x556ee28 <_ZNK18glucentralservices15AttributeUpdate7to_jsonEv+0x2e991e4>
+ 556ee1c: aa1403e0     	mov	x0, x20
+ 556ee20: 2a1303e1     	mov	w1, w19
+ 556ee24: 96fe73f9     	bl	0x150be08 <Java_com_ea_fuel_video_PlayerAndroid_OnErrorNativeImpl+0xa0cc0>
+ 556ee28: f9400e88     	ldr	x8, [x20, #0x18]
+ 556ee2c: b9000e93     	str	w19, [x20, #0xc]
+ 556ee30: 8b151108     	add	x8, x8, x21, lsl #4
+ 556ee34: a9005917     	stp	x23, x22, [x8]
+ 556ee38: 14000028     	b	0x556eed8 <_ZNK18glucentralservices15AttributeUpdate7to_jsonEv+0x2e99294>
+ 556ee3c: f9402294     	ldr	x20, [x20, #0x40]
+ 556ee40: 9000e0a8     	adrp	x8, 0x7182000 <_ZN18glucentralservices16TAG_PRELOAD_NAMEE+0x2dcb76>
+ 556ee44: 911b7d08     	add	x8, x8, #0x6df
+ 556ee48: 910063e0     	add	x0, sp, #0x18
+ 556ee4c: 91002101     	add	x1, x8, #0x8
+ 556ee50: 32000fe2     	orr	w2, wzr, #0xf
+=== parse_static_resources.asm 0x558c480..0x558c5d0 ===
+ 558c480: d0ffffc2     	adrp	x2, 0x5586000 <_ZNK18glucentralservices15AttributeUpdate7to_jsonEv+0x2eb03bc>
+ 558c484: 911d2400     	add	x0, x0, #0x749
+ 558c488: 9127a042     	add	x2, x2, #0x9e8
+ 558c48c: 140000f3     	b	0x558c858 <_ZNK18glucentralservices15AttributeUpdate7to_jsonEv+0x2eb6c14>
+ 558c490: f94002b6     	ldr	x22, [x21]
+ 558c494: 9000b141     	adrp	x1, 0x6bb4000
+ 558c498: 91296421     	add	x1, x1, #0xa59
+ 558c49c: 528002c2     	mov	w2, #0x16               // =22
+ 558c4a0: aa1603e0     	mov	x0, x22
+ 558c4a4: 96dda059     	bl	0xcf4608 <memcmp@plt>
+ 558c4a8: 34001040     	cbz	w0, 0x558c6b0 <_ZNK18glucentralservices15AttributeUpdate7to_jsonEv+0x2eb6a6c>
+ 558c4ac: b000b141     	adrp	x1, 0x6bb5000
+ 558c4b0: 911a7421     	add	x1, x1, #0x69d
+ 558c4b4: 528002c2     	mov	w2, #0x16               // =22
+ 558c4b8: aa1603e0     	mov	x0, x22
+ 558c4bc: 96dda053     	bl	0xcf4608 <memcmp@plt>
+ 558c4c0: 35000840     	cbnz	w0, 0x558c5c8 <_ZNK18glucentralservices15AttributeUpdate7to_jsonEv+0x2eb6984>
+ 558c4c4: b000b140     	adrp	x0, 0x6bb5000
+ 558c4c8: f0ffffe2     	adrp	x2, 0x558b000 <_ZNK18glucentralservices15AttributeUpdate7to_jsonEv+0x2eb53bc>
+ 558c4cc: 911a7400     	add	x0, x0, #0x69d
+ 558c4d0: 91328042     	add	x2, x2, #0xca0
+ 558c4d4: 140000e1     	b	0x558c858 <_ZNK18glucentralservices15AttributeUpdate7to_jsonEv+0x2eb6c14>
+ 558c4d8: f94002b6     	ldr	x22, [x21]
+ 558c4dc: 9000b141     	adrp	x1, 0x6bb4000
+ 558c4e0: 9139f021     	add	x1, x1, #0xe7c
+ 558c4e4: 321d07e2     	orr	w2, wzr, #0x18
+ 558c4e8: aa1603e0     	mov	x0, x22
+ 558c4ec: 96dda047     	bl	0xcf4608 <memcmp@plt>
+ 558c4f0: 34000ea0     	cbz	w0, 0x558c6c4 <_ZNK18glucentralservices15AttributeUpdate7to_jsonEv+0x2eb6a80>
+ 558c4f4: d000b141     	adrp	x1, 0x6bb6000
+ 558c4f8: 9139d821     	add	x1, x1, #0xe76
+ 558c4fc: 321d07e2     	orr	w2, wzr, #0x18
+ 558c500: aa1603e0     	mov	x0, x22
+ 558c504: 96dda041     	bl	0xcf4608 <memcmp@plt>
+ 558c508: 35000600     	cbnz	w0, 0x558c5c8 <_ZNK18glucentralservices15AttributeUpdate7to_jsonEv+0x2eb6984>
+ 558c50c: d000b140     	adrp	x0, 0x6bb6000
+ 558c510: d0ffffe2     	adrp	x2, 0x558a000 <_ZNK18glucentralservices15AttributeUpdate7to_jsonEv+0x2eb43bc>
+ 558c514: 9139d800     	add	x0, x0, #0xe76
+ 558c518: 911ea042     	add	x2, x2, #0x7a8
+ 558c51c: 910003e8     	mov	x8, sp
+ 558c520: aa1303e1     	mov	x1, x19
+ 558c524: 96fe5eaa     	bl	0x1523fcc <Java_com_ea_fuel_video_PlayerAndroid_OnErrorNativeImpl+0xb8e84>
+ 558c528: 140000d7     	b	0x558c884 <_ZNK18glucentralservices15AttributeUpdate7to_jsonEv+0x2eb6c40>
+ 558c52c: f94002a0     	ldr	x0, [x21]
+ 558c530: f000b141     	adrp	x1, 0x6bb7000
+ 558c534: 91055421     	add	x1, x1, #0x155
+ 558c538: 52800322     	mov	w2, #0x19               // =25
+ 558c53c: 96dda033     	bl	0xcf4608 <memcmp@plt>
+ 558c540: 35000440     	cbnz	w0, 0x558c5c8 <_ZNK18glucentralservices15AttributeUpdate7to_jsonEv+0x2eb6984>
+ 558c544: b9407260     	ldr	w0, [x19, #0x70]
+ 558c548: aa1f03e9     	mov	x9, xzr
+ 558c54c: 320007e1     	orr	w1, wzr, #0x3
+ 558c550: 12185c08     	and	w8, w0, #0xffffff00
+ 558c554: 140000d0     	b	0x558c894 <_ZNK18glucentralservices15AttributeUpdate7to_jsonEv+0x2eb6c50>
+ 558c558: f94002b6     	ldr	x22, [x21]
+ 558c55c: d000b141     	adrp	x1, 0x6bb6000
+ 558c560: 913b3821     	add	x1, x1, #0xece
+ 558c564: 52800362     	mov	w2, #0x1b               // =27
+ 558c568: aa1603e0     	mov	x0, x22
+ 558c56c: 96dda027     	bl	0xcf4608 <memcmp@plt>
+ 558c570: 34000b40     	cbz	w0, 0x558c6d8 <_ZNK18glucentralservices15AttributeUpdate7to_jsonEv+0x2eb6a94>
+ 558c574: b000b141     	adrp	x1, 0x6bb5000
+ 558c578: 9118c821     	add	x1, x1, #0x632
+ 558c57c: 52800362     	mov	w2, #0x1b               // =27
+ 558c580: aa1603e0     	mov	x0, x22
+ 558c584: 96dda021     	bl	0xcf4608 <memcmp@plt>
+ 558c588: 35000200     	cbnz	w0, 0x558c5c8 <_ZNK18glucentralservices15AttributeUpdate7to_jsonEv+0x2eb6984>
+ 558c58c: b000b140     	adrp	x0, 0x6bb5000
+ 558c590: f0ffffe2     	adrp	x2, 0x558b000 <_ZNK18glucentralservices15AttributeUpdate7to_jsonEv+0x2eb53bc>
+ 558c594: 9118c800     	add	x0, x0, #0x632
+ 558c598: 9125d042     	add	x2, x2, #0x974
+ 558c59c: 910003e8     	mov	x8, sp
+ 558c5a0: 321f07e3     	orr	w3, wzr, #0x6
+ 558c5a4: aa1303e1     	mov	x1, x19
+ 558c5a8: 96fe620f     	bl	0x1524de4 <Java_com_ea_fuel_video_PlayerAndroid_OnErrorNativeImpl+0xb9c9c>
+ 558c5ac: 140000b6     	b	0x558c884 <_ZNK18glucentralservices15AttributeUpdate7to_jsonEv+0x2eb6c40>
+ 558c5b0: f94002a0     	ldr	x0, [x21]
+ 558c5b4: d000b141     	adrp	x1, 0x6bb6000
+ 558c5b8: 913cb021     	add	x1, x1, #0xf2c
+ 558c5bc: 321e0be2     	orr	w2, wzr, #0x1c
+ 558c5c0: 96dda012     	bl	0xcf4608 <memcmp@plt>
+ 558c5c4: 34000940     	cbz	w0, 0x558c6ec <_ZNK18glucentralservices15AttributeUpdate7to_jsonEv+0x2eb6aa8>
+ 558c5c8: aa1303e0     	mov	x0, x19
+ 558c5cc: aa1503e1     	mov	x1, x21
+ 558c5d0: 2a1403e2     	mov	w2, w20
+=== asset/manifest strings in 0x5568000..0x5596000 ===
+  0x55680d4: '_onAssetDownloadComplete'
+  0x556855c: 'DeviceManifestServieConsentWaitFlow'
+  0x55688bc: 'manifest_paths'
+  0x5568918: 'pf_manifest_url_db'
+  0x5568974: 'pf_manifest_url_zip_db'
+  0x55689e8: 'manifest_crc'
+  0x5568a44: 'pf_config_assets_manifest_url_db'
+  0x5568aa0: 'optools_manifest_url_db'
+  0x5568afc: 'optools_manifest_db_crc'
+  0x5568b58: 'manifest_cache_static'
+  0x556af18: 'ResourceSuffix'
+  0x556b550: 'http://'
+  0x556b57c: 'https://'
+  0x556b998: 'Cache: '
+  0x556ba40: 'Manifest: '
+  0x556bb60: '_onUnbundledResourceLoaded'
+  0x556c49c: '_onAssetError'
+  0x556c784: '_onUnbundledResourceLoaded'
+  0x556ca48: '_onUnbundledResourceLoaded'
+  0x556e414: 'manifest'
+  0x556e7c0: 'Error_Resource_Header'
+  0x556e88c: 'Error_Resource_Message'
+  0x556ec0c: 'unzip_error'
+  0x556ec44: 'crc_file_corrupt'
+  0x556f2d4: 'update_manifest_alert_enabled'
+  0x556fa40: 'DeviceManifestServieConfirmFlow'
+  0x5570414: 'reject_update_manifest_exit_game_enabled'
+  0x5570b88: 'DeviceManifestServieDoubleCheckConfirmFlow'
+  0x5571108: 'update_manifest_alert_enabled'
+  0x55717d4: '_onUrlLoadComplete'
+  0x55725d4: '_onUnbundledResourceLoaded'
+  0x55726d4: 'Manifest: '
+  0x5572d2c: 'xml_'
+  0x55732dc: '_loadUrl'
+  0x55732f8: '_loadUrl'
+  0x557333c: 'loadAsset'
+  0x5573358: 'loadAsset'
+  0x5573384: 'cacheLocal'
+  0x557339c: 'loadBinary'
+  0x55733b4: 'checkAsset'
+  0x55733cc: 'cacheAsset'
+  0x5573414: '_loadUrlMap'
+  0x557342c: 'deleteCache'
+  0x5573444: 'updateCache'
+  0x5573460: 'updateCache'
+  0x557348c: 'resolveAsset'
+  0x55734a8: 'resolveAsset'
+  0x55734bc: '_cacheService'
+  0x55735a0: 'removeFromCache'
+  0x55735e8: '_staticResources'
+  0x557363c: 'getUsedCacheSpace'
+  0x557366c: 'wasManifestLoaded'
+  0x5573744: 'getRealResourceName'
+  0x5573774: 'assetErrorPublisher'
+  0x55737d8: '_manifestInitSuccess'
+  0x55737f0: '_assetErrorPublisher'
+  0x5573808: 'deleteCacheDirectory'
+  0x5573824: 'deleteCacheDirectory'
+  0x5573838: '_manifestRefreshCount'
+  0x5573850: 'getActureResourceName'
+  0x5573880: '_parseStaticResources'
+  0x557389c: '_parseStaticResources'
+  0x55738c8: '_assetNamesStorageFull'
+  0x55738e0: '_getCustomResourceName'
+  0x5573928: 'get_assetErrorPublisher'
+  0x5573940: '_onManifestInitComplete'
+  0x55739d0: '_onAssetDownloadComplete'
+  0x55739ec: '_onAssetDownloadComplete'
+  0x5573a2c: '_onUnbundledResourceLoaded'
+  0x5573a44: '_onUnbundledResourceLoaded'
+  0x5573b5c: 'removeFromCache'
+  0x5573bc0: 'get_assetErrorPublisher'
+  0x5573c00: 'cacheLocal'
+  0x5573c14: 'deleteCache'
+  0x5573c48: 'getUsedCacheSpace'
+  0x5573c5c: 'getRealResourceName'
+  0x5573c78: 'getActureResourceName'
+  0x5573c94: '_onManifestInitComplete'
+  0x5573cbc: 'loadBinary'
+  0x5573d34: '_getCustomResourceName'
+  0x5573d58: '_onAssetError'
+  0x5573d74: '_onAssetError'
+  0x5573d94: 'checkAsset'
+  0x5573da8: 'wasManifestLoaded'
+  0x5573dc4: 'cacheAsset'
+  0x5573e94: '_cache'
+  0x5573f64: '_badUrlMap'
+  0x557401c: 'resource_exists'
+  0x557404c: 'resource_get_src'
+  0x5574078: 'resource_verifyCRC'
+  0x5574090: 'isResourceCritical'
+  0x55740b4: 'isResourceCritical'
+  0x55740d0: 'resource_deleteCache'
+  0x55740fc: 'resource_removeByName'
+  0x5574128: 'MANIFEST_RESOURCE_NAME'
+  0x5574140: 'resource_downloadAsset'
+  0x5574188: 'resource_cancelDownload'
+  0x55741a0: 'resource_verifyCRC_text'
+  0x5574200: 'resource_refreshManifest'
+  0x5574230: 'resource_getFreeDiskSpace'
+  0x557425c: 'resource_get_local_by_name'
+  0x5574274: 'resource_getUsedCacheSpace'
+  0x55742fc: 'resource_deleteCacheDirectory'
+  0x5574314: 'CONFIG_MANIFEST_RESOURCE_NAME'
+  0x557432c: 'resource_downloadConfirmReset'
+  0x557435c: 'resource_registerAssetCallback'
+  0x5574388: 'resource_downloadConfirmAccepted'
+  0x55743b4: 'resource_registerManifestCallback'
+  0x55743e0: 'resource_registerWaitingDownloadConfirmCallback'
+  0x5574558: '_loadUrlMap'
+  0x55745ac: '_cacheService'
+  0x5574684: '_staticResources'
+  0x5574798: '_manifestInitSuccess'
+  0x55747b0: '_assetErrorPublisher'
+  0x5574808: '_manifestRefreshCount'
+  0x5574864: '_assetNamesStorageFull'
+  0x5574d04: '_cache'
+  0x5574e4c: '_badUrlMap'
+  0x5574f48: 'resource_exists'
+  0x5574f7c: 'resource_get_src'
+  0x5574fac: 'resource_verifyCRC'
+  0x5574fdc: 'resource_deleteCache'
+  0x557500c: 'resource_removeByName'
+  0x557503c: 'MANIFEST_RESOURCE_NAME'
+  0x5575054: 'resource_downloadAsset'
+  0x55750a0: 'resource_cancelDownload'
+  0x55750b8: 'resource_verifyCRC_text'
+  0x557511c: 'resource_refreshManifest'
+  0x5575150: 'resource_getFreeDiskSpace'
+  0x5575180: 'resource_get_local_by_name'
+  0x5575198: 'resource_getUsedCacheSpace'
+  0x557522c: 'resource_deleteCacheDirectory'
+  0x5575244: 'CONFIG_MANIFEST_RESOURCE_NAME'
+  0x557525c: 'resource_downloadConfirmReset'
+  0x5575290: 'resource_registerAssetCallback'
+  0x55752c0: 'resource_downloadConfirmAccepted'
+  0x55752f0: 'resource_registerManifestCallback'
+  0x5575320: 'resource_registerWaitingDownloadConfirmCallback'
+  0x55757f8: '_manifestInitSuccess'
+  0x55758b8: '_cacheService'
+  0x5575978: '_loadUrlMap'
+  0x55759d8: '_assetErrorPublisher'
+  0x5575a38: '_staticResources'
+  0x5575af8: '_manifestRefreshCount'
+  0x5575c78: '_assetNamesStorageFull'
+  0x5575cd8: 'assetErrorPublisher'
+  0x5576cbc: 'resource_deleteCacheDirectory'
+  0x5576de4: 'resource_deleteCache'
+  0x5576f0c: 'resource_removeByName'
+  0x5577034: 'resource_getFreeDiskSpace'
+  0x55775c0: 'manifest'
+  0x55776c8: 'configAssetsManifest'
+  0x55782f0: 'resource_registerManifestCallback'
+  0x5578418: 'resource_registerWaitingDownloadConfirmCallback'
+  0x5578540: 'resource_downloadConfirmAccepted'
+  0x5578668: 'resource_downloadConfirmReset'
+  0x5578790: 'resource_registerAssetCallback'
+  0x55788b8: 'resource_refreshManifest'
+  0x55789e0: 'resource_exists'
+  0x5578b08: 'resource_downloadAsset'
+  0x5578c30: 'resource_get_local_by_name'
+  0x5578d58: 'resource_cancelDownload'
+  0x5578e80: 'resource_get_src'
+  0x5578fa8: 'resource_verifyCRC'
+  0x55790d0: 'resource_verifyCRC_text'
+  0x55791f8: 'resource_getUsedCacheSpace'
+  0x557b048: '_onUrlLoadComplete'
+  0x557b92c: '_url'
+  0x557ba50: '_urlLoader'
+  0x557bb78: '_onUrlLoadComplete'
+  0x557bb90: '_onUrlLoadComplete'
+  0x557bbc8: '_assetErrorCallback'
+  0x557bbec: 'assetDownloadComplete'
+  0x557bc04: 'assetDownloadComplete'
+  0x557bc24: '_clearUrlLoaderListeners'
+  0x557bcc4: '_clearUrlLoaderListeners'
+  0x557be04: '_url'
+  0x557bf5c: '_urlLoader'
+  0x557c03c: '_assetErrorCallback'
+  0x557c58c: '_urlLoader'
+  0x557c868: 'e_registerAssetCallback'
+  0x557e66c: 'e_registerAssetCallback'
+  0x5580128: 'httpStatus'
+  0x5580144: '_onHttpStatus'
+  0x55819e0: 'httpStatus'
+  0x55819fc: '_onHttpStatus'
+  0x5582058: '_url'
+  0x55820c0: '_asset'
+  0x5582190: '_resource'
+  0x55821b4: '_urlLoader'
+  0x55821d4: '_httpStatus'
+  0x558227c: '_onHttpStatus'
+  0x55822c4: '_getUrlRequest'
+  0x55822dc: '_getUrlRequest'
+  0x5582390: '_assetErrorPublisher'
+  0x5582448: '_onHttpStatus'
+  0x5582504: '_url'
+  0x558257c: '_asset'
+  0x5582668: '_resource'
+  0x558269c: '_urlLoader'
+  0x55826f0: '_httpStatus'
+  0x558283c: '_assetErrorPublisher'
+  0x5582c90: '_urlLoader'
+  0x5582e10: '_httpStatus'
+  0x5582e70: '_asset'
+  0x5582ed0: '_assetErrorPublisher'
+  0x5583e8c: 'e_registerAssetCallback'
+  0x5583ff4: 'refreshConfigManifestXMLFlow'
+  0x5584454: '_onManifestChangedFlowComplete'
+  0x5584a98: '_onManifestChangedFlowComplete'
+  0x5584acc: '_onManifestChangedFlowComplete'
+  0x55857ec: 'manifest_paths'
+  0x55859b4: 'manifest_cache_static_path_index'
+  0x5585a0c: 'manifest_cache_static'
+  0x5586064: 'pf_manifest_url_xml'
+  0x55860bc: 'pf_config_assets_manifest_url_xml'
+  0x5586114: 'optools_manifest_url_xml'
+  0x5586170: 'Manifest Load'
+  0x558619c: '_loadManifest'
+  0x5586290: '_loadManifest'
+  0x5586384: '_loadManifest'
+  0x5586478: '_onAllManifestLoadComplete'
+  0x5587700: '_onUnbundledResourceLoaded'
+  0x5587ae4: 'Manifest: '
+  0x5588190: '_onUnbundledResourceLoaded'
+  0x5588470: '_onUnbundledResourceLoaded'
+  0x5589ce4: '_onManifestLoadComplete'
+  0x558a280: 'resources'
+  0x558a2bc: 'resource'
+  0x558adcc: 'http://'
+  0x558adf8: 'https://'
+  0x558b20c: 'e_registerAssetCallback'
+  0x558b358: 'e_registerAssetCallback'
+  0x558c018: '_loadUrl'
+  0x558c034: '_loadUrl'
+  0x558c078: 'loadAsset'
+  0x558c094: 'loadAsset'
+  0x558c0c0: 'cacheLocal'
+  0x558c0d8: 'loadBinary'
+  0x558c0f0: 'checkAsset'
+  0x558c108: 'cacheAsset'
+  0x558c124: 'cacheAsset'
+  0x558c138: '_loadUrlMap'
+  0x558c150: 'deleteCache'
+  0x558c168: 'updateCache'
+  0x558c184: 'updateCache'
+  0x558c198: '_resourceMap'
+  0x558c1c8: 'resolveAsset'
+  0x558c1e4: 'resolveAsset'
+  0x558c1f8: '_cacheService'
+  0x558c27c: '_getUrlForName'
+  0x558c298: '_getUrlForName'
+  0x558c2ac: '_manifestLoadOp'
+  0x558c2c4: 'removeFromCache'
+  0x558c2dc: '_getUrlForName2'
+  0x558c324: '_staticResources'
+  0x558c344: 'getUsedCacheSpace'
+  0x558c3a4: 'wasManifestLoaded'
+  0x558c3bc: '_loadAllManifests'
+  0x558c3d8: '_loadAllManifests'
+  0x558c3ec: 'getRealResourceName'
+  0x558c404: 'assetErrorPublisher'
+  0x558c438: '_manifestInitSuccess'
+  0x558c450: '_assetErrorPublisher'
+  0x558c468: 'deleteCacheDirectory'
+  0x558c484: 'deleteCacheDirectory'
+  0x558c498: 'getActureResourceName'
+  0x558c4b0: '_parseStaticResources'
+  0x558c4cc: '_parseStaticResources'
+  0x558c4e0: 'get_assetErrorPublisher'
+  0x558c4f8: '_onManifestLoadComplete'
+  0x558c514: '_onManifestLoadComplete'
+  0x558c534: '_staticResourcePathIndex'
+  0x558c560: '_onAllManifestLoadComplete'
+  0x558c578: '_onUnbundledResourceLoaded'
+  0x558c594: '_onUnbundledResourceLoaded'
+  0x558c5b8: '_overrideResourceMapFromXML'
+  0x558c67c: 'getUsedCacheSpace'
+  0x558c690: 'getRealResourceName'
+  0x558c6b8: 'getActureResourceName'
+  0x558c6cc: 'get_assetErrorPublisher'
+  0x558c6e0: '_onAllManifestLoadComplete'
+  0x558c6f4: '_overrideResourceMapFromXML'
+  0x558c71c: '_loadManifest'
+  0x558c738: '_loadManifest'
+  0x558c754: 'cacheLocal'
+  0x558c768: 'deleteCache'
+  0x558c7a4: 'removeFromCache'
+  0x558c7d4: 'loadBinary'
+  0x558c7f4: '_getUrlForName2'
+  0x558c83c: 'checkAsset'
+  0x558c870: 'wasManifestLoaded'
+  0x558cb5c: '_loadUrlMap'
+  0x558cbac: '_resourceMap'
+  0x558cc00: '_cacheService'
+  0x558cca4: '_manifestLoadOp'
+  0x558ccd4: '_staticResources'
+  0x558cd20: '_manifestInitSuccess'
+  0x558cd38: '_assetErrorPublisher'
+  0x558cd90: '_staticResourcePathIndex'
+  0x558d218: '_cacheService'
+  0x558d348: '_resourceMap'
+  0x558d3a8: '_loadUrlMap'
+  0x558d4c8: '_manifestInitSuccess'
+  0x558d528: '_manifestLoadOp'
+  0x558d588: '_assetErrorPublisher'
+  0x558d5e8: '_staticResources'
+  0x558d648: '_staticResourcePathIndex'
+  0x558d708: 'assetErrorPublisher'
+  0x558eb18: 'n7service8manifest6device25DeviceManifestService_obj11__constructEvE13_hx_Closure_0'
+  0x558eb44: 'n7service8manifest6device25DeviceManifestService_obj11__constructEvE13_hx_Closure_0'
+  0x558eb70: 'n7service8manifest6device25DeviceManifestService_obj11__constructEvE13_hx_Closure_0'
+  0x558eb9c: 'n7service8manifest6device25DeviceManifestService_obj11__constructEvE13_hx_Closure_0'
+  0x558ebc8: 'n7service8manifest6device25DeviceManifestService_obj11__constructEvE13_hx_Closure_0'
+  0x558ebf4: 'n7service8manifest6device25DeviceManifestService_obj11__constructEvE13_hx_Closure_0'
+  0x558ec20: 'n7service8manifest6device25DeviceManifestService_obj11__constructEvE13_hx_Closure_0'
+  0x558ec4c: 'n7service8manifest6device25DeviceManifestService_obj11__constructEvE13_hx_Closure_0'
+  0x558ec78: 'n7service8manifest6device25DeviceManifestService_obj11__constructEvE13_hx_Closure_0'
+  0x558eca4: 'n7service8manifest6device25DeviceManifestService_obj11__constructEvE13_hx_Closure_0'
+  0x558ecd0: 'n7service8manifest6device25DeviceManifestService_obj11__constructEvE13_hx_Closure_0'
+  0x558ecfc: 'n7service8manifest6device25DeviceManifestService_obj11__constructEvE13_hx_Closure_0'
+  0x558ed28: 'n7service8manifest6device25DeviceManifestService_obj11__constructEvE13_hx_Closure_0'
+  0x558ed54: 'n7service8manifest6device25DeviceManifestService_obj11__constructEvE13_hx_Closure_0'
+  0x558ed80: 'n7service8manifest6device25DeviceManifestService_obj11__constructEvE13_hx_Closure_0'
+  0x5595eb8: 'n7service8manifest6device25DeviceManifestService_obj11__constructEvE13_hx_Closure_0'
+  0x5595f1c: 'n7service8manifest6device25DeviceManifestService_obj11__constructEvE13_hx_Closure_0'
+  0x5595f7c: 'n7service8manifest6device25DeviceManifestService_obj11__constructEvE13_hx_Closure_0'

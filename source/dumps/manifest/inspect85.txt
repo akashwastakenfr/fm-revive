@@ -1,0 +1,224 @@
+
+=== icfiles_loader (0x123c850..0x123ca20) ===
+  123c854: 35ffffe8     	cbnz	w8, 0x123c850
+  123c85c: 97fd34c0     	bl	0x1189b5c
+  123c86c: 97fd34bc     	bl	0x1189b5c
+  123c870: 943a065f     	bl	0x20be1ec
+  123c87c: 7100011f     	cmp	w8, #0x0
+  123c88c: 943a12e7     	bl	0x20c1428
+  123c890: 94458e36     	bl	0x23a0168
+  123c8bc: 955000e5     	bl	0x663cc50
+  123c8c4: 91232421     	add	x1, x1, #0x8c9  ; 'Data/DynamicAssets/android/'
+  123c8c8: 91006c22     	add	x2, x1, #0x1b  ; 'goryAllocator            DB                         Parachute               [ clearalloc=0, clearfre'
+  123c8d0: 97fd34a3     	bl	0x1189b5c
+  123c8d4: 943a0646     	bl	0x20be1ec
+  123c8e0: 7100011f     	cmp	w8, #0x0
+  123c8f0: 943a12ce     	bl	0x20c1428
+  123c8f4: 97fd3531     	bl	0x1189db8
+  123c8fc: 97ff6175     	bl	0x1214ed0
+  123c908: 97ff951d     	bl	0x1221d7c
+  123c90c: 97fd352b     	bl	0x1189db8
+  123c918: 97ff6183     	bl	0x1214f24
+  123c920: 9108e400     	add	x0, x0, #0x239  ; 'icfiles.big'
+  123c928: 9441a2eb     	bl	0x22a54d4
+  123c92c: 97fff986     	bl	0x123af44
+  123c930: 97fff9cf     	bl	0x123b06c
+  123c934: 97fffb4f     	bl	0x123b670
+  123c938: 94526af7     	bl	0x26d7514
+  123c94c: 94526ce4     	bl	0x26d7cdc
+  123c960: 913f6821     	add	x1, x1, #0xfda  ; 'Rendering'
+  123c964: 9441a0b6     	bl	0x22a4c3c
+  123c970: 91097000     	add	x0, x0, #0x25c  ; 'Default'
+  123c974: 94284d37     	bl	0x1c4fe50
+  123c980: 943825c5     	bl	0x2046094
+  123c984: 9409d64f     	bl	0x14b22c0
+  123c988: 94012592     	bl	0x1285fd0
+  123c98c: 9409fe7f     	bl	0x14bc388
+  123c990: 9409fe95     	bl	0x14bc3e4
+  123c998: 94526adf     	bl	0x26d7514
+  123c9a0: 94393b73     	bl	0x208b76c
+  123c9a8: 940b0b2d     	bl	0x14ff65c
+  123c9d4: 9409fe84     	bl	0x14bc3e4
+  123c9e4: 91008821     	add	x1, x1, #0x22  ; 'AI_Permanent'
+  123c9e8: 9100bc42     	add	x2, x2, #0x2f  ; 'GameFrameWork::Interface'
+  123c9f4: 94284b54     	bl	0x1c4f744
+  123ca1c: 9409fe72     	bl	0x14bc3e4
+
+=== shader_loader (0x2135ad0..0x2135ec0) ===
+  2135ae0: 91355421     	add	x1, x1, #0xd55  ; 'BECore%s'
+  2135ae4: 9133f442     	add	x2, x2, #0xcfd  ; 'ShaderDetail'
+  2135aec: 940a1ebb     	bl	0x23bd5d8
+  2135afc: 97c44716     	bl	0x1247754
+  2135b00: 7100041f     	cmp	w0, #0x1
+  2135b04: 540000e1     	b.ne	0x2135b20
+  2135b0c: 910d1421     	add	x1, x1, #0x345  ; 'shader_low.big'
+  2135b10: 91003822     	add	x2, x1, #0xe  ; 'oFramework::SentencePlayer::SentenceGroup::HasValidSamples::parameterValueIndexList'
+  2135b18: 97c183a0     	bl	0x1196998
+  2135b28: 91355421     	add	x1, x1, #0xd55  ; 'BECore%s'
+  2135b2c: 9133f442     	add	x2, x2, #0xcfd  ; 'ShaderDetail'
+  2135b34: 940a1ea9     	bl	0x23bd5d8
+  2135b44: 97c44704     	bl	0x1247754
+  2135b48: 7100081f     	cmp	w0, #0x2
+  2135b4c: 540000e1     	b.ne	0x2135b68
+  2135b54: 910d5021     	add	x1, x1, #0x354  ; 'shader_verylow.big'
+  2135b58: 91004822     	add	x2, x1, #0x12  ; 'mework::SentencePlayer::SentenceGroup::HasValidSamples::parameterValueIndexList'
+  2135b60: 97c1838e     	bl	0x1196998
+  2135b6c: 910d9c21     	add	x1, x1, #0x367  ; 'shader.big'
+  2135b70: 91002822     	add	x2, x1, #0xa  ; 'AudioFramework::SentencePlayer::SentenceGroup::HasValidSamples::parameterValueIndexList'
+  2135b78: 97c18388     	bl	0x1196998
+  2135bc4: 710002ff     	cmp	w23, #0x0
+  2135bd8: 94011a4d     	bl	0x217c50c
+  2135bf0: 36f80108     	tbz	w8, #0x1f, 0x2135c10
+  2135bf8: b40000c1     	cbz	x1, 0x2135c10
+  2135c0c: 97c13086     	bl	0x1181e24
+  2135c18: eb09011f     	cmp	x8, x9
+  2135c1c: 54000101     	b.ne	0x2135c3c
+  2135c38: d65f03c0     	ret
+  2135c3c: 97aefa37     	bl	0xcf4518
+  2135c40: 97c12f05     	bl	0x1181854
+  2135c4c: 36f80108     	tbz	w8, #0x1f, 0x2135c6c
+  2135c54: b40000c1     	cbz	x1, 0x2135c6c
+  2135c68: 97c1306f     	bl	0x1181e24
+  2135c70: 940dd5ae     	bl	0x24ab328
+  2135c74: 97c12ef8     	bl	0x1181854
+  2135c98: 91355421     	add	x1, x1, #0xd55  ; 'BECore%s'
+  2135c9c: 9133f442     	add	x2, x2, #0xcfd  ; 'ShaderDetail'
+  2135ca8: 940a1e4c     	bl	0x23bd5d8
+  2135cb8: 97c446a7     	bl	0x1247754
+  2135cc4: eb09011f     	cmp	x8, x9
+  2135cc8: 540000a1     	b.ne	0x2135cdc
+  2135cd8: d65f03c0     	ret
+  2135cdc: 97aefa0f     	bl	0xcf4518
+  2135d0c: 911e1821     	add	x1, x1, #0x786  ; 'EASTL basic_string'
+  2135d24: 97c1301c     	bl	0x1181d94
+  2135d48: 97c13019     	bl	0x1181dac
+  2135d50: 910cdd08     	add	x8, x8, #0x337  ; 'data/fifarna/'
+  2135d80: 91355421     	add	x1, x1, #0xd55  ; 'BECore%s'
+  2135d84: 9133f442     	add	x2, x2, #0xcfd  ; 'ShaderDetail'
+  2135d8c: 940a1e13     	bl	0x23bd5d8
+  2135d9c: 97c4466e     	bl	0x1247754
+  2135da0: 7100041f     	cmp	w0, #0x1
+  2135da4: 540000e1     	b.ne	0x2135dc0
+  2135dac: 910dc821     	add	x1, x1, #0x372  ; 'shaderboot_low.big'
+  2135db0: 91004822     	add	x2, x1, #0x12  ; 'mework::SentencePlayer::SentenceGroup::HasValidSamples::parameterValueIndexList'
+  2135db8: 97c182f8     	bl	0x1196998
+  2135dc8: 91355421     	add	x1, x1, #0xd55  ; 'BECore%s'
+  2135dcc: 9133f442     	add	x2, x2, #0xcfd  ; 'ShaderDetail'
+  2135dd4: 940a1e01     	bl	0x23bd5d8
+  2135de4: 97c4465c     	bl	0x1247754
+  2135de8: 7100081f     	cmp	w0, #0x2
+  2135dec: 540000e1     	b.ne	0x2135e08
+  2135df4: 910e1421     	add	x1, x1, #0x385  ; 'shaderboot_verylow.big'
+  2135df8: 91005822     	add	x2, x1, #0x16  ; 'rk::SentencePlayer::SentenceGroup::HasValidSamples::parameterValueIndexList'
+  2135e00: 97c182e6     	bl	0x1196998
+  2135e0c: 910e7021     	add	x1, x1, #0x39c  ; 'shaderboot.big'
+  2135e10: 91003822     	add	x2, x1, #0xe  ; 'oFramework::SentencePlayer::SentenceGroup::HasValidSamples::parameterValueIndexList'
+  2135e18: 97c182e0     	bl	0x1196998
+  2135e64: 710002ff     	cmp	w23, #0x0
+  2135e78: 940119a5     	bl	0x217c50c
+  2135e90: 36f80108     	tbz	w8, #0x1f, 0x2135eb0
+  2135e98: b40000c1     	cbz	x1, 0x2135eb0
+  2135eac: 97c12fde     	bl	0x1181e24
+  2135eb8: eb09011f     	cmp	x8, x9
+  2135ebc: 54000101     	b.ne	0x2135edc
+
+=== _loadAllManifests (0x5589700..0x5589b90) ===
+  5589704: 96ddab89     	bl	0xcf4528
+  558970c: 96efe02c     	bl	0x11817bc
+  5589738: b40004e0     	cbz	x0, 0x55897d4
+  5589754: 942c0fc6     	bl	0x608d66c
+  558975c: b40003d4     	cbz	x20, 0x55897d4
+  5589764: 911e9108     	add	x8, x8, #0x7a4  ; 'src'
+  5589774: 96fe76c0     	bl	0x1527274
+  5589794: 7100143f     	cmp	w1, #0x5
+  558979c: 54000208     	b.hi	0x55897dc
+  55897b8: b4000129     	cbz	x9, 0x55897dc
+  55897f0: 96fe76a1     	bl	0x1527274
+  5589800: 96fe7a7f     	bl	0x15281fc
+  5589810: 96fe79ff     	bl	0x152800c
+  5589820: 96fe7aba     	bl	0x1528308
+  5589830: 96fe7b3d     	bl	0x1528524
+  5589840: 96ff285d     	bl	0x15539b4
+  558985c: d65f03c0     	ret
+  558986c: 96ff2852     	bl	0x15539b4
+  5589874: 973c86ad     	bl	0x24ab328
+  5589894: 96fe7984     	bl	0x1527ea4
+  55898a4: 97ffff60     	bl	0x5589624
+  55898b0: 96fe6553     	bl	0x1522dfc
+  55898c0: d65f03c0     	ret
+  5589900: 340001c8     	cbz	w8, 0x5589938
+  5589910: 96ddabb6     	bl	0xcf47e8
+  558991c: b4000575     	cbz	x21, 0x55899c8
+  5589928: 6b08033f     	cmp	w25, w8
+  558992c: 5400012a     	b.ge	0x5589950
+  5589948: b5fffed5     	cbnz	x21, 0x5589920
+  5589954: 7100013f     	cmp	w9, #0x0
+  5589974: eb00031f     	cmp	x24, x0
+  558997c: 54000182     	b.hs	0x55899ac
+  5589980: 96efdf7a     	bl	0x1181768
+  5589988: b4000157     	cbz	x23, 0x55899b0
+  5589998: 96ddaae4     	bl	0xcf4528
+  55899a0: 96efdf87     	bl	0x11817bc
+  55899d8: 97ffef38     	bl	0x55856b8
+  55899e0: 96ff27f5     	bl	0x15539b4
+  55899fc: d65f03c0     	ret
+  5589a08: 96ff27eb     	bl	0x15539b4
+  5589a10: 973c8646     	bl	0x24ab328
+  5589a30: 97ffffa5     	bl	0x55898c4
+  5589a40: d65f03c0     	ret
+  5589a78: 340001c8     	cbz	w8, 0x5589ab0
+  5589a88: 96ddab58     	bl	0xcf47e8
+  5589a94: b4000574     	cbz	x20, 0x5589b40
+  5589aa0: 6b08031f     	cmp	w24, w8
+  5589aa4: 5400012a     	b.ge	0x5589ac8
+  5589ac0: b5fffed4     	cbnz	x20, 0x5589a98
+  5589acc: 7100013f     	cmp	w9, #0x0
+  5589aec: eb0002ff     	cmp	x23, x0
+  5589af4: 54000182     	b.hs	0x5589b24
+  5589af8: 96efdf1c     	bl	0x1181768
+  5589b00: b4000156     	cbz	x22, 0x5589b28
+  5589b10: 96ddaa86     	bl	0xcf4528
+  5589b18: 96efdf29     	bl	0x11817bc
+  5589b48: 96ff279b     	bl	0x15539b4
+  5589b60: d65f03c0     	ret
+  5589b84: 97fff0cd     	bl	0x5585eb8
+
+=== _getUrlForName (0x558b350..0x558b690) ===
+  558b364: 96fe7c12     	bl	0x152a3ac
+  558b3d0: 96ff2179     	bl	0x15539b4
+  558b3d8: 973c7fd4     	bl	0x24ab328
+  558b3f8: 96fe72ab     	bl	0x1527ea4
+  558b408: 97fff116     	bl	0x5587860
+  558b414: 96fe5e7a     	bl	0x1522dfc
+  558b424: d65f03c0     	ret
+  558b450: 96fe7295     	bl	0x1527ea4
+  558b458: b40000e0     	cbz	x0, 0x558b474
+  558b468: 7100001f     	cmp	w0, #0x0
+  558b480: 96fe7289     	bl	0x1527ea4
+  558b498: 97fffdb9     	bl	0x558ab7c
+  558b4a4: 96fe5e56     	bl	0x1522dfc
+  558b4b8: d65f03c0     	ret
+  558b4e4: 96fe7270     	bl	0x1527ea4
+  558b4f4: b40000c0     	cbz	x0, 0x558b50c
+  558b520: 97fff12b     	bl	0x55879cc
+  558b534: d65f03c0     	ret
+  558b574: 340001c8     	cbz	w8, 0x558b5ac
+  558b584: 96dda499     	bl	0xcf47e8
+  558b590: b4000575     	cbz	x21, 0x558b63c
+  558b59c: 6b08033f     	cmp	w25, w8
+  558b5a0: 5400012a     	b.ge	0x558b5c4
+  558b5bc: b5fffed5     	cbnz	x21, 0x558b594
+  558b5c8: 7100013f     	cmp	w9, #0x0
+  558b5e8: eb00031f     	cmp	x24, x0
+  558b5f0: 54000182     	b.hs	0x558b620
+  558b5f4: 96efd85d     	bl	0x1181768
+  558b5fc: b4000157     	cbz	x23, 0x558b624
+  558b60c: 96dda3c7     	bl	0xcf4528
+  558b614: 96efd86a     	bl	0x11817bc
+  558b658: 96fe9dac     	bl	0x1532d08
+  558b660: 96ff20d5     	bl	0x15539b4
+  558b67c: d65f03c0     	ret
+  558b688: 96ff20cb     	bl	0x15539b4
+  558b690: 973c7f26     	bl	0x24ab328
+
+Splash_85_Percent rodata: None

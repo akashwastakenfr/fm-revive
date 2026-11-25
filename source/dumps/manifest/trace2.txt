@@ -1,0 +1,385 @@
+
+=== static_helper_body (0x5585ae4..0x5585eb0) ===
+  5585b08: f9441508     	ldr	x8, [x8, #0x828]
+  5585b24: 340001c8     	cbz	w8, 0x5585b5c
+  5585b2c: f9441908     	ldr	x8, [x8, #0x830]
+  5585b30: b9400100     	ldr	w0, [x8]
+  5585b34: 96ddbb2d     	bl	0xcf47e8
+  5585b40: b4000575     	cbz	x21, 0x5585bec
+  5585b4c: 6b08033f     	cmp	w25, w8
+  5585b50: 5400012a     	b.ge	0x5585b74
+  5585b54: f9401ab6     	ldr	x22, [x21, #0x30]
+  5585b58: 14000020     	b	0x5585bd8
+  5585b60: f9441d08     	ldr	x8, [x8, #0x838]
+  5585b64: f9400115     	ldr	x21, [x8]
+  5585b6c: b5fffed5     	cbnz	x21, 0x5585b44
+  5585b70: 1400001f     	b	0x5585bec
+  5585b78: 7100013f     	cmp	w9, #0x0
+  5585b80: f9401ab7     	ldr	x23, [x21, #0x30]
+  5585b98: eb00031f     	cmp	x24, x0
+  5585ba0: 54000182     	b.hs	0x5585bd0
+  5585ba4: 96efeef1     	bl	0x1181768
+  5585bac: b4000157     	cbz	x23, 0x5585bd4
+  5585bbc: 96ddba5b     	bl	0xcf4528
+  5585bc4: 96efeefe     	bl	0x11817bc
+  5585bc8: b9402eb9     	ldr	w25, [x21, #0x2c]
+  5585bcc: 14000002     	b	0x5585bd4
+  5585be0: b9402ea8     	ldr	w8, [x21, #0x2c]
+  5585c00: 96fe859d     	bl	0x1527274
+  5585c10: 96fe8fa3     	bl	0x1529a9c
+  5585c14: f94027e8     	ldr	x8, [sp, #0x48]
+  5585c18: b9400d09     	ldr	w9, [x8, #0xc]
+  5585c1c: 7100053f     	cmp	w9, #0x1
+  5585c20: 5400126b     	b.lt	0x5585e6c
+  5585c30: 91002154     	add	x20, x10, #0x8  ; 'y"'
+  5585c34: eb2942ff     	cmp	x23, w9, uxtw
+  5585c38: 54000102     	b.hs	0x5585c58
+  5585c3c: f9400d08     	ldr	x8, [x8, #0x18]
+  5585c44: f9400109     	ldr	x9, [x8]
+  5585c4c: f9400508     	ldr	x8, [x8, #0x8]
+  5585c54: 14000002     	b	0x5585c5c
+  5585c68: 96fe8583     	bl	0x1527274
+  5585c78: 96fe8f89     	bl	0x1529a9c
+  5585c7c: f9402be0     	ldr	x0, [sp, #0x50]
+  5585c84: 94003fa7     	bl	0x5595b20
+  5585c88: f9401be8     	ldr	x8, [sp, #0x30]
+  5585c8c: b9400d09     	ldr	w9, [x8, #0xc]
+  5585c90: 340000a9     	cbz	w9, 0x5585ca4
+  5585c94: f9400d08     	ldr	x8, [x8, #0x18]
+  5585ca0: 14000002     	b	0x5585ca8
+  5585cb0: 96fe8b75     	bl	0x1528a84
+  5585cb4: f9400ff9     	ldr	x25, [sp, #0x18]
+  5585cb8: f94017e8     	ldr	x8, [sp, #0x28]
+  5585cc0: f94013e8     	ldr	x8, [sp, #0x20]
+  5585cc8: f9401be8     	ldr	x8, [sp, #0x30]
+  5585ccc: b9400d09     	ldr	w9, [x8, #0xc]
+  5585cd0: 7100093f     	cmp	w9, #0x2
+  5585cd4: 540000a3     	b.lo	0x5585ce8
+  5585cd8: f9400d0a     	ldr	x10, [x8, #0x18]
+  5585cdc: f9400949     	ldr	x9, [x10, #0x10]
+  5585ce0: fd400d40     	ldr	d0, [x10, #0x18]
+  5585ce4: 14000003     	b	0x5585cf0
+  5585cfc: 71000f1f     	cmp	w24, #0x3
+  5585d00: 5400094b     	b.lt	0x5585e28
+  5585d0c: 3700043b     	tbnz	w27, #0x0, 0x5585d90
+  5585d10: f9401735     	ldr	x21, [x25, #0x28]
+  5585d14: f9402be0     	ldr	x0, [sp, #0x50]
+  5585d1c: 94001772     	bl	0x558bae4
+  5585d24: f94013fc     	ldr	x28, [sp, #0x20]
+  5585d2c: 6b19011f     	cmp	w8, w25
+  5585d34: 5400008c     	b.gt	0x5585d44
+  5585d40: 96fe1832     	bl	0x150be08
+  5585d44: f9400ea8     	ldr	x8, [x21, #0x18]
+  5585d50: f9401be8     	ldr	x8, [sp, #0x30]
+  5585d54: b9400d09     	ldr	w9, [x8, #0xc]
+  5585d58: eb09037f     	cmp	x27, x9
+  5585d5c: 54000482     	b.hs	0x5585dec
+  5585d60: f9400d09     	ldr	x9, [x8, #0x18]
+  5585d68: f9401149     	ldr	x9, [x10, #0x20]
+  5585d6c: fd401540     	ldr	d0, [x10, #0x28]
+  5585d70: f9400ff9     	ldr	x25, [sp, #0x18]
+  5585d74: f940172a     	ldr	x10, [x25, #0x28]
+  5585d78: b9400d4b     	ldr	w11, [x10, #0xc]
+  5585d7c: 3400044b     	cbz	w11, 0x5585e04
+  5585d80: f9400d4a     	ldr	x10, [x10, #0x18]
+  5585d88: f86bd94b     	ldr	x11, [x10, w11, sxtw #3]
+  5585d8c: 1400001f     	b	0x5585e08
+  5585d90: b9400d09     	ldr	w9, [x8, #0xc]
+  5585d94: eb09037f     	cmp	x27, x9
+  5585d98: 54000182     	b.hs	0x5585dc8
+  5585d9c: f9400d09     	ldr	x9, [x8, #0x18]
+  5585da4: f9401149     	ldr	x9, [x10, #0x20]
+  5585da8: fd401540     	ldr	d0, [x10, #0x28]
+  5585dac: f940172a     	ldr	x10, [x25, #0x28]
+  5585db0: b9400d4b     	ldr	w11, [x10, #0xc]
+  5585db4: 3400014b     	cbz	w11, 0x5585ddc
+  5585db8: f9400d4a     	ldr	x10, [x10, #0x18]
+  5585dc0: f86bd94b     	ldr	x11, [x10, w11, sxtw #3]
+  5585dc4: 14000007     	b	0x5585de0
+  5585dd0: f940172a     	ldr	x10, [x25, #0x28]
+  5585dd4: b9400d4b     	ldr	w11, [x10, #0xc]
+  5585dd8: 35ffff0b     	cbnz	w11, 0x5585db8
+  5585de8: 1400000a     	b	0x5585e10
+  5585df4: f9400ff9     	ldr	x25, [sp, #0x18]
+  5585df8: f940172a     	ldr	x10, [x25, #0x28]
+  5585dfc: b9400d4b     	ldr	w11, [x10, #0xc]
+  5585e00: 35fffc0b     	cbnz	w11, 0x5585d80
+  5585e14: eb18037f     	cmp	x27, x24
+  5585e24: 54fff74b     	b.lt	0x5585d0c
+  5585e28: f9403675     	ldr	x21, [x19, #0x68]
+  5585e34: 6b18011f     	cmp	w8, w24
+  5585e3c: 5400008c     	b.gt	0x5585e4c
+  5585e48: 96fe17f0     	bl	0x150be08
+  5585e4c: f9400ea8     	ldr	x8, [x21, #0x18]
+  5585e5c: f94027e8     	ldr	x8, [sp, #0x48]
+  5585e64: eb0902ff     	cmp	x23, x9
+  5585e68: 54ffee6b     	b.lt	0x5585c34
+  5585e70: 96ff36d1     	bl	0x15539b4
+  5585e90: d65f03c0     	ret
+  5585e94: 14000004     	b	0x5585ea4
+  5585e98: 14000003     	b	0x5585ea4
+  5585e9c: 14000002     	b	0x5585ea4
+  5585ea0: 14000001     	b	0x5585ea4
+  5585eac: 96ff36c2     	bl	0x15539b4
+
+=== src_url_resolver (0x558acb0..0x558b060) ===
+  558acb8: 942c0a6d     	bl	0x608d66c
+  558acc0: b4000858     	cbz	x24, 0x558adc8
+  558accc: 911e92f7     	add	x23, x23, #0x7a4  ; 'src'
+  558acdc: 96fe7166     	bl	0x1527274
+  558ace0: f9400308     	ldr	x8, [x24]
+  558ace4: f9403908     	ldr	x8, [x8, #0x70]
+  558ad00: 34000081     	cbz	w1, 0x558ad10
+  558ad08: 96f5213a     	bl	0x12d31f0
+  558ad14: 910d5d08     	add	x8, x8, #0x357  ; 'indexOf'
+  558ad1c: 91002101     	add	x1, x8, #0x8  ; 'apData'
+  558ad24: 96fe7154     	bl	0x1527274
+  558ad28: f94002a8     	ldr	x8, [x21]
+  558ad2c: f9403908     	ldr	x8, [x8, #0x70]
+  558ad5c: 96fe7146     	bl	0x1527274
+  558ad68: 96fe6025     	bl	0x1522dfc
+  558ad6c: 710006df     	cmp	w22, #0x1
+  558ad70: 54000040     	b.eq	0x558ad78
+  558ad74: 35000076     	cbnz	w22, 0x558ad80
+  558ad78: b5000055     	cbnz	x21, 0x558ad80
+  558ad7c: 96fe6225     	bl	0x1523610
+  558ad80: f94002a8     	ldr	x8, [x21]
+  558ad84: f9407109     	ldr	x9, [x8, #0xe0]
+  558ad9c: b40000c0     	cbz	x0, 0x558adb4
+  558ada0: f9400008     	ldr	x8, [x0]
+  558ada4: f9402508     	ldr	x8, [x8, #0x48]
+  558adb0: 5400078a     	b.ge	0x558aea0
+  558adc0: 96fe712d     	bl	0x1527274
+  558adc4: 1400003d     	b	0x558aeb8
+  558adcc: 912f9d08     	add	x8, x8, #0xbe7  ; 'http://'
+  558add4: 91002101     	add	x1, x8, #0x8  ; 'gAlpha'
+  558addc: 96fe7126     	bl	0x1527274
+  558adec: 96fe792a     	bl	0x1529294
+  558adf0: 34002480     	cbz	w0, 0x558b280
+  558adf8: 910be108     	add	x8, x8, #0x2f8  ; 'https://'
+  558ae00: 91002101     	add	x1, x8, #0x8  ; 'y"'
+  558ae08: 96fe711b     	bl	0x1527274
+  558ae18: 96fe791f     	bl	0x1529294
+  558ae1c: 34002320     	cbz	w0, 0x558b280
+  558ae24: 910bdd08     	add	x8, x8, #0x2f7  ; 'file://'
+  558ae2c: 91002101     	add	x1, x8, #0x8  ; 'apData'
+  558ae34: 96fe7110     	bl	0x1527274
+  558ae44: 96fe7914     	bl	0x1529294
+  558ae48: 34000e00     	cbz	w0, 0x558b008
+  558ae4c: f940379a     	ldr	x26, [x28, #0x68]
+  558ae50: b9400f48     	ldr	w8, [x26, #0xc]
+  558ae54: 7100051f     	cmp	w8, #0x1
+  558ae58: 54001a2b     	b.lt	0x558b19c
+  558ae5c: 36000ef6     	tbz	w22, #0x0, 0x558b038
+  558ae64: eb28427f     	cmp	x19, w8, uxtw
+  558ae6c: 54000062     	b.hs	0x558ae78
+  558ae70: f9400f48     	ldr	x8, [x26, #0x18]
+  558ae74: f8737919     	ldr	x25, [x8, x19, lsl #3]
+  558ae84: 96fe7904     	bl	0x1529294
+  558ae88: 34001120     	cbz	w0, 0x558b0ac
+  558ae94: eb08027f     	cmp	x19, x8
+  558ae98: 54fffe6b     	b.lt	0x558ae64
+  558ae9c: 140000c0     	b	0x558b19c
+  558aeb4: 96fe70f0     	bl	0x1527274
+  558aec4: f9400b96     	ldr	x22, [x28, #0x10]
+  558aecc: 91217508     	add	x8, x8, #0x85d  ; 'pathIndex'
+  558aedc: 96fe70e6     	bl	0x1527274
+  558aee0: f94002a8     	ldr	x8, [x21]
+  558aee4: f9403908     	ldr	x8, [x8, #0x70]
+  558aefc: 7100151f     	cmp	w8, #0x5
+  558af04: 540002c8     	b.hi	0x558af5c
+  558af24: b9400ec8     	ldr	w8, [x22, #0xc]
+  558af28: 7100051f     	cmp	w8, #0x1
+  558af2c: 540001e0     	b.eq	0x558af68
+  558af30: f9400ac0     	ldr	x0, [x22, #0x10]
+  558af34: f9400008     	ldr	x8, [x0]
+  558af38: f9406509     	ldr	x9, [x8, #0xc8]
+  558af44: 1400000a     	b	0x558af6c
+  558af48: b40006e0     	cbz	x0, 0x558b024
+  558af4c: f9400008     	ldr	x8, [x0]
+  558af50: f9402108     	ldr	x8, [x8, #0x40]
+  558af5c: b9400ec8     	ldr	w8, [x22, #0xc]
+  558af60: 7100051f     	cmp	w8, #0x1
+  558af64: 54fffe61     	b.ne	0x558af30
+  558af7c: 96fe70be     	bl	0x1527274
+  558af80: f94002a8     	ldr	x8, [x21]
+  558af84: f9403908     	ldr	x8, [x8, #0x70]
+  558afa8: 96fe6117     	bl	0x1523404
+  558afb4: 94326f43     	bl	0x6226cc0
+  558afc4: 96fe7cfa     	bl	0x152a3ac
+  558afd4: 96fe7cf6     	bl	0x152a3ac
+  558afd8: 140000ae     	b	0x558b290
+  558afe4: b9400ec8     	ldr	w8, [x22, #0xc]
+  558afe8: 7100051f     	cmp	w8, #0x1
+  558afec: 54fffbe0     	b.eq	0x558af68
+  558aff0: 17ffffd0     	b	0x558af30
+  558aff8: b9400ec8     	ldr	w8, [x22, #0xc]
+  558affc: 7100051f     	cmp	w8, #0x1
+  558b000: 54fffb40     	b.eq	0x558af68
+  558b004: 17ffffcb     	b	0x558af30
+  558b01c: 96fe7c79     	bl	0x152a200
+  558b020: 1400009c     	b	0x558b290
+  558b028: b9400ec8     	ldr	w8, [x22, #0xc]
+  558b02c: 7100051f     	cmp	w8, #0x1
+  558b030: 54fff9c0     	b.eq	0x558af68
+  558b034: 17ffffbf     	b	0x558af30
+  558b03c: eb28437f     	cmp	x27, w8, uxtw
+  558b044: 54000062     	b.hs	0x558b050
+  558b048: f9400f48     	ldr	x8, [x26, #0x18]
+  558b04c: f87b7919     	ldr	x25, [x8, x27, lsl #3]
+  558b060: 96fe788d     	bl	0x1529294
+
+=== manifest_init_keys (0x55688a0..0x5568e50) ===
+  55688a0: b9402ea8     	ldr	w8, [x21, #0x2c]
+  55688ac: f9400288     	ldr	x8, [x20]
+  55688b0: f9401a74     	ldr	x20, [x19, #0x30]
+  55688bc: 9106b108     	add	x8, x8, #0x1ac  ; 'manifest_paths'
+  55688c4: 91002101     	add	x1, x8, #0x8  ; 'y"'
+  55688cc: 96fefa6a     	bl	0x1527274
+  55688d0: f9400288     	ldr	x8, [x20]
+  55688d4: f9403d08     	ldr	x8, [x8, #0x78]
+  55688f0: 36000068     	tbz	w8, #0x0, 0x55688fc
+  55688f4: f9400008     	ldr	x8, [x0]
+  55688f8: f8696909     	ldr	x9, [x8, x9]
+  5568910: f9401a74     	ldr	x20, [x19, #0x30]
+  5568918: 91070d08     	add	x8, x8, #0x1c3  ; 'pf_manifest_url_db'
+  5568920: 91002101     	add	x1, x8, #0x8  ; 'y"'
+  5568928: 96fefa53     	bl	0x1527274
+  556892c: f9400288     	ldr	x8, [x20]
+  5568930: f9403d08     	ldr	x8, [x8, #0x78]
+  556894c: 36000068     	tbz	w8, #0x0, 0x5568958
+  5568950: f9400008     	ldr	x8, [x0]
+  5568954: f8696909     	ldr	x9, [x8, x9]
+  556896c: f9401a74     	ldr	x20, [x19, #0x30]
+  5568974: 91077908     	add	x8, x8, #0x1de  ; 'pf_manifest_url_zip_db'
+  556897c: 91002101     	add	x1, x8, #0x8  ; 'y"'
+  5568984: 96fefa3c     	bl	0x1527274
+  5568988: f9400288     	ldr	x8, [x20]
+  556898c: f9403d08     	ldr	x8, [x8, #0x78]
+  55689a8: 36000068     	tbz	w8, #0x0, 0x55689b4
+  55689ac: f9400008     	ldr	x8, [x0]
+  55689b0: f8696909     	ldr	x9, [x8, x9]
+  55689d0: f9401a74     	ldr	x20, [x19, #0x30]
+  55689d4: f100011f     	cmp	x8, #0x0
+  55689dc: 7100013f     	cmp	w9, #0x0
+  55689e8: 9107f508     	add	x8, x8, #0x1fd  ; 'manifest_crc'
+  55689f0: 91002101     	add	x1, x8, #0x8  ; 'y"'
+  55689f8: 96fefa1f     	bl	0x1527274
+  55689fc: f9400288     	ldr	x8, [x20]
+  5568a00: f9403d08     	ldr	x8, [x8, #0x78]
+  5568a1c: 36000069     	tbz	w9, #0x0, 0x5568a28
+  5568a20: f9400009     	ldr	x9, [x0]
+  5568a24: f8686928     	ldr	x8, [x9, x8]
+  5568a38: f9401a75     	ldr	x21, [x19, #0x30]
+  5568a44: 91084908     	add	x8, x8, #0x212  ; 'pf_config_assets_manifest_url_db'
+  5568a4c: 91002101     	add	x1, x8, #0x8  ; 'y"'
+  5568a54: 96fefa08     	bl	0x1527274
+  5568a58: f94002a8     	ldr	x8, [x21]
+  5568a5c: f9403d08     	ldr	x8, [x8, #0x78]
+  5568a78: 36000068     	tbz	w8, #0x0, 0x5568a84
+  5568a7c: f9400008     	ldr	x8, [x0]
+  5568a80: f8696909     	ldr	x9, [x8, x9]
+  5568a98: f9401a75     	ldr	x21, [x19, #0x30]
+  5568aa0: 912ad508     	add	x8, x8, #0xab5  ; 'optools_manifest_url_db'
+  5568aa8: 91002101     	add	x1, x8, #0x8  ; 'reakdownList'
+  5568ab0: 96fef9f1     	bl	0x1527274
+  5568ab4: f94002a8     	ldr	x8, [x21]
+  5568ab8: f9403d08     	ldr	x8, [x8, #0x78]
+  5568ad4: 36000068     	tbz	w8, #0x0, 0x5568ae0
+  5568ad8: f9400008     	ldr	x8, [x0]
+  5568adc: f8696909     	ldr	x9, [x8, x9]
+  5568af4: f9401a75     	ldr	x21, [x19, #0x30]
+  5568afc: 912b5508     	add	x8, x8, #0xad5  ; 'optools_manifest_db_crc'
+  5568b04: 91002101     	add	x1, x8, #0x8  ; 'reakdownList'
+  5568b0c: 96fef9da     	bl	0x1527274
+  5568b10: f94002a8     	ldr	x8, [x21]
+  5568b14: f9403d08     	ldr	x8, [x8, #0x78]
+  5568b30: 36000069     	tbz	w9, #0x0, 0x5568b3c
+  5568b34: f9400009     	ldr	x9, [x0]
+  5568b38: f8686928     	ldr	x8, [x9, x8]
+  5568b4c: f9401a76     	ldr	x22, [x19, #0x30]
+  5568b58: 9108ed08     	add	x8, x8, #0x23b  ; 'manifest_cache_static'
+  5568b60: 91002101     	add	x1, x8, #0x8  ; 'y"'
+  5568b68: 96fef9c3     	bl	0x1527274
+  5568b6c: f94002c8     	ldr	x8, [x22]
+  5568b70: f9403d08     	ldr	x8, [x8, #0x78]
+  5568b8c: 36000068     	tbz	w8, #0x0, 0x5568b98
+  5568b90: f9400008     	ldr	x8, [x0]
+  5568b94: f8696909     	ldr	x9, [x8, x9]
+  5568bac: f94073e8     	ldr	x8, [sp, #0xe0]
+  5568bb0: b40000c8     	cbz	x8, 0x5568bc8
+  5568bb4: f94077e9     	ldr	x9, [sp, #0xe8]
+  5568bc4: 94000094     	bl	0x5568e14
+  5568bc8: f9401e76     	ldr	x22, [x19, #0x38]
+  5568bcc: f94002c8     	ldr	x8, [x22]
+  5568bd0: f9403d08     	ldr	x8, [x8, #0x78]
+  5568bec: 36000069     	tbz	w9, #0x0, 0x5568bf8
+  5568bf0: f9400009     	ldr	x9, [x0]
+  5568bf4: f8686928     	ldr	x8, [x9, x8]
+  5568c10: 710002df     	cmp	w22, #0x0
+  5568c14: 9100310a     	add	x10, x8, #0xc  ; 'idgetUnlockKey'
+  5568c28: b9400129     	ldr	w9, [x9]
+  5568c2c: b940090a     	ldr	w10, [x8, #0x8]
+  5568c30: f9400108     	ldr	x8, [x8]
+  5568c44: 96fee86e     	bl	0x1522dfc
+  5568c50: 96fee86b     	bl	0x1522dfc
+  5568c5c: 96fee705     	bl	0x1522870
+  5568c68: 96fee865     	bl	0x1522dfc
+  5568c74: 96fee6ff     	bl	0x1522870
+  5568c80: 96fee85f     	bl	0x1522dfc
+  5568c8c: 96fee6f9     	bl	0x1522870
+  5568c9c: 96fee6ec     	bl	0x152284c
+  5568ccc: 96feee1f     	bl	0x1524548
+  5568cd0: b8478e68     	ldr	w8, [x19, #0x78]!
+  5568ce0: 91096694     	add	x20, x20, #0x259  ; ' | '
+  5568ce8: 91002281     	add	x1, x20, #0x8  ; 'y"'
+  5568cf0: 96fef961     	bl	0x1527274
+  5568d00: 96ff05ab     	bl	0x152a3ac
+  5568d10: 96ff05a7     	bl	0x152a3ac
+  5568d14: 91002281     	add	x1, x20, #0x8  ; 'y"'
+  5568d20: 96fef955     	bl	0x1527274
+  5568d30: 96ff059f     	bl	0x152a3ac
+  5568d40: 96ff059b     	bl	0x152a3ac
+  5568d44: 91002281     	add	x1, x20, #0x8  ; 'y"'
+  5568d50: 96fef949     	bl	0x1527274
+  5568d60: 96ff0593     	bl	0x152a3ac
+  5568d6c: 96fefca8     	bl	0x152800c
+  5568d7c: 96ff058c     	bl	0x152a3ac
+  5568d88: 97c97382     	bl	0x47c5b90
+  5568d90: 96ffab09     	bl	0x15539b4
+  5568dac: d65f03c0     	ret
+  5568db0: 14000014     	b	0x5568e00
+  5568db4: 14000013     	b	0x5568e00
+  5568db8: 14000012     	b	0x5568e00
+  5568dbc: 14000011     	b	0x5568e00
+  5568dc0: 14000010     	b	0x5568e00
+  5568dc4: 1400000f     	b	0x5568e00
+  5568dc8: 1400000e     	b	0x5568e00
+  5568dcc: 1400000d     	b	0x5568e00
+  5568dd0: 1400000c     	b	0x5568e00
+  5568dd4: 1400000b     	b	0x5568e00
+  5568dd8: 1400000a     	b	0x5568e00
+  5568ddc: 14000009     	b	0x5568e00
+  5568de0: 14000008     	b	0x5568e00
+  5568de4: 14000007     	b	0x5568e00
+  5568de8: 14000006     	b	0x5568e00
+  5568dec: 14000005     	b	0x5568e00
+  5568df0: 14000004     	b	0x5568e00
+  5568df4: 14000003     	b	0x5568e00
+  5568df8: 14000002     	b	0x5568e00
+  5568dfc: 14000001     	b	0x5568e00
+  5568e08: 96ffaaeb     	bl	0x15539b4
+  5568e10: 973d0946     	bl	0x24ab328
+  5568e3c: f9441508     	ldr	x8, [x8, #0x828]
+
+=== Last 10 captures ===
+  2026-11-25T13:24:27.324354+00:00 POST /g/game/batch {}
+  2026-11-25T13:24:27.390242+00:00 GET /assets/manifest.db {}
+  2026-11-25T13:25:02.651199+00:00 GET /config/ {}
+  2026-11-25T13:25:03.114203+00:00 GET /config/Android/18.1.03/config.ini {}
+  2026-11-25T13:25:03.170649+00:00 POST /g/game/batch {}
+  2026-11-25T13:25:03.217072+00:00 POST /g/game/batch {}
+  2026-11-25T13:25:08.137149+00:00 GET /assets/manifest.db {}
+  2026-11-25T13:25:08.749735+00:00 POST /g/game/batch {}
+  2026-11-25T13:25:27.767636+00:00 POST /g/game/batch {}
+  2026-11-25T13:25:27.872033+00:00 GET /assets/manifest.db {}

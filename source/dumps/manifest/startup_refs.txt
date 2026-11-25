@@ -1,0 +1,219 @@
+=== DMS method addresses (0x558bfd0..0x558c5d0) ===
+  558bfe0: 54002f41     	b.ne	0x558c5c8
+  558bfe4: d0009d40     	adrp	x0, 0x6935000
+  558bfe8: 90ffffe2     	adrp	x2, 0x5587000
+  558bfec: 9102c800     	add	x0, x0, #0xb2
+  558bff0: 91071042     	add	x2, x2, #0x1c4
+  558bff4: 14000221     	b	0x558c878
+  558bffc: b000b141     	adrp	x1, 0x6bb4000
+  558c000: 912d8021     	add	x1, x1, #0xb60
+  558c00c: 96dda17f     	bl	0xcf4608
+  558c014: 9000aec1     	adrp	x1, 0x6b64000
+  558c018: 911ab021     	add	x1, x1, #0x6ac
+  558c024: 96dda179     	bl	0xcf4608
+  558c02c: 9000aec0     	adrp	x0, 0x6b64000
+  558c030: f0ffffe2     	adrp	x2, 0x558b000
+  558c034: 911ab000     	add	x0, x0, #0x6ac
+  558c038: 9112f042     	add	x2, x2, #0x4bc
+  558c03c: 140001f0     	b	0x558c7fc
+  558c044: f0009cc1     	adrp	x1, 0x6927000
+  558c048: 910b2421     	add	x1, x1, #0x2c9
+  558c054: 96dda16d     	bl	0xcf4608
+  558c05c: b000b141     	adrp	x1, 0x6bb5000
+  558c060: 911e4c21     	add	x1, x1, #0x793
+  558c06c: 96dda167     	bl	0xcf4608
+  558c074: 9000b141     	adrp	x1, 0x6bb4000
+  558c078: 912c5c21     	add	x1, x1, #0xb17
+  558c084: 96dda161     	bl	0xcf4608
+  558c08c: 9000b140     	adrp	x0, 0x6bb4000
+  558c090: f0ffffc2     	adrp	x2, 0x5587000
+  558c094: 912c5c00     	add	x0, x0, #0xb17
+  558c098: 913f5042     	add	x2, x2, #0xfd4
+  558c09c: 140001d8     	b	0x558c7fc
+  558c0a4: f000a3a1     	adrp	x1, 0x6a03000
+  558c0a8: 91079c21     	add	x1, x1, #0x1e7
+  558c0b4: 96dda155     	bl	0xcf4608
+  558c0bc: 9000b141     	adrp	x1, 0x6bb4000
+  558c0c0: 91227421     	add	x1, x1, #0x89d
+  558c0cc: 96dda14f     	bl	0xcf4608
+  558c0d4: 9000b141     	adrp	x1, 0x6bb4000
+  558c0d8: 912e9c21     	add	x1, x1, #0xba7
+  558c0e4: 96dda149     	bl	0xcf4608
+  558c0ec: 9000b141     	adrp	x1, 0x6bb4000
+  558c0f0: 91321021     	add	x1, x1, #0xc84
+  558c0fc: 96dda143     	bl	0xcf4608
+  558c104: 9000b141     	adrp	x1, 0x6bb4000
+  558c108: 91333c21     	add	x1, x1, #0xccf
+  558c114: 96dda13d     	bl	0xcf4608
+  558c11c: 9000b140     	adrp	x0, 0x6bb4000
+  558c120: b0ffffe2     	adrp	x2, 0x5589000
+  558c124: 91333c00     	add	x0, x0, #0xccf
+  558c128: 91000042     	add	x2, x2, #0x0
+  558c12c: 140001ac     	b	0x558c7dc
+  558c134: b000b141     	adrp	x1, 0x6bb5000
+  558c138: 911e7421     	add	x1, x1, #0x79d
+  558c144: 96dda131     	bl	0xcf4608
+  558c14c: 9000b141     	adrp	x1, 0x6bb4000
+  558c150: 91214021     	add	x1, x1, #0x850
+  558c15c: 96dda12b     	bl	0xcf4608
+  558c164: 9000b141     	adrp	x1, 0x6bb4000
+  558c168: 91376821     	add	x1, x1, #0xdda
+  558c174: 96dda125     	bl	0xcf4608
+  558c17c: 9000b140     	adrp	x0, 0x6bb4000
+  558c180: b0ffffe2     	adrp	x2, 0x5589000
+  558c184: 91376800     	add	x0, x0, #0xdda
+  558c188: 91053042     	add	x2, x2, #0x14c
+  558c18c: 14000194     	b	0x558c7dc
+  558c194: f000b141     	adrp	x1, 0x6bb7000
+  558c198: 9104e021     	add	x1, x1, #0x138
+  558c1a4: 96dda119     	bl	0xcf4608
+  558c1ac: 9000b141     	adrp	x1, 0x6bb4000
+  558c1b0: 911ea021     	add	x1, x1, #0x7a8
+  558c1bc: 96dda113     	bl	0xcf4608
+  558c1c4: 9000b141     	adrp	x1, 0x6bb4000
+  558c1c8: 9130d421     	add	x1, x1, #0xc35
+  558c1d4: 96dda10d     	bl	0xcf4608
+  558c1dc: 9000b140     	adrp	x0, 0x6bb4000
+  558c1e0: 90ffffe2     	adrp	x2, 0x5588000
+  558c1e4: 9130d400     	add	x0, x0, #0xc35
+  558c1e8: 91352042     	add	x2, x2, #0xd48
+  558c1ec: 1400019b     	b	0x558c858
+  558c1f4: b000b141     	adrp	x1, 0x6bb5000
+  558c1f8: 911ea421     	add	x1, x1, #0x7a9
+  558c204: 96dda101     	bl	0xcf4608
+  558c20c: b000b141     	adrp	x1, 0x6bb5000
+  558c210: 911f1421     	add	x1, x1, #0x7c5
+  558c21c: 96dda0fb     	bl	0xcf4608
+  558c224: 540026e1     	b.ne	0x558c700
+  558c234: 97fff16a     	bl	0x55887dc
+  558c240: 14000107     	b	0x558c65c
+  558c248: b000b141     	adrp	x1, 0x6bb5000
+  558c24c: 911f4c21     	add	x1, x1, #0x7d3
+  558c258: 96dda0ec     	bl	0xcf4608
+  558c260: d000af61     	adrp	x1, 0x6b7a000
+  558c264: 9105cc21     	add	x1, x1, #0x173
+  558c270: 96dda0e6     	bl	0xcf4608
+  558c278: d000b141     	adrp	x1, 0x6bb6000
+  558c27c: 913e3021     	add	x1, x1, #0xf8c
+  558c288: 96dda0e0     	bl	0xcf4608
+  558c290: d000b140     	adrp	x0, 0x6bb6000
+  558c294: f0ffffe2     	adrp	x2, 0x558b000
+  558c298: 913e3000     	add	x0, x0, #0xf8c
+  558c29c: 910f7042     	add	x2, x2, #0x3dc
+  558c2a0: 1400016e     	b	0x558c858
+  558c2a8: f000b141     	adrp	x1, 0x6bb7000
+  558c2ac: 91051421     	add	x1, x1, #0x145
+  558c2b8: 96dda0d4     	bl	0xcf4608
+  558c2c0: 9000b141     	adrp	x1, 0x6bb4000
+  558c2c4: 91389c21     	add	x1, x1, #0xe27
+  558c2d0: 96dda0ce     	bl	0xcf4608
+  558c2d8: d000b141     	adrp	x1, 0x6bb6000
+  558c2dc: 913f4821     	add	x1, x1, #0xfd2
+  558c2e8: 96dda0c8     	bl	0xcf4608
+  558c2f0: b000b141     	adrp	x1, 0x6bb5000
+  558c2f4: 91177421     	add	x1, x1, #0x5dd
+  558c300: 96dda0c2     	bl	0xcf4608
+  558c308: b000b140     	adrp	x0, 0x6bb5000
+  558c30c: f0ffffe2     	adrp	x2, 0x558b000
+  558c310: 91177400     	add	x0, x0, #0x5dd
+  558c314: 911a5042     	add	x2, x2, #0x694
+  558c318: 14000131     	b	0x558c7dc
+  558c320: b000b141     	adrp	x1, 0x6bb5000
+  558c324: 911f8821     	add	x1, x1, #0x7e2
+  558c32c: 96dda0b7     	bl	0xcf4608
+  558c338: 14000154     	b	0x558c888
+  558c340: 9000b141     	adrp	x1, 0x6bb4000
+  558c344: 911fdc21     	add	x1, x1, #0x7f7
+  558c350: 96dda0ae     	bl	0xcf4608
+  558c358: 9000b141     	adrp	x1, 0x6bb4000
+  558c35c: 9123a021     	add	x1, x1, #0x8e8
+  558c368: 96dda0a8     	bl	0xcf4608
+  558c370: 9000b141     	adrp	x1, 0x6bb4000
+  558c374: 913e2c21     	add	x1, x1, #0xf8b
+  558c380: 96dda0a2     	bl	0xcf4608
+  558c388: 9000b141     	adrp	x1, 0x6bb4000
+  558c38c: 913f9021     	add	x1, x1, #0xfe4
+  558c398: 96dda09c     	bl	0xcf4608
+  558c3a0: 9000b141     	adrp	x1, 0x6bb4000
+  558c3a4: 913b8421     	add	x1, x1, #0xee1
+  558c3b0: 96dda096     	bl	0xcf4608
+  558c3b8: d000b141     	adrp	x1, 0x6bb6000
+  558c3bc: 91379821     	add	x1, x1, #0xde6
+  558c3c8: 96dda090     	bl	0xcf4608
+  558c3d0: d000b140     	adrp	x0, 0x6bb6000
+  558c3d4: b0ffffe2     	adrp	x2, 0x5589000
+  558c3d8: 91379800     	add	x0, x0, #0xde6
+  558c3dc: 912da042     	add	x2, x2, #0xb68
+  558c3e0: 1400011e     	b	0x558c858
+  558c3e8: 9000b141     	adrp	x1, 0x6bb4000
+  558c3ec: 912ae821     	add	x1, x1, #0xaba
+  558c3f8: 96dda084     	bl	0xcf4608
+  558c400: b000b141     	adrp	x1, 0x6bb5000
+  558c404: 91205c21     	add	x1, x1, #0x817
+  558c410: 96dda07e     	bl	0xcf4608
+  558c418: 54000d81     	b.ne	0x558c5c8
+  558c428: 97fff3d1     	bl	0x558936c
+  558c42c: 14000116     	b	0x558c884
+  558c434: b000b141     	adrp	x1, 0x6bb5000
+  558c438: 91215421     	add	x1, x1, #0x855
+  558c444: 96dda071     	bl	0xcf4608
+  558c44c: b000b141     	adrp	x1, 0x6bb5000
+  558c450: 9121a821     	add	x1, x1, #0x86a
+  558c45c: 96dda06b     	bl	0xcf4608
+  558c464: 9000b141     	adrp	x1, 0x6bb4000
+  558c468: 911d2421     	add	x1, x1, #0x749
+  558c474: 96dda065     	bl	0xcf4608
+  558c47c: 9000b140     	adrp	x0, 0x6bb4000
+  558c480: d0ffffc2     	adrp	x2, 0x5586000
+  558c484: 911d2400     	add	x0, x0, #0x749
+  558c488: 9127a042     	add	x2, x2, #0x9e8
+  558c48c: 140000f3     	b	0x558c858
+  558c494: 9000b141     	adrp	x1, 0x6bb4000
+  558c498: 91296421     	add	x1, x1, #0xa59
+  558c4a4: 96dda059     	bl	0xcf4608
+  558c4ac: b000b141     	adrp	x1, 0x6bb5000
+  558c4b0: 911a7421     	add	x1, x1, #0x69d
+  558c4bc: 96dda053     	bl	0xcf4608
+  558c4c4: b000b140     	adrp	x0, 0x6bb5000
+  558c4c8: f0ffffe2     	adrp	x2, 0x558b000
+  558c4cc: 911a7400     	add	x0, x0, #0x69d
+  558c4d0: 91328042     	add	x2, x2, #0xca0
+  558c4d4: 140000e1     	b	0x558c858
+  558c4dc: 9000b141     	adrp	x1, 0x6bb4000
+  558c4e0: 9139f021     	add	x1, x1, #0xe7c
+  558c4ec: 96dda047     	bl	0xcf4608
+  558c4f4: d000b141     	adrp	x1, 0x6bb6000
+  558c4f8: 9139d821     	add	x1, x1, #0xe76
+  558c504: 96dda041     	bl	0xcf4608
+  558c50c: d000b140     	adrp	x0, 0x6bb6000
+  558c510: d0ffffe2     	adrp	x2, 0x558a000
+  558c514: 9139d800     	add	x0, x0, #0xe76
+  558c518: 911ea042     	add	x2, x2, #0x7a8
+  558c524: 96fe5eaa     	bl	0x1523fcc
+  558c528: 140000d7     	b	0x558c884
+  558c530: f000b141     	adrp	x1, 0x6bb7000
+  558c534: 91055421     	add	x1, x1, #0x155
+  558c53c: 96dda033     	bl	0xcf4608
+  558c554: 140000d0     	b	0x558c894
+  558c55c: d000b141     	adrp	x1, 0x6bb6000
+  558c560: 913b3821     	add	x1, x1, #0xece
+  558c56c: 96dda027     	bl	0xcf4608
+  558c574: b000b141     	adrp	x1, 0x6bb5000
+  558c578: 9118c821     	add	x1, x1, #0x632
+  558c584: 96dda021     	bl	0xcf4608
+  558c58c: b000b140     	adrp	x0, 0x6bb5000
+  558c590: f0ffffe2     	adrp	x2, 0x558b000
+  558c594: 9118c800     	add	x0, x0, #0x632
+  558c598: 9125d042     	add	x2, x2, #0x974
+  558c5a8: 96fe620f     	bl	0x1524de4
+  558c5ac: 140000b6     	b	0x558c884
+  558c5b4: d000b141     	adrp	x1, 0x6bb6000
+  558c5b8: 913cb021     	add	x1, x1, #0xf2c
+  558c5c0: 96dda012     	bl	0xcf4608
+
+=== .text xrefs to startup .big strings ===
+  0x123c91c: icfiles.big (0x686a239)
+  0x2135b68: shader.big (0x68cf367)
+  0x2135da8: shader_verylow.big (0x68cf372)
+  0x2135df0: shader.big (0x68cf385)
+  0x2135e08: shaderboot.big (0x68cf39c)
