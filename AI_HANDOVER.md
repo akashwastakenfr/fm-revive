@@ -64,3 +64,15 @@ Even with `server/modules/batch.py` returning `status=200` and `SystemSettings` 
 - **Confirmed (`0x128c5a4..0x128c678`):** `GET /assets/manifest.db` expects a raw SQLite3 database with `resources(name TEXT PRIMARY KEY, src TEXT, length INTEGER, crc INTEGER)`.
 - **Live Result:** Serving an empty `manifest.db` via `routes.json` (`content_type: application/x.binary`) downloaded `12KB/12KB` and advanced to `KICKING OFF.....`, then failed with `RESOURCE DOWNLOAD ERROR` because `resources` has 0 rows and no v18.1.03 `.big` / `DynamicAssets` cache exists on device or in the repo.
 - **Next:** Either source an archived FIFA Mobile `v18.1.03` `DynamicAssets` / `.big` asset pack to populate `manifest.db` + serve over HTTP, or inspect what specific startup resource `name`s `0x128c514` queries in `resources`.
+
+---
+
+## 7. Additive Update (`manifest.db` SQLCipher Key & Zero-Context Continuation Guide)
+- **Confirmed (`0x127ae24`, `0x1271754`, `0x128d960..0x128da14`):**
+  - Plain SQLite `manifest.db` is accepted and rekeyed in-place with `b"aes256:mcryan"` (`0x21ad9c4` `sqlite3_rekey_v2`).
+  - Client reaches `Splash_85_Percent` (`12KB/12KB KICKING OFF.....`) then triggers `Error_Resource_Header` (`RESOURCE DOWNLOAD ERROR`) when `0x128d9c4` (`sqlite3_step`) returns `SQLITE_DONE` (`0x65`, 0 rows) for a required startup resource.
+  - `apk/base_extract/assets/Data/` has `83 MB` (`1,047` files in `DynamicAssets/android/`). `apk/base_extract/assets/Data/FIFA/icfiles.big` is `24 KB`.
+- **Workflow & Exact Next Steps for Next AI:**
+  1. **Methodology:** Keep Termux commands short (user is on Android). Inspect `libFIFAMobileNeon.so.original` with `llvm-objdump` / `strings` / Python offset scans, verify against live `server/main.py` captures (`server/data/captures/*.json`), and test patches incrementally.
+  2. **Find queried resource `name`s:** Find callers of the `manifest.db` lookup function (`0x128d960` block—scan `.text` for `bl` to its entry point) and/or inspect `ResourceDownloadHandler` (`0x6d41430`) and `Error_Resource_Header` xrefs to see the exact `name` strings queried at 85%.
+  3. **Test `manifest.db` rows:** Populate `resources(name, src, length, crc)` with matching rows (and serve files from `/assets/<src>` via `routes.json` with `content_type: application/x.binary`) or determine which external `.big` bundles are required vs. already in `apk/base_extract/assets/Data/`.
