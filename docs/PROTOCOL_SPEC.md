@@ -107,3 +107,9 @@ Mapped in `server/config/routes.json` (JSON stubs; live Stage 2/3 client behavio
 ### `manifest.db` Encryption & Row Lookup (Confirmed)
 - **In-Place Rekey (`0x128c5d8`, `0x21ad9c4`):** Plain SQLite downloaded from `GET /assets/manifest.db` is rekeyed in-place using `wxSQLite3` key `b"aes256:mcryan"` (`0x6d52789 ^ 0x6d44cf5`).
 - **Lookup (`0x128d9b0..0x128da14`):** Binds `name` and reads `(src, length, crc)`. Returning `SQLITE_DONE` (`0` rows) for required startup resources triggers `Error_Resource_Header` at `Splash_85_Percent` (`KICKING OFF...`).
+
+---
+
+### `manifest.db` Encryption & Row Lookup (Confirmed)
+- **In-Place Rekey (`0x128c5d8`, `0x21ad9c4`):** Plain SQLite downloaded from `GET /assets/manifest.db` is rekeyed in-place using `wxSQLite3` key `b"aes256:mcryan"` (`0x6d52789 ^ 0x6d44cf5`).
+- **Lookup (`0x128d9b0..0x128da14`):** Binds `name` and reads `(src, length, crc)`. Returning `SQLITE_DONE` (`0` rows) for required startup resources triggers `Error_Resource_Header` at `Splash_85_Percent` (`KICKING OFF...`).

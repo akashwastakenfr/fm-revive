@@ -4,75 +4,24 @@ Read this file completely before suggesting commands, code edits, or diagnoses.
 
 ## 1. Strict Rules
 1. Never confuse **Confirmed** facts with **Hypotheses** or **Unknowns**.
-2. Do not repeat completed work (APKM extraction, JADX decompilation, Stage 1 `config.ini` diagnosis, and `0x4e69764` byte-decoder reversing are DONE).
+2. Do not repeat completed work (APKM extraction, JADX decompilation, Stage 1 `config.ini` diagnosis, and Stage 2 byte-decoder reversing are DONE).
 3. Keep Termux commands short (user works on an Android phone) and save large outputs to `source/dumps/` or `logs/`.
 4. Always run `llvm-objdump` / `llvm-readelf` on `libFIFAMobileNeon.so.original`, NOT `libFIFAMobileNeon.so`.
 5. Document every breakthrough in `discoveries/`.
 6. Never commit `.apk`, `.apkm`, `.so*`, `jadx-out/`, `logs/`, or `server/data/captures/`.
 
-## 2. Confirmed Facts (Do Not Re-Investigate)
-- **Target APK:** `com.ea.gp.fifamobile` v18.1.03 (40214), `FifaMainActivity`, Target SDK 33, Min SDK 21. `assets/Data/FIFA/icfiles.big` is 24 KB (bootstrap client).
-- **Stage 1 (`Error_HostName_Message` — RESOLVED):**
-  - `"Unable to access the configuration of current build..."` is `Error_HostName_Message` in `assets/Data/DynamicAssets/android/lang_BOOTSTRAP_EN_US.properties`.
-  - Patched client connects to `http://127.0.0.1:8080` and requests `GET /config/Android/18.1.03/config.ini`.
-  - `ConfigService._config_verifyFifaMobileHostNameFetch` (`0x129a57c` -> `0x118f8e8`) parses the INI via `0x1269058(..., "", "")` -> `0x12687f8` and checks `0x126a744(map, "hostName")` (`0x8380030` -> `0x6862770`). No RSA/HMAC signature is checked.
-  - `0x12687f8` (`0x1268a18`–`0x1268af8`) ONLY reads `[default]`, `[platform]`, and a 6-byte section (`0x686b02a`), ignoring `[FIFAMobileApp]`.
-  - Changing `[FIFAMobileApp]` to `[default]` in `server/data/responses/default-config.ini` resolved Stage 1 completely.
-- **Stage 2 (`POST /g/game/batch` — IN PROGRESS):**
-  - Client sends binary protobuf RPC batches to `POST /g/game/batch` (`User-Agent: ProtoHttp 1.3/DS 15.1.3.0.4 (Android)`, `Content-Type: application/x.binary`).
-  - `BatchResponseCollection` uses protobuf group (wire type 3/4, field 1, `vtable+0x190` at `0x4b15b94`) wrapping `BatchResponse` (field 1 varint `status`, field 2 bytes `payload`, field 3 double `checksum`).
-  - `0x56f30c0` checks `BatchResponse.status == 200` (`0xc8`). `get_checksum()` is unused in `0x56f3024..0x56f3360`.
-  - On first `status=200` `BatchResponse`, `0x56f39f8..0x56f3af8` strips `2*[0x886a928] + 4 = 14` bytes from the end of `payload`, feeds 4 seed bytes + `ldrb [0x886a8f0]` into `0x4e68fdc`, caches `[0x886a910]`, and decodes payload bytes via `0x4e69764`.
-  - `0x4e69764` (`0x4e69868..0x4e69884`): if `ldrb w8, [x20, #0x8]` is `0`, returns byte unchanged; else returns `([x20 + 0xc] * byte) & 0xff`.
-  - `server/main.py` is wired to `server/modules/batch.py` (`handle_batch`). Live Termux runs show `[BATCH] id=1 endpoints=['game/system/settings']` ... `id=6 endpoints=['game/telemetry/logNonSessionEvent', 'game/system/settings']`.
+## 2. Current State of Progress (Confirmed)
+- **Stage 1 (HostName Fetch):** RESOLVED. Client connects to `http://127.0.0.1:8080/config/Android/18.1.03/config.ini`. INI section must be `[default]`.
+- **Stage 2 (Batch Protobuf):** RESOLVED. Client sends `POST /g/game/batch`. Response uses `BatchResponseCollection` groups (wire type 3/4). Trailer is `b"\x00"*5 + b"\x00\x00\x00\x01" + b"\x00"*5` (`w2=1` identity). `game/system/settings` and `game/loginvideo/getCurrentVideo` pass cleanly.
+- **Stage 3 (Asset Download & Manifest):**
+  - Client requests `GET /assets/manifest.db`.
+  - Client opens it via `sqlite3_open_v2` and encrypts it with `aes256:mcryan` (`sqlite3_rekey_v2`).
+  - Client reaches 85% (`Splash_85_Percent = "KICKING OFF....."`).
+  - Client throws `Error_Resource_Header` (`RESOURCE DOWNLOAD ERROR`) because `resources` table in `manifest.db` is currently empty.
+  - At `0x556e78c..0x556e790`, `DeviceManifestService` checks if resource download queue length is `> 0`. With 0 rows, it takes the failure branch directly into `Error_Resource_Header`.
 
-## 3. Current Blocker & Exact Next Steps
-Even with `server/modules/batch.py` returning `status=200` and `SystemSettings` protobuf groups, the client retries `game/system/settings` (`id=1..6`) until `Error_RpcTimeout` (`SERVER CONNECTION ISSUE : Your connection with EA servers has been lost...`).
-
-**Next checks in order:**
-1. Inspect `is_retry` and `payload_hex` in the latest `/g/game/batch` captures in `server/data/captures/` to confirm whether `id=2..6` are retries of `id=1` (`is_retry=1`) or distinct calls.
-2. Inspect `source/dumps/batch_rpc/sysset-mergefrom.txt` (lines 105–185) and the completion callback called at `0x56f3220` (`SettingsService._onGetInitialSettingsComplete`) in `libFIFAMobileNeon.so.original` to confirm:
-   - Whether `SystemSettings` expects wire type 3/4 groups (`0x0b..0x0c`) or wire type 2 messages (`0x0a`),
-   - Whether `0x56f3a24..0x56f3af8` accepted the `b"\x00" * 14` trailer cleanly on `id=1`,
-   - Which keys/values `SettingsService` requires before moving on to `system/getServerTime`, `content/init`, and `user/login`.
----
-
-## 4. Additive Update (Stage 2 Checksum Resolved -> Stage 3 Reached)
-- **Confirmed (`0x57017cc`, `0x57015c0`, `0x719f110`):** `BatchResponse` field `3` (`checksum`) is a 32-bit varint (`wire type 0`, not double). `RpcService._validateResponse` requires `CRC32(raw_payload + bytes.fromhex("22ecd02d437fdc88")) & 0xFFFFFFFF` whenever `[x19, #0xf8]` (`batch_checksum_enabled`) is `1`.
-- **Live Result:** With `field 3` added in `server/modules/batch.py`, the client passed `game/system/settings`, showed and accepted the birthdate age-gate, and reached `0KB/0KB GETTING WARMED UP.....` (`RESOURCE DOWNLOAD ERROR`).
-- **Next Steps (Stage 3):**
-  1. Fix/neutralize the `b"\x00" * 14` first-response trailer so `0x4e68fdc` does not obfuscate `id=1+` request endpoints (notice `id=1` arrived as `\x00\x00...` when seed was all-zeros, or `0x4e69764`-encoded bytes).
-  2. Inspect the latest `server/data/captures/*.json` from this run and implement `content/init` / resource download responses.
-
----
-
-## 5. Additive Update (Stage 2 Codec Fixed -> Stage 3 `GET /assets/manifest.db` Triggered)
-- **Codec Fix (`0x56f3a54`, `0x56f3a78..0x56f3aec`):** `batch.py` now consumes `_first_response_pending` only when `len(payload) > 0` and sends `b"\x00"*5 + b"\x00\x00\x00\x01" + b"\x00"*5` (`w2=1` identity multiplier). All `id=1+` RPC endpoints now decode in clean plaintext (`game/loginvideo/getCurrentVideo`, etc.).
-- **Stage 3 Trigger (`0x711f7f3`, `0x686cb5f`):** Adding `pf_config_assets_manifest_url_db` / `_xml` pointing to `http://127.0.0.1:8080/assets/manifest.db` triggered the Content Update dialog and a live `GET /assets/manifest.db` request. Binary queries `SELECT src,length,crc FROM resources WHERE name = ?`.
-- **Next:** Configure `GET /assets/manifest.db` in `server/config/routes.json` with a SQLite DB containing `resources(name, src, length, crc)` (check `Unz` / gzip if needed).
-
----
-
-## 5. Additive Update (Stage 2 Codec Fixed -> Stage 3 `GET /assets/manifest.db` Triggered)
-- **Codec Fix (`0x56f3a54`, `0x56f3a78..0x56f3aec`):** `batch.py` now consumes `_first_response_pending` only when `len(payload) > 0` and sends `b"\x00"*5 + b"\x00\x00\x00\x01" + b"\x00"*5` (`w2=1` identity multiplier). All `id=1+` RPC endpoints now decode in clean plaintext (`game/loginvideo/getCurrentVideo`, etc.).
-- **Stage 3 Trigger (`0x711f7f3`, `0x686cb5f`):** Adding `pf_config_assets_manifest_url_db` / `_xml` pointing to `http://127.0.0.1:8080/assets/manifest.db` triggered the Content Update dialog and a live `GET /assets/manifest.db` request. Binary queries `SELECT src,length,crc FROM resources WHERE name = ?`.
-- **Next:** Configure `GET /assets/manifest.db` in `server/config/routes.json` with a SQLite DB containing `resources(name, src, length, crc)` (check `Unz` / gzip if needed).
-
----
-
-## 6. Additive Update (`manifest.db` Parsed -> `12KB/12KB KICKING OFF.....`)
-- **Confirmed (`0x128c5a4..0x128c678`):** `GET /assets/manifest.db` expects a raw SQLite3 database with `resources(name TEXT PRIMARY KEY, src TEXT, length INTEGER, crc INTEGER)`.
-- **Live Result:** Serving an empty `manifest.db` via `routes.json` (`content_type: application/x.binary`) downloaded `12KB/12KB` and advanced to `KICKING OFF.....`, then failed with `RESOURCE DOWNLOAD ERROR` because `resources` has 0 rows and no v18.1.03 `.big` / `DynamicAssets` cache exists on device or in the repo.
-- **Next:** Either source an archived FIFA Mobile `v18.1.03` `DynamicAssets` / `.big` asset pack to populate `manifest.db` + serve over HTTP, or inspect what specific startup resource `name`s `0x128c514` queries in `resources`.
-
----
-
-## 7. Additive Update (`manifest.db` SQLCipher Key & Zero-Context Continuation Guide)
-- **Confirmed (`0x127ae24`, `0x1271754`, `0x128d960..0x128da14`):**
-  - Plain SQLite `manifest.db` is accepted and rekeyed in-place with `b"aes256:mcryan"` (`0x21ad9c4` `sqlite3_rekey_v2`).
-  - Client reaches `Splash_85_Percent` (`12KB/12KB KICKING OFF.....`) then triggers `Error_Resource_Header` (`RESOURCE DOWNLOAD ERROR`) when `0x128d9c4` (`sqlite3_step`) returns `SQLITE_DONE` (`0x65`, 0 rows) for a required startup resource.
-  - `apk/base_extract/assets/Data/` has `83 MB` (`1,047` files in `DynamicAssets/android/`). `apk/base_extract/assets/Data/FIFA/icfiles.big` is `24 KB`.
-- **Workflow & Exact Next Steps for Next AI:**
-  1. **Methodology:** Keep Termux commands short (user is on Android). Inspect `libFIFAMobileNeon.so.original` with `llvm-objdump` / `strings` / Python offset scans, verify against live `server/main.py` captures (`server/data/captures/*.json`), and test patches incrementally.
-  2. **Find queried resource `name`s:** Find callers of the `manifest.db` lookup function (`0x128d960` block—scan `.text` for `bl` to its entry point) and/or inspect `ResourceDownloadHandler` (`0x6d41430`) and `Error_Resource_Header` xrefs to see the exact `name` strings queried at 85%.
-  3. **Test `manifest.db` rows:** Populate `resources(name, src, length, crc)` with matching rows (and serve files from `/assets/<src>` via `routes.json` with `content_type: application/x.binary`) or determine which external `.big` bundles are required vs. already in `apk/base_extract/assets/Data/`.
+## 3. Exact Current Blocker & Next Investigation Step
+The game needs startup resource rows in `server/data/responses/manifest.db`:
+- Lookup query: `SELECT src,length,crc FROM resources WHERE name = ?` (caller at `0x1276dc0`).
+- Disassemble `0x558bca0` (the target of `_parseStaticResources` dispatch at `0x558c4ac..0x558c4d4`) to determine the exact keys queried during startup.
+- Populate `resources` table in `manifest.db` with matching rows (e.g. `icfiles.big`, `shaderboot.big`).

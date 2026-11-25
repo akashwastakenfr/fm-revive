@@ -39,3 +39,16 @@
 - **Bundled Assets & Error Key:**
   - `apk/base_extract/assets/Data/` already contains `83 MB` (`1,047` files in `DynamicAssets/android/` + `FIFA/icfiles.big` 24 KB).
   - `lang_BOOTSTRAP_EN_US.properties`: `Splash_85_Percent=KICKING OFF...`, `Error_Resource_Header=RESOURCE DOWNLOAD ERROR`.
+
+## 4. SQLCipher Key (`aes256:mcryan`), Bundled Assets, & `manifest.db` Row Lookup
+- **SQLCipher / `wxSQLite3` Key (`0x127ae24`, `0x1271754`):**
+  - `0x6d52789` (13 bytes) XOR `0x6d44cf5` (13 bytes) = `b"aes256:mcryan"`.
+  - `0x128c5c4..0x128c600`: Downloads plain SQLite `manifest.db`, opens with `sqlite3_open_v2`, and encrypts in-place via `0x21ad9c4` (`sqlite3_rekey_v2`, `zDb=NULL`).
+  - `0x128c348..0x128c370`: Opens cached `manifest.db` with `0x21ac714` (`sqlite3_key`) and prepares `SELECT src,length,crc FROM resources WHERE name = ?` (`0x128c570`).
+- **Row Lookup (`0x128d960..0x128da14`):**
+  - `0x128d9b0`: `sqlite3_bind_text` (arg `name`)
+  - `0x128d9c4`: `sqlite3_step` (`100`/`0x64` = `SQLITE_ROW`, `101`/`0x65` = `SQLITE_DONE` -> `0x128da68` not-found)
+  - `0x128d9e8..0x128da14`: reads `src` (col 0), `length` (col 1), `crc` (col 2).
+- **Bundled Assets & Error Key:**
+  - `apk/base_extract/assets/Data/` already contains `83 MB` (`1,047` files in `DynamicAssets/android/` + `FIFA/icfiles.big` 24 KB).
+  - `lang_BOOTSTRAP_EN_US.properties`: `Splash_85_Percent=KICKING OFF...`, `Error_Resource_Header=RESOURCE DOWNLOAD ERROR`.
