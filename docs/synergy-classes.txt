@@ -1,0 +1,6 @@
+jadx-out/sources/com/ea/nimble/identity/NimbleIdentityImpl.java
+jadx-out/sources/com/ea/nimble/ISynergyEnvironment.java
+jadx-out/sources/com/ea/nimble/BaseCore.java
+jadx-out/sources/com/ea/nimble/EnvironmentDataContainer.java
+jadx-out/sources/com/ea/nimble/SynergyEnvironmentUpdater.java
+jadx-out/sources/com/ea/nimble/SynergyEnvironmentImpl.java

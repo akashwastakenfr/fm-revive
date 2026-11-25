@@ -1,0 +1,126 @@
+
+libFIFAMobileNeon.so.original:	file format elf64-littleaarch64
+
+Disassembly of section .text:
+
+0000000000d22128 <OPENSSL_cpuid_setup>:
+  fa4080: 94160c7d     	bl	0x1527274 <Java_com_ea_fuel_video_PlayerAndroid_OnErrorNativeImpl+0xbc12c>
+  fa4084: 911182c0     	add	x0, x22, #0x460
+  fa4088: 528002c2     	mov	w2, #0x16               // =22
+  fa408c: aa1903e1     	mov	x1, x25
+  fa4090: 94160c79     	bl	0x1527274 <Java_com_ea_fuel_video_PlayerAndroid_OnErrorNativeImpl+0xbc12c>
+  fa4094: 9002dd09     	adrp	x9, 0x6b44000
+  fa4098: 91031929     	add	x9, x9, #0xc6
+  fa409c: b003c0e8     	adrp	x8, 0x87c1000 <_ZN6gluads15EAAnzuNativeAds10mDebugModeE+0x2a2756>
+  fa40a0: 9e670120     	fmov	d0, x9
+  fa40a4: 9002dd09     	adrp	x9, 0x6b44000
+  fa40a8: f904691f     	str	xzr, [x8, #0x8d0]
+  fa40ac: 9002dd08     	adrp	x8, 0x6b44000
+  fa40b0: 9105a129     	add	x9, x9, #0x168
+  fa40b4: 9103d108     	add	x8, x8, #0xf4
+  fa40b8: 9e670122     	fmov	d2, x9
+  fa40bc: 9002dd09     	adrp	x9, 0x6b44000
+  fa40c0: 9e670101     	fmov	d1, x8
+  fa40c4: 9002dd08     	adrp	x8, 0x6b44000
+  fa40c8: 9107dd29     	add	x9, x9, #0x1f7
+  fa40cc: 9106e108     	add	x8, x8, #0x1b8
+  fa40d0: 9e670124     	fmov	d4, x9
+  fa40d4: 9002dd09     	adrp	x9, 0x6b44000
+  fa40d8: 9e670103     	fmov	d3, x8
+  fa40dc: 9002dd08     	adrp	x8, 0x6b44000
+  fa40e0: 9109ad29     	add	x9, x9, #0x26b
+  fa40e4: 9108cd08     	add	x8, x8, #0x233
+  fa40e8: 9e670126     	fmov	d6, x9
+  fa40ec: 9002dd09     	adrp	x9, 0x6b44000
+  fa40f0: 9e670105     	fmov	d5, x8
+  fa40f4: 9002dd08     	adrp	x8, 0x6b44000
+  fa40f8: 910b7929     	add	x9, x9, #0x2de
+  fa40fc: 910a8508     	add	x8, x8, #0x2a1
+  fa4100: 9e670130     	fmov	d16, x9
+  fa4104: 9002dd09     	adrp	x9, 0x6b44000
+  fa4108: f002c6aa     	adrp	x10, 0x687b000
+  fa410c: 9e670107     	fmov	d7, x8
+  fa4110: b003c0e8     	adrp	x8, 0x87c1000 <_ZN6gluads15EAAnzuNativeAds10mDebugModeE+0x2a2756>
+  fa4114: 91049929     	add	x9, x9, #0x126
+  fa4118: 4ea01c11     	mov	v17.16b, v0.16b
+  fa411c: 9122514a     	add	x10, x10, #0x894
+  fa4120: 91238108     	add	x8, x8, #0x8e0
+  fa4124: 4e181d51     	mov	v17.d[1], x10
+  fa4128: 9002dd0a     	adrp	x10, 0x6b44000
+  fa412c: 4e181d21     	mov	v1.d[1], x9
+  fa4130: 91055d4a     	add	x10, x10, #0x157
+  fa4134: 4ea01c12     	mov	v18.16b, v0.16b
+  fa4138: ad000511     	stp	q17, q1, [x8]
+  fa413c: 9002dd08     	adrp	x8, 0x6b44000
+  fa4140: 4e181d52     	mov	v18.d[1], x10
+  fa4144: b003c0ea     	adrp	x10, 0x87c1000 <_ZN6gluads15EAAnzuNativeAds10mDebugModeE+0x2a2756>
+  fa4148: 91069d08     	add	x8, x8, #0x1a7
+  fa414c: 4ea01c01     	mov	v1.16b, v0.16b
+  fa4150: 9124414a     	add	x10, x10, #0x910
+  fa4154: 4e181d01     	mov	v1.d[1], x8
+  fa4158: b003c0e8     	adrp	x8, 0x87c1000 <_ZN6gluads15EAAnzuNativeAds10mDebugModeE+0x2a2756>
+  fa415c: 4e181d22     	mov	v2.d[1], x9
+  fa4160: 9002cb2b     	adrp	x11, 0x6908000
+  fa4164: 91250108     	add	x8, x8, #0x940
+  fa4168: ad000952     	stp	q18, q2, [x10]
+  fa416c: 4ea01c02     	mov	v2.16b, v0.16b
+  fa4170: 9119856b     	add	x11, x11, #0x661
+  fa4174: 4e181d23     	mov	v3.d[1], x9
+  fa4178: 9002cb2c     	adrp	x12, 0x6908000
+  fa417c: 4e181d62     	mov	v2.d[1], x11
+  fa4180: b003c0eb     	adrp	x11, 0x87c1000 <_ZN6gluads15EAAnzuNativeAds10mDebugModeE+0x2a2756>
+  fa4184: ad000d01     	stp	q1, q3, [x8]
+  fa4188: 4ea01c01     	mov	v1.16b, v0.16b
+  fa418c: 911aa58c     	add	x12, x12, #0x6a9
+  fa4190: b003c0ea     	adrp	x10, 0x87c1000 <_ZN6gluads15EAAnzuNativeAds10mDebugModeE+0x2a2756>
+  fa4194: 9126816b     	add	x11, x11, #0x9a0
+  fa4198: 4e181d81     	mov	v1.d[1], x12
+  fa419c: 4e181d25     	mov	v5.d[1], x9
+  fa41a0: 9002cb2e     	adrp	x14, 0x6908000
+  fa41a4: 9125c14a     	add	x10, x10, #0x970
+  fa41a8: b003c0ec     	adrp	x12, 0x87c1000 <_ZN6gluads15EAAnzuNativeAds10mDebugModeE+0x2a2756>
+  fa41ac: 4e181d24     	mov	v4.d[1], x9
+  fa41b0: ad001561     	stp	q1, q5, [x11]
+  fa41b4: 4ea01c01     	mov	v1.16b, v0.16b
+  fa41b8: 911c95ce     	add	x14, x14, #0x725
+  fa41bc: b003c0e8     	adrp	x8, 0x87c1000 <_ZN6gluads15EAAnzuNativeAds10mDebugModeE+0x2a2756>
+  fa41c0: 9128018c     	add	x12, x12, #0xa00
+  fa41c4: ad001142     	stp	q2, q4, [x10]
+  fa41c8: 4ea01c02     	mov	v2.16b, v0.16b
+  fa41cc: 4e181dc1     	mov	v1.d[1], x14
+  fa41d0: 4e181d27     	mov	v7.d[1], x9
+  fa41d4: 91274108     	add	x8, x8, #0x9d0
+  fa41d8: 4e181f42     	mov	v2.d[1], x26
+  fa41dc: 4e181d26     	mov	v6.d[1], x9
+  fa41e0: ad001d81     	stp	q1, q7, [x12]
+  fa41e4: 9002cb2c     	adrp	x12, 0x6908000
+  fa41e8: b003c0ea     	adrp	x10, 0x87c1000 <_ZN6gluads15EAAnzuNativeAds10mDebugModeE+0x2a2756>
+  fa41ec: ad001902     	stp	q2, q6, [x8]
+  fa41f0: 4ea01c02     	mov	v2.16b, v0.16b
+  fa41f4: 911dbd8c     	add	x12, x12, #0x76f
+  fa41f8: 9128c14a     	add	x10, x10, #0xa30
+  fa41fc: 9002dd0b     	adrp	x11, 0x6b44000
+  fa4200: 4e181d82     	mov	v2.d[1], x12
+  fa4204: 4e181d30     	mov	v16.d[1], x9
+  fa4208: 910c7d6b     	add	x11, x11, #0x31f
+  fa420c: ad004142     	stp	q2, q16, [x10]
+  fa4210: 9002cb2a     	adrp	x10, 0x6908000
+  fa4214: b003c0ed     	adrp	x13, 0x87c1000 <_ZN6gluads15EAAnzuNativeAds10mDebugModeE+0x2a2756>
+  fa4218: 9002dd08     	adrp	x8, 0x6b44000
+  fa421c: 4ea01c01     	mov	v1.16b, v0.16b
+  fa4220: 9e670162     	fmov	d2, x11
+  fa4224: 911f054a     	add	x10, x10, #0x7c1
+  fa4228: 912981ad     	add	x13, x13, #0xa60
+  fa422c: 910d8508     	add	x8, x8, #0x361
+  fa4230: 4e181d41     	mov	v1.d[1], x10
+  fa4234: 4e181d22     	mov	v2.d[1], x9
+  fa4238: ad0009a1     	stp	q1, q2, [x13]
+  fa423c: 9e670101     	fmov	d1, x8
+  fa4240: 9002cb28     	adrp	x8, 0x6908000
+  fa4244: 91205508     	add	x8, x8, #0x815
+  fa4248: 4e181d00     	mov	v0.d[1], x8
+  fa424c: 90030ac8     	adrp	x8, 0x70fc000 <_ZN18glucentralservices16TAG_PRELOAD_NAMEE+0x256b76>
+  fa4250: b003c0ee     	adrp	x14, 0x87c1000 <_ZN6gluads15EAAnzuNativeAds10mDebugModeE+0x2a2756>
+  fa4254: 9101f108     	add	x8, x8, #0x7c
+  fa4258: 912a41ce     	add	x14, x14, #0xa90
+  fa425c: 4e181d21     	mov	v1.d[1], x9

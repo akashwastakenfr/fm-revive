@@ -1,0 +1,16 @@
+{
+  "status": "ok",
+  "uid": "local-dev-user-001",
+  "user": {
+    "uid": "local-dev-user-001",
+    "hasSetUserName": true,
+    "isDefaultUserName": false,
+    "currentActiveLineupType": 0,
+    "countryId": 0,
+    "isS5User": false,
+    "mtxAllowed": false
+  },
+  "lineupUnlockData": [],
+  "roster": [],
+  "inventory": []
+}

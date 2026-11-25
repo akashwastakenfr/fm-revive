@@ -1,0 +1,422 @@
+
+libFIFAMobileNeon.so.original:	file format elf64-littleaarch64
+
+Disassembly of section .text:
+
+0000000000d22128 <OPENSSL_cpuid_setup>:
+  f4fc80: 9114a508     	add	x8, x8, #0x529
+  f4fc84: 91320340     	add	x0, x26, #0xc80
+  f4fc88: 91002101     	add	x1, x8, #0x8
+  f4fc8c: 321f07e2     	orr	w2, wzr, #0x6
+  f4fc90: f9003be1     	str	x1, [sp, #0x70]
+  f4fc94: 94175d78     	bl	0x1527274 <Java_com_ea_fuel_video_PlayerAndroid_OnErrorNativeImpl+0xbc12c>
+  f4fc98: 91324340     	add	x0, x26, #0xc90
+  f4fc9c: 528001a2     	mov	w2, #0xd                // =13
+  f4fca0: aa1603e1     	mov	x1, x22
+  f4fca4: 94175d74     	bl	0x1527274 <Java_com_ea_fuel_video_PlayerAndroid_OnErrorNativeImpl+0xbc12c>
+  f4fca8: 91328340     	add	x0, x26, #0xca0
+  f4fcac: 52800122     	mov	w2, #0x9                // =9
+  f4fcb0: aa1303e1     	mov	x1, x19
+  f4fcb4: aa1303f8     	mov	x24, x19
+  f4fcb8: 94175d6f     	bl	0x1527274 <Java_com_ea_fuel_video_PlayerAndroid_OnErrorNativeImpl+0xbc12c>
+  f4fcbc: 9132c340     	add	x0, x26, #0xcb0
+  f4fcc0: 32000be2     	orr	w2, wzr, #0x7
+  f4fcc4: aa1b03e1     	mov	x1, x27
+  f4fcc8: aa1b03f7     	mov	x23, x27
+  f4fccc: 94175d6a     	bl	0x1527274 <Java_com_ea_fuel_video_PlayerAndroid_OnErrorNativeImpl+0xbc12c>
+  f4fcd0: 91330340     	add	x0, x26, #0xcc0
+  f4fcd4: 321f0be2     	orr	w2, wzr, #0xe
+  f4fcd8: aa1403e1     	mov	x1, x20
+  f4fcdc: aa1403f9     	mov	x25, x20
+  f4fce0: 94175d65     	bl	0x1527274 <Java_com_ea_fuel_video_PlayerAndroid_OnErrorNativeImpl+0xbc12c>
+  f4fce4: f85803bb     	ldur	x27, [x29, #-0x80]
+  f4fce8: 91334340     	add	x0, x26, #0xcd0
+  f4fcec: 52800242     	mov	w2, #0x12               // =18
+  f4fcf0: aa1b03e1     	mov	x1, x27
+  f4fcf4: 94175d60     	bl	0x1527274 <Java_com_ea_fuel_video_PlayerAndroid_OnErrorNativeImpl+0xbc12c>
+  f4fcf8: f85883b3     	ldur	x19, [x29, #-0x78]
+  f4fcfc: 91338340     	add	x0, x26, #0xce0
+  f4fd00: 52800262     	mov	w2, #0x13               // =19
+  f4fd04: aa1303e1     	mov	x1, x19
+  f4fd08: 94175d5b     	bl	0x1527274 <Java_com_ea_fuel_video_PlayerAndroid_OnErrorNativeImpl+0xbc12c>
+  f4fd0c: f85903b4     	ldur	x20, [x29, #-0x70]
+  f4fd10: 9133c340     	add	x0, x26, #0xcf0
+  f4fd14: 528002c2     	mov	w2, #0x16               // =22
+  f4fd18: aa1403e1     	mov	x1, x20
+  f4fd1c: 94175d56     	bl	0x1527274 <Java_com_ea_fuel_video_PlayerAndroid_OnErrorNativeImpl+0xbc12c>
+  f4fd20: d002dcea     	adrp	x10, 0x6aed000
+  f4fd24: 9003c0e9     	adrp	x9, 0x876b000 <_ZN6gluads15EAAnzuNativeAds10mDebugModeE+0x24c756>
+  f4fd28: 9118f54a     	add	x10, x10, #0x63d
+  f4fd2c: f906593f     	str	xzr, [x9, #0xcb0]
+  f4fd30: d002dce9     	adrp	x9, 0x6aed000
+  f4fd34: 9e670140     	fmov	d0, x10
+  f4fd38: d002dcea     	adrp	x10, 0x6aed000
+  f4fd3c: 91198d29     	add	x9, x9, #0x663
+  f4fd40: 911b394a     	add	x10, x10, #0x6ce
+  f4fd44: 9e670121     	fmov	d1, x9
+  f4fd48: d002dce9     	adrp	x9, 0x6aed000
+  f4fd4c: 9e670142     	fmov	d2, x10
+  f4fd50: d002dcea     	adrp	x10, 0x6aed000
+  f4fd54: 911c9129     	add	x9, x9, #0x724
+  f4fd58: 911db94a     	add	x10, x10, #0x76e
+  f4fd5c: 9e670123     	fmov	d3, x9
+  f4fd60: d002dce9     	adrp	x9, 0x6aed000
+  f4fd64: 9e670144     	fmov	d4, x10
+  f4fd68: d002dcea     	adrp	x10, 0x6aed000
+  f4fd6c: 911eb129     	add	x9, x9, #0x7ac
+  f4fd70: 911f794a     	add	x10, x10, #0x7de
+  f4fd74: 9e670125     	fmov	d5, x9
+  f4fd78: d002dce9     	adrp	x9, 0x6aed000
+  f4fd7c: 9e670146     	fmov	d6, x10
+  f4fd80: d002dcea     	adrp	x10, 0x6aed000
+  f4fd84: 91204929     	add	x9, x9, #0x812
+  f4fd88: 9121094a     	add	x10, x10, #0x842
+  f4fd8c: 9e670127     	fmov	d7, x9
+  f4fd90: d002dce9     	adrp	x9, 0x6aed000
+  f4fd94: 9e670150     	fmov	d16, x10
+  f4fd98: d002dcea     	adrp	x10, 0x6aed000
+  f4fd9c: 9121c129     	add	x9, x9, #0x870
+  f4fda0: 9122954a     	add	x10, x10, #0x8a5
+  f4fda4: 9e670131     	fmov	d17, x9
+  f4fda8: d002dce9     	adrp	x9, 0x6aed000
+  f4fdac: 9e670152     	fmov	d18, x10
+  f4fdb0: d002dcea     	adrp	x10, 0x6aed000
+  f4fdb4: 9002c96b     	adrp	x11, 0x687b000
+  f4fdb8: 9003c0e8     	adrp	x8, 0x876b000 <_ZN6gluads15EAAnzuNativeAds10mDebugModeE+0x24c756>
+  f4fdbc: 91237929     	add	x9, x9, #0x8de
+  f4fdc0: 911a354a     	add	x10, x10, #0x68d
+  f4fdc4: 4ea01c14     	mov	v20.16b, v0.16b
+  f4fdc8: 9122516b     	add	x11, x11, #0x894
+  f4fdcc: 91330108     	add	x8, x8, #0xcc0
+  f4fdd0: 9e670133     	fmov	d19, x9
+  f4fdd4: d002dce9     	adrp	x9, 0x6aed000
+  f4fdd8: 4e181d74     	mov	v20.d[1], x11
+  f4fddc: 4e181d41     	mov	v1.d[1], x10
+  f4fde0: 911ad929     	add	x9, x9, #0x6b6
+  f4fde4: ad000514     	stp	q20, q1, [x8]
+  f4fde8: 9003c0e8     	adrp	x8, 0x876b000 <_ZN6gluads15EAAnzuNativeAds10mDebugModeE+0x24c756>
+  f4fdec: 4ea01c01     	mov	v1.16b, v0.16b
+  f4fdf0: 9133c108     	add	x8, x8, #0xcf0
+  f4fdf4: 4e181d21     	mov	v1.d[1], x9
+  f4fdf8: d002dce9     	adrp	x9, 0x6aed000
+  f4fdfc: 4e181d42     	mov	v2.d[1], x10
+  f4fe00: 911c3129     	add	x9, x9, #0x70c
+  f4fe04: ad000901     	stp	q1, q2, [x8]
+  f4fe08: 9003c0e8     	adrp	x8, 0x876b000 <_ZN6gluads15EAAnzuNativeAds10mDebugModeE+0x24c756>
+  f4fe0c: 4ea01c01     	mov	v1.16b, v0.16b
+  f4fe10: 91348108     	add	x8, x8, #0xd20
+  f4fe14: 4e181d21     	mov	v1.d[1], x9
+  f4fe18: d002dce9     	adrp	x9, 0x6aed000
+  f4fe1c: 4e181d43     	mov	v3.d[1], x10
+  f4fe20: 911d8929     	add	x9, x9, #0x762
+  f4fe24: ad000d01     	stp	q1, q3, [x8]
+  f4fe28: 9003c0e8     	adrp	x8, 0x876b000 <_ZN6gluads15EAAnzuNativeAds10mDebugModeE+0x24c756>
+  f4fe2c: 4ea01c01     	mov	v1.16b, v0.16b
+  f4fe30: 91354108     	add	x8, x8, #0xd50
+  f4fe34: 4e181d21     	mov	v1.d[1], x9
+  f4fe38: d002dce9     	adrp	x9, 0x6aed000
+  f4fe3c: 4e181d44     	mov	v4.d[1], x10
+  f4fe40: 911e8129     	add	x9, x9, #0x7a0
+  f4fe44: ad001101     	stp	q1, q4, [x8]
+  f4fe48: 9003c0e8     	adrp	x8, 0x876b000 <_ZN6gluads15EAAnzuNativeAds10mDebugModeE+0x24c756>
+  f4fe4c: 4ea01c01     	mov	v1.16b, v0.16b
+  f4fe50: 91360108     	add	x8, x8, #0xd80
+  f4fe54: 4e181d21     	mov	v1.d[1], x9
+  f4fe58: 4e181d45     	mov	v5.d[1], x10
+  f4fe5c: b002cdcb     	adrp	x11, 0x6908000
+  f4fe60: 9003c0e9     	adrp	x9, 0x876b000 <_ZN6gluads15EAAnzuNativeAds10mDebugModeE+0x24c756>
+  f4fe64: ad001501     	stp	q1, q5, [x8]
+  f4fe68: 4ea01c01     	mov	v1.16b, v0.16b
+  f4fe6c: 9119856b     	add	x11, x11, #0x661
+  f4fe70: 9136c129     	add	x9, x9, #0xdb0
+  f4fe74: 4e181d61     	mov	v1.d[1], x11
+  f4fe78: 4e181d46     	mov	v6.d[1], x10
+  f4fe7c: b002cdcb     	adrp	x11, 0x6908000
+  f4fe80: 9003c0e8     	adrp	x8, 0x876b000 <_ZN6gluads15EAAnzuNativeAds10mDebugModeE+0x24c756>
+  f4fe84: ad001921     	stp	q1, q6, [x9]
+  f4fe88: 4ea01c01     	mov	v1.16b, v0.16b
+  f4fe8c: 911aa56b     	add	x11, x11, #0x6a9
+  f4fe90: 91378108     	add	x8, x8, #0xde0
+  f4fe94: 4e181d61     	mov	v1.d[1], x11
+  f4fe98: 4e181d47     	mov	v7.d[1], x10
+  f4fe9c: b002cdcb     	adrp	x11, 0x6908000
+  f4fea0: 9003c0e9     	adrp	x9, 0x876b000 <_ZN6gluads15EAAnzuNativeAds10mDebugModeE+0x24c756>
+  f4fea4: ad001d01     	stp	q1, q7, [x8]
+  f4fea8: 4ea01c01     	mov	v1.16b, v0.16b
+  f4feac: 911ba56b     	add	x11, x11, #0x6e9
+  f4feb0: 91384129     	add	x9, x9, #0xe10
+  f4feb4: 4e181d61     	mov	v1.d[1], x11
+  f4feb8: 4e181d50     	mov	v16.d[1], x10
+  f4febc: 9003c0e8     	adrp	x8, 0x876b000 <_ZN6gluads15EAAnzuNativeAds10mDebugModeE+0x24c756>
+  f4fec0: ad004121     	stp	q1, q16, [x9]
+  f4fec4: 4ea01c01     	mov	v1.16b, v0.16b
+  f4fec8: 91390108     	add	x8, x8, #0xe40
+  f4fecc: 4e181ea1     	mov	v1.d[1], x21
+  f4fed0: 4e181d51     	mov	v17.d[1], x10
+  f4fed4: b002cdcb     	adrp	x11, 0x6908000
+  f4fed8: 9003c0e9     	adrp	x9, 0x876b000 <_ZN6gluads15EAAnzuNativeAds10mDebugModeE+0x24c756>
+  f4fedc: ad004501     	stp	q1, q17, [x8]
+  f4fee0: 4ea01c01     	mov	v1.16b, v0.16b
+  f4fee4: 911dbd6b     	add	x11, x11, #0x76f
+  f4fee8: 9139c129     	add	x9, x9, #0xe70
+  f4feec: 4e181d61     	mov	v1.d[1], x11
+  f4fef0: 4e181d52     	mov	v18.d[1], x10
+  f4fef4: b002cdcb     	adrp	x11, 0x6908000
+  f4fef8: 9003c0e8     	adrp	x8, 0x876b000 <_ZN6gluads15EAAnzuNativeAds10mDebugModeE+0x24c756>
+  f4fefc: ad004921     	stp	q1, q18, [x9]
+  f4ff00: d002dce9     	adrp	x9, 0x6aed000
+  f4ff04: 4ea01c01     	mov	v1.16b, v0.16b
+  f4ff08: 911f056b     	add	x11, x11, #0x7c1
+  f4ff0c: 913a8108     	add	x8, x8, #0xea0
+  f4ff10: 91246129     	add	x9, x9, #0x918
+  f4ff14: 4e181d61     	mov	v1.d[1], x11
+  f4ff18: 4e181d53     	mov	v19.d[1], x10
+  f4ff1c: ad004d01     	stp	q1, q19, [x8]
+  f4ff20: 9e670121     	fmov	d1, x9
+  f4ff24: b002cdc9     	adrp	x9, 0x6908000
+  f4ff28: 9003c0e8     	adrp	x8, 0x876b000 <_ZN6gluads15EAAnzuNativeAds10mDebugModeE+0x24c756>
+  f4ff2c: 91205529     	add	x9, x9, #0x815
+  f4ff30: 913b4108     	add	x8, x8, #0xed0
+  f4ff34: 4e181d20     	mov	v0.d[1], x9
+  f4ff38: 4e181d41     	mov	v1.d[1], x10
+  f4ff3c: ad000500     	stp	q0, q1, [x8]
+  f4ff40: 9002efe8     	adrp	x8, 0x6d4b000 <_ZTSNSt6__ndk117bad_function_callE+0x9a90>
+  f4ff44: 91265508     	add	x8, x8, #0x995
+  f4ff48: 9117c340     	add	x0, x26, #0x5f0
+  f4ff4c: 91002101     	add	x1, x8, #0x8
+  f4ff50: 528002e2     	mov	w2, #0x17               // =23
+  f4ff54: f906875f     	str	xzr, [x26, #0xd08]
+  f4ff58: f906835f     	str	xzr, [x26, #0xd00]
+  f4ff5c: 94175cc6     	bl	0x1527274 <Java_com_ea_fuel_video_PlayerAndroid_OnErrorNativeImpl+0xbc12c>
+  f4ff60: 9002efe8     	adrp	x8, 0x6d4b000 <_ZTSNSt6__ndk117bad_function_callE+0x9a90>
+  f4ff64: 9126d508     	add	x8, x8, #0x9b5
+  f4ff68: 91180340     	add	x0, x26, #0x600
+  f4ff6c: 91002101     	add	x1, x8, #0x8
+  f4ff70: 528002e2     	mov	w2, #0x17               // =23
+  f4ff74: 94175cc0     	bl	0x1527274 <Java_com_ea_fuel_video_PlayerAndroid_OnErrorNativeImpl+0xbc12c>
+  f4ff78: 90030be8     	adrp	x8, 0x70cb000 <_ZN18glucentralservices16TAG_PRELOAD_NAMEE+0x225b76>
+  f4ff7c: 91170508     	add	x8, x8, #0x5c1
+  f4ff80: 91184340     	add	x0, x26, #0x610
+  f4ff84: 91002101     	add	x1, x8, #0x8
+  f4ff88: 52800162     	mov	w2, #0xb                // =11
+  f4ff8c: 94175cba     	bl	0x1527274 <Java_com_ea_fuel_video_PlayerAndroid_OnErrorNativeImpl+0xbc12c>
+  f4ff90: 90030be8     	adrp	x8, 0x70cb000 <_ZN18glucentralservices16TAG_PRELOAD_NAMEE+0x225b76>
+  f4ff94: 91175508     	add	x8, x8, #0x5d5
+  f4ff98: 91188340     	add	x0, x26, #0x620
+  f4ff9c: 91002101     	add	x1, x8, #0x8
+  f4ffa0: 52800162     	mov	w2, #0xb                // =11
+  f4ffa4: 94175cb4     	bl	0x1527274 <Java_com_ea_fuel_video_PlayerAndroid_OnErrorNativeImpl+0xbc12c>
+  f4ffa8: 9118c340     	add	x0, x26, #0x630
+  f4ffac: 528001a2     	mov	w2, #0xd                // =13
+  f4ffb0: aa1603e1     	mov	x1, x22
+  f4ffb4: 94175cb0     	bl	0x1527274 <Java_com_ea_fuel_video_PlayerAndroid_OnErrorNativeImpl+0xbc12c>
+  f4ffb8: 91190340     	add	x0, x26, #0x640
+  f4ffbc: 52800122     	mov	w2, #0x9                // =9
+  f4ffc0: aa1803e1     	mov	x1, x24
+  f4ffc4: 94175cac     	bl	0x1527274 <Java_com_ea_fuel_video_PlayerAndroid_OnErrorNativeImpl+0xbc12c>
+  f4ffc8: 91194340     	add	x0, x26, #0x650
+  f4ffcc: 32000be2     	orr	w2, wzr, #0x7
+  f4ffd0: aa1703e1     	mov	x1, x23
+  f4ffd4: 94175ca8     	bl	0x1527274 <Java_com_ea_fuel_video_PlayerAndroid_OnErrorNativeImpl+0xbc12c>
+  f4ffd8: 91198340     	add	x0, x26, #0x660
+  f4ffdc: 321f0be2     	orr	w2, wzr, #0xe
+  f4ffe0: aa1903e1     	mov	x1, x25
+  f4ffe4: 94175ca4     	bl	0x1527274 <Java_com_ea_fuel_video_PlayerAndroid_OnErrorNativeImpl+0xbc12c>
+  f4ffe8: 9119c340     	add	x0, x26, #0x670
+  f4ffec: 52800242     	mov	w2, #0x12               // =18
+  f4fff0: aa1b03e1     	mov	x1, x27
+  f4fff4: 94175ca0     	bl	0x1527274 <Java_com_ea_fuel_video_PlayerAndroid_OnErrorNativeImpl+0xbc12c>
+  f4fff8: 911a0340     	add	x0, x26, #0x680
+  f4fffc: 52800262     	mov	w2, #0x13               // =19
+  f50000: aa1303e1     	mov	x1, x19
+  f50004: 94175c9c     	bl	0x1527274 <Java_com_ea_fuel_video_PlayerAndroid_OnErrorNativeImpl+0xbc12c>
+  f50008: 911a4340     	add	x0, x26, #0x690
+  f5000c: 528002c2     	mov	w2, #0x16               // =22
+  f50010: aa1403e1     	mov	x1, x20
+  f50014: aa1403f5     	mov	x21, x20
+  f50018: 94175c97     	bl	0x1527274 <Java_com_ea_fuel_video_PlayerAndroid_OnErrorNativeImpl+0xbc12c>
+  f5001c: f003c0ca     	adrp	x10, 0x876b000 <_ZN6gluads15EAAnzuNativeAds10mDebugModeE+0x24c756>
+  f50020: f907815f     	str	xzr, [x10, #0xf00]
+  f50024: b002dcea     	adrp	x10, 0x6aed000
+  f50028: 9127914a     	add	x10, x10, #0x9e4
+  f5002c: 9e670142     	fmov	d2, x10
+  f50030: b002dcea     	adrp	x10, 0x6aed000
+  f50034: b002dceb     	adrp	x11, 0x6aed000
+  f50038: 9129094a     	add	x10, x10, #0xa42
+  f5003c: 9125c56b     	add	x11, x11, #0x971
+  f50040: 9e670144     	fmov	d4, x10
+  f50044: b002dcea     	adrp	x10, 0x6aed000
+  f50048: 9e670160     	fmov	d0, x11
+  f5004c: b002dceb     	adrp	x11, 0x6aed000
+  f50050: 912a894a     	add	x10, x10, #0xaa2
+  f50054: 91284d6b     	add	x11, x11, #0xa13
+  f50058: 9e670146     	fmov	d6, x10
+  f5005c: b002dcea     	adrp	x10, 0x6aed000
+  f50060: 9e670163     	fmov	d3, x11
+  f50064: b002dceb     	adrp	x11, 0x6aed000
+  f50068: 912c114a     	add	x10, x10, #0xb04
+  f5006c: 9129c96b     	add	x11, x11, #0xa72
+  f50070: 9e670150     	fmov	d16, x10
+  f50074: b002dcea     	adrp	x10, 0x6aed000
+  f50078: 9e670165     	fmov	d5, x11
+  f5007c: b002dceb     	adrp	x11, 0x6aed000
+  f50080: 912d914a     	add	x10, x10, #0xb64
+  f50084: 912b4d6b     	add	x11, x11, #0xad3
+  f50088: 9e670152     	fmov	d18, x10
+  f5008c: b002dcea     	adrp	x10, 0x6aed000
+  f50090: b002dcec     	adrp	x12, 0x6aed000
+  f50094: 9e670167     	fmov	d7, x11
+  f50098: b002dceb     	adrp	x11, 0x6aed000
+  f5009c: 912f0d4a     	add	x10, x10, #0xbc3
+  f500a0: 9126558c     	add	x12, x12, #0x995
+  f500a4: b002dce8     	adrp	x8, 0x6aed000
+  f500a8: 912cd96b     	add	x11, x11, #0xb36
+  f500ac: 9e670154     	fmov	d20, x10
+  f500b0: f002c94a     	adrp	x10, 0x687b000
+  f500b4: f003c0c9     	adrp	x9, 0x876b000 <_ZN6gluads15EAAnzuNativeAds10mDebugModeE+0x24c756>
+  f500b8: 9126f508     	add	x8, x8, #0x9bd
+  f500bc: 9e670181     	fmov	d1, x12
+  f500c0: 9e670171     	fmov	d17, x11
+  f500c4: b002dceb     	adrp	x11, 0x6aed000
+  f500c8: 4ea01c15     	mov	v21.16b, v0.16b
+  f500cc: 9122514a     	add	x10, x10, #0x894
+  f500d0: 913c4129     	add	x9, x9, #0xf10
+  f500d4: f002cdcd     	adrp	x13, 0x690b000
+  f500d8: 912e416b     	add	x11, x11, #0xb90
+  f500dc: 4e181d55     	mov	v21.d[1], x10
+  f500e0: 4e181d01     	mov	v1.d[1], x8
+  f500e4: 912171ad     	add	x13, x13, #0x85c
+  f500e8: 9e670173     	fmov	d19, x11
+  f500ec: f003c0cb     	adrp	x11, 0x876b000 <_ZN6gluads15EAAnzuNativeAds10mDebugModeE+0x24c756>
+  f500f0: ad000535     	stp	q21, q1, [x9]
+  f500f4: 4ea01c01     	mov	v1.16b, v0.16b
+  f500f8: 913d016b     	add	x11, x11, #0xf40
+  f500fc: f002cdcc     	adrp	x12, 0x690b000
+  f50100: 4e181da1     	mov	v1.d[1], x13
+  f50104: 4e181d02     	mov	v2.d[1], x8
+  f50108: 9122998c     	add	x12, x12, #0x8a6
+  f5010c: f003c0c9     	adrp	x9, 0x876b000 <_ZN6gluads15EAAnzuNativeAds10mDebugModeE+0x24c756>
+  f50110: ad000961     	stp	q1, q2, [x11]
+  f50114: 4ea01c01     	mov	v1.16b, v0.16b
+  f50118: 913dc129     	add	x9, x9, #0xf70
+  f5011c: 4e181d81     	mov	v1.d[1], x12
+  f50120: 4e181d03     	mov	v3.d[1], x8
+  f50124: b002dceb     	adrp	x11, 0x6aed000
+  f50128: f003c0ca     	adrp	x10, 0x876b000 <_ZN6gluads15EAAnzuNativeAds10mDebugModeE+0x24c756>
+  f5012c: ad000d21     	stp	q1, q3, [x9]
+  f50130: 4ea01c01     	mov	v1.16b, v0.16b
+  f50134: 910dc16b     	add	x11, x11, #0x370
+  f50138: 913e814a     	add	x10, x10, #0xfa0
+  f5013c: 4e181d61     	mov	v1.d[1], x11
+  f50140: 4e181d04     	mov	v4.d[1], x8
+  f50144: b002dcec     	adrp	x12, 0x6aed000
+  f50148: f003c0c9     	adrp	x9, 0x876b000 <_ZN6gluads15EAAnzuNativeAds10mDebugModeE+0x24c756>
+  f5014c: ad001141     	stp	q1, q4, [x10]
+  f50150: 4ea01c01     	mov	v1.16b, v0.16b
+  f50154: 910e918c     	add	x12, x12, #0x3a4
+  f50158: 913f4129     	add	x9, x9, #0xfd0
+  f5015c: 4e181d81     	mov	v1.d[1], x12
+  f50160: 4e181d05     	mov	v5.d[1], x8
+  f50164: b002dced     	adrp	x13, 0x6aed000
+  f50168: 9003c0eb     	adrp	x11, 0x876c000 <_ZN6gluads15EAAnzuNativeAds10mDebugModeE+0x24d756>
+  f5016c: ad001521     	stp	q1, q5, [x9]
+  f50170: 4ea01c01     	mov	v1.16b, v0.16b
+  f50174: 910f61ad     	add	x13, x13, #0x3d8
+  f50178: 9100016b     	add	x11, x11, #0x0
+  f5017c: 4e181da1     	mov	v1.d[1], x13
+  f50180: 4e181d06     	mov	v6.d[1], x8
+  f50184: b002dcee     	adrp	x14, 0x6aed000
+  f50188: 9003c0ea     	adrp	x10, 0x876c000 <_ZN6gluads15EAAnzuNativeAds10mDebugModeE+0x24d756>
+  f5018c: ad001961     	stp	q1, q6, [x11]
+  f50190: 4ea01c01     	mov	v1.16b, v0.16b
+  f50194: 911039ce     	add	x14, x14, #0x40e
+  f50198: 9100c14a     	add	x10, x10, #0x30
+  f5019c: 4e181dc1     	mov	v1.d[1], x14
+  f501a0: 4e181d07     	mov	v7.d[1], x8
+  f501a4: 9002cdcf     	adrp	x15, 0x6908000
+  f501a8: 9003c0ec     	adrp	x12, 0x876c000 <_ZN6gluads15EAAnzuNativeAds10mDebugModeE+0x24d756>
+  f501ac: ad001d41     	stp	q1, q7, [x10]
+  f501b0: 4ea01c01     	mov	v1.16b, v0.16b
+  f501b4: 911985ef     	add	x15, x15, #0x661
+  f501b8: 9101818c     	add	x12, x12, #0x60
+  f501bc: 4e181de1     	mov	v1.d[1], x15
+  f501c0: 4e181d10     	mov	v16.d[1], x8
+  f501c4: 9002cdcf     	adrp	x15, 0x6908000
+  f501c8: 9003c0e9     	adrp	x9, 0x876c000 <_ZN6gluads15EAAnzuNativeAds10mDebugModeE+0x24d756>
+  f501cc: ad004181     	stp	q1, q16, [x12]
+  f501d0: 4ea01c01     	mov	v1.16b, v0.16b
+  f501d4: 911aa5ef     	add	x15, x15, #0x6a9
+  f501d8: 91024129     	add	x9, x9, #0x90
+  f501dc: 4e181de1     	mov	v1.d[1], x15
+  f501e0: 4e181d11     	mov	v17.d[1], x8
+  f501e4: 9002cdcf     	adrp	x15, 0x6908000
+  f501e8: 9003c0ed     	adrp	x13, 0x876c000 <_ZN6gluads15EAAnzuNativeAds10mDebugModeE+0x24d756>
+  f501ec: ad004521     	stp	q1, q17, [x9]
+  f501f0: 4ea01c01     	mov	v1.16b, v0.16b
+  f501f4: 911ba5ef     	add	x15, x15, #0x6e9
+  f501f8: 910301ad     	add	x13, x13, #0xc0
+  f501fc: 4e181de1     	mov	v1.d[1], x15
+  f50200: 4e181d12     	mov	v18.d[1], x8
+  f50204: 9002cdd4     	adrp	x20, 0x6908000
+  f50208: 9003c0eb     	adrp	x11, 0x876c000 <_ZN6gluads15EAAnzuNativeAds10mDebugModeE+0x24d756>
+  f5020c: ad0049a1     	stp	q1, q18, [x13]
+  f50210: 4ea01c01     	mov	v1.16b, v0.16b
+  f50214: 911c9694     	add	x20, x20, #0x725
+  f50218: 9103c16b     	add	x11, x11, #0xf0
+  f5021c: 4e181e81     	mov	v1.d[1], x20
+  f50220: 4e181d13     	mov	v19.d[1], x8
+  f50224: ad004d61     	stp	q1, q19, [x11]
+  f50228: 9002cdcb     	adrp	x11, 0x6908000
+  f5022c: 9003c0ee     	adrp	x14, 0x876c000 <_ZN6gluads15EAAnzuNativeAds10mDebugModeE+0x24d756>
+  f50230: b002dcec     	adrp	x12, 0x6aed000
+  f50234: 4ea01c02     	mov	v2.16b, v0.16b
+  f50238: 911dbd6b     	add	x11, x11, #0x76f
+  f5023c: 910481ce     	add	x14, x14, #0x120
+  f50240: 912fe98c     	add	x12, x12, #0xbfa
+  f50244: 4e181d62     	mov	v2.d[1], x11
+  f50248: 4e181d14     	mov	v20.d[1], x8
+  f5024c: 9002cdcb     	adrp	x11, 0x6908000
+  f50250: 9003c0ea     	adrp	x10, 0x876c000 <_ZN6gluads15EAAnzuNativeAds10mDebugModeE+0x24d756>
+  f50254: b002dced     	adrp	x13, 0x6aed000
+  f50258: 4ea01c01     	mov	v1.16b, v0.16b
+  f5025c: ad0051c2     	stp	q2, q20, [x14]
+  f50260: 9e670182     	fmov	d2, x12
+  f50264: 911f056b     	add	x11, x11, #0x7c1
+  f50268: 9105414a     	add	x10, x10, #0x150
+  f5026c: 9130c9ad     	add	x13, x13, #0xc32
+  f50270: 4e181d61     	mov	v1.d[1], x11
+  f50274: 4e181d02     	mov	v2.d[1], x8
+  f50278: ad000941     	stp	q1, q2, [x10]
+  f5027c: 9e6701a1     	fmov	d1, x13
+  f50280: 9002cdca     	adrp	x10, 0x6908000
+  f50284: 4e181d01     	mov	v1.d[1], x8
+  f50288: f0030bc8     	adrp	x8, 0x70cb000 <_ZN18glucentralservices16TAG_PRELOAD_NAMEE+0x225b76>
+  f5028c: 9003c0e9     	adrp	x9, 0x876c000 <_ZN6gluads15EAAnzuNativeAds10mDebugModeE+0x24d756>
+  f50290: 9120554a     	add	x10, x10, #0x815
+  f50294: 9118d508     	add	x8, x8, #0x635
+  f50298: 91060129     	add	x9, x9, #0x180
+  f5029c: 4e181d40     	mov	v0.d[1], x10
+  f502a0: 91214340     	add	x0, x26, #0x850
+  f502a4: 91002101     	add	x1, x8, #0x8
+  f502a8: 52800142     	mov	w2, #0xa                // =10
+  f502ac: f903575f     	str	xzr, [x26, #0x6a8]
+  f502b0: f903535f     	str	xzr, [x26, #0x6a0]
+  f502b4: ad000520     	stp	q0, q1, [x9]
+  f502b8: f90047e1     	str	x1, [sp, #0x88]
+  f502bc: 94175bee     	bl	0x1527274 <Java_com_ea_fuel_video_PlayerAndroid_OnErrorNativeImpl+0xbc12c>
+  f502c0: f0030bc8     	adrp	x8, 0x70cb000 <_ZN18glucentralservices16TAG_PRELOAD_NAMEE+0x225b76>
+  f502c4: 91192108     	add	x8, x8, #0x648
+  f502c8: 91218340     	add	x0, x26, #0x860
+  f502cc: 91002101     	add	x1, x8, #0x8
+  f502d0: 52800142     	mov	w2, #0xa                // =10
+  f502d4: f90043e1     	str	x1, [sp, #0x80]
+  f502d8: 94175be7     	bl	0x1527274 <Java_com_ea_fuel_video_PlayerAndroid_OnErrorNativeImpl+0xbc12c>
+  f502dc: f94013e1     	ldr	x1, [sp, #0x20]
+  f502e0: 9121c340     	add	x0, x26, #0x870
+  f502e4: 52800162     	mov	w2, #0xb                // =11
+  f502e8: 94175be3     	bl	0x1527274 <Java_com_ea_fuel_video_PlayerAndroid_OnErrorNativeImpl+0xbc12c>
+  f502ec: f9400fe1     	ldr	x1, [sp, #0x18]
+  f502f0: 91220340     	add	x0, x26, #0x880
+  f502f4: 52800162     	mov	w2, #0xb                // =11
+  f502f8: 94175bdf     	bl	0x1527274 <Java_com_ea_fuel_video_PlayerAndroid_OnErrorNativeImpl+0xbc12c>
+  f502fc: f9400be1     	ldr	x1, [sp, #0x10]

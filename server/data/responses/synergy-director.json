@@ -1,0 +1,9 @@
+{
+  "serverData": [
+    {"key": "synergy.user", "value": "http://127.0.0.1:8080"},
+    {"key": "synergy.product", "value": "http://127.0.0.1:8080"},
+    {"key": "synergy.drm", "value": "http://127.0.0.1:8080"},
+    {"key": "synergy.s2s", "value": "http://127.0.0.1:8080"},
+    {"key": "synergy.tracking", "value": "http://127.0.0.1:8080"}
+  ]
+}

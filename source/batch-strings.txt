@@ -1,0 +1,4 @@
+711f8c0 batch_checksum_enabled
+71203f3 obfuscation_enabled
+719e426 batch_checksum_enabled
+719e445 obfuscation_enabled

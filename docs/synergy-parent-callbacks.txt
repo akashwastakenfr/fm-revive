@@ -1,0 +1,23 @@
+jadx-out/sources/com/ea/nimble/SynergyEnvironmentUpdater.java-67-
+jadx-out/sources/com/ea/nimble/SynergyEnvironmentUpdater.java-68-    EnvironmentDataContainer getEnvironmentDataContainer() {
+jadx-out/sources/com/ea/nimble/SynergyEnvironmentUpdater.java-69-        return this.m_environmentForSynergyStartUp;
+jadx-out/sources/com/ea/nimble/SynergyEnvironmentUpdater.java-70-    }
+jadx-out/sources/com/ea/nimble/SynergyEnvironmentUpdater.java-71-
+jadx-out/sources/com/ea/nimble/SynergyEnvironmentUpdater.java:72:    public void startSynergyStartupSequence(EnvironmentDataContainer environmentDataContainer, CompletionCallback completionCallback) {
+jadx-out/sources/com/ea/nimble/SynergyEnvironmentUpdater.java-73-        Log.Helper.LOGPUBLICFUNC(this);
+jadx-out/sources/com/ea/nimble/SynergyEnvironmentUpdater.java-74-        this.m_completionCallback = completionCallback;
+jadx-out/sources/com/ea/nimble/SynergyEnvironmentUpdater.java-75-        this.m_previousValidEnvironmentData = environmentDataContainer;
+jadx-out/sources/com/ea/nimble/SynergyEnvironmentUpdater.java-76-        if (Network.getComponent().getStatus() != Network.Status.OK) {
+jadx-out/sources/com/ea/nimble/SynergyEnvironmentUpdater.java-77-            onStartUpSequenceFinished(new Error(Error.Code.NETWORK_NO_CONNECTION, "Device is not connected to Wifi or wireless."));
+--
+jadx-out/sources/com/ea/nimble/SynergyEnvironmentImpl.java-342-        }
+jadx-out/sources/com/ea/nimble/SynergyEnvironmentImpl.java-343-        this.m_previousValidEnvironmentDataContainer = this.m_environmentDataContainer;
+jadx-out/sources/com/ea/nimble/SynergyEnvironmentImpl.java-344-        HashMap map = new HashMap();
+jadx-out/sources/com/ea/nimble/SynergyEnvironmentImpl.java-345-        map.put("result", "1");
+jadx-out/sources/com/ea/nimble/SynergyEnvironmentImpl.java-346-        Utility.sendBroadcast(SynergyEnvironment.NOTIFICATION_STARTUP_REQUESTS_STARTED, map);
+jadx-out/sources/com/ea/nimble/SynergyEnvironmentImpl.java:347:        synergyEnvironmentUpdater.startSynergyStartupSequence(this.m_previousValidEnvironmentDataContainer, new SynergyEnvironmentUpdater.CompletionCallback() { // from class: com.ea.nimble.SynergyEnvironmentImpl.2
+jadx-out/sources/com/ea/nimble/SynergyEnvironmentImpl.java-348-            @Override // com.ea.nimble.SynergyEnvironmentUpdater.CompletionCallback
+jadx-out/sources/com/ea/nimble/SynergyEnvironmentImpl.java-349-            public void callback(Exception exc) {
+jadx-out/sources/com/ea/nimble/SynergyEnvironmentImpl.java-350-                if (exc == null) {
+jadx-out/sources/com/ea/nimble/SynergyEnvironmentImpl.java-351-                    if (SynergyEnvironmentImpl.this.m_synergyStartupObject != null && synergyEnvironmentUpdater.getEnvironmentDataContainer() != null) {
+jadx-out/sources/com/ea/nimble/SynergyEnvironmentImpl.java-352-                        SynergyEnvironmentImpl.this.m_environmentDataContainer = synergyEnvironmentUpdater.getEnvironmentDataContainer();

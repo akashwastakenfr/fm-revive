@@ -1,0 +1,6 @@
+=== 64-bit pointer hits ===
+=== ADRP+ADD (<=16 insns) ===
+ADRP=0x118ef0c ADD=0x118ef10 -> 0x686298a (fm22-configserver)
+ADRP=0x118f004 ADD=0x118f008 -> 0x68629c4 (/config.ini?)
+ADRP=0x118f698 ADD=0x118f69c -> 0x686298a (fm22-configserver)
+ADRP=0x118f6ac ADD=0x118f6b0 -> 0x68629d1 (/default/config.ini?)

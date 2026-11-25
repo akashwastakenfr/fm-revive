@@ -1,0 +1,108 @@
+jadx-out/sources/com/ea/nimble/mtx/googleplay/GooglePlay.java:34:import com.ea.nimble.NimbleApplicationConfiguration;
+jadx-out/sources/com/ea/nimble/mtx/googleplay/GooglePlay.java:35:import com.ea.nimble.NimbleConfiguration;
+jadx-out/sources/com/ea/nimble/mtx/googleplay/GooglePlay.java:305:        String configValueAsString = NimbleApplicationConfiguration.getConfigValueAsString("com.ea.nimble.mtx.enableVerification");
+jadx-out/sources/com/ea/nimble/mtx/googleplay/GooglePlay.java:309:            String configValueAsString2 = NimbleApplicationConfiguration.getConfigValueAsString("com.ea.nimble.mtx.reportingEnabled");
+jadx-out/sources/com/ea/nimble/mtx/googleplay/GooglePlay.java:1085:                        if (Base.getConfiguration() != NimbleConfiguration.LIVE) {
+jadx-out/sources/com/ea/nimble/mtx/googleplay/GooglePlay.java:1585:                        String configValueAsString = NimbleApplicationConfiguration.getConfigValueAsString(FacebookSdk.APPLICATION_ID_PROPERTY);
+jadx-out/sources/com/ea/nimble/tracking/NimbleTrackingImplBase.java:12:import com.ea.nimble.NimbleApplicationConfiguration;
+jadx-out/sources/com/ea/nimble/tracking/NimbleTrackingImplBase.java:269:            String configValueAsString = NimbleApplicationConfiguration.getConfigValueAsString(NIMBLE_TRACKING_DEFAULT_POST_ENABLE);
+jadx-out/sources/com/ea/nimble/tracking/NimbleTrackingImplBase.java:454:        String configValueAsString = NimbleApplicationConfiguration.getConfigValueAsString(Tracking.NIMBLE_TRACKING_DEFAULTENABLE);
+jadx-out/sources/com/ea/nimble/identity/NimbleIdentityConfig.java:8:import com.ea.nimble.NimbleApplicationConfiguration;
+jadx-out/sources/com/ea/nimble/identity/NimbleIdentityConfig.java:17:    static final String NOTIFICATION_IDENTITY_CONFIGURATION_CHANGE = "nimble.notification.identity.configuration.change";
+jadx-out/sources/com/ea/nimble/identity/NimbleIdentityConfig.java:123:        if (!Utility.validString(nexusClientId) && (configValueAsString2 = NimbleApplicationConfiguration.getConfigValueAsString(META_DATA_TAG_CLIENT_ID)) != null && configValueAsString2.length() > 0) {
+jadx-out/sources/com/ea/nimble/identity/NimbleIdentityConfig.java:127:        if (!Utility.validString(nexusClientSecret) && (configValueAsString = NimbleApplicationConfiguration.getConfigValueAsString(META_DATA_TAG_CLIENT_SECRET)) != null && configValueAsString.length() > 0) {
+jadx-out/sources/com/ea/nimble/identity/NimbleIdentityImpl.java:52:    private NimbleIdentityConfig m_configuration = new NimbleIdentityConfig();
+jadx-out/sources/com/ea/nimble/identity/NimbleIdentityImpl.java:88:    NimbleIdentityConfig getConfiguration() {
+jadx-out/sources/com/ea/nimble/identity/AuthenticatorBase.java:134:    protected NimbleIdentityConfig getConfiguration() {
+jadx-out/sources/com/ea/nimble/identity/AuthenticatorBase.java:135:        return NimbleIdentityImpl.getComponent().getConfiguration();
+jadx-out/sources/com/ea/nimble/identity/AuthenticatorBase.java:157:            Utility.registerReceiver("nimble.notification.identity.configuration.change", this.m_identityConfigChangeReceiver);
+jadx-out/sources/com/ea/nimble/identity/AuthenticatorBase.java:508:        NimbleIdentityConfig configuration = getConfiguration();
+jadx-out/sources/com/ea/nimble/identity/AuthenticatorBase.java:551:        NimbleIdentityConfig configuration = getConfiguration();
+jadx-out/sources/com/ea/nimble/identity/AuthenticatorBase.java:593:        NimbleIdentityConfig configuration = getConfiguration();
+jadx-out/sources/com/ea/nimble/identity/AuthenticatorBase.java:903:            NimbleIdentityConfig configuration = getConfiguration();
+jadx-out/sources/com/ea/nimble/identity/AuthenticatorBase.java:1016:                NimbleIdentityConfig configuration = getConfiguration();
+jadx-out/sources/com/ea/nimble/identity/AuthenticatorOrigin.java:77:        NimbleIdentityConfig configuration = getConfiguration();
+jadx-out/sources/com/ea/nimble/identity/AuthenticatorFacebook.java:150:            NimbleIdentityConfig configuration = getConfiguration();
+jadx-out/sources/com/ea/nimble/identity/AuthenticatorFacebook.java:260:            nimbleIdentityUserInfoM81clone.setExpiryTime(new Date(System.currentTimeMillis() + ((long) (getConfiguration().getExpiryInterval() * 1000.0d))));
+jadx-out/sources/com/ea/nimble/identity/AuthenticatorAnonymous.java:157:            NimbleIdentityConfig configuration = getConfiguration();
+jadx-out/sources/com/ea/nimble/identity/AuthenticatorAnonymous.java:192:            NimbleIdentityConfig configuration = getConfiguration();
+jadx-out/sources/com/ea/nimble/pushtng/NimblePushTNGBroadcastForwarder.java:13:import com.ea.nimble.NimbleApplicationConfiguration;
+jadx-out/sources/com/ea/nimble/pushtng/NimblePushTNGBroadcastForwarder.java:66:        int configValueAsInt = NimbleApplicationConfiguration.getConfigValueAsInt("com.ea.nimble.pushtng.notification.activity.name");
+jadx-out/sources/com/ea/nimble/pushtng/PushNotificationImpl.java:27:import com.ea.nimble.NimbleApplicationConfiguration;
+jadx-out/sources/com/ea/nimble/pushtng/PushNotificationImpl.java:177:            if (!NimbleApplicationConfiguration.configValueExists(Global.NOTIFICATION_CHANNEL_PUSHTNG_ID_KEY)) {
+jadx-out/sources/com/ea/nimble/pushtng/PushNotificationImpl.java:178:                if (NimbleApplicationConfiguration.configValueExists(Global.NOTIFICATION_CHANNEL_DEFAULT_NAME_KEY)) {
+jadx-out/sources/com/ea/nimble/pushtng/PushNotificationImpl.java:179:                    string = applicationContext.getResources().getString(NimbleApplicationConfiguration.getConfigValueAsInt(Global.NOTIFICATION_CHANNEL_DEFAULT_NAME_KEY));
+jadx-out/sources/com/ea/nimble/pushtng/PushNotificationImpl.java:184:                if (NimbleApplicationConfiguration.configValueExists(Global.NOTIFICATION_CHANNEL_DEFAULT_DESCRIPTION_KEY)) {
+jadx-out/sources/com/ea/nimble/pushtng/PushNotificationImpl.java:185:                    notificationChannel.setDescription(applicationContext.getResources().getString(NimbleApplicationConfiguration.getConfigValueAsInt(Global.NOTIFICATION_CHANNEL_DEFAULT_DESCRIPTION_KEY)));
+jadx-out/sources/com/ea/nimble/pushtng/PushNotificationImpl.java:190:        int configValueAsInt = NimbleApplicationConfiguration.getConfigValueAsInt("com.ea.nimble.pushtng.auth.api.key");
+jadx-out/sources/com/ea/nimble/pushtng/PushNotificationImpl.java:191:        int configValueAsInt2 = NimbleApplicationConfiguration.getConfigValueAsInt("com.ea.nimble.pushtng.auth.api.secret");
+jadx-out/sources/com/ea/nimble/NimbleConfiguration.java:4:public enum NimbleConfiguration {
+jadx-out/sources/com/ea/nimble/NimbleConfiguration.java:12:    public static NimbleConfiguration fromName(String str) {
+jadx-out/sources/com/ea/nimble/NimbleConfiguration.java:32:    /* JADX INFO: renamed from: com.ea.nimble.NimbleConfiguration$1, reason: invalid class name */
+jadx-out/sources/com/ea/nimble/NimbleConfiguration.java:34:        static final /* synthetic */ int[] $SwitchMap$com$ea$nimble$NimbleConfiguration;
+jadx-out/sources/com/ea/nimble/NimbleConfiguration.java:37:            int[] iArr = new int[NimbleConfiguration.values().length];
+jadx-out/sources/com/ea/nimble/NimbleConfiguration.java:38:            $SwitchMap$com$ea$nimble$NimbleConfiguration = iArr;
+jadx-out/sources/com/ea/nimble/NimbleConfiguration.java:40:                iArr[NimbleConfiguration.INTEGRATION.ordinal()] = 1;
+jadx-out/sources/com/ea/nimble/NimbleConfiguration.java:44:                $SwitchMap$com$ea$nimble$NimbleConfiguration[NimbleConfiguration.STAGE.ordinal()] = 2;
+jadx-out/sources/com/ea/nimble/NimbleConfiguration.java:48:                $SwitchMap$com$ea$nimble$NimbleConfiguration[NimbleConfiguration.LIVE.ordinal()] = 3;
+jadx-out/sources/com/ea/nimble/NimbleConfiguration.java:52:                $SwitchMap$com$ea$nimble$NimbleConfiguration[NimbleConfiguration.CUSTOMIZED.ordinal()] = 4;
+jadx-out/sources/com/ea/nimble/NimbleConfiguration.java:56:                $SwitchMap$com$ea$nimble$NimbleConfiguration[NimbleConfiguration.MANUAL.ordinal()] = 5;
+jadx-out/sources/com/ea/nimble/NimbleConfiguration.java:64:        int i = AnonymousClass1.$SwitchMap$com$ea$nimble$NimbleConfiguration[ordinal()];
+jadx-out/sources/com/ea/nimble/ISynergyEnvironment.java:33:    String getSynergyDirectorServerUrl(NimbleConfiguration nimbleConfiguration);
+jadx-out/sources/com/ea/nimble/NimbleApplicationConfiguration.java:8:public class NimbleApplicationConfiguration {
+jadx-out/sources/com/ea/nimble/Base.java:38:    public static NimbleConfiguration getConfiguration() {
+jadx-out/sources/com/ea/nimble/Base.java:43:    public static void restartWithConfiguration(NimbleConfiguration nimbleConfiguration) {
+jadx-out/sources/com/ea/nimble/Base.java:47:            baseCoreActiveValidate.restartWithConfiguration(nimbleConfiguration);
+jadx-out/sources/com/ea/nimble/Persistence.java:589:        String str = path + File.separator + Global.NIMBLE_ID + File.separator + NimbleApplicationConfiguration.getConfigValueAsString(BaseCore.NIMBLE_SERVER_CONFIG) + File.separator + "persistence";
+jadx-out/sources/com/ea/nimble/BaseCore.java:25:    public static final String NIMBLE_SERVER_CONFIG = "com.ea.nimble.configuration";
+jadx-out/sources/com/ea/nimble/BaseCore.java:29:    protected NimbleConfiguration m_configuration;
+jadx-out/sources/com/ea/nimble/BaseCore.java:106:    public NimbleConfiguration getConfiguration() {
+jadx-out/sources/com/ea/nimble/BaseCore.java:259:    public void restartWithConfiguration(final NimbleConfiguration nimbleConfiguration) {
+jadx-out/sources/com/ea/nimble/BaseCore.java:264:        if (nimbleConfiguration == NimbleConfiguration.UNKNOWN) {
+jadx-out/sources/com/ea/nimble/BaseCore.java:265:            Log.Helper.LOGE(this, "Cannot restart nimble with unknown configuration", new Object[0]);
+jadx-out/sources/com/ea/nimble/BaseCore.java:280:                            BaseCore.this.m_configuration = nimbleConfiguration;
+jadx-out/sources/com/ea/nimble/BaseCore.java:372:        String configValueAsString = NimbleApplicationConfiguration.getConfigValueAsString(NIMBLE_SERVER_CONFIG);
+jadx-out/sources/com/ea/nimble/BaseCore.java:374:            NimbleConfiguration nimbleConfigurationFromName = NimbleConfiguration.fromName(configValueAsString);
+jadx-out/sources/com/ea/nimble/BaseCore.java:375:            this.m_configuration = nimbleConfigurationFromName;
+jadx-out/sources/com/ea/nimble/BaseCore.java:376:            if (nimbleConfigurationFromName != NimbleConfiguration.UNKNOWN && this.m_configuration != NimbleConfiguration.CUSTOMIZED) {
+jadx-out/sources/com/ea/nimble/BaseCore.java:380:        android.util.Log.e(Global.NIMBLE_ID, "WARNING! Cannot find valid NimbleConfiguration from AndroidManifest.xml");
+jadx-out/sources/com/ea/nimble/BaseCore.java:381:        this.m_configuration = NimbleConfiguration.LIVE;
+jadx-out/sources/com/ea/nimble/EnvironmentDataContainer.java:133:    public String getSynergyDirectorServerUrl(NimbleConfiguration nimbleConfiguration) {
+jadx-out/sources/com/ea/nimble/EnvironmentDataContainer.java:135:        return SynergyEnvironment.getComponent().getSynergyDirectorServerUrl(nimbleConfiguration);
+jadx-out/sources/com/ea/nimble/NimbleLocalNotificationsImpl.java:72:            if (NimbleApplicationConfiguration.configValueExists(Global.NOTIFICATION_CHANNEL_LOCAL_NOTIFICATION_ID_KEY)) {
+jadx-out/sources/com/ea/nimble/NimbleLocalNotificationsImpl.java:75:            if (NimbleApplicationConfiguration.configValueExists(Global.NOTIFICATION_CHANNEL_DEFAULT_NAME_KEY)) {
+jadx-out/sources/com/ea/nimble/NimbleLocalNotificationsImpl.java:76:                string = applicationContext.getResources().getString(NimbleApplicationConfiguration.getConfigValueAsInt(Global.NOTIFICATION_CHANNEL_DEFAULT_NAME_KEY));
+jadx-out/sources/com/ea/nimble/NimbleLocalNotificationsImpl.java:81:            if (NimbleApplicationConfiguration.configValueExists(Global.NOTIFICATION_CHANNEL_DEFAULT_DESCRIPTION_KEY)) {
+jadx-out/sources/com/ea/nimble/NimbleLocalNotificationsImpl.java:82:                notificationChannel.setDescription(applicationContext.getResources().getString(NimbleApplicationConfiguration.getConfigValueAsInt(Global.NOTIFICATION_CHANNEL_DEFAULT_DESCRIPTION_KEY)));
+jadx-out/sources/com/ea/nimble/NimbleLocalNotificationsImpl.java:160:            Notification.Builder autoCancel = new Notification.Builder(applicationContext, NimbleApplicationConfiguration.configValueExists(Global.NOTIFICATION_CHANNEL_LOCAL_NOTIFICATION_ID_KEY) ? NimbleApplicationConfiguration.getConfigValueAsString(Global.NOTIFICATION_CHANNEL_LOCAL_NOTIFICATION_ID_KEY) : Global.NOTIFICATION_CHANNEL_DEFAULT_ID).setContentTitle(str).setContentText(str2).setStyle(new Notification.BigTextStyle().bigText(str2)).setAutoCancel(true);
+jadx-out/sources/com/ea/nimble/NimbleLocalNotificationsImpl.java:302:                Notification.Builder visibility = new Notification.Builder(applicationContext, NimbleApplicationConfiguration.configValueExists(Global.NOTIFICATION_CHANNEL_LOCAL_NOTIFICATION_ID_KEY) ? NimbleApplicationConfiguration.getConfigValueAsString(Global.NOTIFICATION_CHANNEL_LOCAL_NOTIFICATION_ID_KEY) : Global.NOTIFICATION_CHANNEL_DEFAULT_ID).setContentTitle(str).setContentText(str2).setAutoCancel(true).setNumber(i).setVisibility(-1);
+jadx-out/sources/com/ea/nimble/LogImpl.java:176:                android.util.Log.i(Global.NIMBLE_ID, String.format("LOG: Default Log level(%d) without log configuration file", Integer.valueOf(level)));
+jadx-out/sources/com/ea/nimble/LogImpl.java:319:        return (this.m_core.getConfiguration() == NimbleConfiguration.INTEGRATION || this.m_core.getConfiguration() == NimbleConfiguration.STAGE) ? 100 : 500;
+jadx-out/sources/com/ea/nimble/LogImpl.java:412:            if (this.m_core.getConfiguration() == NimbleConfiguration.INTEGRATION || this.m_core.getConfiguration() == NimbleConfiguration.STAGE) {
+jadx-out/sources/com/ea/nimble/SynergyEnvironmentUpdater.java:138:            if (this.m_core.getConfiguration() == NimbleConfiguration.MANUAL) {
+jadx-out/sources/com/ea/nimble/SynergyEnvironmentUpdater.java:198:        static final /* synthetic */ int[] $SwitchMap$com$ea$nimble$NimbleConfiguration;
+jadx-out/sources/com/ea/nimble/SynergyEnvironmentUpdater.java:201:            int[] iArr = new int[NimbleConfiguration.values().length];
+jadx-out/sources/com/ea/nimble/SynergyEnvironmentUpdater.java:202:            $SwitchMap$com$ea$nimble$NimbleConfiguration = iArr;
+jadx-out/sources/com/ea/nimble/SynergyEnvironmentUpdater.java:204:                iArr[NimbleConfiguration.INTEGRATION.ordinal()] = 1;
+jadx-out/sources/com/ea/nimble/SynergyEnvironmentUpdater.java:208:                $SwitchMap$com$ea$nimble$NimbleConfiguration[NimbleConfiguration.STAGE.ordinal()] = 2;
+jadx-out/sources/com/ea/nimble/SynergyEnvironmentUpdater.java:212:                $SwitchMap$com$ea$nimble$NimbleConfiguration[NimbleConfiguration.LIVE.ordinal()] = 3;
+jadx-out/sources/com/ea/nimble/SynergyEnvironmentUpdater.java:216:                $SwitchMap$com$ea$nimble$NimbleConfiguration[NimbleConfiguration.MANUAL.ordinal()] = 4;
+jadx-out/sources/com/ea/nimble/SynergyEnvironmentUpdater.java:220:                $SwitchMap$com$ea$nimble$NimbleConfiguration[NimbleConfiguration.CUSTOMIZED.ordinal()] = 5;
+jadx-out/sources/com/ea/nimble/SynergyEnvironmentUpdater.java:228:        int i = AnonymousClass5.$SwitchMap$com$ea$nimble$NimbleConfiguration[this.m_core.getConfiguration().ordinal()];
+jadx-out/sources/com/ea/nimble/SynergyEnvironmentUpdater.java:235:        Log.Helper.LOGF(this, "Request for Synergy server environment name with unknown NimbleConfiguration %s", this.m_core.getConfiguration().toString());
+jadx-out/sources/com/ea/nimble/SynergyEnvironmentImpl.java:137:        static final /* synthetic */ int[] $SwitchMap$com$ea$nimble$NimbleConfiguration;
+jadx-out/sources/com/ea/nimble/SynergyEnvironmentImpl.java:140:            int[] iArr = new int[NimbleConfiguration.values().length];
+jadx-out/sources/com/ea/nimble/SynergyEnvironmentImpl.java:141:            $SwitchMap$com$ea$nimble$NimbleConfiguration = iArr;
+jadx-out/sources/com/ea/nimble/SynergyEnvironmentImpl.java:143:                iArr[NimbleConfiguration.INTEGRATION.ordinal()] = 1;
+jadx-out/sources/com/ea/nimble/SynergyEnvironmentImpl.java:147:                $SwitchMap$com$ea$nimble$NimbleConfiguration[NimbleConfiguration.STAGE.ordinal()] = 2;
+jadx-out/sources/com/ea/nimble/SynergyEnvironmentImpl.java:151:                $SwitchMap$com$ea$nimble$NimbleConfiguration[NimbleConfiguration.LIVE.ordinal()] = 3;
+jadx-out/sources/com/ea/nimble/SynergyEnvironmentImpl.java:155:                $SwitchMap$com$ea$nimble$NimbleConfiguration[NimbleConfiguration.CUSTOMIZED.ordinal()] = 4;
+jadx-out/sources/com/ea/nimble/SynergyEnvironmentImpl.java:162:    public String getSynergyDirectorServerUrl(NimbleConfiguration nimbleConfiguration) {
+jadx-out/sources/com/ea/nimble/SynergyEnvironmentImpl.java:164:        int i = AnonymousClass3.$SwitchMap$com$ea$nimble$NimbleConfiguration[nimbleConfiguration.ordinal()];
+jadx-out/sources/com/ea/nimble/SynergyEnvironmentImpl.java:177:        Log.Helper.LOGF(this, "Request for Synergy Director server URL with unknown NimbleConfiguration, %d.", nimbleConfiguration);
+jadx-out/sources/com/ea/nimble/ApplicationEnvironmentImpl.java:358:        return path + File.separator + Global.NIMBLE_ID + File.separator + this.m_core.getConfiguration().toString();
+jadx-out/sources/com/ea/nimble/ApplicationEnvironmentImpl.java:377:        return path + File.separator + Global.NIMBLE_ID + File.separator + this.m_core.getConfiguration().toString();
+jadx-out/sources/com/ea/nimble/ApplicationEnvironmentImpl.java:407:            if (NimbleApplicationConfiguration.configValueExists(OVERRIDE_BUNDLE_ID_KEY)) {
+jadx-out/sources/com/ea/nimble/ApplicationEnvironmentImpl.java:408:                String configValueAsString = NimbleApplicationConfiguration.getConfigValueAsString(OVERRIDE_BUNDLE_ID_KEY);
+jadx-out/sources/com/ea/nimble/ApplicationEnvironmentImpl.java:932:            String configValueAsString = NimbleApplicationConfiguration.getConfigValueAsString("com.ea.nimble.safetynet_api_key", null);
+jadx-out/sources/com/ea/nimble/NimbleAndroidGoogleServiceImpl.java:73:        if (this.mState == INimbleAndroidGoogleService.State.INITIALIZING && !NimbleApplicationConfiguration.configValueExists("com.google.android.gms.games.APP_ID")) {

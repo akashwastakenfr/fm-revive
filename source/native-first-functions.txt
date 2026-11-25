@@ -1,0 +1,199 @@
+
+libFIFAMobileNeon.so:	file format elf64-littleaarch64
+
+Disassembly of section .text:
+
+0000000000cf7000 <.text>:
+  cf70fc: f81e0ff3     	str	x19, [sp, #-0x20]!
+  cf7100: a9017bfd     	stp	x29, x30, [sp, #0x10]
+  cf7104: 910043fd     	add	x29, sp, #0x10
+  cf7108: 9003b6b3     	adrp	x19, 0x83cb000
+  cf710c: 394ae268     	ldrb	w8, [x19, #0x2b8]
+  cf7110: 37000148     	tbnz	w8, #0x0, 0xcf7138 <.text+0x138>
+  cf7114: d0002440     	adrp	x0, 0x1181000 <_ZdlPv+0x4b4>
+  cf7118: 9003b6a1     	adrp	x1, 0x83cb000
+  cf711c: d003b502     	adrp	x2, 0x8399000 <_ZN2EA6Nimble6Google26NimbleCppGoogleServiceImpl10methodSigsE+0xda80>
+  cf7120: 913fc000     	add	x0, x0, #0xff0
+  cf7124: 910ac021     	add	x1, x1, #0x2b0
+  cf7128: 91240042     	add	x2, x2, #0x900
+  cf712c: 97fff507     	bl	0xcf4548 <__cxa_atexit@plt>
+  cf7130: 320003e8     	orr	w8, wzr, #0x1
+  cf7134: f9015e68     	str	x8, [x19, #0x2b8]
+  cf7138: a9417bfd     	ldp	x29, x30, [sp, #0x10]
+  cf713c: f84207f3     	ldr	x19, [sp], #0x20
+  cf7140: d65f03c0     	ret
+  cf7144: f81d0ff5     	str	x21, [sp, #-0x30]!
+  cf7148: a9014ff4     	stp	x20, x19, [sp, #0x10]
+  cf714c: a9027bfd     	stp	x29, x30, [sp, #0x20]
+  cf7150: 910083fd     	add	x29, sp, #0x20
+  cf7154: 9003b6b4     	adrp	x20, 0x83cb000
+  cf7158: 394d2288     	ldrb	w8, [x20, #0x348]
+  cf715c: 370002a8     	tbnz	w8, #0x0, 0xcf71b0 <.text+0x1b0>
+  cf7160: 9003b6b3     	adrp	x19, 0x83cb000
+  cf7164: f002db41     	adrp	x1, 0x6862000
+  cf7168: 910b0273     	add	x19, x19, #0x2c0
+  cf716c: 9117b021     	add	x1, x1, #0x5ec
+  cf7170: 91006260     	add	x0, x19, #0x18
+  cf7174: 321003e3     	orr	w3, wzr, #0x10000
+  cf7178: aa0103e2     	mov	x2, x1
+  cf717c: 2a1f03e4     	mov	w4, wzr
+  cf7180: a9007e7f     	stp	xzr, xzr, [x19]
+  cf7184: f9000a7f     	str	xzr, [x19, #0x10]
+  cf7188: 9430f80d     	bl	0x19351bc <JNI_OnLoad+0x27ee08>
+  cf718c: f0002440     	adrp	x0, 0x1182000 <_ZdaPvSt11align_val_tRKSt9nothrow_t+0x3e4>
+  cf7190: d003b502     	adrp	x2, 0x8399000 <_ZN2EA6Nimble6Google26NimbleCppGoogleServiceImpl10methodSigsE+0xda80>
+  cf7194: 320003f5     	orr	w21, wzr, #0x1
+  cf7198: 91008000     	add	x0, x0, #0x20
+  cf719c: 91240042     	add	x2, x2, #0x900
+  cf71a0: aa1303e1     	mov	x1, x19
+  cf71a4: 39020275     	strb	w21, [x19, #0x80]
+  cf71a8: 97fff4e8     	bl	0xcf4548 <__cxa_atexit@plt>
+  cf71ac: f901a695     	str	x21, [x20, #0x348]
+  cf71b0: a9427bfd     	ldp	x29, x30, [sp, #0x20]
+  cf71b4: a9414ff4     	ldp	x20, x19, [sp, #0x10]
+  cf71b8: f84307f5     	ldr	x21, [sp], #0x30
+  cf71bc: d65f03c0     	ret
+  cf71c0: 9003b6a8     	adrp	x8, 0x83cb000
+  cf71c4: 394d8109     	ldrb	w9, [x8, #0x360]
+  cf71c8: 370000e9     	tbnz	w9, #0x0, 0xcf71e4 <.text+0x1e4>
+  cf71cc: 9003b6a9     	adrp	x9, 0x83cb000
+  cf71d0: 910d4129     	add	x9, x9, #0x350
+  cf71d4: 320003ea     	orr	w10, wzr, #0x1
+  cf71d8: 4e080d20     	dup	v0.2d, x9
+  cf71dc: 3d800120     	str	q0, [x9]
+  cf71e0: f901b10a     	str	x10, [x8, #0x360]
+  cf71e4: d65f03c0     	ret
+  cf71e8: 14122678     	b	0x1180bc8 <_ZdlPv+0x7c>
+  cf71ec: f81d0ff5     	str	x21, [sp, #-0x30]!
+  cf71f0: a9014ff4     	stp	x20, x19, [sp, #0x10]
+  cf71f4: a9027bfd     	stp	x29, x30, [sp, #0x20]
+  cf71f8: 910083fd     	add	x29, sp, #0x20
+  cf71fc: 32007be8     	orr	w8, wzr, #0x7fffffff
+  cf7200: d003b695     	adrp	x21, 0x83c9000 <curve448_precomputed_base+0x2e780>
+  cf7204: 4e080d00     	dup	v0.2d, x8
+  cf7208: 397e82a8     	ldrb	w8, [x21, #0xfa0]
+  cf720c: 9003b6b3     	adrp	x19, 0x83cb000
+  cf7210: 910e8273     	add	x19, x19, #0x3a0
+  cf7214: d003b689     	adrp	x9, 0x83c9000 <curve448_precomputed_base+0x2e780>
+  cf7218: a901fe7f     	stp	xzr, xzr, [x19, #0x18]
+  cf721c: 3d83e120     	str	q0, [x9, #0xf80]
+  cf7220: a902fe7f     	stp	xzr, xzr, [x19, #0x28]
+  cf7224: 37000148     	tbnz	w8, #0x0, 0xcf724c <.text+0x24c>
+  cf7228: d002db34     	adrp	x20, 0x685d000 <X509_STORE_load_locations+0x1028>
+  cf722c: 91093a94     	add	x20, x20, #0x24e
+  cf7230: aa1403e0     	mov	x0, x20
+  cf7234: 945b212a     	bl	0x23bf6dc <Java_com_ea_EAIO_EAIO_Shutdown+0x1a880>
+  cf7238: d003b688     	adrp	x8, 0x83c9000 <curve448_precomputed_base+0x2e780>
+  cf723c: 913e4108     	add	x8, x8, #0xf90
+  cf7240: 320003e9     	orr	w9, wzr, #0x1
+  cf7244: a9000114     	stp	x20, x0, [x8]
+  cf7248: f907d2a9     	str	x9, [x21, #0xfa0]
+  cf724c: f8008e7f     	str	xzr, [x19, #0x8]!
+  cf7250: b0002440     	adrp	x0, 0x1180000 <OPENSSL_cpuid_setup+0x45ded8>
+  cf7254: d003b502     	adrp	x2, 0x8399000 <_ZN2EA6Nimble6Google26NimbleCppGoogleServiceImpl10methodSigsE+0xda80>
+  cf7258: 912e2000     	add	x0, x0, #0xb88
+  cf725c: 91240042     	add	x2, x2, #0x900
+  cf7260: aa1303e1     	mov	x1, x19
+  cf7264: 97fff4b9     	bl	0xcf4548 <__cxa_atexit@plt>
+  cf7268: a9427bfd     	ldp	x29, x30, [sp, #0x20]
+  cf726c: a9414ff4     	ldp	x20, x19, [sp, #0x10]
+  cf7270: d003b688     	adrp	x8, 0x83c9000 <curve448_precomputed_base+0x2e780>
+  cf7274: 0f0167e0     	movi	v0.2s, #0x3f, lsl #24
+  cf7278: fd07d500     	str	d0, [x8, #0xfa8]
+  cf727c: f84307f5     	ldr	x21, [sp], #0x30
+  cf7280: d65f03c0     	ret
+  cf7284: f81d0ff5     	str	x21, [sp, #-0x30]!
+  cf7288: a9014ff4     	stp	x20, x19, [sp, #0x10]
+  cf728c: a9027bfd     	stp	x29, x30, [sp, #0x20]
+  cf7290: 910083fd     	add	x29, sp, #0x20
+  cf7294: 32007be8     	orr	w8, wzr, #0x7fffffff
+  cf7298: d003b695     	adrp	x21, 0x83c9000 <curve448_precomputed_base+0x2e780>
+  cf729c: 4e080d00     	dup	v0.2d, x8
+  cf72a0: 397e82a8     	ldrb	w8, [x21, #0xfa0]
+  cf72a4: 9003b6b3     	adrp	x19, 0x83cb000
+  cf72a8: 91110273     	add	x19, x19, #0x440
+  cf72ac: 9003b6a9     	adrp	x9, 0x83cb000
+  cf72b0: a901fe7f     	stp	xzr, xzr, [x19, #0x18]
+  cf72b4: 3d80f920     	str	q0, [x9, #0x3e0]
+  cf72b8: a902fe7f     	stp	xzr, xzr, [x19, #0x28]
+  cf72bc: 37000148     	tbnz	w8, #0x0, 0xcf72e4 <.text+0x2e4>
+  cf72c0: d002db34     	adrp	x20, 0x685d000 <X509_STORE_load_locations+0x1028>
+  cf72c4: 91093a94     	add	x20, x20, #0x24e
+  cf72c8: aa1403e0     	mov	x0, x20
+  cf72cc: 945b2104     	bl	0x23bf6dc <Java_com_ea_EAIO_EAIO_Shutdown+0x1a880>
+  cf72d0: d003b688     	adrp	x8, 0x83c9000 <curve448_precomputed_base+0x2e780>
+  cf72d4: 913e4108     	add	x8, x8, #0xf90
+  cf72d8: 320003e9     	orr	w9, wzr, #0x1
+  cf72dc: a9000114     	stp	x20, x0, [x8]
+  cf72e0: f907d2a9     	str	x9, [x21, #0xfa0]
+  cf72e4: f8008e7f     	str	xzr, [x19, #0x8]!
+  cf72e8: b0002440     	adrp	x0, 0x1180000 <OPENSSL_cpuid_setup+0x45ded8>
+  cf72ec: d003b502     	adrp	x2, 0x8399000 <_ZN2EA6Nimble6Google26NimbleCppGoogleServiceImpl10methodSigsE+0xda80>
+  cf72f0: 912e2000     	add	x0, x0, #0xb88
+  cf72f4: 91240042     	add	x2, x2, #0x900
+  cf72f8: aa1303e1     	mov	x1, x19
+  cf72fc: 97fff493     	bl	0xcf4548 <__cxa_atexit@plt>
+  cf7300: 6f03d7e1     	mvni	v1.4s, #0x7f, msl #16
+  cf7304: 9003b6a8     	adrp	x8, 0x83cb000
+  cf7308: 0f0167e0     	movi	v0.2s, #0x3f, lsl #24
+  cf730c: 320a23e9     	orr	w9, wzr, #0x7fc00000
+  cf7310: 4f026402     	movi	v2.4s, #0x40, lsl #24
+  cf7314: 3c858261     	stur	q1, [x19, #0x58]
+  cf7318: 4f03f701     	fmov	v1.4s, #1.50000000
+  cf731c: fd01f900     	str	d0, [x8, #0x3f0]
+  cf7320: 32091fe8     	orr	w8, wzr, #0x7f800000
+  cf7324: 3c888262     	stur	q2, [x19, #0x88]
+  cf7328: 4f07f602     	fmov	v2.4s, #-1.00000000
+  cf732c: 3c8a8261     	stur	q1, [x19, #0xa8]
+  cf7330: 4e040d21     	dup	v1.4s, w9
+  cf7334: 528bb1c9     	mov	w9, #0x5d8e             // =23950
+  cf7338: 72a80269     	movk	w9, #0x4013, lsl #16
+  cf733c: 3c8b8262     	stur	q2, [x19, #0xb8]
+  cf7340: 4e040d02     	dup	v2.4s, w8
+  cf7344: 528e4308     	mov	w8, #0x7218             // =29208
+  cf7348: 72a7e628     	movk	w8, #0x3f31, lsl #16
+  cf734c: 3c838261     	stur	q1, [x19, #0x38]
+  cf7350: 4e040d21     	dup	v1.4s, w9
+  cf7354: 528b7b29     	mov	w9, #0x5bd9             // =23513
+  cf7358: 72a7dbc9     	movk	w9, #0x3ede, lsl #16
+  cf735c: 3c8d8261     	stur	q1, [x19, #0xd8]
+  cf7360: 4e040d01     	dup	v1.4s, w8
+  cf7364: 3c8e8261     	stur	q1, [x19, #0xe8]
+  cf7368: 4e040d21     	dup	v1.4s, w9
+  cf736c: 52954769     	mov	w9, #0xaa3b             // =43579
+  cf7370: 4f0167e3     	movi	v3.4s, #0x3f, lsl #24
+  cf7374: 72a7f709     	movk	w9, #0x3fb8, lsl #16
+  cf7378: 4f03f600     	fmov	v0.4s, #1.00000000
+  cf737c: 3c898263     	stur	q3, [x19, #0x98]
+  cf7380: 4f046403     	movi	v3.4s, #0x80, lsl #24
+  cf7384: 91042268     	add	x8, x19, #0x108
+  cf7388: 3c8f8261     	stur	q1, [x19, #0xf8]
+  cf738c: 4e040d21     	dup	v1.4s, w9
+  cf7390: a906fe7f     	stp	xzr, xzr, [x19, #0x68]
+  cf7394: 3c878260     	stur	q0, [x19, #0x78]
+  cf7398: 3c8c8263     	stur	q3, [x19, #0xc8]
+  cf739c: 3c848262     	stur	q2, [x19, #0x48]
+  cf73a0: 3d800101     	str	q1, [x8]
+  cf73a4: 5281fb68     	mov	w8, #0xfdb              // =4059
+  cf73a8: 72a80928     	movk	w8, #0x4049, lsl #16
+  cf73ac: 91046269     	add	x9, x19, #0x118
+  cf73b0: 4e040d01     	dup	v1.4s, w8
+  cf73b4: 3d800121     	str	q1, [x9]
+  cf73b8: 5281fb69     	mov	w9, #0xfdb              // =4059
+  cf73bc: 72a81929     	movk	w9, #0x40c9, lsl #16
+  cf73c0: 9104a268     	add	x8, x19, #0x128
+  cf73c4: 4e040d21     	dup	v1.4s, w9
+  cf73c8: 3d800101     	str	q1, [x8]
+  cf73cc: 5281fb68     	mov	w8, #0xfdb              // =4059
+  cf73d0: 72a7f928     	movk	w8, #0x3fc9, lsl #16
+  cf73d4: 9104e269     	add	x9, x19, #0x138
+  cf73d8: 4e040d01     	dup	v1.4s, w8
+  cf73dc: 3d800121     	str	q1, [x9]
+  cf73e0: 5281fb69     	mov	w9, #0xfdb              // =4059
+  cf73e4: 72a7e929     	movk	w9, #0x3f49, lsl #16
+  cf73e8: 91052268     	add	x8, x19, #0x148
+  cf73ec: 4e040d21     	dup	v1.4s, w9
+  cf73f0: 3d800101     	str	q1, [x8]
+  cf73f4: 529f3068     	mov	w8, #0xf983             // =63875
+  cf73f8: 72a7d448     	movk	w8, #0x3ea2, lsl #16
+  cf73fc: 91056269     	add	x9, x19, #0x158

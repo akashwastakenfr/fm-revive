@@ -1,0 +1,2 @@
+jadx-out/resources/assets/Data/DynamicAssets/android/lang_BOOTSTRAP_EN_US.properties:13:Error_HostName_Message=Unable to access the configuration of current build. Please reboot the game and try again later.
+jadx-out/resources/assets/Data/DynamicAssets/android/zVd3kgOuqJ:13:Error_HostName_Message=Unable to access the configuration of current build. Please reboot the game and try again later.

@@ -1,0 +1,206 @@
+================================================================================
+FIFA MOBILE 23 REVIVAL — COMPLETE PROJECT LOG & ACHIEVEMENT RECORD
+================================================================================
+Date: 2026-11-24 (Asia/Dhaka, +06)
+Target Application: com.ea.gp.fifamobile (FIFA Mobile Android 18.1.03, Code 40214)
+Main Activity: com.ea.gp.fifamobile.FifaMainActivity
+Target SDK / Min SDK: 33 / 21
+Research Platform: Android Device + Termux + ADB + Python 3.14.10 + JADX 1.5.7
+Current Status: Stage 1 (HostName Config Fetch) RESOLVED on local server;
+                Stage 2 binary RPC batching (/g/game/batch) decoded live;
+                Error_RpcTimeout root cause confirmed (status=0 != 200);
+                dynamic batch decoder active; game/system/settings retry
+                investigation and main-menu / offline gameplay remain IN PROGRESS.
+
+================================================================================
+1. EVIDENCE CLASSIFICATION RULES
+================================================================================
+- Confirmed: Directly observed in APK files, JADX output, ELF headers/strings/
+  disassembly, ADB logcat traces, HTTP request captures, or server output.
+- Hypothesis / In Progress: Supported by static/runtime clues but not yet
+  verified end-to-end.
+- Unverified: Main-menu launch, post-settings RPCs, dynamic ContentService asset
+  loading, and offline match gameplay have not been achieved yet.
+
+================================================================================
+2. PHASE 1 — CLIENT ARCHIVE EXTRACTION & INVENTORY (COMPLETED)
+================================================================================
+[Confirmed]
+- Preserved original APKMirror APKM bundle:
+  com.ea.gp.fifamobile_18.1.03-40214_2arch_2dpi_20lang_7c08138b76a1d97094b1ab9d7df2f509_apkmirror.com.apkm
+  (31 files, ~371,486,219 bytes uncompressed).
+- Extracted core splits:
+  - base.apk (~98,326,164 bytes) — Java DEX, AndroidManifest, resources, assets
+  - arm64.apk (~139,260,667 bytes) — lib/arm64-v8a/libFIFAMobileNeon.so (~132 MB)
+  - armv7.apk (~132,608,773 bytes) — lib/armeabi-v7a/libFIFAMobileNeon.so
+- Preserved unmodified native backup as libFIFAMobileNeon.so.original.
+- Decompiled base.apk with JADX 1.5.7 into jadx-out/ (completed with 107
+  decompiler errors; Java sources, resources, and assets extracted).
+
+================================================================================
+3. PHASE 2 — JAVA, MANIFEST, ASSET & SYNERGY ARCHITECTURE MAPPING (COMPLETED)
+================================================================================
+[Confirmed]
+- AndroidManifest.xml metadata:
+  - com.ea.nimble.configuration = "live"
+  - NimbleBundleIdOverride = "com.ea.gp.fifamobile"
+- Packaged asset findings:
+  - assets/P4Info.ini (61 bytes):
+    AutomatedBuild|217490|2023_05_11|FMG-Release|100|dev-retail
+  - No config.ini, FIFAMobileApp.ini, or user.ini bundled locally.
+  - assets/Data/FIFA/icfiles.big is 24 KB (bootstrap-only client; full game
+    data/events/rosters were fetched dynamically via ContentService).
+  - res/xml/base_settings.xml contains http://127.0.0.1:8080/ and
+    chimble.synergy.local=true (R.xml.base_settings 0x7f150000 has 0 Java refs).
+  - assets/hostname_gametalk.txt contains 10.88.230.95 / 9876.
+  - Glu Central Services, Glu Analytics, Glu Ads, AWS Kinesis, AppLovin, and
+    Firebase (project fifa-17-mobile) configs documented.
+- Nimble / Synergy startup sequence reconstructed from
+  jadx-out/sources/com/ea/nimble/SynergyEnvironmentUpdater.java:
+  - LIVE Director: https://syn-dir.sn.eamobile.com
+  - Endpoints: /director/api/android/getDirectionByPackage,
+    /user/api/android/getDeviceID, /user/api/android/validateDeviceID,
+    /user/api/android/getAnonUid.
+
+================================================================================
+4. PHASE 3 — STARTUP BLOCKER #1 DIAGNOSIS & RESOLUTION (BREAKTHROUGH)
+================================================================================
+4.1 Original Blocker (Confirmed)
+- User-facing error:
+  "Retry: Unable to access the configuration of current build. Please reboot the
+   game and try again later.
+   OxOA082FFFF000000001001000000007FFFFFFFF"
+- Localization source confirmed in
+  jadx-out/resources/assets/Data/DynamicAssets/android/lang_BOOTSTRAP_EN_US.properties
+  (and zVd3kgOuqJ):
+  - Error_HostName_Title=Retry
+  - Error_HostName_Message=Unable to access the configuration of current build...
+  - Error_HostName_Disconnection_Message=Server not found...
+
+4.2 Runtime Trace (logs/fifa_pid_32634.txt, PID 32634)
+- Confirmed JNI_OnLoad success, libFIFAMobileNeon.so load, EA::Messaging::Server
+  init, cacert.pem loading, Nimble 1.55.1.5 init (log level 600), Glu/Kinesis
+  init, and HTTP.GEO_PUBLISH.OK (proving working TLS/internet on device).
+- Confirmed thread 861 called AndroidApiUtility.isAirplaneModeActive() and
+  GameActivity.java:1410 entered "Add to dialog lock:1..13" on every Retry tap.
+
+4.3 Native ConfigService Disassembly (libFIFAMobileNeon.so)
+- ELF64 AArch64, NDK r18b, stripped (.text 0x0cf7000 size 0x5b661a8,
+  .rodata 0x685d1b0 size 0xa3ca50, 13,785 .dynsym entries, 246,748 FDEs).
+- Mapped key JNI exports (runEntryPoint, PreInitNative, InitJNIClasses,
+  NativeAreWeInHomeMenu, NativeLocalizeString, JNI_OnLoad).
+- Built heuristic AArch64 ADRP+ADD scanner (source/find_config_refs.py).
+- Disassembled native ConfigService routines:
+  - 0x118ee00..0x118f1c4: builds
+    https://fm22-configserver.prod.fuel.ddns.ea.com/config/Android/<version>/config.ini?<uint64>
+  - 0x118f484..0x118f800: builds fallback
+    https://fm22-configserver.prod.fuel.ddns.ea.com/config/Android/default/config.ini?<uint64>
+  - 0x118f8e8..0x118fa54: EAIO INI load and key-value parsing into [this + 0x25c0].
+  - 0x118fac0..0x118fc24: client_version_override lookup & version fallback.
+- Mapped all Stage 2 & Stage 3 relative RPC endpoints in .rodata (system/*,
+  content/*, versionupdate/*, user/*, loginbonus/*, unlockkey/*, stats/*,
+  telemetry/*, trademarket/*, leaderboard2/*) and Haxe service metadata
+  (ConfigService, SettingsService, UserService, ContentService,
+  AuthenticationServiceGlobal).
+
+4.4 Resolution of Startup Blocker #1 (Confirmed Breakthrough)
+- Built independent local Python HTTP server (server/main.py v0.4.0) on
+  http://127.0.0.1:8080 with request capture, sensitive-field redaction,
+  dynamic /config/Android/*/config.ini routing, binary response support, and
+  routes.json (passing 21/21 synthetic tests in test_server.py).
+- Patched client build successfully bypassed Error_HostName_Message and
+  connected directly to local server http://127.0.0.1:8080.
+- Confirmed live client requests captured on 2026-11-24:
+  - GET /config/ -> 200
+  - GET /config/Android/18.1.03/config.ini -> 200 (served default-config.ini
+    with hostName=http://127.0.0.1:8080, current_contents_version=18.1.03,
+    current_server_version=18.1.03)
+- Client progressed past bootstrap config fetch into video playback and Stage 2
+  RPC communication.
+
+================================================================================
+5. PHASE 4 — STAGE 2 BINARY RPC BATCHING & TIMEOUT DIAGNOSIS (2026-11-24)
+================================================================================
+5.1 New Blocker Observed
+- Client no longer shows Error_HostName_Message. Instead, over the intro
+  video, it displays:
+  "SERVER CONNECTION ISSUE : Your connection with EA servers has been lost.
+   Please make sure you have a reliable network connection and try again. [OK]"
+- Confirmed localization origin in lang_BOOTSTRAP_EN_US.properties (lines 33-34):
+  - Error_RpcTimeout_Header=SERVER CONNECTION ISSUE
+  - Error_RpcTimeout_Message=Your connection with EA servers has been lost...
+
+5.2 Wire Protocol Discovery (Confirmed from Captures)
+- Client does NOT call individual JSON endpoints first; it batches Stage 2 RPCs
+  to:
+  - POST /g/game/batch
+  - User-Agent: ProtoHttp 1.3/DS 15.1.3.0.4 (Android)
+  - Content-Type: application/x.binary
+  - Accept: application/x.binary
+- First captured request (53 bytes) contained protobuf-group framing wrapping
+  "game/system/settings".
+- Server routes.json was initially returning static batch-empty.bin
+  (hex: 0b 08 00 12 00 0c), causing ~13 repeated POST /g/game/batch retries over
+  ~11 seconds until Error_RpcTimeout triggered.
+
+5.3 Native Protobuf & Batch Handler Reversing (libFIFAMobileNeon.so.original)
+- Located Haxe protobuf RPC models in .rodata:
+  - com.ea.fifa.model.rpc.Batch (endpoint, payload, id, isRetry, checksum)
+  - com.ea.fifa.model.rpc.BatchCollection (batchCollectionList, batchId)
+  - com.ea.fifa.model.rpc.BatchResponse (status, payload, checksum)
+  - com.ea.fifa.model.rpc.BatchResponseCollection (batchResponseCollectionList)
+  - com.playfish.kiwi.model.system.SystemSettingsRequest (preRelease)
+  - com.playfish.kiwi.model.system.SystemSettings (settingsList)
+  - com.playfish.kiwi.model.system.SystemSetting (name, value)
+- Disassembled BatchResponse & BatchResponseCollection (0x4b13a00..0x4b16600):
+  - BatchResponseCollection: field 1 = group (0x0b..0x0c) of BatchResponse.
+  - BatchResponse: field 1 (varint) = status, field 2 (bytes) = payload,
+    field 3 (double on wire) = checksum.
+- Disassembled SystemSetting::writeTo (0x4e55cd8..0x4e55d18) & SystemSettings
+  (0x4e572dc..0x4e57658):
+  - SystemSettings: field 1 = group (0x0b..0x0c) of SystemSetting.
+  - SystemSetting: field 1 (string) = name, field 2 (string) = value.
+- Disassembled live batch response handler (0x56f28cc..0x56f3600):
+  - Confirmed at 0x56f30b8..0x56f30c8: BatchResponse.get_status() is compared
+    with 0xc8 (200). Because batch-empty.bin sent status=0, every response
+    branched to 0x56f3228 (RPC failure/retry path) -> Error_RpcTimeout.
+  - Confirmed BatchResponse.get_checksum() (0x4b138fc) is not called in the
+    0x56f3024..0x56f3360 response loop.
+- Disassembled payload decoder 0x56f38b4..0x56f3af8 & 0x4e69bcc..0x4e69e0c &
+  static init 0x5707720:
+  - Confirmed [0x886a928] initializes to 5 (0x5707724).
+  - On first BatchResponse with status=200 (while [0x886a910] is null),
+    0x56f3a24..0x56f3af8 strips a 14-byte trailer (2*5 + 4 bytes) off the end
+    of BatchResponse.payload, reads 4 seed bytes into 0x4e68fdc, caches
+    [0x886a910], and passes the stripped ByteArray into 0x4e69bcc.
+
+5.4 Dynamic /g/game/batch Decoder & Responder Implemented (2026-11-24)
+- Created server/modules/batch.py:
+  - Full pure-Python protobuf wire parser (varints, bytes/strings, groups,
+    32/64-bit) for BatchCollection.
+  - SystemSettings protobuf encoder + BatchResponseCollection encoder
+    (status=200, 14-byte first-response trailer handling).
+  - Automatic session reset on GET /config/Android/*/config.ini.
+- Updated server/main.py (backup preserved at server/main.py.bak) to capture
+  raw body_hex and batch_decoded JSON, and serve dynamic binary responses for
+  POST /g/game/batch.
+- Verified live client batch decoding in Termux:
+  - [BATCH] id=1 endpoints=['game/system/settings']
+  - [BATCH] id=2 endpoints=['game/system/settings']
+  - [BATCH] id=3 endpoints=['game/telemetry/logNonSessionEvent',
+    'game/system/settings', 'game/telemetry/logNonSessionEvent']
+  - [BATCH] id=4 endpoints=['game/system/settings']
+
+================================================================================
+6. CURRENT OPEN ITEMS & NEXT DIAGNOSTIC TARGETS
+================================================================================
+1. Determine why game/system/settings continued retrying across id=1..4:
+   - Inspect 0x4e69820..0x4e69920 (byte decoder 0x4e69764) and 0x4c91760
+     (group vs message writer).
+   - Inspect batch_decoded in latest captures (is_retry, payload_hex) and live
+     game PID logcat to see if Settings parsing succeeded or rejected keys.
+2. Implement protobuf response payloads for subsequent Stage 2/3 RPCs as they
+   appear (telemetry, system/getServerTime, content/init, user/*, etc.).
+3. Address dynamic ContentService packages/manifests beyond bootstrap assets.
+4. Verify main-menu entry and offline gameplay once Stage 2 RPCs complete.
+================================================================================

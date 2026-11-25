@@ -1,0 +1,2 @@
+BatchCollection.mergeFrom: ADRP=0xf4fd78 ADD=0xf4fd84 reg=x9
+BatchCollection.writeTo: ADRP=0xf4fd80 ADD=0xf4fd88 reg=x10

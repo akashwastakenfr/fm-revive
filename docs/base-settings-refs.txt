@@ -1,0 +1,15 @@
+jadx-out/sources/com/ea/gp/fifamobile/R.java-3726-    }
+jadx-out/sources/com/ea/gp/fifamobile/R.java-3727-
+jadx-out/sources/com/ea/gp/fifamobile/R.java-3728-    public static final class xml {
+jadx-out/sources/com/ea/gp/fifamobile/R.java:3729:        public static final int base_settings = 0x7f150000;
+jadx-out/sources/com/ea/gp/fifamobile/R.java-3730-        public static final int components = 0x7f150001;
+jadx-out/sources/com/ea/gp/fifamobile/R.java-3731-        public static final int filepaths = 0x7f150002;
+jadx-out/sources/com/ea/gp/fifamobile/R.java-3732-        public static final int network_security_config = 0x7f150003;
+--
+jadx-out/sources/com/ea/nimble/identity/AuthenticatorBase.java-415-                        Log.Helper.LOGVS(AuthenticatorBase.this.TAG, "Ready to request server auth code for serverId %s and scope %s", str, str2);
+jadx-out/sources/com/ea/nimble/identity/AuthenticatorBase.java-416-                        URL url = null;
+jadx-out/sources/com/ea/nimble/identity/AuthenticatorBase.java-417-                        try {
+jadx-out/sources/com/ea/nimble/identity/AuthenticatorBase.java:418:                            String str3 = String.format(AuthenticatorBase.URL_TEMPLATE_REQUEST_SERVER_AUTHENTICATION_OAUTH_CODE, AuthenticatorBase.this.getConfiguration().getConnectServerUrl(), str, AuthenticatorBase.this.m_token.getAccessToken());
+jadx-out/sources/com/ea/nimble/identity/AuthenticatorBase.java-419-                            if (Utility.validString(str2)) {
+jadx-out/sources/com/ea/nimble/identity/AuthenticatorBase.java-420-                                str3 = String.format("%s&scope=%s", str3, str2);
+jadx-out/sources/com/ea/nimble/identity/AuthenticatorBase.java-421-                            }

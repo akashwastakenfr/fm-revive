@@ -1,0 +1,27 @@
+FIFA MOBILE 23 REVIVAL — CONFIRMED ARCHITECTURE & STATUS REPORT
+Date: 2026-11-23
+Target: com.ea.gp.fifamobile v18.1.03 (40214), ARM64 libFIFAMobileNeon.so
+
+1. CONFIRMED STARTUP FAILURE CAUSE
+- Error dialog: "Retry: Unable to access the configuration of current build. Please reboot the game and try again later. OxOA082FFFF000000001001000000007FFFFFFFF"
+- Origin: Error_HostName_Title / Error_HostName_Message in assets/Data/DynamicAssets/android/lang_BOOTSTRAP_EN_US.properties.
+- Runtime trace (logs/fifa_pid_32634.txt):
+  Thread 861 (ConfigService) fails HostName fetch -> calls AndroidApiUtility.isAirplaneModeActive() -> blocks in GameActivity (osiris-android: Add to dialog lock).
+- Cause: fm22-configserver.prod.fuel.ddns.ea.com is offline, and no local .ini fallback is packaged in base.apk (only assets/P4Info.ini).
+
+2. CONFIRMED CLIENT INITIALIZATION & RPC ARCHITECTURE
+- Java/Android: FifaMainActivity + GameActivity (osiris-android), Nimble 1.55.1.5 (LIVE, log level 600), GluCentralServices 5.0.0.
+  (res/xml/base_settings.xml has no Java references in jadx-out/sources/.)
+- Stage 1 (Native ConfigService):
+  - 0x118ee00..0x118f1c4: https://fm22-configserver.prod.fuel.ddns.ea.com/config/Android/<version>/config.ini?<uint64>
+  - 0x118f484..0x118f800: https://fm22-configserver.prod.fuel.ddns.ea.com/config/Android/default/config.ini?<uint64>
+  - 0x118f8e8..0x118fa54: INI parser -> [this + 0x25c0] (hostName, alternateHostName, current_contents_version, current_server_version, client_version_override, replay_version, etc.).
+- Stage 2 (System/Content RPCs relative to hostName):
+  - system/getServerTime, system/settings, system/loc/get-client-overrides, system/session/create, system/ksession/create, system/settings/authenticated, content/init, content/records, versionupdate/version.
+- Stage 3 (User/Gameplay RPCs):
+  - user/age/get, user/login, user/load, user/settings, user/roster, user/inventory.
+
+3. INDEPENDENT LOCAL TEST HARNESS (server/main.py v0.3.1)
+- Serves JSON and plain-text/INI synthetic fixtures on 127.0.0.1:8080 with request capture and credential redaction.
+- Configured test routes: /health, /project, /test/ping, /test/config, /config/Android/default/config.ini, /system/getServerTime, /system/settings, /system/loc/get-client-overrides, /content/init.
+- Note: Actual original-client integration, main-menu launch, and offline gameplay remain unverified.

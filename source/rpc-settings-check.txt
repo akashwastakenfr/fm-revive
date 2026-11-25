@@ -1,0 +1,27 @@
+=== ErrorCode_Impl_.boot ===
+
+libFIFAMobileNeon.so.original:	file format elf64-littleaarch64
+
+Disassembly of section .text:
+
+0000000000d22128 <OPENSSL_cpuid_setup>:
+  f4ee30: b002cdec     	adrp	x12, 0x690b000
+  f4ee34: 4e181da1     	mov	v1.d[1], x13
+  f4ee38: 4e181d05     	mov	v5.d[1], x8
+  f4ee3c: 9108598c     	add	x12, x12, #0x216
+  f4ee40: 9003c0eb     	adrp	x11, 0x876a000 <_ZN6gluads15EAAnzuNativeAds10mDebugModeE+0x24b756>
+  f4ee44: ad001521     	stp	q1, q5, [x9]
+  f4ee48: f002dcea     	adrp	x10, 0x6aed000
+  f4ee4c: 4ea01c01     	mov	v1.16b, v0.16b
+  f4ee50: 912d816b     	add	x11, x11, #0xb60
+  f4ee54: 9109cd4a     	add	x10, x10, #0x273
+  f4ee58: 4e181d81     	mov	v1.d[1], x12
+  f4ee5c: 4e181d06     	mov	v6.d[1], x8
+  f4ee60: b002cdee     	adrp	x14, 0x690b000
+  f4ee64: ad001961     	stp	q1, q6, [x11]
+  f4ee68: 9e670141     	fmov	d1, x10
+  f4ee6c: b003c0ea     	adrp	x10, 0x876b000 <_ZN6gluads15EAAnzuNativeAds10mDebugModeE+0x24c756>
+=== Settings .hx classes ===
+6ac06a8 com/ea/fifa/model/bracket/BracketSettings.hx
+6add194 com/ea/fifa/model/league/LeagueSettings.hx
+6ae06cd com/ea/fifa/model/league/LeagueTournamentSettings.hx

@@ -1,0 +1,382 @@
+package com.ea.nimble;
+
+import android.content.Context;
+import android.content.res.Resources;
+import android.preference.PreferenceManager;
+import com.facebook.gamingservices.cloudgaming.internal.SDKConstants;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+import org.json.JSONObject;
+
+/* JADX INFO: loaded from: classes.dex */
+class SynergyEnvironmentUpdater implements LogSource {
+    private static final int GET_ANONUID_MAX_RETRY_ATTEMPTS = 3;
+    private static final int GET_DIRECTION_MAX_RETRY_ATTEMPTS = 3;
+    private static final int GET_EADEVICEID_MAX_RETRY_ATTEMPTS = 3;
+    private static final int SYNERGY_DIRECTOR_RESPONSE_ERROR_CODE_SERVERS_FULL = -70002;
+    private static final int SYNERGY_USER_VALIDATE_EADEVICEID_RESPONSE_ERROR_CODE_CLEAR_CLIENT_CACHED_EADEVICEID = -20094;
+    private static final int SYNERGY_USER_VALIDATE_EADEVICEID_RESPONSE_ERROR_CODE_VALIDATION_FAILED = -20093;
+    private static final int VALIDATE_EADEVICEID_MAX_RETRY_ATTEMPTS = 3;
+    private BaseCore m_core;
+    private long m_getAnonUIDRetryCount;
+    private long m_getDirectionRetryCount;
+    private EnvironmentDataContainer m_environmentForSynergyStartUp = new EnvironmentDataContainer();
+    private CompletionCallback m_completionCallback = null;
+    private EnvironmentDataContainer m_previousValidEnvironmentData = null;
+    private SynergyNetworkConnectionHandle m_synergyNetworkConnectionHandle = null;
+    private long m_validateEADeviceIDRetryCount = 0;
+    private long m_getEADeviceIDRetryCount = 0;
+
+    interface CompletionCallback {
+        void callback(Exception exc);
+    }
+
+    @Override // com.ea.nimble.LogSource
+    public String getLogSourceTitle() {
+        return "SynergyEnv";
+    }
+
+    static /* synthetic */ long access$1108(SynergyEnvironmentUpdater synergyEnvironmentUpdater) {
+        long j = synergyEnvironmentUpdater.m_validateEADeviceIDRetryCount;
+        synergyEnvironmentUpdater.m_validateEADeviceIDRetryCount = 1 + j;
+        return j;
+    }
+
+    static /* synthetic */ long access$1308(SynergyEnvironmentUpdater synergyEnvironmentUpdater) {
+        long j = synergyEnvironmentUpdater.m_getAnonUIDRetryCount;
+        synergyEnvironmentUpdater.m_getAnonUIDRetryCount = 1 + j;
+        return j;
+    }
+
+    static /* synthetic */ long access$408(SynergyEnvironmentUpdater synergyEnvironmentUpdater) {
+        long j = synergyEnvironmentUpdater.m_getDirectionRetryCount;
+        synergyEnvironmentUpdater.m_getDirectionRetryCount = 1 + j;
+        return j;
+    }
+
+    static /* synthetic */ long access$808(SynergyEnvironmentUpdater synergyEnvironmentUpdater) {
+        long j = synergyEnvironmentUpdater.m_getEADeviceIDRetryCount;
+        synergyEnvironmentUpdater.m_getEADeviceIDRetryCount = 1 + j;
+        return j;
+    }
+
+    SynergyEnvironmentUpdater(BaseCore baseCore) {
+        this.m_core = baseCore;
+    }
+
+    EnvironmentDataContainer getEnvironmentDataContainer() {
+        return this.m_environmentForSynergyStartUp;
+    }
+
+    public void startSynergyStartupSequence(EnvironmentDataContainer environmentDataContainer, CompletionCallback completionCallback) {
+        Log.Helper.LOGPUBLICFUNC(this);
+        this.m_completionCallback = completionCallback;
+        this.m_previousValidEnvironmentData = environmentDataContainer;
+        if (Network.getComponent().getStatus() != Network.Status.OK) {
+            onStartUpSequenceFinished(new Error(Error.Code.NETWORK_NO_CONNECTION, "Device is not connected to Wifi or wireless."));
+        } else {
+            callSynergyGetDirection();
+        }
+    }
+
+    public void cancel() {
+        Log.Helper.LOGPUBLICFUNC(this);
+        SynergyNetworkConnectionHandle synergyNetworkConnectionHandle = this.m_synergyNetworkConnectionHandle;
+        if (synergyNetworkConnectionHandle != null) {
+            Log.Helper.LOGD(this, "Canceling network connection.", new Object[0]);
+            synergyNetworkConnectionHandle.cancel();
+            this.m_synergyNetworkConnectionHandle = null;
+        }
+        onStartUpSequenceFinished(new Error(Error.Code.NETWORK_OPERATION_CANCELLED, "Synergy startup sequence canceled."));
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public void loadConfig(Map<String, Object> map) {
+        this.m_environmentForSynergyStartUp.setMostRecentDirectorResponseTimestamp(Long.valueOf(System.currentTimeMillis()));
+        this.m_environmentForSynergyStartUp.setGetDirectionResponseDictionary(map);
+        List<Map> list = (List) this.m_environmentForSynergyStartUp.getGetDirectionResponseDictionary().get("serverData");
+        this.m_environmentForSynergyStartUp.setServerUrls(new HashMap());
+        if (list != null) {
+            for (Map map2 : list) {
+                this.m_environmentForSynergyStartUp.getServerUrls().put((String) map2.get(SDKConstants.PARAM_KEY), (String) map2.get("value"));
+            }
+        }
+        if (this.m_environmentForSynergyStartUp.getServerUrls().size() == 0) {
+            onStartUpSequenceFinished(new Error(Error.Code.NOT_AVAILABLE, "No Synergy server URLs available."));
+            return;
+        }
+        EnvironmentDataContainer environmentDataContainer = this.m_previousValidEnvironmentData;
+        if (environmentDataContainer != null && Utility.validString(environmentDataContainer.getEADeviceId())) {
+            callSynergyValidateEADeviceId(this.m_previousValidEnvironmentData.getEADeviceId());
+        } else {
+            callSynergyGetEADeviceId();
+        }
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public void callSynergyGetDirection() {
+        Log.Helper.LOGPUBLICFUNC(this);
+        String applicationBundleId = ApplicationEnvironment.getComponent().getApplicationBundleId();
+        String deviceString = ApplicationEnvironment.getComponent().getDeviceString();
+        String deviceCodename = ApplicationEnvironment.getComponent().getDeviceCodename();
+        String deviceManufacturer = ApplicationEnvironment.getComponent().getDeviceManufacturer();
+        String deviceModel = ApplicationEnvironment.getComponent().getDeviceModel();
+        String deviceBrand = ApplicationEnvironment.getComponent().getDeviceBrand();
+        String deviceFingerprint = ApplicationEnvironment.getComponent().getDeviceFingerprint();
+        if (!Utility.validString(applicationBundleId)) {
+            Log.Helper.LOGE(this, "GETDIRECTION bundleId is invalid", new Object[0]);
+            onStartUpSequenceFinished(new Error(Error.Code.INVALID_ARGUMENT, "bundleId is invalid"));
+            return;
+        }
+        if (!Utility.validString(deviceString)) {
+            Log.Helper.LOGE(this, "GETDIRECTION deviceString is invalid", new Object[0]);
+            onStartUpSequenceFinished(new Error(Error.Code.INVALID_ARGUMENT, "deviceString is invalid"));
+            return;
+        }
+        try {
+            if (this.m_core.getConfiguration() == NimbleConfiguration.MANUAL) {
+                try {
+                    Context applicationContext = ApplicationEnvironment.getComponent().getApplicationContext();
+                    Resources resources = applicationContext.getResources();
+                    loadConfig(Utility.convertJSONObjectToMap(new JSONObject(Utility.readStringFromStream(resources.openRawResource(resources.getIdentifier("synergy_direction", "raw", applicationContext.getPackageName()))))));
+                    return;
+                } catch (Exception e) {
+                    Log.Helper.LOGF(this, "Error loading synergy_direction.json: " + e.toString(), new Object[0]);
+                    return;
+                }
+            }
+            HashMap map = new HashMap();
+            map.put("packageId", applicationBundleId);
+            map.put("deviceString", deviceString);
+            map.put(ApplicationEnvironment.NIMBLE_PARAMETER_DEVICE_CODENAME, deviceCodename);
+            map.put("manufacturer", deviceManufacturer);
+            map.put("model", deviceModel);
+            map.put("brand", deviceBrand);
+            map.put("fingerprint", deviceFingerprint);
+            map.put("serverEnvironment", getSynergyServerEnvironmentName());
+            map.put("sdkVersion", Global.NIMBLE_RELEASE_VERSION);
+            map.put("apiVer", "1.0.0");
+            this.m_synergyNetworkConnectionHandle = SynergyNetwork.getComponent().sendGetRequest(this.m_environmentForSynergyStartUp.getSynergyDirectorServerUrl(Base.getConfiguration()), "/director/api/android/getDirectionByPackage", map, new SynergyNetworkConnectionCallback() { // from class: com.ea.nimble.SynergyEnvironmentUpdater.1
+                @Override // com.ea.nimble.SynergyNetworkConnectionCallback
+                public void callback(SynergyNetworkConnectionHandle synergyNetworkConnectionHandle) {
+                    Log.Helper.LOGD(this, "GETDIRECTION FINISHED", new Object[0]);
+                    SynergyEnvironmentUpdater.this.m_synergyNetworkConnectionHandle = null;
+                    Exception error = synergyNetworkConnectionHandle.getResponse().getError();
+                    if (error == null) {
+                        SynergyEnvironmentUpdater.this.loadConfig(synergyNetworkConnectionHandle.getResponse().getJsonData());
+                        return;
+                    }
+                    if (!(error instanceof SynergyServerError)) {
+                        boolean zIsTimeoutError = SynergyEnvironmentUpdater.this.isTimeoutError(error);
+                        if (zIsTimeoutError || SynergyEnvironmentUpdater.this.m_getDirectionRetryCount >= 3) {
+                            SynergyEnvironmentUpdater.this.m_getDirectionRetryCount = 0L;
+                            if (zIsTimeoutError) {
+                                SynergyEnvironmentUpdater.this.onStartUpSequenceFinished(new Error(Error.Code.SYNERGY_GET_DIRECTION_TIMEOUT, "Synergy /getDirectionByPackage request timed out.", error));
+                                return;
+                            } else {
+                                SynergyEnvironmentUpdater.this.onStartUpSequenceFinished(error);
+                                return;
+                            }
+                        }
+                        SynergyEnvironmentUpdater.access$408(SynergyEnvironmentUpdater.this);
+                        Log.Helper.LOGD(this, "GetDirection, call failed. Making retry attempt number %d.", Long.valueOf(SynergyEnvironmentUpdater.this.m_getDirectionRetryCount));
+                        SynergyEnvironmentUpdater.this.callSynergyGetDirection();
+                        return;
+                    }
+                    if (((SynergyServerError) error).isError(SynergyEnvironmentUpdater.SYNERGY_DIRECTOR_RESPONSE_ERROR_CODE_SERVERS_FULL)) {
+                        SynergyEnvironmentUpdater.this.onStartUpSequenceFinished(new Error(Error.Code.SYNERGY_SERVER_FULL, "Synergy ServerUnavailable signal received.", error));
+                    }
+                }
+            });
+        } catch (Throwable unused) {
+        }
+    }
+
+    /* JADX INFO: renamed from: com.ea.nimble.SynergyEnvironmentUpdater$5, reason: invalid class name */
+    static /* synthetic */ class AnonymousClass5 {
+        static final /* synthetic */ int[] $SwitchMap$com$ea$nimble$NimbleConfiguration;
+
+        static {
+            int[] iArr = new int[NimbleConfiguration.values().length];
+            $SwitchMap$com$ea$nimble$NimbleConfiguration = iArr;
+            try {
+                iArr[NimbleConfiguration.INTEGRATION.ordinal()] = 1;
+            } catch (NoSuchFieldError unused) {
+            }
+            try {
+                $SwitchMap$com$ea$nimble$NimbleConfiguration[NimbleConfiguration.STAGE.ordinal()] = 2;
+            } catch (NoSuchFieldError unused2) {
+            }
+            try {
+                $SwitchMap$com$ea$nimble$NimbleConfiguration[NimbleConfiguration.LIVE.ordinal()] = 3;
+            } catch (NoSuchFieldError unused3) {
+            }
+            try {
+                $SwitchMap$com$ea$nimble$NimbleConfiguration[NimbleConfiguration.MANUAL.ordinal()] = 4;
+            } catch (NoSuchFieldError unused4) {
+            }
+            try {
+                $SwitchMap$com$ea$nimble$NimbleConfiguration[NimbleConfiguration.CUSTOMIZED.ordinal()] = 5;
+            } catch (NoSuchFieldError unused5) {
+            }
+        }
+    }
+
+    private String getSynergyServerEnvironmentName() {
+        Log.Helper.LOGFUNC(this);
+        int i = AnonymousClass5.$SwitchMap$com$ea$nimble$NimbleConfiguration[this.m_core.getConfiguration().ordinal()];
+        if (i == 1 || i == 2 || i == 3 || i == 4) {
+            return this.m_core.getConfiguration().toString();
+        }
+        if (i == 5) {
+            return PreferenceManager.getDefaultSharedPreferences(ApplicationEnvironment.getComponent().getApplicationContext()).getString("NimbleCustomizedSynergyServerEnvironmentName", "live");
+        }
+        Log.Helper.LOGF(this, "Request for Synergy server environment name with unknown NimbleConfiguration %s", this.m_core.getConfiguration().toString());
+        return "live";
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public void callSynergyGetEADeviceId() {
+        Log.Helper.LOGFUNC(this);
+        EnvironmentDataContainer environmentDataContainer = this.m_environmentForSynergyStartUp;
+        HashMap map = new HashMap();
+        map.put("apiVer", "1.0.0");
+        map.put("hwId", environmentDataContainer.getEAHardwareId());
+        map.put(ApplicationEnvironment.NIMBLE_PARAMETER_ANDROID_ID, ApplicationEnvironment.getComponent().getAndroidId());
+        this.m_synergyNetworkConnectionHandle = SynergyNetwork.getComponent().sendGetRequest(this.m_environmentForSynergyStartUp.getServerUrlWithKey(SynergyEnvironment.SERVER_URL_KEY_SYNERGY_USER), "/user/api/android/getDeviceID", map, new SynergyNetworkConnectionCallback() { // from class: com.ea.nimble.SynergyEnvironmentUpdater.2
+            @Override // com.ea.nimble.SynergyNetworkConnectionCallback
+            public void callback(SynergyNetworkConnectionHandle synergyNetworkConnectionHandle) {
+                SynergyEnvironmentUpdater.this.m_synergyNetworkConnectionHandle = null;
+                Exception error = synergyNetworkConnectionHandle.getResponse().getError();
+                if (error != null) {
+                    if (SynergyEnvironmentUpdater.this.isTimeoutError(error) || SynergyEnvironmentUpdater.this.m_getEADeviceIDRetryCount >= 3) {
+                        SynergyEnvironmentUpdater.this.m_getEADeviceIDRetryCount = 0L;
+                        Log.Helper.LOGD(this, "GetEADeviceID Error (%s)", synergyNetworkConnectionHandle.getResponse().getError());
+                        SynergyEnvironmentUpdater.this.onStartUpSequenceFinished(new Error(Error.Code.SYNERGY_GET_EA_DEVICE_ID_FAILURE, "GetEADevideId call failed", synergyNetworkConnectionHandle.getResponse().getError()));
+                        return;
+                    } else {
+                        SynergyEnvironmentUpdater.access$808(SynergyEnvironmentUpdater.this);
+                        Log.Helper.LOGD(this, "GetEADeviceID, call failed. Making retry attempt number %d.", Long.valueOf(SynergyEnvironmentUpdater.this.m_getEADeviceIDRetryCount));
+                        SynergyEnvironmentUpdater.this.callSynergyGetEADeviceId();
+                        return;
+                    }
+                }
+                Log.Helper.LOGD(this, "GetEADeviceID Success", new Object[0]);
+                SynergyEnvironmentUpdater.this.m_environmentForSynergyStartUp.setEADeviceId((String) synergyNetworkConnectionHandle.getResponse().getJsonData().get("deviceId"));
+                SynergyEnvironmentUpdater.this.callSynergyGetAnonUid();
+            }
+        });
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public void callSynergyValidateEADeviceId(final String str) {
+        Log.Helper.LOGFUNC(this);
+        EnvironmentDataContainer environmentDataContainer = this.m_environmentForSynergyStartUp;
+        HashMap map = new HashMap();
+        map.put("apiVer", "1.0.0");
+        map.put("hwId", environmentDataContainer.getEAHardwareId());
+        map.put(ApplicationEnvironment.NIMBLE_PARAMETER_ANDROID_ID, ApplicationEnvironment.getComponent().getAndroidId());
+        map.put("eadeviceid", str);
+        this.m_synergyNetworkConnectionHandle = SynergyNetwork.getComponent().sendGetRequest(this.m_environmentForSynergyStartUp.getServerUrlWithKey(SynergyEnvironment.SERVER_URL_KEY_SYNERGY_USER), "/user/api/android/validateDeviceID", map, new SynergyNetworkConnectionCallback() { // from class: com.ea.nimble.SynergyEnvironmentUpdater.3
+            @Override // com.ea.nimble.SynergyNetworkConnectionCallback
+            public void callback(SynergyNetworkConnectionHandle synergyNetworkConnectionHandle) {
+                SynergyEnvironmentUpdater.this.m_synergyNetworkConnectionHandle = null;
+                Exception error = synergyNetworkConnectionHandle.getResponse().getError();
+                if (error == null) {
+                    Log.Helper.LOGD(this, "ValidateEADeviceID Success", new Object[0]);
+                    SynergyEnvironmentUpdater.this.m_environmentForSynergyStartUp.setEADeviceId((String) synergyNetworkConnectionHandle.getResponse().getJsonData().get("deviceId"));
+                    SynergyEnvironmentUpdater.this.callSynergyGetAnonUid();
+                    return;
+                }
+                Log.Helper.LOGD(this, "ValidateEADeviceID Error (%s)", error);
+                if (error instanceof SynergyServerError) {
+                    SynergyServerError synergyServerError = (SynergyServerError) error;
+                    if (synergyServerError.isError(SynergyEnvironmentUpdater.SYNERGY_USER_VALIDATE_EADEVICEID_RESPONSE_ERROR_CODE_CLEAR_CLIENT_CACHED_EADEVICEID)) {
+                        if (SynergyEnvironmentUpdater.this.m_previousValidEnvironmentData != null) {
+                            SynergyEnvironmentUpdater.this.m_previousValidEnvironmentData.setEADeviceId(null);
+                        }
+                        Log.Helper.LOGD(this, "ValidateEADeviceID, Server signal received to delete cached EA Device ID. Making request to get a new EA Device ID.", new Object[0]);
+                        SynergyEnvironmentUpdater.this.callSynergyGetEADeviceId();
+                        return;
+                    }
+                    if (synergyServerError.isError(SynergyEnvironmentUpdater.SYNERGY_USER_VALIDATE_EADEVICEID_RESPONSE_ERROR_CODE_VALIDATION_FAILED)) {
+                        Log.Helper.LOGD(this, "ValidateEADeviceID, EADeviceID validation failed. Making request to get a new EA Device ID.", new Object[0]);
+                        SynergyEnvironmentUpdater.this.callSynergyGetEADeviceId();
+                        return;
+                    }
+                }
+                if (SynergyEnvironmentUpdater.this.isTimeoutError(error) || SynergyEnvironmentUpdater.this.m_validateEADeviceIDRetryCount >= 3) {
+                    SynergyEnvironmentUpdater.this.m_validateEADeviceIDRetryCount = 0L;
+                    SynergyEnvironmentUpdater.this.onStartUpSequenceFinished(new Error(Error.Code.SYNERGY_GET_EA_DEVICE_ID_FAILURE, "ValidateEADeviceId call failed", error));
+                } else {
+                    SynergyEnvironmentUpdater.access$1108(SynergyEnvironmentUpdater.this);
+                    Log.Helper.LOGD(this, "ValidateEADeviceID, call failed. Making retry attempt number %d.", Long.valueOf(SynergyEnvironmentUpdater.this.m_validateEADeviceIDRetryCount));
+                    SynergyEnvironmentUpdater.this.callSynergyValidateEADeviceId(str);
+                }
+            }
+        });
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public void callSynergyGetAnonUid() {
+        Log.Helper.LOGFUNC(this);
+        String anonymousSynergyId = SynergyIdManager.getComponent().getAnonymousSynergyId();
+        if (anonymousSynergyId != null) {
+            Log.Helper.LOGD(this, "Not getting anonymous ID from Synergy since it was loaded from persistence", new Object[0]);
+            this.m_environmentForSynergyStartUp.setSynergyAnonymousId(anonymousSynergyId);
+            onStartUpSequenceFinished(null);
+            return;
+        }
+        HashMap map = new HashMap();
+        map.put("apiVer", "1.0.0");
+        map.put("updatePriority", "false");
+        map.put("hwId", this.m_environmentForSynergyStartUp.getEAHardwareId());
+        if (Utility.validString(this.m_environmentForSynergyStartUp.getEADeviceId())) {
+            map.put("eadeviceid", this.m_environmentForSynergyStartUp.getEADeviceId());
+            this.m_synergyNetworkConnectionHandle = SynergyNetwork.getComponent().sendGetRequest(this.m_environmentForSynergyStartUp.getServerUrlWithKey(SynergyEnvironment.SERVER_URL_KEY_SYNERGY_USER), "/user/api/android/getAnonUid", map, new SynergyNetworkConnectionCallback() { // from class: com.ea.nimble.SynergyEnvironmentUpdater.4
+                @Override // com.ea.nimble.SynergyNetworkConnectionCallback
+                public void callback(SynergyNetworkConnectionHandle synergyNetworkConnectionHandle) {
+                    SynergyEnvironmentUpdater.this.m_synergyNetworkConnectionHandle = null;
+                    Exception error = synergyNetworkConnectionHandle.getResponse().getError();
+                    if (error != null) {
+                        if (SynergyEnvironmentUpdater.this.isTimeoutError(error) || SynergyEnvironmentUpdater.this.m_getAnonUIDRetryCount >= 3) {
+                            SynergyEnvironmentUpdater.this.m_getAnonUIDRetryCount = 0L;
+                            Log.Helper.LOGD(this, "GETANON Error, (%s)", synergyNetworkConnectionHandle.getResponse().getError().toString());
+                            SynergyEnvironmentUpdater.this.onStartUpSequenceFinished(new Error(Error.Code.SYNERGY_GET_ANONYMOUS_ID_FAILURE, "Synergy \"get anonymous id\" call failed.", error));
+                            return;
+                        } else {
+                            SynergyEnvironmentUpdater.access$1308(SynergyEnvironmentUpdater.this);
+                            Log.Helper.LOGD(this, "GetAnonUid, call failed. Making retry attempt number %d.", Long.valueOf(SynergyEnvironmentUpdater.this.m_getAnonUIDRetryCount));
+                            SynergyEnvironmentUpdater.this.callSynergyGetAnonUid();
+                            return;
+                        }
+                    }
+                    Log.Helper.LOGD(this, "GETANON Success", new Object[0]);
+                    SynergyEnvironmentUpdater.this.m_environmentForSynergyStartUp.setSynergyAnonymousId(synergyNetworkConnectionHandle.getResponse().getJsonData().get("uid").toString());
+                    SynergyEnvironmentUpdater.this.onStartUpSequenceFinished(null);
+                }
+            });
+        } else {
+            Log.Helper.LOGE(this, "getAnonUid got an invalid EA Device ID.", new Object[0]);
+            onStartUpSequenceFinished(new Error(Error.Code.INVALID_ARGUMENT, "EA Device ID is invalid"));
+        }
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public void onStartUpSequenceFinished(Exception exc) {
+        Log.Helper.LOGFUNC(this);
+        CompletionCallback completionCallback = this.m_completionCallback;
+        if (completionCallback != null) {
+            completionCallback.callback(exc);
+        } else {
+            Log.Helper.LOGW(this, "Startup sequence finished, but no completion callback set.", new Object[0]);
+        }
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public boolean isTimeoutError(Exception exc) {
+        Log.Helper.LOGFUNC(this);
+        return (exc instanceof Error) && ((Error) exc).isError(Error.Code.NETWORK_TIMEOUT);
+    }
+}

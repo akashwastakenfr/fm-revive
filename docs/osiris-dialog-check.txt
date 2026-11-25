@@ -1,0 +1,57 @@
+jadx-out/sources/com/ea/gp/fifamobile/AndroidApiUtility.java-78-    public static boolean isAirplaneModeActive() {
+jadx-out/sources/com/ea/gp/fifamobile/AndroidApiUtility.java-79-        boolean z = false;
+jadx-out/sources/com/ea/gp/fifamobile/AndroidApiUtility.java-80-        try {
+jadx-out/sources/com/ea/gp/fifamobile/AndroidApiUtility.java:81:            if (Build.VERSION.SDK_INT < 17 ? 1 == Settings.System.getInt(FifaMainActivity.instance.getContentResolver(), "airplane_mode_on") : 1 == Settings.System.getInt(FifaMainActivity.instance.getContentResolver(), "airplane_mode_on")) {
+jadx-out/sources/com/ea/gp/fifamobile/AndroidApiUtility.java-82-                z = true;
+jadx-out/sources/com/ea/gp/fifamobile/AndroidApiUtility.java-83-            }
+jadx-out/sources/com/ea/gp/fifamobile/AndroidApiUtility.java-84-        } catch (Settings.SettingNotFoundException unused) {
+--
+jadx-out/sources/com/ea/ironmonkey/GameActivity.java-1407-            }
+jadx-out/sources/com/ea/ironmonkey/GameActivity.java-1408-        };
+jadx-out/sources/com/ea/ironmonkey/GameActivity.java-1409-        synchronized (this.mLock) {
+jadx-out/sources/com/ea/ironmonkey/GameActivity.java:1410:            Log.v("osiris-android", "Add to dialog lock:" + requestID);
+jadx-out/sources/com/ea/ironmonkey/GameActivity.java-1411-            this.mLock.add(Integer.valueOf(requestID));
+jadx-out/sources/com/ea/ironmonkey/GameActivity.java-1412-            runOnUiThread(runnable);
+jadx-out/sources/com/ea/ironmonkey/GameActivity.java-1413-            while (this.mLock.contains(Integer.valueOf(requestID))) {
+--
+jadx-out/sources/com/fyber/inneractive/sdk/serverapi/a.java-112-            return null;
+jadx-out/sources/com/fyber/inneractive/sdk/serverapi/a.java-113-        }
+jadx-out/sources/com/fyber/inneractive/sdk/serverapi/a.java-114-        try {
+jadx-out/sources/com/fyber/inneractive/sdk/serverapi/a.java:115:            return Boolean.valueOf(Settings.System.getInt(n.f2380a.getContentResolver(), "airplane_mode_on", 0) != 0);
+jadx-out/sources/com/fyber/inneractive/sdk/serverapi/a.java-116-        } catch (Throwable unused) {
+jadx-out/sources/com/fyber/inneractive/sdk/serverapi/a.java-117-            return null;
+jadx-out/sources/com/fyber/inneractive/sdk/serverapi/a.java-118-        }
+--
+jadx-out/sources/com/google/android/gms/ads/internal/util/zzac.java-115-    }
+jadx-out/sources/com/google/android/gms/ads/internal/util/zzac.java-116-
+jadx-out/sources/com/google/android/gms/ads/internal/util/zzac.java-117-    public int zzf(ContentResolver contentResolver) {
+jadx-out/sources/com/google/android/gms/ads/internal/util/zzac.java:118:        return Settings.System.getInt(contentResolver, "airplane_mode_on", 0);
+jadx-out/sources/com/google/android/gms/ads/internal/util/zzac.java-119-    }
+jadx-out/sources/com/google/android/gms/ads/internal/util/zzac.java-120-
+jadx-out/sources/com/google/android/gms/ads/internal/util/zzac.java-121-    public boolean zzg(View view) {
+--
+jadx-out/sources/com/google/android/gms/ads/internal/util/zzu.java-78-
+jadx-out/sources/com/google/android/gms/ads/internal/util/zzu.java-79-    @Override // com.google.android.gms.ads.internal.util.zzac
+jadx-out/sources/com/google/android/gms/ads/internal/util/zzu.java-80-    public final int zzf(ContentResolver contentResolver) {
+jadx-out/sources/com/google/android/gms/ads/internal/util/zzu.java:81:        return Settings.Global.getInt(contentResolver, "airplane_mode_on", 0);
+jadx-out/sources/com/google/android/gms/ads/internal/util/zzu.java-82-    }
+jadx-out/sources/com/google/android/gms/ads/internal/util/zzu.java-83-
+jadx-out/sources/com/google/android/gms/ads/internal/util/zzu.java-84-    @Override // com.google.android.gms.ads.internal.util.zzac
+--
+jadx-out/sources/com/ironsource/environment/h.java-371-
+jadx-out/sources/com/ironsource/environment/h.java-372-    public static boolean g(Context context) {
+jadx-out/sources/com/ironsource/environment/h.java-373-        try {
+jadx-out/sources/com/ironsource/environment/h.java:374:            return Build.VERSION.SDK_INT >= 17 && Settings.System.getInt(context.getContentResolver(), "airplane_mode_on", 0) != 0;
+jadx-out/sources/com/ironsource/environment/h.java-375-        } catch (Exception e2) {
+jadx-out/sources/com/ironsource/environment/h.java-376-            e2.printStackTrace();
+jadx-out/sources/com/ironsource/environment/h.java-377-        }
+--
+jadx-out/sources/io/bidmachine/utils/DeviceUtils.java-130-        try {
+jadx-out/sources/io/bidmachine/utils/DeviceUtils.java-131-            ContentResolver contentResolver = context.getContentResolver();
+jadx-out/sources/io/bidmachine/utils/DeviceUtils.java-132-            if (Build.VERSION.SDK_INT >= 17) {
+jadx-out/sources/io/bidmachine/utils/DeviceUtils.java:133:                i = Settings.Global.getInt(contentResolver, "airplane_mode_on");
+jadx-out/sources/io/bidmachine/utils/DeviceUtils.java-134-            } else {
+jadx-out/sources/io/bidmachine/utils/DeviceUtils.java:135:                i = Settings.System.getInt(contentResolver, "airplane_mode_on");
+jadx-out/sources/io/bidmachine/utils/DeviceUtils.java-136-            }
+jadx-out/sources/io/bidmachine/utils/DeviceUtils.java-137-            return Boolean.valueOf(i != 0);
+jadx-out/sources/io/bidmachine/utils/DeviceUtils.java-138-        } catch (Exception unused) {

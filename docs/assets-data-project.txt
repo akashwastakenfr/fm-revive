@@ -1,0 +1,8 @@
+jadx-out/resources/assets/Data/:
+total 7
+drwxrwx---. 3 root everybody 3488 Nov 23 14:26 DynamicAssets
+drwxrwx---. 3 root everybody 3488 Nov 23 14:37 FIFA
+
+jadx-out/resources/assets/project/:
+total 4
+drwxrwx---. 3 root everybody 3488 Nov 23 14:27 published

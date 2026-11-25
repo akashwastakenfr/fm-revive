@@ -1,0 +1,202 @@
+jadx-out/sources/com/ea/nimble/tracking/NimbleTrackingImplBase.java-469-        android.util.Log.e(Global.NIMBLE_ID, "WARNING! Cannot find valid TrackingEnable from AndroidManifest.xml");
+jadx-out/sources/com/ea/nimble/tracking/NimbleTrackingImplBase.java-470-    }
+jadx-out/sources/com/ea/nimble/tracking/NimbleTrackingImplBase.java-471-
+jadx-out/sources/com/ea/nimble/tracking/NimbleTrackingImplBase.java-472-    protected void addObserverForSynergyEnvironmentUpdateFinished() {
+jadx-out/sources/com/ea/nimble/tracking/NimbleTrackingImplBase.java-473-        Log.Helper.LOGFUNC(this);
+jadx-out/sources/com/ea/nimble/tracking/NimbleTrackingImplBase.java-474-        if (this.m_receiver == null) {
+jadx-out/sources/com/ea/nimble/tracking/NimbleTrackingImplBase.java-475-            StartupRequestsFinishedReceiver startupRequestsFinishedReceiver = new StartupRequestsFinishedReceiver();
+jadx-out/sources/com/ea/nimble/tracking/NimbleTrackingImplBase.java-476-            this.m_receiver = startupRequestsFinishedReceiver;
+jadx-out/sources/com/ea/nimble/tracking/NimbleTrackingImplBase.java:477:            Utility.registerReceiver(SynergyEnvironment.NOTIFICATION_STARTUP_REQUESTS_FINISHED, startupRequestsFinishedReceiver);
+jadx-out/sources/com/ea/nimble/tracking/NimbleTrackingImplBase.java-478-        }
+jadx-out/sources/com/ea/nimble/tracking/NimbleTrackingImplBase.java-479-    }
+jadx-out/sources/com/ea/nimble/tracking/NimbleTrackingImplBase.java-480-
+jadx-out/sources/com/ea/nimble/tracking/NimbleTrackingImplBase.java-481-    /* JADX INFO: Access modifiers changed from: private */
+jadx-out/sources/com/ea/nimble/tracking/NimbleTrackingImplBase.java-482-    public void onStartupRequestsFinished(Intent intent) {
+jadx-out/sources/com/ea/nimble/tracking/NimbleTrackingImplBase.java-483-        Log.Helper.LOGFUNC(this);
+jadx-out/sources/com/ea/nimble/tracking/NimbleTrackingImplBase.java-484-        if (intent.getExtras() == null || !intent.getExtras().getString("result").equals("1")) {
+jadx-out/sources/com/ea/nimble/tracking/NimbleTrackingImplBase.java-485-            return;
+--
+jadx-out/sources/com/ea/nimble/tracking/NimbleTrackingImplBase.java-552-
+jadx-out/sources/com/ea/nimble/tracking/NimbleTrackingImplBase.java-553-    private class StartupRequestsFinishedReceiver extends BroadcastReceiver {
+jadx-out/sources/com/ea/nimble/tracking/NimbleTrackingImplBase.java-554-        private StartupRequestsFinishedReceiver() {
+jadx-out/sources/com/ea/nimble/tracking/NimbleTrackingImplBase.java-555-        }
+jadx-out/sources/com/ea/nimble/tracking/NimbleTrackingImplBase.java-556-
+jadx-out/sources/com/ea/nimble/tracking/NimbleTrackingImplBase.java-557-        @Override // android.content.BroadcastReceiver
+jadx-out/sources/com/ea/nimble/tracking/NimbleTrackingImplBase.java-558-        public void onReceive(Context context, final Intent intent) {
+jadx-out/sources/com/ea/nimble/tracking/NimbleTrackingImplBase.java-559-            Log.Helper.LOGPUBLICFUNC(this);
+jadx-out/sources/com/ea/nimble/tracking/NimbleTrackingImplBase.java:560:            if (intent.getAction().equals(SynergyEnvironment.NOTIFICATION_STARTUP_REQUESTS_FINISHED)) {
+jadx-out/sources/com/ea/nimble/tracking/NimbleTrackingImplBase.java-561-                NimbleTrackingImplBase.this.updateFeatureDisableState();
+jadx-out/sources/com/ea/nimble/tracking/NimbleTrackingImplBase.java-562-                NimbleTrackingImplBase.this.m_threadManager.runInWorkerThread(new Runnable() { // from class: com.ea.nimble.tracking.NimbleTrackingImplBase.StartupRequestsFinishedReceiver.1
+jadx-out/sources/com/ea/nimble/tracking/NimbleTrackingImplBase.java-563-                    @Override // java.lang.Runnable
+jadx-out/sources/com/ea/nimble/tracking/NimbleTrackingImplBase.java-564-                    public void run() {
+jadx-out/sources/com/ea/nimble/tracking/NimbleTrackingImplBase.java-565-                        Log.Helper.LOGPUBLICFUNC(this);
+jadx-out/sources/com/ea/nimble/tracking/NimbleTrackingImplBase.java-566-                        NimbleTrackingImplBase.this.onStartupRequestsFinished(intent);
+jadx-out/sources/com/ea/nimble/tracking/NimbleTrackingImplBase.java-567-                    }
+jadx-out/sources/com/ea/nimble/tracking/NimbleTrackingImplBase.java-568-                });
+--
+jadx-out/sources/com/ea/nimble/identity/NimbleIdentityConfig.java-85-    }
+jadx-out/sources/com/ea/nimble/identity/NimbleIdentityConfig.java-86-
+jadx-out/sources/com/ea/nimble/identity/NimbleIdentityConfig.java-87-    void initialize() {
+jadx-out/sources/com/ea/nimble/identity/NimbleIdentityConfig.java-88-        this.m_ready = false;
+jadx-out/sources/com/ea/nimble/identity/NimbleIdentityConfig.java-89-        this.m_autoRefresh = false;
+jadx-out/sources/com/ea/nimble/identity/NimbleIdentityConfig.java-90-        if (SynergyEnvironment.getComponent().isDataAvailable()) {
+jadx-out/sources/com/ea/nimble/identity/NimbleIdentityConfig.java-91-            onUpdate();
+jadx-out/sources/com/ea/nimble/identity/NimbleIdentityConfig.java-92-        }
+jadx-out/sources/com/ea/nimble/identity/NimbleIdentityConfig.java:93:        Utility.registerReceiver(SynergyEnvironment.NOTIFICATION_STARTUP_ENVIRONMENT_DATA_CHANGED, this.m_receiver);
+jadx-out/sources/com/ea/nimble/identity/NimbleIdentityConfig.java-94-        Log.Helper.LOGV(this, "Configuration initiailized", new Object[0]);
+jadx-out/sources/com/ea/nimble/identity/NimbleIdentityConfig.java-95-    }
+jadx-out/sources/com/ea/nimble/identity/NimbleIdentityConfig.java-96-
+jadx-out/sources/com/ea/nimble/identity/NimbleIdentityConfig.java-97-    void uninitialize() {
+jadx-out/sources/com/ea/nimble/identity/NimbleIdentityConfig.java-98-        Utility.unregisterReceiver(this.m_receiver);
+jadx-out/sources/com/ea/nimble/identity/NimbleIdentityConfig.java-99-    }
+jadx-out/sources/com/ea/nimble/identity/NimbleIdentityConfig.java-100-
+jadx-out/sources/com/ea/nimble/identity/NimbleIdentityConfig.java-101-    /* JADX INFO: Access modifiers changed from: private */
+--
+jadx-out/sources/com/ea/nimble/pushtng/PushNotificationImpl.java-121-        Persistence persistenceForNimbleComponent = PersistenceService.getPersistenceForNimbleComponent(getComponentId(), Persistence.Storage.CACHE);
+jadx-out/sources/com/ea/nimble/pushtng/PushNotificationImpl.java-122-        if (persistenceForNimbleComponent != null) {
+jadx-out/sources/com/ea/nimble/pushtng/PushNotificationImpl.java-123-            this.disabled = (Boolean) persistenceForNimbleComponent.getValue("disabled");
+jadx-out/sources/com/ea/nimble/pushtng/PushNotificationImpl.java-124-        }
+jadx-out/sources/com/ea/nimble/pushtng/PushNotificationImpl.java-125-        ISynergyEnvironment component = SynergyEnvironment.getComponent();
+jadx-out/sources/com/ea/nimble/pushtng/PushNotificationImpl.java-126-        if (component.getProductId() != null && component.getSellId() != null && component.getServerUrlWithKey(SynergyEnvironment.SERVER_URL_KEY_ENS) != null) {
+jadx-out/sources/com/ea/nimble/pushtng/PushNotificationImpl.java-127-            onComponentSetupCompleted();
+jadx-out/sources/com/ea/nimble/pushtng/PushNotificationImpl.java-128-        } else {
+jadx-out/sources/com/ea/nimble/pushtng/PushNotificationImpl.java:129:            Utility.registerReceiver(SynergyEnvironment.NOTIFICATION_STARTUP_REQUESTS_FINISHED, new BroadcastReceiver() { // from class: com.ea.nimble.pushtng.PushNotificationImpl.2
+jadx-out/sources/com/ea/nimble/pushtng/PushNotificationImpl.java-130-                @Override // android.content.BroadcastReceiver
+jadx-out/sources/com/ea/nimble/pushtng/PushNotificationImpl.java-131-                public void onReceive(Context context, Intent intent) {
+jadx-out/sources/com/ea/nimble/pushtng/PushNotificationImpl.java-132-                    Bundle extras = intent.getExtras();
+jadx-out/sources/com/ea/nimble/pushtng/PushNotificationImpl.java-133-                    if (extras == null || !extras.getString("result").equals("1")) {
+jadx-out/sources/com/ea/nimble/pushtng/PushNotificationImpl.java-134-                        return;
+jadx-out/sources/com/ea/nimble/pushtng/PushNotificationImpl.java-135-                    }
+jadx-out/sources/com/ea/nimble/pushtng/PushNotificationImpl.java-136-                    PushNotificationImpl.this.onComponentSetupCompleted();
+jadx-out/sources/com/ea/nimble/pushtng/PushNotificationImpl.java-137-                }
+--
+jadx-out/sources/com/ea/nimble/SynergyEnvironment.java-1-package com.ea.nimble;
+jadx-out/sources/com/ea/nimble/SynergyEnvironment.java-2-
+jadx-out/sources/com/ea/nimble/SynergyEnvironment.java-3-/* JADX INFO: loaded from: classes.dex */
+jadx-out/sources/com/ea/nimble/SynergyEnvironment.java-4-public class SynergyEnvironment {
+jadx-out/sources/com/ea/nimble/SynergyEnvironment.java-5-    public static final String COMPONENT_ID = "com.ea.nimble.synergyEnvironment";
+jadx-out/sources/com/ea/nimble/SynergyEnvironment.java-6-    public static final int INVALID_INT_VALUE = -1;
+jadx-out/sources/com/ea/nimble/SynergyEnvironment.java-7-    public static final String NOTIFICATION_APP_VERSION_CHECK_FINISHED = "nimble.environment.notification.app_version_check_finished";
+jadx-out/sources/com/ea/nimble/SynergyEnvironment.java-8-    public static final String NOTIFICATION_RESTORED_FROM_PERSISTENT = "nimble.environment.notification.restored_from_persistent";
+jadx-out/sources/com/ea/nimble/SynergyEnvironment.java:9:    public static final String NOTIFICATION_STARTUP_ENVIRONMENT_DATA_CHANGED = "nimble.environment.notification.startup_environment_data_changed";
+jadx-out/sources/com/ea/nimble/SynergyEnvironment.java:10:    public static final String NOTIFICATION_STARTUP_REQUESTS_FINISHED = "nimble.environment.notification.startup_requests_finished";
+jadx-out/sources/com/ea/nimble/SynergyEnvironment.java:11:    public static final String NOTIFICATION_STARTUP_REQUESTS_STARTED = "nimble.environment.notification.startup_requests_started";
+jadx-out/sources/com/ea/nimble/SynergyEnvironment.java-12-    public static final String SERVER_URL_KEY_ANTELOPE_GROUPS = "antelope.groups.url";
+jadx-out/sources/com/ea/nimble/SynergyEnvironment.java-13-    public static final String SERVER_URL_KEY_ANTELOPE_REAL_TIME_MESSAGING = "antelope.rtm.host";
+jadx-out/sources/com/ea/nimble/SynergyEnvironment.java-14-    public static final String SERVER_URL_KEY_ANTELOPE_REST_MESSAGING = "antelope.rtm.url";
+jadx-out/sources/com/ea/nimble/SynergyEnvironment.java-15-    public static final String SERVER_URL_KEY_ARUBA = "aruba.url";
+jadx-out/sources/com/ea/nimble/SynergyEnvironment.java-16-    public static final String SERVER_URL_KEY_EADP_FRIENDS_HOST = "eadp.friends.host";
+jadx-out/sources/com/ea/nimble/SynergyEnvironment.java-17-    public static final String SERVER_URL_KEY_ENS = "ens.url";
+jadx-out/sources/com/ea/nimble/SynergyEnvironment.java-18-    public static final String SERVER_URL_KEY_IDENTITY_CONNECT = "nexus.connect";
+jadx-out/sources/com/ea/nimble/SynergyEnvironment.java-19-    public static final String SERVER_URL_KEY_IDENTITY_PORTAL = "nexus.portal";
+--
+jadx-out/sources/com/ea/nimble/SynergyIdManagerImpl.java-49-    private void wakeup() {
+jadx-out/sources/com/ea/nimble/SynergyIdManagerImpl.java-50-        restoreFromPersistent();
+jadx-out/sources/com/ea/nimble/SynergyIdManagerImpl.java-51-        if (!Utility.validString(this.m_anonymousSynergyId)) {
+jadx-out/sources/com/ea/nimble/SynergyIdManagerImpl.java-52-            setAnonymousSynergyId(SynergyEnvironment.getComponent().getSynergyId());
+jadx-out/sources/com/ea/nimble/SynergyIdManagerImpl.java-53-        }
+jadx-out/sources/com/ea/nimble/SynergyIdManagerImpl.java-54-        if (!Utility.validString(this.m_currentSynergyId)) {
+jadx-out/sources/com/ea/nimble/SynergyIdManagerImpl.java-55-            setCurrentSynergyId(this.m_anonymousSynergyId);
+jadx-out/sources/com/ea/nimble/SynergyIdManagerImpl.java-56-        }
+jadx-out/sources/com/ea/nimble/SynergyIdManagerImpl.java:57:        Utility.registerReceiver(SynergyEnvironment.NOTIFICATION_STARTUP_REQUESTS_FINISHED, this.m_receiver);
+jadx-out/sources/com/ea/nimble/SynergyIdManagerImpl.java-58-    }
+jadx-out/sources/com/ea/nimble/SynergyIdManagerImpl.java-59-
+jadx-out/sources/com/ea/nimble/SynergyIdManagerImpl.java-60-    private void sleep() {
+jadx-out/sources/com/ea/nimble/SynergyIdManagerImpl.java-61-        Utility.unregisterReceiver(this.m_receiver);
+jadx-out/sources/com/ea/nimble/SynergyIdManagerImpl.java-62-        saveDataToPersistent();
+jadx-out/sources/com/ea/nimble/SynergyIdManagerImpl.java-63-    }
+jadx-out/sources/com/ea/nimble/SynergyIdManagerImpl.java-64-
+jadx-out/sources/com/ea/nimble/SynergyIdManagerImpl.java-65-    @Override // com.ea.nimble.Component
+--
+jadx-out/sources/com/ea/nimble/SynergyNetworkImpl.java-61-                    while (it2.hasNext()) {
+jadx-out/sources/com/ea/nimble/SynergyNetworkImpl.java-62-                        ((SynergyNetworkConnection) it2.next()).errorPriorToSend(new Error(Error.Code.SYNERGY_ENVIRONMENT_UPDATE_FAILURE, "Failed to retrieve Environment data from Synergy"));
+jadx-out/sources/com/ea/nimble/SynergyNetworkImpl.java-63-                    }
+jadx-out/sources/com/ea/nimble/SynergyNetworkImpl.java-64-                }
+jadx-out/sources/com/ea/nimble/SynergyNetworkImpl.java-65-                SynergyNetworkImpl.this.m_pendingRequests.clear();
+jadx-out/sources/com/ea/nimble/SynergyNetworkImpl.java-66-            }
+jadx-out/sources/com/ea/nimble/SynergyNetworkImpl.java-67-        };
+jadx-out/sources/com/ea/nimble/SynergyNetworkImpl.java-68-        this.m_synergyEnvironmentNotifyReceiver = broadcastReceiver;
+jadx-out/sources/com/ea/nimble/SynergyNetworkImpl.java:69:        Utility.registerReceiver(SynergyEnvironment.NOTIFICATION_STARTUP_REQUESTS_FINISHED, broadcastReceiver);
+jadx-out/sources/com/ea/nimble/SynergyNetworkImpl.java-70-    }
+jadx-out/sources/com/ea/nimble/SynergyNetworkImpl.java-71-
+jadx-out/sources/com/ea/nimble/SynergyNetworkImpl.java-72-    @Override // com.ea.nimble.Component
+jadx-out/sources/com/ea/nimble/SynergyNetworkImpl.java-73-    protected void suspend() {
+jadx-out/sources/com/ea/nimble/SynergyNetworkImpl.java-74-        this.m_sessionIdNeedsRefresh = true;
+jadx-out/sources/com/ea/nimble/SynergyNetworkImpl.java-75-    }
+jadx-out/sources/com/ea/nimble/SynergyNetworkImpl.java-76-
+jadx-out/sources/com/ea/nimble/SynergyNetworkImpl.java-77-    @Override // com.ea.nimble.Component
+--
+jadx-out/sources/com/ea/nimble/SynergyEnvironmentImpl.java-262-        EnvironmentDataContainer environmentDataContainer = this.m_environmentDataContainer;
+jadx-out/sources/com/ea/nimble/SynergyEnvironmentImpl.java-263-        if (environmentDataContainer == null || environmentDataContainer.getMostRecentDirectorResponseTimestamp() == null || (System.currentTimeMillis() - this.m_environmentDataContainer.getMostRecentDirectorResponseTimestamp().longValue()) / 1000.0d > 300.0d) {
+jadx-out/sources/com/ea/nimble/SynergyEnvironmentImpl.java-264-            startSynergyEnvironmentUpdate();
+jadx-out/sources/com/ea/nimble/SynergyEnvironmentImpl.java-265-        }
+jadx-out/sources/com/ea/nimble/SynergyEnvironmentImpl.java-266-        if (this.m_pendingStartupFinishedNotification) {
+jadx-out/sources/com/ea/nimble/SynergyEnvironmentImpl.java-267-            this.m_pendingStartupFinishedNotification = false;
+jadx-out/sources/com/ea/nimble/SynergyEnvironmentImpl.java-268-            HashMap map = new HashMap();
+jadx-out/sources/com/ea/nimble/SynergyEnvironmentImpl.java-269-            map.put("result", "1");
+jadx-out/sources/com/ea/nimble/SynergyEnvironmentImpl.java:270:            Log.Helper.LOGD(this, "App is running in forground, sending delayed the NOTIFICATION_STARTUP_REQUESTS_FINISHED notification", new Object[0]);
+jadx-out/sources/com/ea/nimble/SynergyEnvironmentImpl.java:271:            Utility.sendBroadcast(SynergyEnvironment.NOTIFICATION_STARTUP_REQUESTS_FINISHED, map);
+jadx-out/sources/com/ea/nimble/SynergyEnvironmentImpl.java-272-        }
+jadx-out/sources/com/ea/nimble/SynergyEnvironmentImpl.java-273-    }
+jadx-out/sources/com/ea/nimble/SynergyEnvironmentImpl.java-274-
+jadx-out/sources/com/ea/nimble/SynergyEnvironmentImpl.java-275-    @Override // com.ea.nimble.Component
+jadx-out/sources/com/ea/nimble/SynergyEnvironmentImpl.java-276-    public void cleanup() {
+jadx-out/sources/com/ea/nimble/SynergyEnvironmentImpl.java-277-        Log.Helper.LOGFUNC(this);
+jadx-out/sources/com/ea/nimble/SynergyEnvironmentImpl.java-278-        SynergyEnvironmentUpdater synergyEnvironmentUpdater = this.m_synergyStartupObject;
+jadx-out/sources/com/ea/nimble/SynergyEnvironmentImpl.java-279-        if (synergyEnvironmentUpdater != null) {
+--
+jadx-out/sources/com/ea/nimble/SynergyEnvironmentImpl.java-338-        Log.Helper.LOGFUNC(this);
+jadx-out/sources/com/ea/nimble/SynergyEnvironmentImpl.java-339-        if (synergyEnvironmentUpdater == null) {
+jadx-out/sources/com/ea/nimble/SynergyEnvironmentImpl.java-340-            Log.Helper.LOGD(this, "Synergy Environment Update canceled before it could start", new Object[0]);
+jadx-out/sources/com/ea/nimble/SynergyEnvironmentImpl.java-341-            return;
+jadx-out/sources/com/ea/nimble/SynergyEnvironmentImpl.java-342-        }
+jadx-out/sources/com/ea/nimble/SynergyEnvironmentImpl.java-343-        this.m_previousValidEnvironmentDataContainer = this.m_environmentDataContainer;
+jadx-out/sources/com/ea/nimble/SynergyEnvironmentImpl.java-344-        HashMap map = new HashMap();
+jadx-out/sources/com/ea/nimble/SynergyEnvironmentImpl.java-345-        map.put("result", "1");
+jadx-out/sources/com/ea/nimble/SynergyEnvironmentImpl.java:346:        Utility.sendBroadcast(SynergyEnvironment.NOTIFICATION_STARTUP_REQUESTS_STARTED, map);
+jadx-out/sources/com/ea/nimble/SynergyEnvironmentImpl.java-347-        synergyEnvironmentUpdater.startSynergyStartupSequence(this.m_previousValidEnvironmentDataContainer, new SynergyEnvironmentUpdater.CompletionCallback() { // from class: com.ea.nimble.SynergyEnvironmentImpl.2
+jadx-out/sources/com/ea/nimble/SynergyEnvironmentImpl.java-348-            @Override // com.ea.nimble.SynergyEnvironmentUpdater.CompletionCallback
+jadx-out/sources/com/ea/nimble/SynergyEnvironmentImpl.java-349-            public void callback(Exception exc) {
+jadx-out/sources/com/ea/nimble/SynergyEnvironmentImpl.java-350-                if (exc == null) {
+jadx-out/sources/com/ea/nimble/SynergyEnvironmentImpl.java-351-                    if (SynergyEnvironmentImpl.this.m_synergyStartupObject != null && synergyEnvironmentUpdater.getEnvironmentDataContainer() != null) {
+jadx-out/sources/com/ea/nimble/SynergyEnvironmentImpl.java-352-                        SynergyEnvironmentImpl.this.m_environmentDataContainer = synergyEnvironmentUpdater.getEnvironmentDataContainer();
+jadx-out/sources/com/ea/nimble/SynergyEnvironmentImpl.java-353-                        SynergyEnvironmentImpl.this.saveEnvironmentDataToPersistent();
+jadx-out/sources/com/ea/nimble/SynergyEnvironmentImpl.java-354-                        if (SynergyEnvironmentImpl.this.m_environmentDataContainer.getKeysOfDifferences(SynergyEnvironmentImpl.this.m_previousValidEnvironmentDataContainer) != null) {
+jadx-out/sources/com/ea/nimble/SynergyEnvironmentImpl.java:355:                            Utility.sendBroadcast(SynergyEnvironment.NOTIFICATION_STARTUP_ENVIRONMENT_DATA_CHANGED);
+jadx-out/sources/com/ea/nimble/SynergyEnvironmentImpl.java-356-                        }
+jadx-out/sources/com/ea/nimble/SynergyEnvironmentImpl.java-357-                        HashMap map2 = new HashMap();
+jadx-out/sources/com/ea/nimble/SynergyEnvironmentImpl.java-358-                        map2.put("result", "1");
+jadx-out/sources/com/ea/nimble/SynergyEnvironmentImpl.java-359-                        if (ApplicationEnvironment.isMainApplicationActive()) {
+jadx-out/sources/com/ea/nimble/SynergyEnvironmentImpl.java:360:                            Log.Helper.LOGD(this, "App is running in forground, send the NOTIFICATION_STARTUP_REQUESTS_FINISHED notification", new Object[0]);
+jadx-out/sources/com/ea/nimble/SynergyEnvironmentImpl.java:361:                            Utility.sendBroadcast(SynergyEnvironment.NOTIFICATION_STARTUP_REQUESTS_FINISHED, map2);
+jadx-out/sources/com/ea/nimble/SynergyEnvironmentImpl.java-362-                        } else {
+jadx-out/sources/com/ea/nimble/SynergyEnvironmentImpl.java:363:                            Log.Helper.LOGI(this, "App is not running in forground, discard the NOTIFICATION_STARTUP_REQUESTS_FINISHED notification", new Object[0]);
+jadx-out/sources/com/ea/nimble/SynergyEnvironmentImpl.java-364-                            SynergyEnvironmentImpl.this.m_pendingStartupFinishedNotification = true;
+jadx-out/sources/com/ea/nimble/SynergyEnvironmentImpl.java-365-                        }
+jadx-out/sources/com/ea/nimble/SynergyEnvironmentImpl.java-366-                    } else {
+jadx-out/sources/com/ea/nimble/SynergyEnvironmentImpl.java-367-                        Log.Helper.LOGD(this, "Synergy Environment Update object or dataContainer null at callback. Update was canceled", new Object[0]);
+jadx-out/sources/com/ea/nimble/SynergyEnvironmentImpl.java-368-                    }
+jadx-out/sources/com/ea/nimble/SynergyEnvironmentImpl.java-369-                } else {
+jadx-out/sources/com/ea/nimble/SynergyEnvironmentImpl.java-370-                    Log.Helper.LOGE(this, "StartupError(%s)", exc);
+jadx-out/sources/com/ea/nimble/SynergyEnvironmentImpl.java-371-                    if (!(exc instanceof Error)) {
+--
+jadx-out/sources/com/ea/nimble/SynergyEnvironmentImpl.java-378-                            Log.Helper.LOGD(this, "GetDirection request timed out or ServerUnavailable signal received. Start rate limiting of /getDirection call.", new Object[0]);
+jadx-out/sources/com/ea/nimble/SynergyEnvironmentImpl.java-379-                            SynergyEnvironmentImpl.this.startSynergyEnvironmentUpdateRateLimiting();
+jadx-out/sources/com/ea/nimble/SynergyEnvironmentImpl.java-380-                        }
+jadx-out/sources/com/ea/nimble/SynergyEnvironmentImpl.java-381-                    }
+jadx-out/sources/com/ea/nimble/SynergyEnvironmentImpl.java-382-                    HashMap map3 = new HashMap();
+jadx-out/sources/com/ea/nimble/SynergyEnvironmentImpl.java-383-                    map3.put("result", "0");
+jadx-out/sources/com/ea/nimble/SynergyEnvironmentImpl.java-384-                    map3.put("error", exc.toString());
+jadx-out/sources/com/ea/nimble/SynergyEnvironmentImpl.java-385-                    if (ApplicationEnvironment.isMainApplicationActive()) {
+jadx-out/sources/com/ea/nimble/SynergyEnvironmentImpl.java:386:                        Log.Helper.LOGD(this, "App is running in forground, send the NOTIFICATION_STARTUP_REQUESTS_FINISHED notification", new Object[0]);
+jadx-out/sources/com/ea/nimble/SynergyEnvironmentImpl.java:387:                        Utility.sendBroadcast(SynergyEnvironment.NOTIFICATION_STARTUP_REQUESTS_FINISHED, map3);
+jadx-out/sources/com/ea/nimble/SynergyEnvironmentImpl.java-388-                    } else {
+jadx-out/sources/com/ea/nimble/SynergyEnvironmentImpl.java:389:                        Log.Helper.LOGI(this, "App is not running in forground, discard the NOTIFICATION_STARTUP_REQUESTS_FINISHED notification", new Object[0]);
+jadx-out/sources/com/ea/nimble/SynergyEnvironmentImpl.java-390-                    }
+jadx-out/sources/com/ea/nimble/SynergyEnvironmentImpl.java-391-                }
+jadx-out/sources/com/ea/nimble/SynergyEnvironmentImpl.java-392-                SynergyEnvironmentImpl.this.m_synergyStartupObject = null;
+jadx-out/sources/com/ea/nimble/SynergyEnvironmentImpl.java-393-            }
+jadx-out/sources/com/ea/nimble/SynergyEnvironmentImpl.java-394-        });
+jadx-out/sources/com/ea/nimble/SynergyEnvironmentImpl.java-395-    }
+jadx-out/sources/com/ea/nimble/SynergyEnvironmentImpl.java-396-
+jadx-out/sources/com/ea/nimble/SynergyEnvironmentImpl.java-397-    /* JADX INFO: Access modifiers changed from: private */

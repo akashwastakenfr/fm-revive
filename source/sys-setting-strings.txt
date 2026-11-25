@@ -1,0 +1,38 @@
+6b43db6 com.playfish.kiwi.model.system.SystemSetting
+6b43de3 com.playfish.kiwi.model.system.SystemSetting.new
+6b43e44 com.playfish.kiwi.model.system.SystemSetting.get_name
+6b43e7a com.playfish.kiwi.model.system.SystemSetting.set_name
+6b43eb0 com.playfish.kiwi.model.system.SystemSetting.get_value
+6b43ee7 com.playfish.kiwi.model.system.SystemSetting.set_value
+6b43f1e com.playfish.kiwi.model.system.SystemSetting.isInitialized
+6b43f59 com.playfish.kiwi.model.system.SystemSetting.mergeFrom
+6b43f90 com.playfish.kiwi.model.system.SystemSetting.writeTo
+6b43fc5 com.playfish.kiwi.model.system.SystemSetting.getFieldNumber
+6b44001 com.playfish.kiwi.model.system.SystemSetting.fieldIsInitialised
+6b44041 com.playfish.kiwi.model.system.SystemSetting.setFieldInitialised
+6b44082 com.playfish.kiwi.model.system.SystemSetting.clearInitialisedFields
+6b440c6 com.playfish.kiwi.model.system.SystemSettings
+6b440f4 com.playfish.kiwi.model.system.SystemSettings.new
+6b44168 com.playfish.kiwi.model.system.SystemSettings.get_settingsList
+6b441b8 com.playfish.kiwi.model.system.SystemSettings.set_settingsList
+6b441f7 com.playfish.kiwi.model.system.SystemSettings.isInitialized
+6b44233 com.playfish.kiwi.model.system.SystemSettings.mergeFrom
+6b4426b com.playfish.kiwi.model.system.SystemSettings.writeTo
+6b442a1 com.playfish.kiwi.model.system.SystemSettings.getFieldNumber
+6b442de com.playfish.kiwi.model.system.SystemSettings.fieldIsInitialised
+6b4431f com.playfish.kiwi.model.system.SystemSettings.setFieldInitialised
+6b44361 com.playfish.kiwi.model.system.SystemSettings.clearInitialisedFields
+6b443b3 com.playfish.kiwi.model.system.SystemSettingsRequest
+6b443e8 com.playfish.kiwi.model.system.SystemSettingsRequest.new
+6b44468 com.playfish.kiwi.model.system.SystemSettingsRequest.get_preRelease
+6b444bb com.playfish.kiwi.model.system.SystemSettingsRequest.set_preRelease
+6b444ff com.playfish.kiwi.model.system.SystemSettingsRequest.isInitialized
+6b44542 com.playfish.kiwi.model.system.SystemSettingsRequest.mergeFrom
+6b44581 com.playfish.kiwi.model.system.SystemSettingsRequest.writeTo
+6b445be com.playfish.kiwi.model.system.SystemSettingsRequest.getFieldNumber
+6b44602 com.playfish.kiwi.model.system.SystemSettingsRequest.fieldIsInitialised
+6b4464a com.playfish.kiwi.model.system.SystemSettingsRequest.setFieldInitialised
+6b44693 com.playfish.kiwi.model.system.SystemSettingsRequest.clearInitialisedFields
+70fbfb5 Mapping undefined SystemSetting#
+70fc02f Mapping undefined SystemSettings#
+70fcb94 Mapping undefined SystemSettingsRequest#

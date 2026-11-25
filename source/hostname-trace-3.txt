@@ -1,0 +1,220 @@
+===== INITIALIZE SHARED HELPER =====
+
+libFIFAMobileNeon.so:	file format elf64-littleaarch64
+
+Disassembly of section .text:
+
+000000000146b148 <Java_com_ea_fuel_video_PlayerAndroid_OnErrorNativeImpl>:
+ 15237e0: f9442529     	ldr	x9, [x9, #0x848]
+ 15237e4: b9400129     	ldr	w9, [x9]
+ 15237e8: 2a090108     	orr	w8, w8, w9
+ 15237ec: 32170508     	orr	w8, w8, #0x600
+ 15237f0: b8004408     	str	w8, [x0], #0x4
+ 15237f4: 900353a8     	adrp	x8, 0x7f97000 <_ZTVNSt6__ndk115basic_streambufIcNS_11char_traitsIcEEEE+0x1d3c8>
+ 15237f8: 91152108     	add	x8, x8, #0x548
+ 15237fc: 91004108     	add	x8, x8, #0x10
+ 1523800: a900d013     	stp	x19, x20, [x0, #0x8]
+ 1523804: f9000008     	str	x8, [x0]
+ 1523808: a9427bfd     	ldp	x29, x30, [sp, #0x20]
+ 152380c: a9414ff4     	ldp	x20, x19, [sp, #0x10]
+ 1523810: f90002a0     	str	x0, [x21]
+ 1523814: f84307f5     	ldr	x21, [sp], #0x30
+ 1523818: d65f03c0     	ret
+ 152381c: a9bd57f6     	stp	x22, x21, [sp, #-0x30]!
+ 1523820: a9014ff4     	stp	x20, x19, [sp, #0x10]
+ 1523824: a9027bfd     	stp	x29, x30, [sp, #0x20]
+ 1523828: 910083fd     	add	x29, sp, #0x20
+ 152382c: d0037289     	adrp	x9, 0x8375000
+ 1523830: f9441529     	ldr	x9, [x9, #0x828]
+ 1523834: aa0203f4     	mov	x20, x2
+ 1523838: aa0103f3     	mov	x19, x1
+ 152383c: aa0003f5     	mov	x21, x0
+ 1523840: 39400129     	ldrb	w9, [x9]
+ 1523844: aa0803f6     	mov	x22, x8
+ 1523848: 340000c9     	cbz	w9, 0x1523860 <Java_com_ea_fuel_video_PlayerAndroid_OnErrorNativeImpl+0xb8718>
+ 152384c: d0037288     	adrp	x8, 0x8375000
+ 1523850: f9441908     	ldr	x8, [x8, #0x830]
+ 1523854: b9400100     	ldr	w0, [x8]
+ 1523858: 97df43e4     	bl	0xcf47e8 <pthread_getspecific@plt>
+ 152385c: 14000004     	b	0x152386c <Java_com_ea_fuel_video_PlayerAndroid_OnErrorNativeImpl+0xb8724>
+ 1523860: d0037288     	adrp	x8, 0x8375000
+ 1523864: f9441d08     	ldr	x8, [x8, #0x838]
+ 1523868: f9400100     	ldr	x0, [x8]
+ 152386c: 29412808     	ldp	w8, w10, [x0, #0x8]
+ 1523870: 93407d08     	sxtw	x8, w8
+ 1523874: 11009109     	add	w9, w8, #0x24
+ 1523878: 6b0a013f     	cmp	w9, w10
+ 152387c: 540000ed     	b.le	0x1523898 <Java_com_ea_fuel_video_PlayerAndroid_OnErrorNativeImpl+0xb8750>
+ 1523880: f9400008     	ldr	x8, [x0]
+ 1523884: 321b03e1     	orr	w1, wzr, #0x20
+ 1523888: 320903e2     	orr	w2, wzr, #0x800000
+ 152388c: f9400908     	ldr	x8, [x8, #0x10]
+ 1523890: d63f0100     	blr	x8
+ 1523894: 14000016     	b	0x15238ec <Java_com_ea_fuel_video_PlayerAndroid_OnErrorNativeImpl+0xb87a4>
+ 1523898: b9000809     	str	w9, [x0, #0x8]
+ 152389c: d003728d     	adrp	x13, 0x8375000
+ 15238a0: a9412809     	ldp	x9, x10, [x0, #0x10]
+ 15238a4: f94421ad     	ldr	x13, [x13, #0x840]
+ 15238a8: 13077d0b     	asr	w11, w8, #7
+ 15238ac: 1200190c     	and	w12, w8, #0x7f
+ 15238b0: 8b080140     	add	x0, x10, x8
+ 15238b4: b86c59ac     	ldr	w12, [x13, w12, uxtw #2]
+ 15238b8: 937e7d6d     	sbfiz	x13, x11, #2, #32
+ 15238bc: b86d692e     	ldr	w14, [x9, x13]
+ 15238c0: 11028d08     	add	w8, w8, #0xa3
+ 15238c4: 13077d08     	asr	w8, w8, #7
+ 15238c8: 4b0b0108     	sub	w8, w8, w11
+ 15238cc: 2a0c01ca     	orr	w10, w14, w12
+ 15238d0: b82d692a     	str	w10, [x9, x13]
+ 15238d4: d0037289     	adrp	x9, 0x8375000
+ 15238d8: f9442529     	ldr	x9, [x9, #0x848]
+ 15238dc: b9400129     	ldr	w9, [x9]
+ 15238e0: 2a090108     	orr	w8, w8, w9
+ 15238e4: 32150108     	orr	w8, w8, #0x800
+ 15238e8: b8004408     	str	w8, [x0], #0x4
+ 15238ec: 900353a8     	adrp	x8, 0x7f97000 <_ZTVNSt6__ndk115basic_streambufIcNS_11char_traitsIcEEEE+0x1d3c8>
+ 15238f0: 911a2108     	add	x8, x8, #0x688
+ 15238f4: 91004108     	add	x8, x8, #0x10
+ 15238f8: a9015414     	stp	x20, x21, [x0, #0x10]
+ 15238fc: a9004c08     	stp	x8, x19, [x0]
+ 1523900: a9427bfd     	ldp	x29, x30, [sp, #0x20]
+ 1523904: a9414ff4     	ldp	x20, x19, [sp, #0x10]
+ 1523908: f90002c0     	str	x0, [x22]
+ 152390c: a8c357f6     	ldp	x22, x21, [sp], #0x30
+ 1523910: d65f03c0     	ret
+ 1523914: f81d0ff5     	str	x21, [sp, #-0x30]!
+ 1523918: a9014ff4     	stp	x20, x19, [sp, #0x10]
+ 152391c: a9027bfd     	stp	x29, x30, [sp, #0x20]
+ 1523920: 910083fd     	add	x29, sp, #0x20
+ 1523924: d0037289     	adrp	x9, 0x8375000
+ 1523928: f9441529     	ldr	x9, [x9, #0x828]
+ 152392c: aa0103f3     	mov	x19, x1
+===== CALLBACK METADATA CONTINUATION =====
+
+libFIFAMobileNeon.so:	file format elf64-littleaarch64
+
+Disassembly of section .text:
+
+00000000026d5c44 <_ZNK18glucentralservices15AttributeUpdate7to_jsonEv>:
+ 53c5140: 7100193f     	cmp	w9, #0x6
+ 53c5144: f90007ea     	str	x10, [sp, #0x8]
+ 53c5148: 54000323     	b.lo	0x53c51ac <_ZNK18glucentralservices15AttributeUpdate7to_jsonEv+0x2cef568>
+ 53c514c: f9400d0a     	ldr	x10, [x8, #0x18]
+ 53c5150: f9401540     	ldr	x0, [x10, #0x28]
+ 53c5154: b4000100     	cbz	x0, 0x53c5174 <_ZNK18glucentralservices15AttributeUpdate7to_jsonEv+0x2cef530>
+ 53c5158: f9400008     	ldr	x8, [x0]
+ 53c515c: 528081a1     	mov	w1, #0x40d              // =1037
+ 53c5160: 72a64861     	movk	w1, #0x3243, lsl #16
+ 53c5164: f9400908     	ldr	x8, [x8, #0x10]
+ 53c5168: d63f0100     	blr	x8
+ 53c516c: f94002c8     	ldr	x8, [x22]
+ 53c5170: b9400d09     	ldr	w9, [x8, #0xc]
+ 53c5174: 71001d3f     	cmp	w9, #0x7
+ 53c5178: 2a1f03e7     	mov	w7, wzr
+ 53c517c: 54000183     	b.lo	0x53c51ac <_ZNK18glucentralservices15AttributeUpdate7to_jsonEv+0x2cef568>
+ 53c5180: f9400d08     	ldr	x8, [x8, #0x18]
+ 53c5184: f9401900     	ldr	x0, [x8, #0x30]
+ 53c5188: b40003a0     	cbz	x0, 0x53c51fc <_ZNK18glucentralservices15AttributeUpdate7to_jsonEv+0x2cef5b8>
+ 53c518c: f9400008     	ldr	x8, [x0]
+ 53c5190: f9402108     	ldr	x8, [x8, #0x40]
+ 53c5194: d63f0100     	blr	x8
+ 53c5198: 7100001f     	cmp	w0, #0x0
+ 53c519c: 1a9f07e7     	cset	w7, ne
+ 53c51a0: 14000003     	b	0x53c51ac <_ZNK18glucentralservices15AttributeUpdate7to_jsonEv+0x2cef568>
+ 53c51a4: 2a1f03e7     	mov	w7, wzr
+ 53c51a8: f90007ff     	str	xzr, [sp, #0x8]
+ 53c51ac: 9100a3e3     	add	x3, sp, #0x28
+ 53c51b0: 910063e4     	add	x4, sp, #0x18
+ 53c51b4: 910023e5     	add	x5, sp, #0x8
+ 53c51b8: aa1403e0     	mov	x0, x20
+ 53c51bc: 2a1503e1     	mov	w1, w21
+ 53c51c0: 2a1703e2     	mov	w2, w23
+ 53c51c4: 97fffb86     	bl	0x53c3fdc <_ZNK18glucentralservices15AttributeUpdate7to_jsonEv+0x2cee398>
+ 53c51c8: f900027f     	str	xzr, [x19]
+ 53c51cc: a9467bfd     	ldp	x29, x30, [sp, #0x60]
+ 53c51d0: a9454ff4     	ldp	x20, x19, [sp, #0x50]
+ 53c51d4: a94457f6     	ldp	x22, x21, [sp, #0x40]
+ 53c51d8: a9435ff8     	ldp	x24, x23, [sp, #0x30]
+ 53c51dc: 9101c3ff     	add	sp, sp, #0x70
+ 53c51e0: d65f03c0     	ret
+ 53c51e4: aa1f03ea     	mov	x10, xzr
+ 53c51e8: 2a1f03e7     	mov	w7, wzr
+ 53c51ec: 7100193f     	cmp	w9, #0x6
+ 53c51f0: f90007ea     	str	x10, [sp, #0x8]
+ 53c51f4: 54fffac2     	b.hs	0x53c514c <_ZNK18glucentralservices15AttributeUpdate7to_jsonEv+0x2cef508>
+ 53c51f8: 17ffffed     	b	0x53c51ac <_ZNK18glucentralservices15AttributeUpdate7to_jsonEv+0x2cef568>
+ 53c51fc: 2a1f03e7     	mov	w7, wzr
+ 53c5200: 17ffffeb     	b	0x53c51ac <_ZNK18glucentralservices15AttributeUpdate7to_jsonEv+0x2cef568>
+ 53c5204: d10383ff     	sub	sp, sp, #0xe0
+ 53c5208: f9004bf9     	str	x25, [sp, #0x90]
+ 53c520c: a90a5ff8     	stp	x24, x23, [sp, #0xa0]
+ 53c5210: a90b57f6     	stp	x22, x21, [sp, #0xb0]
+ 53c5214: a90c4ff4     	stp	x20, x19, [sp, #0xc0]
+ 53c5218: a90d7bfd     	stp	x29, x30, [sp, #0xd0]
+ 53c521c: 910343fd     	add	x29, sp, #0xd0
+ 53c5220: 90017d88     	adrp	x8, 0x8375000
+ 53c5224: f9441508     	ldr	x8, [x8, #0x828]
+ 53c5228: d001a349     	adrp	x9, 0x882f000 <_ZN6gluads15EAAnzuNativeAds10mDebugModeE+0x310756>
+ 53c522c: aa0103f3     	mov	x19, x1
+ 53c5230: aa0003f4     	mov	x20, x0
+ 53c5234: 39400108     	ldrb	w8, [x8]
+ 53c5238: 91318129     	add	x9, x9, #0xc60
+ 53c523c: f81b83a9     	stur	x9, [x29, #-0x48]
+ 53c5240: 340001c8     	cbz	w8, 0x53c5278 <_ZNK18glucentralservices15AttributeUpdate7to_jsonEv+0x2cef634>
+ 53c5244: 90017d88     	adrp	x8, 0x8375000
+ 53c5248: f9441908     	ldr	x8, [x8, #0x830]
+ 53c524c: b9400100     	ldr	w0, [x8]
+ 53c5250: 96e4bd66     	bl	0xcf47e8 <pthread_getspecific@plt>
+ 53c5254: aa0003f5     	mov	x21, x0
+ 53c5258: f81b03b5     	stur	x21, [x29, #-0x50]
+ 53c525c: b4000575     	cbz	x21, 0x53c5308 <_ZNK18glucentralservices15AttributeUpdate7to_jsonEv+0x2cef6c4>
+ 53c5260: 294566a8     	ldp	w8, w25, [x21, #0x28]
+ 53c5264: 390122bf     	strb	wzr, [x21, #0x48]
+ 53c5268: 6b08033f     	cmp	w25, w8
+ 53c526c: 5400012a     	b.ge	0x53c5290 <_ZNK18glucentralservices15AttributeUpdate7to_jsonEv+0x2cef64c>
+ 53c5270: f9401ab6     	ldr	x22, [x21, #0x30]
+ 53c5274: 14000020     	b	0x53c52f4 <_ZNK18glucentralservices15AttributeUpdate7to_jsonEv+0x2cef6b0>
+ 53c5278: 90017d88     	adrp	x8, 0x8375000
+ 53c527c: f9441d08     	ldr	x8, [x8, #0x838]
+ 53c5280: f9400115     	ldr	x21, [x8]
+ 53c5284: f81b03b5     	stur	x21, [x29, #-0x50]
+ 53c5288: b5fffed5     	cbnz	x21, 0x53c5260 <_ZNK18glucentralservices15AttributeUpdate7to_jsonEv+0x2cef61c>
+ 53c528c: 1400001f     	b	0x53c5308 <_ZNK18glucentralservices15AttributeUpdate7to_jsonEv+0x2cef6c4>
+ 53c5290: 0b190729     	add	w9, w25, w25, lsl #1
+ 53c5294: 7100013f     	cmp	w9, #0x0
+ 53c5298: 1a89a529     	cinc	w9, w9, lt
+ 53c529c: f9401ab7     	ldr	x23, [x21, #0x30]
+ 53c52a0: 13017d29     	asr	w9, w9, #1
+ 53c52a4: 93407f28     	sxtw	x8, w25
+ 53c52a8: 11002929     	add	w9, w9, #0xa
+ 53c52ac: 937d7d20     	sbfiz	x0, x9, #3, #32
+ 53c52b0: d37df118     	lsl	x24, x8, #3
+ 53c52b4: eb00031f     	cmp	x24, x0
+ 53c52b8: b9002aa9     	str	w9, [x21, #0x28]
+ 53c52bc: 54000182     	b.hs	0x53c52ec <_ZNK18glucentralservices15AttributeUpdate7to_jsonEv+0x2cef6a8>
+===== INITIALIZE METHOD NAME STRINGS =====
+6b960f6 initializeHostNameFetch
+6b9610e madden.service.config.ConfigService.initializeHostNameFetch
+6b9614a _doInitializeHostNameFetch
+6b96165 madden.service.config.ConfigService._doInitializeHostNameFetch
+6b961a4 _doInitializeHostNameFetchDefault
+6b961c6 madden.service.config.ConfigService._doInitializeHostNameFetchDefault
+6b9620c _oninitializeHostNameFetch
+6b96227 madden.service.config.ConfigService._oninitializeHostNameFetch
+6b983a1 _config_getFifaMobileHostNameFetchUrl
+6b983c7 _config_verifyFifaMobileHostNameFetch
+6b98440 _config_getFifaMobileHostNameFetchUrlDefault
+6d4e47d initializeHostNameFetch
+7163508 _config_getFifaMobileHostNameFetchUrl
+7163536 _config_getFifaMobileHostNameFetchUrlDefault
+716356b _config_verifyFifaMobileHostNameFetch
+7163840 _doInitializeHostNameFetch
+7163863 _doInitializeHostNameFetchDefault
+716388d _oninitializeHostNameFetch
+71650d0 ZN6madden7service6config17ConfigService_obj26_doInitializeHostNameFetchE7DynamiciE13_hx_Closure_0
+7165140 ZN6madden7service6config17ConfigService_obj26_doInitializeHostNameFetchE7DynamiciE13_hx_Closure_1
+71651b0 ZN6madden7service6config17ConfigService_obj33_doInitializeHostNameFetchDefaultE7DynamiciE13_hx_Closure_0
+7165220 ZN6madden7service6config17ConfigService_obj33_doInitializeHostNameFetchDefaultE7DynamiciE13_hx_Closure_1
+7165290 ZN6madden7service6config17ConfigService_obj26_oninitializeHostNameFetchEbi7Dynamic6StringN2hx9ObjectPtrIN6openfl3net13URLLoader_objEEENS6_INS7_6events9Event_objEEEbE13_hx_Closure_0
+7165360 ZN6madden7service6config17ConfigService_obj26_oninitializeHostNameFetchEbi7Dynamic6StringN2hx9ObjectPtrIN6openfl3net13URLLoader_objEEENS6_INS7_6events9Event_objEEEbE13_hx_Closure_1
+7165420 ZN6madden7service6config17ConfigService_obj26_oninitializeHostNameFetchEbi7Dynamic6StringN2hx9ObjectPtrIN6openfl3net13URLLoader_objEEENS6_INS7_6events9Event_objEEEbE13_hx_Closure_2

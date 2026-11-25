@@ -1,0 +1,463 @@
+  5693b _ZN2EA6Nimble12BaseInternal29NimbleCppComponentManagerImpl25registerDeferredComponentEv
+  56993 _ZN2EA6Nimble12BaseInternal29NimbleCppComponentManagerImpl9classNameE
+  569d9 _ZN2EA6Nimble12BaseInternal29NimbleCppComponentManagerImpl9fieldSigsE
+  56a1f _ZN2EA6Nimble16JavaClassManager10s_instanceE
+  56a4c _ZN2EA6Nimble16JavaClassManager12getJavaClassINS0_12BaseInternal29NimbleCppComponentManagerImplEEEPNS0_9JavaClassEv
+  56ac0 _ZN2EA6Nimble16JavaClassManager12getJavaClassINS0_4Base39NimbleCppApplicationConfigurationBridgeEEEPNS0_9JavaClassEv
+  56b35 _ZN2EA6Nimble16JavaClassManagerC1Ev
+  56b59 _ZN2EA6Nimble4Base11Persistence14getStringValueERKNSt6__ndk112basic_stringIcNS3_11char_traitsIcEENS3_9allocatorIcEEEE
+  56bcf _ZN2EA6Nimble4Base11Persistence8setValueERKNSt6__ndk112basic_stringIcNS3_11char_traitsIcEENS3_9allocatorIcEEEESB_
+  56c41 _ZN2EA6Nimble4Base14NimbleCppErrorC1ENS2_4CodeERKNSt6__ndk112basic_stringIcNS4_11char_traitsIcEENS4_9allocatorIcEEEE
+  56cb6 _ZN2EA6Nimble4Base14NimbleCppErrorC1Ev
+--
+  59e8a _ZN2EA6Nimble4Base29NimbleCppNetworkClientManagerC1Ev
+  59ec0 _ZN2EA6Nimble4Base29NimbleCppNetworkClientManagerC2Ev
+  59ef6 _ZN2EA6Nimble4Base29NimbleCppNetworkClientManagerD0Ev
+  59f2c _ZN2EA6Nimble4Base29NimbleCppNetworkClientManagerD1Ev
+  59f62 _ZN2EA6Nimble4Base29NimbleCppNetworkClientManagerD2Ev
+  59f98 _ZN2EA6Nimble4Base33NimbleCppApplicationConfiguration14getConfigValueERKNSt6__ndk112basic_stringIcNS3_11char_traitsIcEENS3_9allocatorIcEEEERS9_
+  5a028 _ZN2EA6Nimble4Base33NimbleCppApplicationConfiguration14getConfigValueERKNSt6__ndk112basic_stringIcNS3_11char_traitsIcEENS3_9allocatorIcEEEERb
+  5a0b6 _ZN2EA6Nimble4Base33NimbleCppApplicationConfiguration14getConfigValueERKNSt6__ndk112basic_stringIcNS3_11char_traitsIcEENS3_9allocatorIcEEEERd
+  5a144 _ZN2EA6Nimble4Base33NimbleCppApplicationConfiguration14getConfigValueERKNSt6__ndk112basic_stringIcNS3_11char_traitsIcEENS3_9allocatorIcEEEERi
+  5a1d2 _ZN2EA6Nimble4Base39NimbleCppApplicationConfigurationBridge10fieldCountE
+  5a21b _ZN2EA6Nimble4Base39NimbleCppApplicationConfigurationBridge10fieldNamesE
+  5a264 _ZN2EA6Nimble4Base39NimbleCppApplicationConfigurationBridge10methodSigsE
+  5a2ad _ZN2EA6Nimble4Base39NimbleCppApplicationConfigurationBridge11methodCountE
+  5a2f7 _ZN2EA6Nimble4Base39NimbleCppApplicationConfigurationBridge11methodNamesE
+  5a341 _ZN2EA6Nimble4Base39NimbleCppApplicationConfigurationBridge17configValueExistsERKNSt6__ndk112basic_stringIcNS3_11char_traitsIcEENS3_9allocatorIcEEEE
+  5a3d6 _ZN2EA6Nimble4Base39NimbleCppApplicationConfigurationBridge9classNameE
+  5a41d _ZN2EA6Nimble4Base39NimbleCppApplicationConfigurationBridge9fieldSigsE
+  5a464 _ZN2EA6Nimble4Base3Log17getThresholdLevelEv
+  5a490 _ZN2EA6Nimble4Base7Network12getHttpProxyEv
+  5a4bb _ZN2EA6Nimble4BaselsERNSt6__ndk113basic_ostreamIcNS2_11char_traitsIcEEEERKNS1_14NimbleCppErrorE
+  5a51b _ZN2EA6Nimble4Json5Value6appendERKS2_
+  5a541 _ZN2EA6Nimble6getEnvEv
+--
+  645e6 _ZN2EA6Nimble16JavaClassManager16getJavaClassImplINS0_4Base24PersistenceStorageBridgeEEEPNS0_9JavaClassEv
+  64650 _ZN2EA6Nimble16JavaClassManager16getJavaClassImplINS0_4Base24SynergyEnvironmentBridgeEEEPNS0_9JavaClassEv
+  646ba _ZN2EA6Nimble16JavaClassManager16getJavaClassImplINS0_4Base25ILocalNotificationsBridgeEEEPNS0_9JavaClassEv
+  64725 _ZN2EA6Nimble16JavaClassManager16getJavaClassImplINS0_4Base25IPersistenceServiceBridgeEEEPNS0_9JavaClassEv
+  64790 _ZN2EA6Nimble16JavaClassManager16getJavaClassImplINS0_4Base25ISynergyEnvironmentBridgeEEEPNS0_9JavaClassEv
+  647fb _ZN2EA6Nimble16JavaClassManager16getJavaClassImplINS0_4Base25NimbleConfigurationBridgeEEEPNS0_9JavaClassEv
+  64866 _ZN2EA6Nimble16JavaClassManager16getJavaClassImplINS0_4Base28ApplicationEnvironmentBridgeEEEPNS0_9JavaClassEv
+  648d4 _ZN2EA6Nimble16JavaClassManager16getJavaClassImplINS0_4Base28PersistenceMergePolicyBridgeEEEPNS0_9JavaClassEv
+  64942 _ZN2EA6Nimble16JavaClassManager16getJavaClassImplINS0_4Base29IApplicationEnvironmentBridgeEEEPNS0_9JavaClassEv
+  649b1 _ZN2EA6Nimble16JavaClassManager16getJavaClassImplINS0_4Base29NetworkConnectionHandleBridgeEEEPNS0_9JavaClassEv
+  64a20 _ZN2EA6Nimble16JavaClassManager16getJavaClassImplINS0_4Base31OperationalTelemetryEventBridgeEEEPNS0_9JavaClassEv
+--
+  67d8b _ZN2EA6Nimble4Base10BaseBridge10fieldCountE
+  67db7 _ZN2EA6Nimble4Base10BaseBridge10fieldNamesE
+  67de3 _ZN2EA6Nimble4Base10BaseBridge10methodSigsE
+  67e0f _ZN2EA6Nimble4Base10BaseBridge11methodCountE
+  67e3c _ZN2EA6Nimble4Base10BaseBridge11methodNamesE
+  67e69 _ZN2EA6Nimble4Base10BaseBridge20convertConfigurationEP7_JNIEnvNS1_4Base19NimbleConfigurationE
+  67ec7 _ZN2EA6Nimble4Base10BaseBridge9classNameE
+  67ef1 _ZN2EA6Nimble4Base10BaseBridge9fieldSigsE
+  67f1b _ZN2EA6Nimble4Base10ILogBridge10fieldCountE
+  67f47 _ZN2EA6Nimble4Base10ILogBridge10fieldNamesE
+  67f73 _ZN2EA6Nimble4Base10ILogBridge10methodSigsE
+--
+  6ce81 _ZN2EA6Nimble4Base25ISynergyEnvironmentBridge10methodSigsE
+  6cebc _ZN2EA6Nimble4Base25ISynergyEnvironmentBridge11methodCountE
+  6cef8 _ZN2EA6Nimble4Base25ISynergyEnvironmentBridge11methodNamesE
+  6cf34 _ZN2EA6Nimble4Base25ISynergyEnvironmentBridge9classNameE
+  6cf6d _ZN2EA6Nimble4Base25ISynergyEnvironmentBridge9fieldSigsE
+  6cfa6 _ZN2EA6Nimble4Base25NimbleConfigurationBridge10fieldCountE
+  6cfe1 _ZN2EA6Nimble4Base25NimbleConfigurationBridge10fieldNamesE
+  6d01c _ZN2EA6Nimble4Base25NimbleConfigurationBridge10methodSigsE
+  6d057 _ZN2EA6Nimble4Base25NimbleConfigurationBridge11methodCountE
+  6d093 _ZN2EA6Nimble4Base25NimbleConfigurationBridge11methodNamesE
+  6d0cf _ZN2EA6Nimble4Base25NimbleConfigurationBridge9classNameE
+  6d108 _ZN2EA6Nimble4Base25NimbleConfigurationBridge9fieldSigsE
+  6d141 _ZN2EA6Nimble4Base25OperationalTelemetryEventC1ERKNS0_13SharedPointerINS1_31OperationalTelemetryEventBridgeEEE
+  6d1b0 _ZN2EA6Nimble4Base25OperationalTelemetryEventC2ERKNS0_13SharedPointerINS1_31OperationalTelemetryEventBridgeEEE
+  6d21f _ZN2EA6Nimble4Base26ApplicationLifeCycleBridge11addObserverEPNS1_28ApplicationLifeCycleObserverE
+  6d280 _ZN2EA6Nimble4Base26ApplicationLifeCycleBridge14removeObserverEPNS1_28ApplicationLifeCycleObserverE
+  6d2e4 _ZN2EA6Nimble4Base26ApplicationLifeCycleBridgeD2Ev
+--
+  6f117 _ZN2EA6Nimble4Base46NIMBLE_NOTIFICATION_ATTRIBUTION_DATA_AVAILABLEE
+  6f15b _ZN2EA6Nimble4Base47NIMBLE_DICTIONARY_KEY_IDENTITY_AUTHENTICATOR_IDE
+  6f1a0 _ZN2EA6Nimble4Base48NIMBLE_NOTIFICATION_IDENTITY_PERSONA_INFO_UPDATEE
+  6f1e6 _ZN2EA6Nimble4Base4Base13getSdkVersionEv
+  6f20f _ZN2EA6Nimble4Base4Base16getComponentListEv
+  6f23b _ZN2EA6Nimble4Base4Base16getConfigurationEv
+  6f267 _ZN2EA6Nimble4Base4Base17getReleaseVersionEv
+  6f294 _ZN2EA6Nimble4Base4Base19configurationToNameENS2_19NimbleConfigurationE
+  6f2dc _ZN2EA6Nimble4Base4Base21configurationFromNameERKNSt6__ndk112basic_stringIcNS3_11char_traitsIcEENS3_9allocatorIcEEEE
+  6f351 _ZN2EA6Nimble4Base4Base24restartWithConfigurationENS2_19NimbleConfigurationE
+  6f39e _ZN2EA6Nimble4Base50NIMBLE_NOTIFICATION_IDENTITY_AUTHENTICATION_UPDATEE
+  6f3e6 _ZN2EA6Nimble4Base52NIMBLE_NOTIFICATION_PUSHTNG_COMPONENT_SETUP_COMPLETEE
+  6f430 _ZN2EA6Nimble4Base54NIMBLE_NOTIFICATION_IDENTITY_MAIN_AUTHENTICATOR_CHANGEE
+  6f47c _ZN2EA6Nimble4Base55NIMBLE_NOTIFICATION_IDENTITY_STOP_PROCESS_STATUS_UPDATEE
+  6f4c9 _ZN2EA6Nimble4Base56NIMBLE_NOTIFICATION_COMPONENT_INDEPENDENT_SETUP_FINISHEDE
+--
+68628f4 GameLayer
+68628fe MaddenSocialApp::LoadPropertiesData
+6862927 IniBytes
+6862930 replay_version
+6862941 AutomatedBuild
+6862950 Build_Metadata_Not_Configured
+6862973 alternateHostName
+686298a https://fm22-configserver.prod.fuel.ddns.ea.com/config/
+68629c4 /config.ini?
+68629d1 /default/config.ini?
+68629e6 Android
+--
+686bbdb locale
+686bbe2 deviceName
+686bbed clientVersion
+686bbfb clientVersionStr
+686bc0c replayVersion
+686bc1a buildConfig
+686bc26 screenWidth
+686bc32 screenHeight
+686bc3f dpix=%f&dpiy=%f&width=%d&height=%d
+686bc62 cpuModel
+686bc6b numCpuCores
+--
+688b562 1.2.7
+688b568 com.ea.nimble.bridge.NimbleCppComponentRegistrar
+688b599 register
+688b5a2 getComponentId
+688b5b1 (Lcom/ea/nimble/Component;)Ljava/lang/String;
+688b5df com.ea.nimble.NimbleApplicationConfiguration
+688b60c configValueExists
+688b61e getConfigValueAsString
+688b635 getConfigValueAsInt
+688b649 getConfigValueAsDouble
+688b660 getConfigValueAsBoolean
+--
+688c028 ()Lcom/ea/nimble/IApplicationEnvironment;
+688c055 com.ea.nimble.Base
+688c068 setupNimble
+688c074 teardownNimble
+688c083 getComponentList
+688c094 getConfiguration
+688c0a5 restartWithConfiguration
+688c0be (Ljava/lang/String;)[Lcom/ea/nimble/Component;
+688c0ed ()Lcom/ea/nimble/NimbleConfiguration;
+688c113 (Lcom/ea/nimble/NimbleConfiguration;)V
+688c13a com.ea.nimble.NimbleConfiguration
+688c15c fromName
+688c165 (Ljava/lang/String;)Lcom/ea/nimble/NimbleConfiguration;
+688c19d INTEGRATION
+688c1a9 STAGE
+688c1b4 CUSTOMIZED
+688c1bf Lcom/ea/nimble/NimbleConfiguration;
+688c1e3 com.ea.nimble.Component
+688c1fb com.ea.nimble.Global
+688c210 NIMBLE_SDK_VERSION
+688c223 NIMBLE_RELEASE_VERSION
+688c23a Nimble
+--
+688d375 isDataAvailable
+688d385 isUpdateInProgress
+688d398 checkAndInitiateSynergyEnvironmentUpdate
+688d3c1 isFeatureDisabled
+688d3d3 (Ljava/lang/String;Ljava/lang/String;)Lcom/ea/nimble/Error;
+688d40f (Lcom/ea/nimble/NimbleConfiguration;)Ljava/lang/String;
+688d447 ()Lcom/ea/nimble/Error;
+688d45f SYNERGY_APP_VERSION_OK
+688d476 SYNERGY_APP_VERSION_UPDATE_RECOMMENDED
+688d49d SYNERGY_APP_VERSION_UPDATE_REQUIRED
+688d4c3 com.ea.nimble.SynergyEnvironment
+--
+6890e3c nexus.portal
+6890e49 ReleaseType
+6890e55 Invalid json response. Status code 
+6890e79 . Payload:
+6890e85 Request failed with status code 
+6890ea6 /.well-known/access-token-configuration/certs
+6890ed4 http://
+6890edc NimbleIdentityUseJWT
+6890ef1 access_token
+6890efe refresh_token
+6890f0c token_type
+--
+68b3dc2 Failed to CreateAllocator of type %s, name %s
+68b3df1 'Unknown allocator'
+68b3e05 Error: Too many conditions registered. Can't accommodate '%s'
+68b3e43 %s,%s,%s|
+68b3e4d Empty Description
+68b3e5f Empty Configuration Name
+68b3e78 Empty Title
+68b3e84 Empty Device Info
+68b3e96 Empty Build Platform
+68b3eab Empty Build Source
+68b3ebe Empty Build Type
+--
+68b3f16 		<Title>%s</Title>
+68b3f2a 		<Version>2.0</Version>
+68b3f43 		<Heap>MemoryFramework</Heap>
+68b3f62 		<Description>%s</Description>
+68b3f82 		<Platform>Android</Platform>
+68b3fa1 		<Configuration>%s</Configuration>
+68b3fc5 		<AllocatorDump>%d</AllocatorDump>
+68b3fe9 		<Timestamp>%s</Timestamp>
+68b4005 		<PageSize>%d</PageSize>
+68b401f 		<Address>%p %p</Address>
+68b403a 		<DeviceInfo>%s</DeviceInfo>
+--
+68d778f buttonData.ini
+68d779e buttonDataKeyBoardMouse.ini
+68d77ba MemoryStatisticsAtPurge.txt
+68d77d6 Acceleration
+68d77e3 Character
+68d77ed Configuration
+68d77fb LifeCycle
+68d7809 Keyboard
+68d7812 Mouse
+68d7818 Notification
+68d7825 Pointer
+--
+6a2b929 madden.ui.view.advancedtraining.AdvancedTrainingRankUpSuccessPopUp._updateAttriList
+6a2b97d _levelPlaceAnim
+6a2b98d madden.ui.view.advancedtraining.AdvancedTrainingRankUpSuccessPopUp._levelPlaceAnim
+6a2b9e0 _rankupSuccessAnimEvent
+6a2b9f8 madden.ui.view.advancedtraining.AdvancedTrainingRankUpSuccessPopUp._rankupSuccessAnimEvent
+6a2ba53 _arabicInitialConfigurationFix
+6a2ba72 madden.ui.view.advancedtraining.AdvancedTrainingRankUpSuccessPopUp._arabicInitialConfigurationFix
+6a2bad4 madden.ui.view.advancedtraining.AdvancedTrainingRankUpSuccessPopUp.boot
+6a2bb1c _ranklevel
+6a2bb27 _rankUpLabel
+6a2bb34 _successLabel
+6a2bb42 _nextLevelLabel
+--
+6b970ed madden.service.config.ConfigService.getClientInfoHash
+6b97123 getClientInfoStr
+6b97134 madden.service.config.ConfigService.getClientInfoStr
+6b97169 getBuildNumber
+6b97178 madden.service.config.ConfigService.getBuildNumber
+6b971ab getBuildConfig
+6b971ba madden.service.config.ConfigService.getBuildConfig
+6b971ed getStorageSize
+6b971fc madden.service.config.ConfigService.getStorageSize
+6b9722f madden.service.config.ConfigService.getNumCpuCores
+6b97262 getDeviceRam
+6b9726f madden.service.config.ConfigService.getDeviceRam
+--
+6cd4f97 This parameter specifies the output that the Dac should use. Possible values are OUTPUT_SPEAKERS and OUTPUT_HDMI.
+6cd5009 EVENT_ENUMERATEMODE
+6cd501d EnumerateModeParam
+6cd5030 Enumerate Mode
+6cd503f The enumerate mode event allows a game to determine if a given output mode is supported.
+6cd5099 On the PC platform, different PC's may support different modes based on the configuration of the PC software and hardware. On other console platforms, the modes supported will typically not change.
+6cd5160 On the XBox One, PS3 and PS4 the mix may either be output as 7.1 or reformatted to something else based on the console dashboard settings (such as stereo or 5.1). In the case of a stereo console selection, ProLogic II can be output instead of stereo if set to this mode via EAAudioCore (EVENT_SETMODE).
+6cd5290  On the Xbox 360, the mix will first be reformatted by the Dac PlugIn to 5.1 channels if it isn't already in that format. It may be further reformatted by the console to the selected output mode, such as mono, stereo, or ProLogic II. 
+6cd537c For mobile platforms, the only output modes supported are mono and stereo.
+6cd53c7 EVENT_SETMODE
+6cd53d5 SetModeParam
+6cd53e2 Set Mode
+6cd53eb The set mode event allows a game to set the Dac output to a new output mode.
+6cd5439 If the specified output mode is not supported on the given platform/configuration, the next most logical output mode will be notched down to and selected automatically. For most platforms, this means the output mode could always be set to 7.1 if desired and the closest supported mode will be selected. The output mode should ideally be set before the Dac is started. However it can be changed while the Dac is running without any lasting side effects to the EAAudioCore code or game code on PC and PS3. The audio output will be interrupted for a brief period, which can sound disconcerting. If this is an issue the signal on the mastering voice could be faded down and back around the switch by manipulating a fader PlugIn appropriately. For iOS the output mode must be set before the Dac is started.
+6cd575c For the Xbox 360, XBox One and PS4 all output mode selection is handled via the dashboard. For XBox 360 EAAudioCore always feeds a 5.1 signal to the console and it will down-mix or encode the audio into the format the user has selected. On XBox One and PS4 the same happens except with a 7.1 signal feed to the console.
+6cd589d Unlike the other consoles, the PS3 does not automatically encode audio into the format the user has selected in the OSD.EAAudioCore looks at what audio output modes are set up in the OSD and selects the one it determines will yield the highest quality results. The selection criteria first attempts 8 channel modes, 6 channel modes, and then 2 channel modes. Within each channel selection it will attempt the encoding method that introduces the least distortion into the signal. Given only some of the OSD modes are supported this effectively results in the order of selection being HDMI 7.1, HDMI 5.1, HDMI or optical Dolby Digital 5.1, HDMI or optical DTS 5.1, then HDMI or optical or analog stereo. 
+6cd5b5d On the PS3 the SETMODE event is respected in the specific case of selecting a Dolby Pro Logic II output versus plain stereo when the user has selected a stereo output via the OSD. The OSD and Sony libraries lack native support for PL2. Some game teams have requested PL2 support on PS3 so EAAudioCore provides it via its own encoder. Unfortunately there is no way to select PL2 in the OSD as it doesn't support it, and so switching between stereo and PL2 must be managed by calling SETMODE with either MODE_STEREO or MODE_PROLOGIC2. In this situation the SETMODE event acts more like a hint than an absolute setting. MODE_STEREO or MODE_PROLOGIC2 will only be respected if the OSD is set to output stereo. Setting of other modes will be ignored. For example, setting MODE_5POINT1 is meaningless as EAAudioCore only respects the OSD when determining non-stereo output modes.
+6cd5ec8 A PS3 game that wishes to support PL2 is faced with one of two choices on how to know when to enable it. The game code could have a front end menu option to allow the user to select between stereo and PL2. This is however very ugly to the end user as they now have to configure audio output in more than one place. The option is also confusing as it doesn't force stereo or PL2 mode if the OSD is set to a 5.1 or 7.1 output mode. For these reasons a menu option is not recommended. The better alternative is to decide up front if your game will always output either plain stereo or PL2. This would probably be the audio director's choice based on what they prefer.
+6cd6162 On the PC platform, note that some output modes are not reliable, even if they are enumerated as supported (e.g., quad, 5.1 and 7.1). Although everything may appear to work correctly when interfacing with EAAudioCore, the user may experience crackling audio or missing channels for example. For that matter the quad, 5.1, and 7.1 modes will almost always be enumerated as supported even if the user only has two speakers. As the quad, 5.1, and 7.1 modes cannot be counted on to work on every machine, the game must provide an option to let the user switch between stereo, quad, 5.1, and 7.1 modes. It is also a bonus to the user if an audio testing screen is included where a sound is played in turn on all channels. This way the user can determine if the quad, 5.1, or 7.1 modes will work properly for them in the game.
+6cd6498 For iOS the only mode supported are stereo and mono.
+6cd64ce For Android, the output mode selection is handled via Java code AndroidEAAudioCore.Startup (channels).When a channel configuration with more channels than what the output is set to is fed to the Dac, it will perform an industry standard fold-down to the required configuration (5.1, quad, stereo or mono). Even if the Dac PlugIn is not performing the fold-down, the PC or console platform might be performing a fold-down on its end. Hard clipping can be introduced during the fold-down if the signal coming into the fold-down is loud. Although the hard clipping should not be as audible a problem as it might sound, it can be avoided by reducing the volume of the signal before it goes into the Dac PlugIn. If a signal is normalized to full scale (+/- 1.0) before it enters the Dac PlugIn by a PlugIn such as a compressor, then when folding down to quad or stereo, reducing the signal to approximately 45% (-6.9 dB) of its original level will ensure no hard clipping will occur. On the other hand, hard clipping noise is not as noticeable as one might think. Furthermore, given that it may be quite unlikely that the mix will be driven in game to produce the extreme configuration required to produce the maximum peak (greater than +/- 1.0) after fold-down, it is suggested that users not worry too much about clipping possibilities, especially since the additional reduction of volume to avoid it may result in the game output being too quiet.
+6cd6a75 EVENT_START2
+6cd6a82 Start2Param
+6cd6a8e The start2 event tells the Dac PlugIn to begin operation. The Dac can be started either in offline mode or realtime mode, the latter being the norm. When started in realtime mode, the Dac will begin driving the EAAudioCore mixer process and outputting the resulting sample data to the speakers. This driving of the mixing process will either be indirect via the user thread when running in System Jobs mode with User Scheduling, or direct via a Dac thread otherwise. When started in offline mode, the Dac will enter a state where mix frames are processed as a result of the EVENT_OFFLINEMIXFRAME event in the case of Non-System Jobs Mode, and via System::ScheduleJobs() in the System Jobs Mode case. In offline mode, sample data is not output from the Dac. Users who wish to use the audio data that is produced when in offline mode should use the SampleCapture or AiffWriter PlugIns, or a suitable replacement.
+6cd6e1e The start2 event must be called in order for any EAAudioCore playback to occur. The Dac is not started upon instantiation.
+6cd6e9a On the PC platform, it is possible that no sound card is installed on a machine or the sound system is not working for some reason. When this happens, the Dac provides functionality to "pretend" that it is operating normally as if a sound card is present. EAAudioCore will act as if nothing is wrong. This functionality is provided so that game programmers can handle the missing sound system with ease. The less appealing alternative would be to have special code inserted everywhere to handle EAAudioCore API functions not working as expected.
+--
+6ce780c Controls the Far Rear Left Gain of the matrix panner. Applicable to 1X8 panners.
+6ce785d ATTRIBUTE_SETGAIN_FARREARRIGHT
+6ce787c Gain - Side Right
+6ce788e Controls the Far Rear Right Gain of the matrix panner. Applicable to 1X8 panners.
+6ce78e0 Panner (Matrix)
+6ce78f0 The MatrixPanner PlugIn is used to place a mono sound source on multiple speakers, where each speaker has a separate gain controller. The objective is to create a sense of placement relative to the game player when playing sounds. The gain levels should be specified from 0.0 to 1.0. Negative values are allowed to invert the signal. At present, the configurations supported are 1X2, 1X4, 1x6 and 1X8. 
+6ce7a83 Controls the Front Left channel gain. Applicable to all available channel modes (stereo, quad, 5.1, 7.1). Gain is specified in linear units. A gain of 1.0 will pass the signal through without modification, a value of 0.0 will silence the signal, and a value of 2.0 would double the amplitude of the signal. A value of -0.5 would reduce volume to half and invert the phase of the signal.
+6ce7c06 Controls the Center channel gain. Applicable to 5.1 and 7.1 channel modes. Gain is specified in linear units. A gain of 1.0 will pass the signal through without modification, a value of 0.0 will silence the signal, and a value of 2.0 would double the amplitude of the signal. A value of -0.5 would reduce volume to half and invert the phase of the signal.
+6ce7d6a Controls the Front Right channel gain. Applicable to all available channel modes (stereo, quad, 5.1, 7.1). Gain is specified in linear units. A gain of 1.0 will pass the signal through without modification, a value of 0.0 will silence the signal, and a value of 2.0 would double the amplitude of the signal. A value of -0.5 would reduce volume to half and invert the phase of the signal.
+6ce7eee Controls the Rear Left channel gain. Applicable to quad, 5.1, and 7.1 channel modes. Gain is specified in linear units. A gain of 1.0 will pass the signal through without modification, a value of 0.0 will silence the signal, and a value of 2.0 would double the amplitude of the signal. A value of -0.5 would reduce volume to half and invert the phase of the signal.
+6ce805c Controls the Rear Right channel gain. Applicable to quad, 5.1, and 7.1 channel modes. Gain is specified in linear units. A gain of 1.0 will pass the signal through without modification, a value of 0.0 will silence the signal, and a value of 2.0 would double the amplitude of the signal. A value of -0.5 would reduce volume to half and invert the phase of the signal.
+--
+6ce90f3 ATTRIBUTE_SETOBJECTSIZE
+6ce910b Object Size
+6ce9117 For multi-channel inputs, controls the distance of the input channels from the sound location.
+6ce9176 Object 3D Output
+6ce9187 The Object3DOutput PlugIn can be used to accurately represent an audio emitter in 3D space. The PS4 uses the SDK object audio implementation in the Sony Audio3D library. For PC and XBoxOne, the object is panned into the 8.1.4.4 bed of the Microsoft ISpatialAudioClient API. For all other platforms the Object3DOutput does not output any audio.
+6ce92e0 PS4 details: The Object3DOutput PlugIn has been created to leverage the capabilities of Sony's Audio3D library which provides 3D object audio capabilities on the PS4 platform. Each PlugIn instance can be used to represent an audio emitter in 3D space. The object position, gain and other attributes are preserved as metadata and passed along with the mono audio waveform data to the Sony Audio3D library API which will either pass it on to a 3D Object Audio capable receiver or to headphones if connected, or render the audio to a 7.1 mix for output along with the rest of the audio mix. In the case of a 3D Object Audio capable receiver, it is expected that such a receiver would render the object audio based on the speaker configuration it is using, which ideally would include speakers above (and possibly below) the plane in order to experience more accurate 3D sound. In the case of headphones, head-related-transfer-function (HRTF) techniques could be used to render the audio in 3D. Note that the mixer sample rate must be set to the default 48 KHz value (which is the output sample rate of the PS4) because Object3DOutput does not resample the mix to the hardware output rate. Thus the System must be run at the same rate as the hardware in order for the PlugIn to work. For more information on this functionality, please refer to the PS4 Audio3D library documentation.
+6ce9844 Users wishing to use Object3DOutput must set the maximum number of PlugIn instances to be used via the System::CreateParameters object, as the default is set to 0.
+6ce98e9 The Object3DOutput should always be inserted as the last PlugIn on a voice.
+6ce9937 FORMAT_16BIT_INT_LE
+6ce994b 16 Bit Interleaved Little Endian
+6ce996c This value indicates that the source sample data is encoded as 16 bit interleaved little endian PCM data.
+--
+6ceb751 LFE Pass Through Level
+6ceb768 Controls the level of the LFE signal going into the LFE speaker, for a 5.1 or 7.1 output. This applies when the source is 5.1 or 7.1; it has no effect when the source has no LFE. 
+6ceb81c Panner (2D)
+6ceb828 The Pan2D1 PlugIn allows for panning of a signal, with speakers pre-positioned at fixed locations on the edge of the circle according to the number of output channels. The power will be distributed between the speakers based on panangle, pandistance, pansize, and pantwist parameters relative to the listener's position at the center of the circle.
+6ceb986 The geometry of the panner can be over-ridden once in game code by calling EA::Audio::Core::Pan2D1::SetDefaultFrontSpeakerAngle(),  EA::Audio::Core::Pan2D1::SetDefaultRearSpeakerAngle(), and EA::Audio::Core::Pan2D1::SetDefaultFarRearSpeakerAngle(). The geometry can also be over-ridden on a per panner instance basis by setting angles as parameters in the constructor to the panner.
+6cebb06 By default the front speakers are set 30 degrees from front center, the rear speakers are 110 degrees from front center, and the far rears at 150 degrees from front center. This provides a reasonable compromise for operation in quad/5.1 channel cases versus 7.1. If users want a configuration specific to a given output channel configuration, they should set the speaker locations either via calling the aforementioned SetDefaultFront/Rear/FarRearSpeakerAngle() functions, or by using the constructor parameters. For example, users may want a 7.1 channel configuration where the front, rear, and far rear speakers are equidistant. Such an equidistant relationship provides some nice benefits when rotating multi-channel content around in a circle, as it means a stereo image with 60 degree separation can be rotated to emanate from any two speakers without bleeding of the image, assuming the centre level of the panner is set to 0. If the voice outputs 5.1 channels (i.e., the voice containing this panner has 6 output channel rather than 8), then for the same equidistant properties, values of 45 and 135 degrees should be used for the front and rear speaker geometries respectively. 
+6cebfaa For all source channel configurations, the front, rear, and far rear source geometry can be adjusted independent of the speaker geometry. By default, the source geometry is the same as the speaker geometry.
+6cec07a For speaker configurations that include a LFE channel, the PlugIn will pass through the incoming LFE channel by ATTRIBUTE_SETLFEPASSTHROUGHLEVEL. ATTRIBUTE_SETLFEPASSTHROUGHLEVEL has no effect if the source is without a LFE channel. The other LFE control, ATTRIBUTE_SETLFELEVEL, scales each source channel and adds to the output LFE, if applicable. 
+6cec1d8 Maximum Delay
+6cec1e6 Defines the maximum delay length to be allocated for a Pan3D instance. The delay line is used for simulating the delay effect of the direct sound path from the sound source, the variously delayed indirect paths (reflections, diffractions)that occur due to geometry, and the Doppler effect. A larger value normally allows the Pan3D instance to accommodate more indirect paths. If the size of the room that the Pan3D instance is simulating is large, CONSTRUCTORPARAM_MAXDELAY will also need to be large in order to enable hearing of at least all the first order reflections. A general usage guideline is to set CONSTRUCTORPARAM_MAXDELAY to double the size of room that Pan3D is simulating (converted to seconds based on the speed of sound), within the constraints of available memory.
+6cec4f5 CONSTRUCTORPARAM_MAXINDIRECTPATHS
+6cec517 Maximum Paths (i.e. reflected or diffracted paths)
+6cec54a Defines the maximum number of indirect paths to be rendered.
+--
+6cec81e ApplyDspSettingsParam
+6cec834 Apply DSP Settings
+6cec847 This event results in the DSPSettings object location being passed to Pan3D. The object is also copied to local memory owned by Pan3D. The reason for copying the DSPSettings object to Pan3D local memory is to minimize the time duration during which the applicationcreating and filling in the DSPSettings object (such as EAAudio3D) and Pan3D are accessingthe same memory space. Given this approach, the only time during which a conflict could occur is during this event, when the data of DSPSettings is being copied over. As such, it is essential that the higher level 3D application take care to not modify this memory space while EAAudioCore is accessing it, either by acquiring the EAAudioCore lock, or using a double buffering scheme that precludes conflicts. See also: EA::Audio::Core::Pan3D::DSPSettings. 
+6cecb73 This event will stop 3D panning and result in the PlugIn producing silence on all output channels.
+6cecbd6 Panner (3D)
+6cecbe2 The Pan3D PlugIn allows for spatializing a mono signal over stereo, quad, 5.1 , or 7.1 channel configurations. The PlugIn is intended for use in conjunction with a higher level 3D audio application such as the EAAudio3D (or EAAudioSimple3D) library. This higher level library is responsible for producing a set of path parameters (delay amounts, azimuths, gains, filter cutoffs, etc.) for a direct path and several indirect paths which are to be used by Pan3D in spatializing the input signal.
+6cecdd1 The geometry of the panner can be over-ridden once globally in game code by calling EA::Audio::Core::Pan3D::SetDefaultFrontSpeakerAngle(),  EA::Audio::Core::Pan3D::SetDefaultRearSpeakerAngle(), and EA::Audio::Core::Pan3D::SetDefaultFarRearSpeakerAngle(). The geometry can also be over-ridden on a per instance basis by setting the appropriate angle-based constructor parameters of Pan3D. By default the front speakers are set 30 degrees from front center, the rear speakers are 110 degrees from front center, and the far rears at 150 degrees from front center. This provides a reasonable compromise for operation in quad/5.1 channel cases versus 7.1. If users want a configuration specific to a given output channel configuration, they should set the speaker locations either via calling the aforementioned SetDefaultFront/Rear/FarRearSpeakerAngle() functions, or by using the constructor parameters.
+6ced157 The Pan3D PlugIn consists of an interpolating multi-tap delay line, several filters, and Vector Base Amplitude Panners (VBAP) for direct and indirect path types. The length of the delay line is determined by the constructor parameter CONSTRUCTORPARAM_MAXDELAY, and the maximum number of indirect paths and corresponding read taps is determined by the constructor parameter CONSTRUCTORPARAM_MAXINDIRECTPATHS. It is possible that the higher level 3D audio application sends less indirect paths than the maximum, though sending more will result in some paths not getting played. The positions of the read taps are determined by the delay values of the direct and indirect paths. The input audio signal is first read either directly from a tap, or via interpolation (two-point linear) in the case of a changing delay and corresponding Doppler shift. It then passes through a low pass filter, followed by a low shelving filter in the case of the direct path only, and finally into a type of VBAP panner. The low pass filter simulates air and surface absorption effects while the low shelving filter models the proximity effect. The VBAP panner maps the direct path azimuth to gain values for each of the five main channels in the 5.1 setup to allow for a smooth panning transition when the sound emitter is very close to the listener. The indirect paths use two channel panning on the assumption they generally originate from far away, thereby reducing the amount of processing needed.
+6ced721 The Pan3D PlugIn accepts a mono source as the input signal and produces up to an 8 channel output. If rendering of stereo or multichannel sources is required, the user will have to first split the input into multiple mono sources.
+6ced809 Pan3D can be CPU intensive if a large number of indirect paths are being processed. The PlugIn can require a large amount of memory as well, depending on CONSTRUCTORPARAM_MAXDELAY and the number of indirect paths used, and therefore it is good practice to understand how much of the system resources can be allocated to Pan3D before choosing these values.
+6ced96e For more information on 3D audio calculation and rendering, please see the EAAudio3D package documentation and library. Also, please refer to the EATech 3D Audio Solution white papers and presentation on EA Knowledge at: http://www.worldwide.ea.com/articles/view.aspx?id=2770 .
+6ceda84 ATTRIBUTE_SETPAUSECONTROL
+--
+6cf398a Reverb (Impulse Response)
+6cf39a4 The ReverbIR1 PlugIn provides an efficient method for applying the reverberation characteristic of a given space to the game audio signal. This is achieved by performing the fast convolution of the audio signal with the impulse response (captured or created) of a given reverberant space. The efficient implementation is achieved by performing the convolution in the frequency domain, after having first sectioned the impulse response into smaller pieces in order to minimize delay and memory usage. To apply a given impulse response (IR), a corresponding impulse response file (such as say a stereo .wav file that contains the IR) must first be converted to an irf file (via SIMEX/SX). This file must be at the same sample rate as the output rate used in the game. The response is then applied to the signal via the EVENT_APPLYREVERB event.
+6cf3cef While the PlugIn has been designed for efficient operation, it does still require considerable resources, especially memory. To help mitigate this, memory usage can be traded off against the high frequency content of the reverberated signal retained. This is specified when creating the impulse response file (irf) via the SIMEX/SX parameter percentHighFrequencyCut. Reductions in memory usage will be nearly proportional to the number specified (i.e., if 50.0 is specified, memory usage will go down by close to half). This also results in considerable cycle savings. Additionally, cycle usage can be traded off against delay with the SIMEX/SX parameter samplesPerFFTBlock, which allows for specification of the FFT block (segment) size. Larger sizes result in more efficient processing at the expense of added delay. Sizes used by the FFT must be a power of 2, so any sizes specified that aren't will be forced to a power of 2. On the PS3 platform the block size is limited to a maximum of 1024 samples, which is large enough to achieve very good efficiency while not adding too much delay. 
+6cf4136  The ReverbIR1 PlugIn supports the use of two impulse responses at the same time. This allows for efficient cross fading from one environment to another, or the blending of two environments to create a third. This is immensely more efficient than using two separate ReverbIR voice instances, as the extra amount of memory and cycles required to support two reverbs rather than one within the PlugIn is very small. To utilize this feature, users must simply specify the reverb number (APPLYREVERBPARAM_REVERBNUMBER) along with the impulse response file (APPLYREVERBPARAM_REVERBFILE) when applying the reverb with the apply reverb event (EVENT_APPLYREVERB). In addition, to set the relative level of each reverb file the associated gain attribute should be set (i.e., ATTRIBUTE_REVERB0GAIN for reverb 0). Users must also ensure that any impulse response files being simultaneously used have the same number of channels, samples per block, and high frequency cut values.
+6cf44ff The ReverbIR1 PlugIn also supports the enveloping of either or both of the impulse responses. This allows for the possibility of shortening a given impulse response by fading it out to zero over a specified amount of time (i.e., ATTRIBUTE_REVERB0ENVELOPELENGTH for reverb 0).A start gain and envelope shape also must be specified via attributes (i.e., ATTRIBUTE_REVERB0ENVELOPESTARTLEVEL and ATTRIBUTE_REVERB0ENVELOPETYPE for reverb 0 respectively). This enveloping feature should be used with care, as the artificial shortening of an impulse response with a ramp does not exactly reflect a real-world scenario. If employed, users should experiment with the various enveloping parameters and impulse response(s) to confirm the resulting reverb suits their needs. The potential benefit with the use of enveloping is that it provides the user with some control over a given impulse response, allowing for greater variability and/or the use of less impulse response files. In the extreme, a user might use a single long impulse response, and simply adjust its length via enveloping to tailor it to the various reverberent spaces of the game. Combining enveloping with the use of two active individually gained reverb files can result in a high degree of flexibility and real-time creative control. 
+6cf4a10  To help minimize memory fragmentation due to allocations made internally by ReverbIR1, the constructor parameter CONSTRUCTORPARAM_MAXREVERBLENGTH has been provided. Users should set this to the longest impulse response (in seconds) used in their game if they want to minimize memory reallocations. If interested in further minimizing reallocations, users are advised to alternately use reverb slots 0 and 1 as they move from one impulse response file to the next. Not only does this allow cross fading from one to the other via the gain attributes, but it avoids the memory reallocations that would occur if the same slot were used. Specifically, when only a single reverb slot is being used/reused, ReverbIR1 does not insist that a newly applied reverb file be configured identically to the previous one, thereby allowing for a change in configuration if this is required. However, if slots are being alternately used (with some non-zero time overlap), then since this implies they must be configured the same, there does not need to be any memory reallocation (as long as the reverb files are never larger than the largest reverb used thus far and/or the value set in the constructor parameter CONSTRUCTORPARAM_MAXREVERBLENGTH). Also note that an EVENT_STOPREVERB1 event need not be used prior to applying a new reverb file, as the application of the new reverb file will result in the previous one not being accessed further by the ReverbIR1 instance. One reason to apply the stop event would be if there was some time during which only one reverb was needed, especially if the next reverb needed was not yet known. However, as long as slots are alternated and at least one slot is always active, use of the stop event should not cause additional reallocations.
+6cf50f7 The ReverbIR1 PlugIn supports several channel-impulse response file configurations. 1:1 source to output channel mappings (1, 2, 4, 6 or 8 channels) are supported, where the impulse response file is either mono, or it is comprised of the same number of channels as the signal input. Also, a 1:n source to output channel configuration is supported (1, 2, 4, 6 or 8 output channels), where the impulse response file is comprised of n channels.
+6cf52b2 Since the ReverbIR1 PlugIn will tend to be used as a global effect, and also since it will in some cases produce a different number of channels than are fed to it, the PlugIn is configured so that it will return silence when inactive. Normally, a separate parallel path would exist that persists even when the reverb is off, providing the dry, non-reverberated audio signal.
+6cf542a Also note that most impulse response files will have some gain associated with them. If this is significantly larger than one and the PlugIn input signal is also fairly large, the ReverbIR1 output will most likely get clipped in the mastering voice, causing distortion. This can be avoided by decreasing the send level into or out of the ReverbIR1 voice, or by reducing the level via a gain PlugIn within the ReverbIR1 voice. 
+6cf55d5 CONSTRUCTORPARAM_MAXSPACESIZE
+6cf55f3 Maximum Space Size
+6cf5606 This attribute specifies the maximum expected size of the reverberant space that will be set with the attribute ATTRIBUTE_SETSPACESIZE. A larger maximum space size will consume more memory, but if the space size attribute is set over this value, a costly buffer resize will be triggered.
+--
+6cfb835 Get Playback Info
+6cfb847 This event gets playback information about a given request. This includes an up-to-date play position and the sample duration. Note that this event executes immediately, and the returned play position can change between mixes.
+6cfb92a Sample Player
+6cfb938 The SamplePlayer PlugIn is a general purpose player which is designed to be format agnostic. Using the EA::Audio::Core::ISampleReader interface, the player is capable of playing from any compressed data source for which an implementation has been provided. Currently we've only provided a reader for the sps file format to allow playback of SndPlayer1 assets. But future releases may also provide readers for generic user content, packet streams, and more.
+6cfbb02 The SampleReader PlugIn is capable of looping, seeking, and stitching but is limited by reader implementations and the file formats involved. For example, looping and sample accurate stitching works well with sps data, but would be problematic for conventional MP3 data.
+6cfbc12 A SampleReader instance can output a dynamic number of channels (between 1 and the number of output channels it was created with). It is suggested that the player be followed by a Rechannel PlugIn when dealing with multiple source asset channel configurations on a single player.
+6cfbd2b The SamplePlayer PlugIn, although functionally very similar to the SndPlayer1 PlugIn, has some key API differences that users should be aware of. Firstly, attributes are now updated from the mixer thread in lock free mode as is typical for most PlugIns. This is unlike the SndPlayer1 and the GenericPlayer PlugIns which update their attribute values from within a timer client. The difference here is that attribute values may not always appear to be consistent with each other. For example, a client holding the lock may read one attribute, then the mixer thread updates the voice attributes without holding the lock, and then the client reads a second attribute before releasing the lock. The client will not see invalid values but there is no guarantee that they all came from the same mixer frame. In other words, the attributes may not be mutually consistent. Although, the approach taken with the SamplePlayer may be more complex, the advangage is that the player implementation may suspend its PPU timer client execution much of the time to save CPU cycles.
+6cfc155 Users should avoid cases where reading mutually consistent attributes is required. The SamplePlayer provides the following new attributes to handle the most common cases where reading multiple was typically required:
+6cfc22e    - the ATTRIBUTE_GETTIMEREMAINING attribute can be used to avoid needing to read both the position and length values atomically.
+6cfc2b1    - the ATTRIBUTE_GETPROGRESS attribute can be used to avoid needing to read both the position and length values atomically.
+6cfc32f    - the ATTRIBUTE_GETCURRENTREQUEST attribute can be used alone to determine whether a given request handle has been completed or not (since the player will advance past the last request by 0.5f when idle).
+--
+6d01a09 Note that any sample requests with loop points in them will prevent subsequent requests from playing properly since a looping sample will never end (unless stopped with EA::Audio::Core::SndPlayer1::EVENT_STOP). Due to other internal implementation details queuing further requests while a looping sample is in the queue is forbidden. An assert will be generated if such an attempt is made. Seeking into giga or looped samples is not supported.
+6d01bc5 SND Player
+6d01bd0 The SndPlayer1 PlugIn is the main player used for game audio sample playback. It efficiently supports resident RAM samples, streamed samples, gigastream samples, stitched playback, looped samples, sample accurate starting, up to 64 channels, and multiple compression types.
+6d01ce3 Looping samples will repeat their loop section infinitely, there is no lead-out section present which can be triggered.
+6d01d5c When stitching, the samples being stitched can be in any format (different sample rates, compression types, number of channels), and the joining of two samples will still be seamless.
+6d01e15 A SndPlayer1 instance will output a variable number of channels equal to the number of channels int the source sample data. In order for a single voice to handle assets with differing channel configurations, it will need to be followed by a PlugIn which provides a constant number of channles as output such as Rechannel (for standard fold-up or fold down behaviors) or MapChannels (for simple copy, clear behaviors). For more details on their precise behaviors, please see the documentation those PlugIns. To determine the number of channels in an SndPlayer1 asset at runtime you can use the static member function SndPlayer1::GetFileInfo()
+6d02098 Gigastream formatted samples are those where a small portion of the beginning of a sample is always stored in RAM, and the rest is stored on media such as DVD. The idea is to allow a sample to begin with no delay as if it was in RAM, but also allow the sample to be as long as desired without consuming any RAM besides the small beginning part in RAM. The small part of the file stored in RAM gives the SndPlayer1 time to retrieve the next portion off of DVD. This means that the length of sample in RAM must be longer than the length of time it takes to retrieve more data off of DVD, under all game conditions where heavy stream load is occurring. The amount of sample data in RAM is chosen at the time the SndPlayer assets are created. You may need to experiment with the length of the data in RAM, a good starting point is about 1 second of sample data.
+6d023f3 SndPlayer1 is one of the few PlugIns that supports non-standard channel configurations (up to 64). The Route PlugIn can be used to bus selections of channels to SubMix PlugIns, which can be useful for efficiently streaming layers of interactive music or ambience. For example, a stream file could be authored that contains 4 intensities of stereo crowd ambience. The 8 channel SndPlayer1 output can be routed into 4 stereo SubMixes, and then each SubMix Voice can vary its volume appropriately to cross-fade between the 4 intensities. This approach may use more CPU time than other approaches, but streaming a single 64 kilobyte/s stream will be far easier on a DVD than streaming 4 16 kilobyte/s streams. In most cases DVD bandwidth will be far more scarce than CPU bandwidth.
+6d026fd CONSTRUCTORPARAMETER_NAME
+6d02717 This constructor parameter should point to a C style string that will uniquely identify the SubMix instance by string name.
+6d02794 If a Send type of PlugIn wishes to connect to a SubMix by name, then the SubMix name must be set.
+6d027f7 The name does not have to be set if the SubMix will only be connected to by pointer. If the constructor parameters are not provided, the SubMix will default to having no name (it will only be connectable by pointer).
+6d028d1 The same name cannot be used more than once across all the active SubMix instances. This condition will be asserted on if using the debug version of EAAudioCore, but other versions will not assert and unexpected behaviour may occur.
+--
+6d0873f MODE_MONO
+6d08749 Mono output. The mono output mode is supported on the PC, iOS and Android platforms.
+6d0879f For the PC, this output mode is not recommended to be used in game code. The 7.1 signal is folded down by dropping the LFE, dropping the backs and center by 3 dB and mixing them with the front left and front right, and then bringing the entire mix down an additional 3 dB. For the listed mobile platforms other then Android, this mode can be set via EVENT_SETMODE. For Android, the mode cannot be set via EVENT_SETMODE, but rather is set via the Java code AndroidEAAudioCore.Startup(channels).
+6d0898d MODE_STEREO
+6d08999 Stereo output. The stereo output mode is supported on the PC, Xbox 360, XBox One, PS3, PS4, iOS and Android.
+6d08a07 This mode can only be set via EVENT_SETMODE on the PC, PS3, and some mobile platforms. For the PS3, the event will only be respected when the PS3 OSD audio configuration is set to a stereo output mode. For the Xbox 360, the mode cannot be set via EVENT_SETMODE. Instead, the mode is set via the dashboard. For mobile platforms except for Android, this mode can be set via EVENT_SETMODE. For Android, the mode cannot be set via EVENT_SETMODE, but rather is set via Java code AndroidEAAudioCore.Startup(channels).
+6d08c08 For the PS3, setting the stereo output mode will instruct EAAudioCore to only output plain stereo when the OSD audio configuration is also set to stereo mode. This is the default output mode when the OSD is set to stereo (versus the MODE_PROLOGIC2 option described later).
+6d08d1a On the PC where EAAudioCore is in charge of handling the fold down from 7.1 to stereo, an accepted standard for mixing the signals together is used. The LFE is dropped, the backs and far backs are lowered by 3 dB and mixed with the fronts, and the center channel is mixed in with the fronts at equal power (down 3 dB). The entire mix is then brought down an additional 3 dB to keep the signal from running too hot and clipping excessively where it wouldn't have in the 7.1 mix. Similar algorithms are likely used on platforms where the console itself is in charge of fold down (e.g. Xbox 360 and PS3), and they seem to produce the same results as EAAudioCore on PC. However, it is possible there may be slight differences, since the details of those algorithm implementations are not public.
+6d09033 Stereo and mono (in most cases) are the only modes currently supported on the mobile platforms.
+6d09093 MODE_QUAD
+6d0909d Quad output (4.0). The quad output mode is supported on the PC platform.
+6d090e7 A fair number of older PC sound cards only support up to a four channel or quad output. PC titles may wish to support this output mode.
+--
+6d092f5 This mode should be supported as an option for PC titles. This mode can only be set via EVENT_SETMODE on the PC. For the other platforms the mode cannot be set via EVENT_SETMODE, but rather is set via the dashboard.
+6d093cf MODE_PROLOGIC2
+6d093de ProLogic2
+6d093e8 Dolby Pro Logic II. The Dolby Pro Logic II output mode is supported on the Xbox 360 and PS3 platforms.
+6d09450 This mode can only be set via EVENT_SETMODE on the PS3. For the Xbox 360, the mode cannot be set via EVENT_SETMODE. Instead, the mode is set via the dashboard.
+6d094f1 This mode can only be set via EVENT_SETMODE on the PS3 and will only be respected when the PS3 OSD audio configuration is set to a stereo output mode.
+6d09589 On the PS3 it is EAAudioCore itself that encodes Dolby Pro Logic II signals. The encode is performed on the final mix and uses a proper PL2 encode and fold-down algorithm as recommended by Dolby. The overall mix level is brought down an additional 3 dB the same way the stereo fold-down brings it down to prevent the input signal from getting too hot when carried over 2 channels. This also ensures level matching with the stereo mode.
+6d0973e When the PS3 is in PL2 mode a small amount of extra SPU cycles are used compared to stereo (~0.2%). This means your game should probably be tested in the most expensive output mode (currently PL2) to ensure performance is adequate. See the EAAudioCore benchmarks for the latest SPU usage differences between stereo, PL2, and 5.1/7.1.
+6d0988d It should be noted PL2 is not a discreet surround format, but rather surround information is derived from phase and amplitude information encoded in the signals. Surround in PL2 will not generally sound exactly the same as discreet 5.1. In particular, phantom center sounds will collapse to the center. The signal encoding process may also introduce some audio issues when played back on stereo equipment.
+6d09a25 MODE_HRTF
+6d09a34 Head Related Transfer Function (HRTF)The HRTF output mode is supported on all platforms.
+--
+6e555c0 object identifier routines
+6e555e0 PEM routines
+6e555f0 dsa routines
+6e55600 x509 certificate routines
+6e55620 asn1 encoding routines
+6e55638 configuration file routines
+6e55658 common libcrypto routines
+6e55678 elliptic curve routines
+6e55690 ECDSA routines
+6e556a0 ECDH routines
+6e556b0 SSL routines
+--
+6e77200 invalid ccs message
+6e77218 invalid certificate or alg
+6e77238 invalid command
+6e77248 invalid compression algorithm
+6e77268 invalid config
+6e77278 invalid configuration name
+6e77298 invalid context
+6e772a8 invalid ct validation type
+6e772c8 invalid key update type
+6e772e0 invalid max early data
+6e772f8 invalid null cmd name
+--
+7017485 _rankUpSuccessAnim
+70174a0 get_xmlBindingResource
+70174bf _beginLoad
+70174d2 _updateAttriList
+70174eb _levelPlaceAnim
+7017503 _arabicInitialConfigurationFix
+701752a AUDIO_INDEX0
+701753f RANK_LEVEL_SHOW
+7017557 AUDIO_INDEX2
+701756c AUDIO_INDEX3
+7017581 ITEMS_SHOW
+--
+711dbcf PLATFORM_VERSION
+711dbe8 DEVICE_NAME
+711dbfc CLIENT_VERSION
+711dc13 CLIENT_VERSION_STR
+711dc2e REPLAY_VERSION
+711dc45 BUILD_CONFIG
+711dc5a DEVICE_METRICS
+711dc71 STORAGE_SIZE
+711dc86 NUM_CPU_CORES
+711dc9c DEVICE_RAM
+711dcaf SCREEN_WIDTH
+--
+7120529 platformVersion
+7120541 deviceName
+7120554 clientVersion
+712056a clientVersionStr
+7120583 replayVersion
+7120599 buildConfig
+71205ad deviceMetrics
+71205c3 storageSize
+71205d7 numCpuCores
+71205eb deviceRam
+71205fd screenWidth
+--
+7162d4d current_server_version
+7162d6c current_gameplay_version
+7162da4  res:
+7162db2  server:
+7162ddb replayVersion
+7162df1 buildConfig
+7162e05 storageSize
+7162e19 numCpuCores
+7162e2d deviceRam
+7162e3f deviceName
+7162e52 ROSTER_UPDATE_COMPLETED_SEASON_
+--
+7163db4 getUserIpAddressCountryIsoAlpha2Code
+7163de1 getReplayVersion
+7163dfa getClientInfoHash
+7163e14 getClientInfoStr
+7163e2d getBuildNumber
+7163e44 getBuildConfig
+7163e5b getStorageSize
+7163e72 getNumCpuCores
+7163e89 getDeviceRam
+7163e9e getDeviceName
+7163eb4 getRosterUpdateSeasonKey

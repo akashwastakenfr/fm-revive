@@ -1,0 +1,111 @@
+
+libFIFAMobileNeon.so.original:	file format elf64-littleaarch64
+
+Disassembly of section .text:
+
+00000000026d5c44 <_ZNK18glucentralservices15AttributeUpdate7to_jsonEv>:
+ 4e68fdc: f81c0ff7     	str	x23, [sp, #-0x40]!
+ 4e68fe0: a90157f6     	stp	x22, x21, [sp, #0x10]
+ 4e68fe4: a9024ff4     	stp	x20, x19, [sp, #0x20]
+ 4e68fe8: a9037bfd     	stp	x29, x30, [sp, #0x30]
+ 4e68fec: 9100c3fd     	add	x29, sp, #0x30
+ 4e68ff0: 29412c09     	ldp	w9, w11, [x0, #0x8]
+ 4e68ff4: 2a0303f3     	mov	w19, w3
+ 4e68ff8: 2a0203f4     	mov	w20, w2
+ 4e68ffc: 2a0103f5     	mov	w21, w1
+ 4e69000: aa0803f6     	mov	x22, x8
+ 4e69004: 93407d29     	sxtw	x9, w9
+ 4e69008: 1100712a     	add	w10, w9, #0x1c
+ 4e6900c: 6b0b015f     	cmp	w10, w11
+ 4e69010: 5400010d     	b.le	0x4e69030 <_ZNK18glucentralservices15AttributeUpdate7to_jsonEv+0x27933ec>
+ 4e69014: f9400008     	ldr	x8, [x0]
+ 4e69018: 321d07e1     	orr	w1, wzr, #0x18
+ 4e6901c: 2a1f03e2     	mov	w2, wzr
+ 4e69020: f9400908     	ldr	x8, [x8, #0x10]
+ 4e69024: d63f0100     	blr	x8
+ 4e69028: aa0003f7     	mov	x23, x0
+ 4e6902c: 14000016     	b	0x4e69084 <_ZNK18glucentralservices15AttributeUpdate7to_jsonEv+0x2793440>
+ 4e69030: b900080a     	str	w10, [x0, #0x8]
+ 4e69034: 9001a86d     	adrp	x13, 0x8375000
+ 4e69038: a9412808     	ldp	x8, x10, [x0, #0x10]
+ 4e6903c: f94421ad     	ldr	x13, [x13, #0x840]
+ 4e69040: 13077d2b     	asr	w11, w9, #7
+ 4e69044: 1200192c     	and	w12, w9, #0x7f
+ 4e69048: 8b090157     	add	x23, x10, x9
+ 4e6904c: b86c59ac     	ldr	w12, [x13, w12, uxtw #2]
+ 4e69050: 937e7d6d     	sbfiz	x13, x11, #2, #32
+ 4e69054: b86d690e     	ldr	w14, [x8, x13]
+ 4e69058: 11026d29     	add	w9, w9, #0x9b
+ 4e6905c: 13077d29     	asr	w9, w9, #7
+ 4e69060: 4b0b0129     	sub	w9, w9, w11
+ 4e69064: 2a0c01ca     	orr	w10, w14, w12
+ 4e69068: b82d690a     	str	w10, [x8, x13]
+ 4e6906c: 9001a868     	adrp	x8, 0x8375000
+ 4e69070: f945f108     	ldr	x8, [x8, #0xbe0]
+ 4e69074: b9400108     	ldr	w8, [x8]
+ 4e69078: 2a080128     	orr	w8, w9, w8
+ 4e6907c: 32170508     	orr	w8, w8, #0x600
+ 4e69080: b80046e8     	str	w8, [x23], #0x4
+ 4e69084: 9001cae8     	adrp	x8, 0x87c5000 <_ZN6gluads15EAAnzuNativeAds10mDebugModeE+0x2a6756>
+ 4e69088: f9442508     	ldr	x8, [x8, #0x848]
+ 4e6908c: 120002a1     	and	w1, w21, #0x1
+ 4e69090: aa1703e0     	mov	x0, x23
+ 4e69094: 2a1403e2     	mov	w2, w20
+ 4e69098: 2a1303e3     	mov	w3, w19
+ 4e6909c: f90002e8     	str	x8, [x23]
+ 4e690a0: 94000007     	bl	0x4e690bc <_ZNK18glucentralservices15AttributeUpdate7to_jsonEv+0x2793478>
+ 4e690a4: f90002d7     	str	x23, [x22]
+ 4e690a8: a9437bfd     	ldp	x29, x30, [sp, #0x30]
+ 4e690ac: a9424ff4     	ldp	x20, x19, [sp, #0x20]
+ 4e690b0: a94157f6     	ldp	x22, x21, [sp, #0x10]
+ 4e690b4: f84407f7     	ldr	x23, [sp], #0x40
+ 4e690b8: d65f03c0     	ret
+ 4e690bc: d101c3ff     	sub	sp, sp, #0x70
+ 4e690c0: f9000bfb     	str	x27, [sp, #0x10]
+ 4e690c4: a90267fa     	stp	x26, x25, [sp, #0x20]
+ 4e690c8: a9035ff8     	stp	x24, x23, [sp, #0x30]
+ 4e690cc: a90457f6     	stp	x22, x21, [sp, #0x40]
+ 4e690d0: a9054ff4     	stp	x20, x19, [sp, #0x50]
+ 4e690d4: a9067bfd     	stp	x29, x30, [sp, #0x60]
+ 4e690d8: 910183fd     	add	x29, sp, #0x60
+ 4e690dc: 9001a868     	adrp	x8, 0x8375000
+ 4e690e0: f9441508     	ldr	x8, [x8, #0x828]
+ 4e690e4: 9001cae9     	adrp	x9, 0x87c5000 <_ZN6gluads15EAAnzuNativeAds10mDebugModeE+0x2a6756>
+ 4e690e8: 2a0303f3     	mov	w19, w3
+ 4e690ec: 2a0203f5     	mov	w21, w2
+ 4e690f0: 39400108     	ldrb	w8, [x8]
+ 4e690f4: aa0003f4     	mov	x20, x0
+ 4e690f8: 1200003a     	and	w26, w1, #0x1
+ 4e690fc: 91184129     	add	x9, x9, #0x610
+ 4e69100: f90007e9     	str	x9, [sp, #0x8]
+ 4e69104: 340001c8     	cbz	w8, 0x4e6913c <_ZNK18glucentralservices15AttributeUpdate7to_jsonEv+0x27934f8>
+ 4e69108: 9001a868     	adrp	x8, 0x8375000
+ 4e6910c: f9441908     	ldr	x8, [x8, #0x830]
+ 4e69110: b9400100     	ldr	w0, [x8]
+ 4e69114: 96fa2db5     	bl	0xcf47e8 <pthread_getspecific@plt>
+ 4e69118: aa0003f6     	mov	x22, x0
+ 4e6911c: f90003f6     	str	x22, [sp]
+ 4e69120: b4000576     	cbz	x22, 0x4e691cc <_ZNK18glucentralservices15AttributeUpdate7to_jsonEv+0x2793588>
+ 4e69124: 29456ec8     	ldp	w8, w27, [x22, #0x28]
+ 4e69128: 390122df     	strb	wzr, [x22, #0x48]
+ 4e6912c: 6b08037f     	cmp	w27, w8
+ 4e69130: 5400012a     	b.ge	0x4e69154 <_ZNK18glucentralservices15AttributeUpdate7to_jsonEv+0x2793510>
+ 4e69134: f9401ad7     	ldr	x23, [x22, #0x30]
+ 4e69138: 14000020     	b	0x4e691b8 <_ZNK18glucentralservices15AttributeUpdate7to_jsonEv+0x2793574>
+ 4e6913c: 9001a868     	adrp	x8, 0x8375000
+ 4e69140: f9441d08     	ldr	x8, [x8, #0x838]
+ 4e69144: f9400116     	ldr	x22, [x8]
+ 4e69148: f90003f6     	str	x22, [sp]
+ 4e6914c: b5fffed6     	cbnz	x22, 0x4e69124 <_ZNK18glucentralservices15AttributeUpdate7to_jsonEv+0x27934e0>
+ 4e69150: 1400001f     	b	0x4e691cc <_ZNK18glucentralservices15AttributeUpdate7to_jsonEv+0x2793588>
+ 4e69154: 0b1b0769     	add	w9, w27, w27, lsl #1
+ 4e69158: 7100013f     	cmp	w9, #0x0
+ 4e6915c: 1a89a529     	cinc	w9, w9, lt
+ 4e69160: f9401ad8     	ldr	x24, [x22, #0x30]
+ 4e69164: 13017d29     	asr	w9, w9, #1
+ 4e69168: 93407f68     	sxtw	x8, w27
+ 4e6916c: 11002929     	add	w9, w9, #0xa
+ 4e69170: 937d7d20     	sbfiz	x0, x9, #3, #32
+ 4e69174: d37df119     	lsl	x25, x8, #3
+ 4e69178: eb00033f     	cmp	x25, x0
+ 4e6917c: b9002ac9     	str	w9, [x22, #0x28]

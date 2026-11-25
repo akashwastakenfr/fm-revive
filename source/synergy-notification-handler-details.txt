@@ -1,0 +1,208 @@
+
+========== jadx-out/sources/com/ea/nimble/SynergyIdManagerImpl.java ==========
+42-        }
+43-    }
+44-
+45-    public static ISynergyIdManager getComponent() {
+46-        return (ISynergyIdManager) Base.getComponent(SynergyIdManager.COMPONENT_ID);
+47-    }
+48-
+49-    private void wakeup() {
+50-        restoreFromPersistent();
+51-        if (!Utility.validString(this.m_anonymousSynergyId)) {
+52-            setAnonymousSynergyId(SynergyEnvironment.getComponent().getSynergyId());
+53-        }
+54-        if (!Utility.validString(this.m_currentSynergyId)) {
+55-            setCurrentSynergyId(this.m_anonymousSynergyId);
+56-        }
+57:        Utility.registerReceiver(SynergyEnvironment.NOTIFICATION_STARTUP_REQUESTS_FINISHED, this.m_receiver);
+58-    }
+59-
+60-    private void sleep() {
+61-        Utility.unregisterReceiver(this.m_receiver);
+62-        saveDataToPersistent();
+63-    }
+64-
+65-    @Override // com.ea.nimble.Component
+66-    protected void restore() {
+67-        wakeup();
+68-    }
+69-
+70-    @Override // com.ea.nimble.Component
+71-    protected void suspend() {
+72-        sleep();
+
+========== jadx-out/sources/com/ea/nimble/SynergyNetworkImpl.java ==========
+54-                if (stringExtra == null || !stringExtra.equals("0")) {
+55-                    Iterator it = SynergyNetworkImpl.this.m_pendingRequests.iterator();
+56-                    while (it.hasNext()) {
+57-                        ((SynergyNetworkConnection) it.next()).start();
+58-                    }
+59-                } else {
+60-                    Iterator it2 = SynergyNetworkImpl.this.m_pendingRequests.iterator();
+61-                    while (it2.hasNext()) {
+62-                        ((SynergyNetworkConnection) it2.next()).errorPriorToSend(new Error(Error.Code.SYNERGY_ENVIRONMENT_UPDATE_FAILURE, "Failed to retrieve Environment data from Synergy"));
+63-                    }
+64-                }
+65-                SynergyNetworkImpl.this.m_pendingRequests.clear();
+66-            }
+67-        };
+68-        this.m_synergyEnvironmentNotifyReceiver = broadcastReceiver;
+69:        Utility.registerReceiver(SynergyEnvironment.NOTIFICATION_STARTUP_REQUESTS_FINISHED, broadcastReceiver);
+70-    }
+71-
+72-    @Override // com.ea.nimble.Component
+73-    protected void suspend() {
+74-        this.m_sessionIdNeedsRefresh = true;
+75-    }
+76-
+77-    @Override // com.ea.nimble.Component
+78-    protected void resume() {
+79-        getSessionId();
+80-    }
+81-
+82-    @Override // com.ea.nimble.Component
+83-    public void cleanup() {
+84-        BroadcastReceiver broadcastReceiver = this.m_synergyEnvironmentNotifyReceiver;
+
+========== jadx-out/sources/com/ea/nimble/identity/NimbleIdentityConfig.java ==========
+78-        Log.Helper.LOGPUBLICFUNC(this);
+79-        return this.m_clientSecret;
+80-    }
+81-
+82-    public double getExpiryInterval() {
+83-        Log.Helper.LOGPUBLICFUNC(this);
+84-        return this.m_expiryInterval;
+85-    }
+86-
+87-    void initialize() {
+88-        this.m_ready = false;
+89-        this.m_autoRefresh = false;
+90-        if (SynergyEnvironment.getComponent().isDataAvailable()) {
+91-            onUpdate();
+92-        }
+93:        Utility.registerReceiver(SynergyEnvironment.NOTIFICATION_STARTUP_ENVIRONMENT_DATA_CHANGED, this.m_receiver);
+94-        Log.Helper.LOGV(this, "Configuration initiailized", new Object[0]);
+95-    }
+96-
+97-    void uninitialize() {
+98-        Utility.unregisterReceiver(this.m_receiver);
+99-    }
+100-
+101-    /* JADX INFO: Access modifiers changed from: private */
+102-    public void onUpdate() {
+103-        String configValueAsString;
+104-        String configValueAsString2;
+105-        Log.Helper.LOGFUNC(this);
+106-        String serverUrlWithKey = SynergyEnvironment.getComponent().getServerUrlWithKey(SynergyEnvironment.SERVER_URL_KEY_IDENTITY_CONNECT);
+107-        String serverUrlWithKey2 = SynergyEnvironment.getComponent().getServerUrlWithKey(SynergyEnvironment.SERVER_URL_KEY_IDENTITY_PROXY);
+108-        String serverUrlWithKey3 = SynergyEnvironment.getComponent().getServerUrlWithKey(SynergyEnvironment.SERVER_URL_KEY_IDENTITY_PORTAL);
+
+========== jadx-out/sources/com/ea/nimble/pushtng/PushNotificationImpl.java ==========
+114-        }
+115-    }
+116-
+117-    @Override // com.ea.nimble.Component
+118-    public void restore() {
+119-        Log.Helper.LOGPUBLICFUNC(this);
+120-        sendPendingTrackingRequests();
+121-        Persistence persistenceForNimbleComponent = PersistenceService.getPersistenceForNimbleComponent(getComponentId(), Persistence.Storage.CACHE);
+122-        if (persistenceForNimbleComponent != null) {
+123-            this.disabled = (Boolean) persistenceForNimbleComponent.getValue("disabled");
+124-        }
+125-        ISynergyEnvironment component = SynergyEnvironment.getComponent();
+126-        if (component.getProductId() != null && component.getSellId() != null && component.getServerUrlWithKey(SynergyEnvironment.SERVER_URL_KEY_ENS) != null) {
+127-            onComponentSetupCompleted();
+128-        } else {
+129:            Utility.registerReceiver(SynergyEnvironment.NOTIFICATION_STARTUP_REQUESTS_FINISHED, new BroadcastReceiver() { // from class: com.ea.nimble.pushtng.PushNotificationImpl.2
+130-                @Override // android.content.BroadcastReceiver
+131-                public void onReceive(Context context, Intent intent) {
+132-                    Bundle extras = intent.getExtras();
+133-                    if (extras == null || !extras.getString("result").equals("1")) {
+134-                        return;
+135-                    }
+136-                    PushNotificationImpl.this.onComponentSetupCompleted();
+137-                }
+138-            });
+139-        }
+140-        ApplicationLifecycle.getComponent().registerActivityLifecycleCallbacks(this);
+141-    }
+142-
+143-    @Override // com.ea.nimble.Component
+144-    protected void cleanup() {
+
+========== jadx-out/sources/com/ea/nimble/tracking/NimbleTrackingImplBase.java ==========
+462-                    Log.Helper.LOGD(this, "Default App Setting : Disable Tracking", new Object[0]);
+463-                    this.m_enable = false;
+464-                    return;
+465-                }
+466-                return;
+467-            }
+468-        }
+469-        android.util.Log.e(Global.NIMBLE_ID, "WARNING! Cannot find valid TrackingEnable from AndroidManifest.xml");
+470-    }
+471-
+472-    protected void addObserverForSynergyEnvironmentUpdateFinished() {
+473-        Log.Helper.LOGFUNC(this);
+474-        if (this.m_receiver == null) {
+475-            StartupRequestsFinishedReceiver startupRequestsFinishedReceiver = new StartupRequestsFinishedReceiver();
+476-            this.m_receiver = startupRequestsFinishedReceiver;
+477:            Utility.registerReceiver(SynergyEnvironment.NOTIFICATION_STARTUP_REQUESTS_FINISHED, startupRequestsFinishedReceiver);
+478-        }
+479-    }
+480-
+481-    /* JADX INFO: Access modifiers changed from: private */
+482:    public void onStartupRequestsFinished(Intent intent) {
+483-        Log.Helper.LOGFUNC(this);
+484-        if (intent.getExtras() == null || !intent.getExtras().getString("result").equals("1")) {
+485-            return;
+486-        }
+487-        int trackingPostInterval = SynergyEnvironment.getComponent().getTrackingPostInterval();
+488-        if (trackingPostInterval < 0 || trackingPostInterval == -1) {
+489-            this.m_postInterval = 1.0d;
+490-        } else {
+491-            this.m_postInterval = trackingPostInterval;
+492-        }
+493-        ArrayList<TrackingBaseSessionObject> arrayList = this.m_sessionsToPost;
+494-        if (arrayList != null) {
+495-            for (TrackingBaseSessionObject trackingBaseSessionObject : arrayList) {
+496-                if (trackingBaseSessionObject != null && trackingBaseSessionObject.sessionData != null) {
+497-                    Object obj = trackingBaseSessionObject.sessionData.get(SynergyCatalog.MTX_INFO_KEY_SELLID);
+--
+545-            this.m_receiver = null;
+546-        }
+547-        if (this.m_isPostPending) {
+548-            this.m_isPostPending = false;
+549-            resetPostTimer(0.0d);
+550-        }
+551-    }
+552-
+553-    private class StartupRequestsFinishedReceiver extends BroadcastReceiver {
+554-        private StartupRequestsFinishedReceiver() {
+555-        }
+556-
+557-        @Override // android.content.BroadcastReceiver
+558-        public void onReceive(Context context, final Intent intent) {
+559-            Log.Helper.LOGPUBLICFUNC(this);
+560:            if (intent.getAction().equals(SynergyEnvironment.NOTIFICATION_STARTUP_REQUESTS_FINISHED)) {
+561-                NimbleTrackingImplBase.this.updateFeatureDisableState();
+562-                NimbleTrackingImplBase.this.m_threadManager.runInWorkerThread(new Runnable() { // from class: com.ea.nimble.tracking.NimbleTrackingImplBase.StartupRequestsFinishedReceiver.1
+563-                    @Override // java.lang.Runnable
+564-                    public void run() {
+565-                        Log.Helper.LOGPUBLICFUNC(this);
+566:                        NimbleTrackingImplBase.this.onStartupRequestsFinished(intent);
+567-                    }
+568-                });
+569-            }
+570-        }
+571-    }
+572-
+573-    /* JADX INFO: Access modifiers changed from: private */
+574-    public void onOriginLoginStatusChanged(Intent intent) {
+575-        Log.Helper.LOGFUNC(this);
+576-        if (intent.getExtras() != null) {
+577-            String string = intent.getExtras().getString(ORIGIN_NOTIFICATION_LOGIN_STATUS_UPDATE_KEY_STATUS);
+578-            if (string.equals(ORIGIN_LOGIN_STATUS_STRING_LIVE_USER) || string.equals(ORIGIN_LOGIN_STATUS_STRING_AUTO_LOGGING_IN)) {
+579-                Log.Helper.LOGI(this, "Login status update, TRUE", new Object[0]);
+580-                this.m_loggedInToOrigin = true;
+581-                return;

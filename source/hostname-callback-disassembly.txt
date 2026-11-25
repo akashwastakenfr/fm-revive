@@ -1,0 +1,102 @@
+
+libFIFAMobileNeon.so:	file format elf64-littleaarch64
+
+Disassembly of section .text:
+
+0000000000d22128 <OPENSSL_cpuid_setup>:
+ 100da00: 4e181d07     	mov	v7.d[1], x8
+ 100da04: 4ea01c01     	mov	v1.16b, v0.16b
+ 100da08: 9128818c     	add	x12, x12, #0xa20
+ 100da0c: 3d800567     	str	q7, [x11, #0x10]
+ 100da10: b002dc4b     	adrp	x11, 0x6b96000
+ 100da14: 4e181d41     	mov	v1.d[1], x10
+ 100da18: 4e181d04     	mov	v4.d[1], x8
+ 100da1c: 9103d96b     	add	x11, x11, #0xf6
+ 100da20: ad001181     	stp	q1, q4, [x12]
+ 100da24: 4ea01c01     	mov	v1.16b, v0.16b
+ 100da28: 3d800527     	str	q7, [x9, #0x10]
+ 100da2c: d003c109     	adrp	x9, 0x882f000 <_ZN6gluads15EAAnzuNativeAds10mDebugModeE+0x310756>
+ 100da30: 4e181d61     	mov	v1.d[1], x11
+ 100da34: b002dc4b     	adrp	x11, 0x6b96000
+ 100da38: 91294129     	add	x9, x9, #0xa50
+ 100da3c: 912c8d6b     	add	x11, x11, #0xb23
+ 100da40: 3d8005a7     	str	q7, [x13, #0x10]
+ 100da44: b002dc4d     	adrp	x13, 0x6b96000
+ 100da48: b002dc4a     	adrp	x10, 0x6b96000
+ 100da4c: 3d800121     	str	q1, [x9]
+ 100da50: 9e670161     	fmov	d1, x11
+ 100da54: 910529ad     	add	x13, x13, #0x14a
+ 100da58: 912b014a     	add	x10, x10, #0xac0
+ 100da5c: 3d8073e1     	str	q1, [sp, #0x1c0]
+ 100da60: 4ea01c01     	mov	v1.16b, v0.16b
+ 100da64: 9e67014b     	fmov	d11, x10
+ 100da68: d003c10a     	adrp	x10, 0x882f000 <_ZN6gluads15EAAnzuNativeAds10mDebugModeE+0x310756>
+ 100da6c: d003c10c     	adrp	x12, 0x882f000 <_ZN6gluads15EAAnzuNativeAds10mDebugModeE+0x310756>
+ 100da70: d003c10b     	adrp	x11, 0x882f000 <_ZN6gluads15EAAnzuNativeAds10mDebugModeE+0x310756>
+ 100da74: 4e181da1     	mov	v1.d[1], x13
+ 100da78: b002dc4d     	adrp	x13, 0x6b96000
+ 100da7c: 912a014a     	add	x10, x10, #0xa80
+ 100da80: 912ac18c     	add	x12, x12, #0xab0
+ 100da84: 912b816b     	add	x11, x11, #0xae0
+ 100da88: 4e181d05     	mov	v5.d[1], x8
+ 100da8c: 912e2dad     	add	x13, x13, #0xb8b
+ 100da90: 3d800525     	str	q5, [x9, #0x10]
+ 100da94: b002dc49     	adrp	x9, 0x6b96000
+ 100da98: 3d800181     	str	q1, [x12]
+ 100da9c: 3d800161     	str	q1, [x11]
+ 100daa0: 3d800141     	str	q1, [x10]
+ 100daa4: 9e6701a1     	fmov	d1, x13
+ 100daa8: 91069129     	add	x9, x9, #0x1a4
+ 100daac: 3d8067e1     	str	q1, [sp, #0x190]
+ 100dab0: 4e181d12     	mov	v18.d[1], x8
+ 100dab4: 4ea01c01     	mov	v1.16b, v0.16b
+ 100dab8: d003c10d     	adrp	x13, 0x882f000 <_ZN6gluads15EAAnzuNativeAds10mDebugModeE+0x310756>
+ 100dabc: 3d800552     	str	q18, [x10, #0x10]
+ 100dac0: d003c10a     	adrp	x10, 0x882f000 <_ZN6gluads15EAAnzuNativeAds10mDebugModeE+0x310756>
+ 100dac4: 3d800592     	str	q18, [x12, #0x10]
+ 100dac8: d003c10c     	adrp	x12, 0x882f000 <_ZN6gluads15EAAnzuNativeAds10mDebugModeE+0x310756>
+ 100dacc: 4e181d21     	mov	v1.d[1], x9
+ 100dad0: b002dc49     	adrp	x9, 0x6b96000
+ 100dad4: 912c41ad     	add	x13, x13, #0xb10
+ 100dad8: 912d014a     	add	x10, x10, #0xb40
+ 100dadc: 912dc18c     	add	x12, x12, #0xb70
+ 100dae0: 3d800572     	str	q18, [x11, #0x10]
+ 100dae4: b002dc4b     	adrp	x11, 0x6b96000
+ 100dae8: 912fd929     	add	x9, x9, #0xbf6
+ 100daec: 4e181d14     	mov	v20.d[1], x8
+ 100daf0: 9108316b     	add	x11, x11, #0x20c
+ 100daf4: 3d800181     	str	q1, [x12]
+ 100daf8: 9e67012a     	fmov	d10, x9
+ 100dafc: d003c109     	adrp	x9, 0x882f000 <_ZN6gluads15EAAnzuNativeAds10mDebugModeE+0x310756>
+ 100db00: ad0051a1     	stp	q1, q20, [x13]
+ 100db04: ad005141     	stp	q1, q20, [x10]
+ 100db08: 4ea01c01     	mov	v1.16b, v0.16b
+ 100db0c: 912e8129     	add	x9, x9, #0xba0
+ 100db10: d003c10d     	adrp	x13, 0x882f000 <_ZN6gluads15EAAnzuNativeAds10mDebugModeE+0x310756>
+ 100db14: d003c10a     	adrp	x10, 0x882f000 <_ZN6gluads15EAAnzuNativeAds10mDebugModeE+0x310756>
+ 100db18: 3d800594     	str	q20, [x12, #0x10]
+ 100db1c: d003c10c     	adrp	x12, 0x882f000 <_ZN6gluads15EAAnzuNativeAds10mDebugModeE+0x310756>
+ 100db20: 4e181d61     	mov	v1.d[1], x11
+ 100db24: b002dc4b     	adrp	x11, 0x6b96000
+ 100db28: 4e181d17     	mov	v23.d[1], x8
+ 100db2c: 912f41ad     	add	x13, x13, #0xbd0
+ 100db30: 9130014a     	add	x10, x10, #0xc00
+ 100db34: 9130c18c     	add	x12, x12, #0xc30
+ 100db38: 9130f56b     	add	x11, x11, #0xc3d
+ 100db3c: ad005d21     	stp	q1, q23, [x9]
+ 100db40: b002dc49     	adrp	x9, 0x6b96000
+ 100db44: 3d800141     	str	q1, [x10]
+ 100db48: 3d800181     	str	q1, [x12]
+ 100db4c: 9e670167     	fmov	d7, x11
+ 100db50: 91099929     	add	x9, x9, #0x266
+ 100db54: ad005da1     	stp	q1, q23, [x13]
+ 100db58: d003c10b     	adrp	x11, 0x882f000 <_ZN6gluads15EAAnzuNativeAds10mDebugModeE+0x310756>
+ 100db5c: 4ea01c01     	mov	v1.16b, v0.16b
+ 100db60: 9131816b     	add	x11, x11, #0xc60
+ 100db64: 3d800557     	str	q23, [x10, #0x10]
+ 100db68: b002dc4a     	adrp	x10, 0x6b96000
+ 100db6c: 4e181d21     	mov	v1.d[1], x9
+ 100db70: 4e181d0f     	mov	v15.d[1], x8
+ 100db74: 910aa94a     	add	x10, x10, #0x2aa
+ 100db78: b002dc49     	adrp	x9, 0x6b96000
+ 100db7c: ad003d61     	stp	q1, q15, [x11]

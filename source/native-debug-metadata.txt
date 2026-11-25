@@ -1,0 +1,8 @@
+  [ 3] .dynsym           DYNSYM          00000000000002c0 0002c0 050c58 18   A  4   1  8
+  [ 4] .dynstr           STRTAB          0000000000050f18 050f18 0b1b64 00   A  0   0  1
+  [ 9] .rela.dyn         RELA            000000000011ee60 11ee60 bd26b8 18   A  3   0  8
+  [10] .rela.plt         RELA            0000000000cf1518 cf1518 002fa0 18  AI  3  23  8
+  [15] .eh_frame         PROGBITS        00000000074f8bc8 74f8bc8 84f668 00   A  0   0  8
+  [16] .eh_frame_hdr     PROGBITS        0000000007d48230 7d48230 1e1eec 00   A  0   0  4
+  [28] .shstrtab         STRTAB          0000000000000000 83ba188 000139 00      0   0  1
+libFIFAMobileNeon.so: ELF 64-bit LSB shared object, ARM aarch64, version 1 (SYSV), dynamically linked, for Android 21, built by NDK r18b (5063045), BuildID[sha1]=5b68aef6cae0402e472aaae084aaa1367661b788, stripped

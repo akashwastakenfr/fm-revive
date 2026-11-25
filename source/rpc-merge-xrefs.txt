@@ -1,0 +1,4 @@
+BatchResponse.mergeFrom: ADRP=0xf50098 ADD=0xf500a8 reg=x11
+BatchResponseCollection.mergeFrom: ADRP=0xf503e8 ADD=0xf503f4 reg=x9
+ErrorResponse.mergeFrom: ADRP=0xf506e4 ADD=0xf506f0 reg=x9
+SystemSettings.mergeFrom: ADRP=0xfa40dc ADD=0xfa40e4 reg=x8

@@ -1,0 +1,23 @@
+FIFA REVIVAL — MASTER KNOWLEDGE BASE UPDATE (2026-11-23)
+
+1. CONFIRMED STARTUP ERROR ROOT CAUSE
+- User-facing dialog ("Retry: Unable to access the configuration of current build...") maps to:
+  Error_HostName_Title / Error_HostName_Message in
+  jadx-out/resources/assets/Data/DynamicAssets/android/lang_BOOTSTRAP_EN_US.properties
+- Runtime trace (logs/fifa_pid_32634.txt):
+  Thread 861 (ConfigService) fails HostName fetch -> calls AndroidApiUtility.isAirplaneModeActive() -> blocks in GameActivity (osiris-android: Add to dialog lock).
+- No local .ini fallback (config.ini / FIFAMobileApp.ini / user.ini) is packaged; only assets/P4Info.ini exists.
+
+2. CONFIRMED NATIVE CONFIGSERVICE FUNCTIONS (libFIFAMobileNeon.so)
+- 0x118ee00..0x118f1c4: builds https://fm22-configserver.prod.fuel.ddns.ea.com/config/Android/<version_vtable_0x270>/config.ini?<uint64>
+- 0x118f484..0x118f800: builds https://fm22-configserver.prod.fuel.ddns.ea.com/config/Android/default/config.ini?<uint64>
+- 0x118f8e8..0x118fa54: INI loader populating ConfigService map at [this + 0x25c0].
+- 0x118fac0..0x118fc24: reads client_version_override or vtable 0x270 version.
+
+3. BASE_SETTINGS.XML
+- R.xml.base_settings (0x7f150000) has zero Java references in jadx-out/sources/.
+
+4. LOCAL TEST SERVER (v0.3.1)
+- server/main.py updated to serve both JSON and plain-text/INI templates.
+- Synthetic route added: GET /config/Android/default/config.ini -> server/data/responses/default-config.ini.
+- Real client integration, main-menu launch, and offline gameplay remain unverified.

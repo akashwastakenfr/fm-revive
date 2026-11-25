@@ -1,0 +1,70 @@
+
+libFIFAMobileNeon.so:	file format elf64-littleaarch64
+
+Disassembly of section .text:
+
+000000000146b148 <Java_com_ea_fuel_video_PlayerAndroid_OnErrorNativeImpl>:
+ 15239a0: 1200190c     	and	w12, w8, #0x7f
+ 15239a4: 8b080140     	add	x0, x10, x8
+ 15239a8: b86c59ac     	ldr	w12, [x13, w12, uxtw #2]
+ 15239ac: 937e7d6d     	sbfiz	x13, x11, #2, #32
+ 15239b0: b86d692e     	ldr	w14, [x9, x13]
+ 15239b4: 11026d08     	add	w8, w8, #0x9b
+ 15239b8: 13077d08     	asr	w8, w8, #7
+ 15239bc: 4b0b0108     	sub	w8, w8, w11
+ 15239c0: 2a0c01ca     	orr	w10, w14, w12
+ 15239c4: b82d692a     	str	w10, [x9, x13]
+ 15239c8: d0037289     	adrp	x9, 0x8375000
+ 15239cc: f9442529     	ldr	x9, [x9, #0x848]
+ 15239d0: b9400129     	ldr	w9, [x9]
+ 15239d4: 2a090108     	orr	w8, w8, w9
+ 15239d8: 32170508     	orr	w8, w8, #0x600
+ 15239dc: b8004408     	str	w8, [x0], #0x4
+ 15239e0: 900353a8     	adrp	x8, 0x7f97000 <_ZTVNSt6__ndk115basic_streambufIcNS_11char_traitsIcEEEE+0x1d3c8>
+ 15239e4: 911f2108     	add	x8, x8, #0x7c8
+ 15239e8: 91004108     	add	x8, x8, #0x10
+ 15239ec: a900d013     	stp	x19, x20, [x0, #0x8]
+ 15239f0: f9000008     	str	x8, [x0]
+ 15239f4: a9427bfd     	ldp	x29, x30, [sp, #0x20]
+ 15239f8: a9414ff4     	ldp	x20, x19, [sp, #0x10]
+ 15239fc: f90002a0     	str	x0, [x21]
+ 1523a00: f84307f5     	ldr	x21, [sp], #0x30
+ 1523a04: d65f03c0     	ret
+ 1523a08: a9bd57f6     	stp	x22, x21, [sp, #-0x30]!
+ 1523a0c: a9014ff4     	stp	x20, x19, [sp, #0x10]
+ 1523a10: a9027bfd     	stp	x29, x30, [sp, #0x20]
+ 1523a14: 910083fd     	add	x29, sp, #0x20
+ 1523a18: d0037289     	adrp	x9, 0x8375000
+ 1523a1c: f9441529     	ldr	x9, [x9, #0x828]
+ 1523a20: aa0203f4     	mov	x20, x2
+ 1523a24: aa0103f3     	mov	x19, x1
+ 1523a28: aa0003f5     	mov	x21, x0
+ 1523a2c: 39400129     	ldrb	w9, [x9]
+ 1523a30: aa0803f6     	mov	x22, x8
+ 1523a34: 340000c9     	cbz	w9, 0x1523a4c <Java_com_ea_fuel_video_PlayerAndroid_OnErrorNativeImpl+0xb8904>
+ 1523a38: d0037288     	adrp	x8, 0x8375000
+ 1523a3c: f9441908     	ldr	x8, [x8, #0x830]
+ 1523a40: b9400100     	ldr	w0, [x8]
+ 1523a44: 97df4369     	bl	0xcf47e8 <pthread_getspecific@plt>
+ 1523a48: 14000004     	b	0x1523a58 <Java_com_ea_fuel_video_PlayerAndroid_OnErrorNativeImpl+0xb8910>
+ 1523a4c: d0037288     	adrp	x8, 0x8375000
+ 1523a50: f9441d08     	ldr	x8, [x8, #0x838]
+ 1523a54: f9400100     	ldr	x0, [x8]
+ 1523a58: 29412808     	ldp	w8, w10, [x0, #0x8]
+ 1523a5c: 93407d08     	sxtw	x8, w8
+ 1523a60: 11009109     	add	w9, w8, #0x24
+ 1523a64: 6b0a013f     	cmp	w9, w10
+ 1523a68: 540000ed     	b.le	0x1523a84 <Java_com_ea_fuel_video_PlayerAndroid_OnErrorNativeImpl+0xb893c>
+ 1523a6c: f9400008     	ldr	x8, [x0]
+ 1523a70: 321b03e1     	orr	w1, wzr, #0x20
+ 1523a74: 320903e2     	orr	w2, wzr, #0x800000
+ 1523a78: f9400908     	ldr	x8, [x8, #0x10]
+ 1523a7c: d63f0100     	blr	x8
+ 1523a80: 14000016     	b	0x1523ad8 <Java_com_ea_fuel_video_PlayerAndroid_OnErrorNativeImpl+0xb8990>
+ 1523a84: b9000809     	str	w9, [x0, #0x8]
+ 1523a88: d003728d     	adrp	x13, 0x8375000
+ 1523a8c: a9412809     	ldp	x9, x10, [x0, #0x10]
+ 1523a90: f94421ad     	ldr	x13, [x13, #0x840]
+ 1523a94: 13077d0b     	asr	w11, w8, #7
+ 1523a98: 1200190c     	and	w12, w8, #0x7f
+ 1523a9c: 8b080140     	add	x0, x10, x8

@@ -1,0 +1,110 @@
+
+libFIFAMobileNeon.so.original:	file format elf64-littleaarch64
+
+Disassembly of section .text:
+
+00000000026d5c44 <_ZNK18glucentralservices15AttributeUpdate7to_jsonEv>:
+ 4b15d00: f90003f5     	str	x21, [sp]
+ 4b15d04: b5fffed5     	cbnz	x21, 0x4b15cdc <_ZNK18glucentralservices15AttributeUpdate7to_jsonEv+0x2440098>
+ 4b15d08: f9400694     	ldr	x20, [x20, #0x8]
+ 4b15d0c: b4000714     	cbz	x20, 0x4b15dec <_ZNK18glucentralservices15AttributeUpdate7to_jsonEv+0x24401a8>
+ 4b15d10: b9400e88     	ldr	w8, [x20, #0xc]
+ 4b15d14: 7100051f     	cmp	w8, #0x1
+ 4b15d18: 540006ab     	b.lt	0x4b15dec <_ZNK18glucentralservices15AttributeUpdate7to_jsonEv+0x24401a8>
+ 4b15d1c: 2a1f03f5     	mov	w21, wzr
+ 4b15d20: 6b15011f     	cmp	w8, w21
+ 4b15d24: 540001c9     	b.ls	0x4b15d5c <_ZNK18glucentralservices15AttributeUpdate7to_jsonEv+0x2440118>
+ 4b15d28: f9400e89     	ldr	x9, [x20, #0x18]
+ 4b15d2c: f875d929     	ldr	x9, [x9, w21, sxtw #3]
+ 4b15d30: 110006b5     	add	w21, w21, #0x1
+ 4b15d34: b40000e9     	cbz	x9, 0x4b15d50 <_ZNK18glucentralservices15AttributeUpdate7to_jsonEv+0x244010c>
+ 4b15d38: f9400260     	ldr	x0, [x19]
+ 4b15d3c: f9000fe9     	str	x9, [sp, #0x18]
+ 4b15d40: 320003e1     	orr	w1, wzr, #0x1
+ 4b15d44: 910063e2     	add	x2, sp, #0x18
+ 4b15d48: 9405ee86     	bl	0x4c91760 <_ZNK18glucentralservices15AttributeUpdate7to_jsonEv+0x25bbb1c>
+ 4b15d4c: b9400e88     	ldr	w8, [x20, #0xc]
+ 4b15d50: 6b0802bf     	cmp	w21, w8
+ 4b15d54: 54fffe6b     	b.lt	0x4b15d20 <_ZNK18glucentralservices15AttributeUpdate7to_jsonEv+0x24400dc>
+ 4b15d58: 14000025     	b	0x4b15dec <_ZNK18glucentralservices15AttributeUpdate7to_jsonEv+0x24401a8>
+ 4b15d5c: 110006b5     	add	w21, w21, #0x1
+ 4b15d60: 6b0802bf     	cmp	w21, w8
+ 4b15d64: 54fffdeb     	b.lt	0x4b15d20 <_ZNK18glucentralservices15AttributeUpdate7to_jsonEv+0x24400dc>
+ 4b15d68: 14000021     	b	0x4b15dec <_ZNK18glucentralservices15AttributeUpdate7to_jsonEv+0x24401a8>
+ 4b15d6c: 0b190729     	add	w9, w25, w25, lsl #1
+ 4b15d70: 7100013f     	cmp	w9, #0x0
+ 4b15d74: 1a89a529     	cinc	w9, w9, lt
+ 4b15d78: f9401ab7     	ldr	x23, [x21, #0x30]
+ 4b15d7c: 13017d29     	asr	w9, w9, #1
+ 4b15d80: 93407f28     	sxtw	x8, w25
+ 4b15d84: 11002929     	add	w9, w9, #0xa
+ 4b15d88: 937d7d20     	sbfiz	x0, x9, #3, #32
+ 4b15d8c: d37df118     	lsl	x24, x8, #3
+ 4b15d90: eb00031f     	cmp	x24, x0
+ 4b15d94: b9002aa9     	str	w9, [x21, #0x28]
+ 4b15d98: 54000182     	b.hs	0x4b15dc8 <_ZNK18glucentralservices15AttributeUpdate7to_jsonEv+0x2440184>
+ 4b15d9c: 9719ae73     	bl	0x1181768 <_Znam>
+ 4b15da0: aa0003f6     	mov	x22, x0
+ 4b15da4: b4000157     	cbz	x23, 0x4b15dcc <_ZNK18glucentralservices15AttributeUpdate7to_jsonEv+0x2440188>
+ 4b15da8: aa1603e0     	mov	x0, x22
+ 4b15dac: aa1703e1     	mov	x1, x23
+ 4b15db0: aa1803e2     	mov	x2, x24
+ 4b15db4: 970779dd     	bl	0xcf4528 <memcpy@plt>
+ 4b15db8: aa1703e0     	mov	x0, x23
+ 4b15dbc: 9719ae80     	bl	0x11817bc <_ZdaPv>
+ 4b15dc0: b9402eb9     	ldr	w25, [x21, #0x2c]
+ 4b15dc4: 14000002     	b	0x4b15dcc <_ZNK18glucentralservices15AttributeUpdate7to_jsonEv+0x2440188>
+ 4b15dc8: aa1703f6     	mov	x22, x23
+ 4b15dcc: f9001ab6     	str	x22, [x21, #0x30]
+ 4b15dd0: 910003e8     	mov	x8, sp
+ 4b15dd4: f839dac8     	str	x8, [x22, w25, sxtw #3]
+ 4b15dd8: b9402ea8     	ldr	w8, [x21, #0x2c]
+ 4b15ddc: 11000508     	add	w8, w8, #0x1
+ 4b15de0: b9002ea8     	str	w8, [x21, #0x2c]
+ 4b15de4: f9400694     	ldr	x20, [x20, #0x8]
+ 4b15de8: b5fff954     	cbnz	x20, 0x4b15d10 <_ZNK18glucentralservices15AttributeUpdate7to_jsonEv+0x24400cc>
+ 4b15dec: 910003e0     	mov	x0, sp
+ 4b15df0: 9728f6f1     	bl	0x15539b4 <Java_com_ea_fuel_video_PlayerAndroid_OnErrorNativeImpl+0xe886c>
+ 4b15df4: a9457bfd     	ldp	x29, x30, [sp, #0x50]
+ 4b15df8: a9444ff4     	ldp	x20, x19, [sp, #0x40]
+ 4b15dfc: a94357f6     	ldp	x22, x21, [sp, #0x30]
+ 4b15e00: a9425ff8     	ldp	x24, x23, [sp, #0x20]
+ 4b15e04: f9400bf9     	ldr	x25, [sp, #0x10]
+ 4b15e08: 910183ff     	add	sp, sp, #0x60
+ 4b15e0c: d65f03c0     	ret
+ 4b15e10: aa0003f3     	mov	x19, x0
+ 4b15e14: 910003e0     	mov	x0, sp
+ 4b15e18: 9728f6e7     	bl	0x15539b4 <Java_com_ea_fuel_video_PlayerAndroid_OnErrorNativeImpl+0xe886c>
+ 4b15e1c: aa1303e0     	mov	x0, x19
+ 4b15e20: 97665542     	bl	0x24ab328 <__cxa_demangle+0x18b18>
+ 4b15e24: f81d0ff5     	str	x21, [sp, #-0x30]!
+ 4b15e28: a9014ff4     	stp	x20, x19, [sp, #0x10]
+ 4b15e2c: a9027bfd     	stp	x29, x30, [sp, #0x20]
+ 4b15e30: 910083fd     	add	x29, sp, #0x20
+ 4b15e34: f9400035     	ldr	x21, [x1]
+ 4b15e38: aa0003f4     	mov	x20, x0
+ 4b15e3c: aa0803f3     	mov	x19, x8
+ 4b15e40: b4000155     	cbz	x21, 0x4b15e68 <_ZNK18glucentralservices15AttributeUpdate7to_jsonEv+0x2440224>
+ 4b15e44: f94002a8     	ldr	x8, [x21]
+ 4b15e48: 52818b61     	mov	w1, #0xc5b              // =3163
+ 4b15e4c: 72a31461     	movk	w1, #0x18a3, lsl #16
+ 4b15e50: aa1503e0     	mov	x0, x21
+ 4b15e54: f9400908     	ldr	x8, [x8, #0x10]
+ 4b15e58: d63f0100     	blr	x8
+ 4b15e5c: 7200001f     	tst	w0, #0x1
+ 4b15e60: 9a9f12a8     	csel	x8, x21, xzr, ne
+ 4b15e64: 14000002     	b	0x4b15e6c <_ZNK18glucentralservices15AttributeUpdate7to_jsonEv+0x2440228>
+ 4b15e68: aa1f03e8     	mov	x8, xzr
+ 4b15e6c: 910023e1     	add	x1, sp, #0x8
+ 4b15e70: aa1403e0     	mov	x0, x20
+ 4b15e74: f90007e8     	str	x8, [sp, #0x8]
+ 4b15e78: 97ffff82     	bl	0x4b15c80 <_ZNK18glucentralservices15AttributeUpdate7to_jsonEv+0x244003c>
+ 4b15e7c: f900027f     	str	xzr, [x19]
+ 4b15e80: a9427bfd     	ldp	x29, x30, [sp, #0x20]
+ 4b15e84: a9414ff4     	ldp	x20, x19, [sp, #0x10]
+ 4b15e88: f84307f5     	ldr	x21, [sp], #0x30
+ 4b15e8c: d65f03c0     	ret
+ 4b15e90: d10203ff     	sub	sp, sp, #0x80
+ 4b15e94: a9045ff8     	stp	x24, x23, [sp, #0x40]
+ 4b15e98: a90557f6     	stp	x22, x21, [sp, #0x50]
+ 4b15e9c: a9064ff4     	stp	x20, x19, [sp, #0x60]

@@ -1,0 +1,113 @@
+7532-11-23 16:00:52.517  1180  1298 E ANDR-PERF-OPTSHANDLER: Cannot open/create foreground cgroup file
+7533-11-23 16:00:52.517  1180  1298 E ANDR-PERF-OPTSHANDLER: Cannot open/create foreground cgroup file
+7534-11-23 16:00:52.520  1834  2570 W ActivityManager: Sending non-protected broadcast action_game_optimize_state from system 5918:com.miui.powerkeeper/1000 pkg com.miui.powerkeeper. Callers=
+7535-11-23 16:00:52.520  1834  2570 W ActivityManager: Sending non-protected broadcast action_game_optimize_state from system 5918:com.miui.powerkeeper/1000 pkg com.miui.powerkeeper. Callers=
+7536:11-23 16:00:52.521  3435  3435 D nativeloader: Configuring clns-4 for other apk /system/framework/org.apache.http.legacy.jar. target_sdk_version=33, uses_libraries=ALL, library_path=/data/app/~~64WK3y3VBjrP499mCOErog==/com.ea.gp.fifamobile-36mu9qy46rjd0ePvufwbVg==/lib/arm64:/data/app/~~64WK3y3VBjrP499mCOErog==/com.ea.gp.fifamobile-36mu9qy46rjd0ePvufwbVg==/base.apk!/lib/arm64-v8a:/data/app/~~64WK3y3VBjrP499mCOErog==/com.ea.gp.fifamobile-36mu9qy46rjd0ePvufwbVg==/split_config.ar.apk!/lib/arm64-v8a:/data/app/~~64WK3y3VBjrP499mCOErog==/com.ea.gp.fifamobile-36mu9qy46rjd0ePvufwbVg==/split_config.arm64_v8a.apk!/lib/arm64-v8a:/data/app/~~64WK3y3VBjrP499mCOErog==/com.ea.gp.fifamobile-36mu9qy46rjd0ePvufwbVg==/split_config.armeabi_v7a.apk!/lib/arm64-v8a:/data/app/~~64WK3y3VBjrP499mCOErog==/com.ea.gp.fifamobile-36mu9qy46rjd0ePvufwbVg==/split_config.bn.apk!/lib/arm64-v8a:/data/app/~~64WK3y3VBjrP499mCOErog==/com.ea.gp.fifamobile-36mu9qy46rjd0ePvufwbVg==/split_config.de.apk!/lib/arm64-v8a:/data/app/~~64WK3y3VBjrP499mCOErog==/com.ea.gp.fifamobile-36mu9qy46rjd0ePvufwbVg==
+7537-11-23 16:00:52.522  3435  3435 D nativeloader: Extending system_exposed_libraries: libbinauralrenderer_wrapper.qti.so:libhoaeffects.qti.so:libQOC.qti.so:libmisys_jni.xiaomi.so:libxiaomi_modemdumpsdx55_jni.modem.so:libxiaomi_modemdump_jni.modem.so:libupdateprof.qti.so:libthermalclient.qti.so:libQOC.qti.so:libdiag_system.qti.so:libqape.qti.so:liblistenjni.qti.so
+7538-11-23 16:00:52.522  4942 31696 D TrafficManageService-TrafficSimManager: getMonthDataUsageUsed: new_get = 4228244
+7539-11-23 16:00:52.523 30355 30355 I SmartPhoneTag_w: game mode update: TGAME
+7540-11-23 16:00:52.523  4942  5756 W FirebaseRemoteConfig: No value of type 'Boolean' exists for parameter key 'enable_game_turbo_of_miui_lite'.
+--
+7986-11-23 16:00:52.896 19271 19271 I InputMethodEntryManager: InputMethodEntryManager.loadAdditionalImeDefsForCurrentEntry():3228 loadAdditionalImeDefsForCurrentEntry(): aevc{languageTag=en-GB, variant=qwerty, hasLocalizedResources=true, conditionCacheKey=_android_software_xr_api_spatial=false_device=phone_device_size=default_enable_action_key_down=false_enable_free_cursor_by_long_press_space=true_enable_number_row=false_enable_number_row_in_password=true_enable_pk_simulator=false_enable_pk_simulator_setting=false_enable_scrub_move=true_enable_secondary_digits=true_enable_secondary_symbols=false_enable_simplified_expression_keyboard=false_expressions=normal_four_or_more_letter_rows=false_free_cursor=false_free_cursor_del_swipe_delete=false_free_cursor_in_split_keyboard_gap=false_keyboard_font_size_setting=_keyboard_mode=floating_language=en-GB_layout_9key_split=false_orientation=landscape_physical_keyboard=nokeys_pk_simulator_vk_ready=false_pref_enable_flick_symbols=false_rtl_layout=false_show_comma_key=true_show_period_key=true_show_secondary_digits=true_show_suggestion_strip=true_show_suggestions=true_split_with_duplicate_keys=true_true=true_variant=qwerty_writing_helper_enable_by_word_revert=false, imeDef.stringId=ime_english_great_britain, imeDef.className=com.google.android.apps.inputmethod.libs.latin5.LatinIme, imeDef.languageTag=en-GB}
+7987-11-23 16:00:52.896 19271 19271 I GoogleInputMethodService: GoogleInputMethodService.onCurrentInputMethodEntryChanged():2802 onCurrentInputMethodEntryChanged(): imeDefsChanged=false, entryLanguageVariantChanged=false, keyboardContextChanged=false
+7988-11-23 16:00:52.896 19271 25670 I PerLanguageDataDownloader: PerLanguageDataDownloader.downloadDataInternal():166 downloading Data for en
+7989-11-23 16:00:52.896 19271 19271 I GoogleInputMethodService: GoogleInputMethodService.onCurrentInputMethodEntryChanged():2829 Skip the entry change as the input method entry is consider as not changed.
+7990:11-23 16:00:52.896 19271 25670 I ManifestedDataDownloader: ManifestedDataDownloader.download():67 downloading manifest https://www.gstatic.com/android/keyboard/modelpack/proactiveek/embedding_gemma/2025120304/en_manifest.json
+7991-11-23 16:00:52.898 19271 19326 W ModuleManager: ModuleManager.loadModule():602 Module akof is not available
+7992-11-23 16:00:52.898 19271 19326 W LatinCommonMetricsProcessor: LatinCommonMetricsProcessor.processInputMethodEntryChanged():2745 The new entry is equal to the old entry
+7993-11-23 16:00:52.899 19271 19331 I SP      : Registering emoticon_content_description.2022081613, url: https://www.gstatic.com/android/keyboard/emoticon_content_desc/202208161305/superpacks_manifest.json, constraints: W:*:*:*, flags: bg, requested: 2022081613, current: 2022081613
+7994-11-23 16:00:52.902 19271 19368 I DownloadManager: DownloadManager.completeDownload():530 Download for __PEKB_manifest_pek_blocklist__en scheduled with params aggh[allowMetered=true, requireCharging=false, foreground=false, immediately=true, priority=0]
+7995-11-23 16:00:52.902 19271 19368 I DownloadManager: DownloadManager.startDownload():630 start download of __PEKB_manifest_pek_blocklist__en
+7996:11-23 16:00:52.902 19271 19331 I SP      : Registering content_cache.2024032915, url: https://www.gstatic.com/android/keyboard/modelpack/contentcache/202403291544/superpacks_manifest.json, constraints: W:*:*:*, flags: bg, requested: 2024032915, current: 2024032915
+7997-11-23 16:00:52.903 19271 19368 I DownloadManager: DownloadManager$4.onSuccess():698 download for __PEKB_manifest_pek_blocklist__en is finished with files # anzy@1d83bd37
+7998-11-23 16:00:52.905  3435  3556 W GraphRequest: Starting with v13 of the SDK, a client token must be embedded in your client code before making Graph API calls. Visit https://developers.facebook.com/docs/android/getting-started#client-token to learn how to implement this change.
+7999-11-23 16:00:52.905  3435  3558 W GraphRequest: Starting with v13 of the SDK, a client token must be embedded in your client code before making Graph API calls. Visit https://developers.facebook.com/docs/android/getting-started#client-token to learn how to implement this change.
+8000-11-23 16:00:52.907  1115 24949 E audio_hw_primary: aw_set_channel_reverse:becf: afe: Could not set ctl for mixer command - aw_spin_switch
+--
+8037-11-23 16:00:52.974  3207  3207 D ControlCenter: disable1: 0x00000000 -> 0x00000000 (diff1: 0x00000000)
+8038-11-23 16:00:52.974  3207  3207 D ControlCenter: disable2: 0x00000000 -> 0x00000000 (diff2: 0x00000000)
+8039-11-23 16:00:52.974  3207  3207 D CollapsedStatusBarFragment: adjustDisableFlags: PanelExpansionState = 0 mHideIconsForBouncer = false mWereIconsJustHidden = false, mWakeUpCoordinator.getNotificationsFullyHidden = false, mIsExpanded = false, mBypassController.getBypassEnabled = false, mStatusBarStateController.getState() = 0, mKeyguardStateController.isKeyguardGoingAway() = false, mHeadsUpManager.hasPinnedHeadsUp = false, mIsLaunchAnimationRunning = false, mHideIconsDuringLaunchAnimation = false, isFullWidth()true, mShowIconsWhenExpanded = true, mControlPanelExpand = false
+8040-11-23 16:00:52.975  3435  3585 D CompatibilityChangeReporter: Compat change id reported: 160794467; UID 10413; state: ENABLED
+8041:11-23 16:00:52.979  3435  3534 W a.gp.fifamobile: ClassLoaderContext classpath size mismatch. expected=1, found=0 (DLC[];PCL[base.apk*1374452227]{PCL[/system/framework/org.apache.http.legacy.jar*1414085461]#PCL[/system/framework/com.android.location.provider.jar*3868789109]#PCL[/system/framework/com.android.media.remotedisplay.jar*3886290638]} | DLC[];PCL[])
+8042-11-23 16:00:52.980  3492  3492 D nativeloader: Load libframework-connectivity-jni.so using APEX ns com_android_tethering for caller /apex/com.android.tethering/javalib/framework-connectivity.jar: ok
+8043-11-23 16:00:52.984 16238 16265 V BinderSender: Uid 10412 already starts
+8044-11-23 16:00:52.985 16238 21356 V BinderSender: Uid 10412 already starts
+8045-11-23 16:00:52.986  1834  4656 I SmartPower.com.facebook.katana/10412(1008): idle->background(5014ms) R(content provider start ContentProviderRecord{86a279 u0 com.facebook.katana/com.facebook.platform.common.provider.PlatformProviderBase}) adj=0.
+--
+8209-11-23 16:00:53.048  3207  3207 W FileUtils: Failed to chown(/data/system/theme/config.config): android.system.ErrnoException: chown failed: EPERM (Operation not permitted)
+8210-11-23 16:00:53.048  1834  2997 D CompatibilityInfo: mCompatibilityFlags - 0
+8211-11-23 16:00:53.048  1834  2997 D CompatibilityInfo: applicationDensity - 440
+8212-11-23 16:00:53.048  1834  2997 D CompatibilityInfo: applicationScale - 1.0
+8213:11-23 16:00:53.051  3435  3534 W a.gp.fifamobile: ClassLoaderContext classpath element checksum mismatch. expected=1374452227, found=236411452 (DLC[];PCL[base.apk*1374452227]{PCL[/system/framework/org.apache.http.legacy.jar*1414085461]#PCL[/system/framework/com.android.location.provider.jar*3868789109]#PCL[/system/framework/com.android.media.remotedisplay.jar*3886290638]} | DLC[];PCL[/data/app/~~64WK3y3VBjrP499mCOErog==/com.ea.gp.fifamobile-36mu9qy46rjd0ePvufwbVg==/base.apk*236411452]{PCL[/system/framework/org.apache.http.legacy.jar*1414085461]})
+8214-11-23 16:00:53.055  3435  3535 D libcrashlytics: Initializing libcrashlytics version 3.2.0
+8215-11-23 16:00:53.057 30168 27732 I FacsCacheGmsModule: (REDACTED) Operation '%s' successful!
+8216-11-23 16:00:53.063  1834  2997 D GreezeManager: FZ uid = 10301 reason =tobg success !
+8217-11-23 16:00:53.063  4942  4942 I FrameRateDataService: onStartCommand(intent: Intent { cmp=com.miui.securitycenter/com.miui.gamebooster.gbservices.FrameRateDataService }, flags: 0, startId: 1)
+--
+8314-11-23 16:00:53.164  3207  3207 E BaseAnimation: empty items
+8315-11-23 16:00:53.165  3207  3207 W RectangleScreenElement: illegal number format of cornerRadius.
+8316-11-23 16:00:53.175  4942  3621 I SurfaceMonitorHelper: fps: 49
+8317-11-23 16:00:53.201  3492  3643 D CompatibilityChangeReporter: Compat change id reported: 183155436; UID 10164; state: ENABLED
+8318:11-23 16:00:53.212  4942  5309 E WlanNetUtil: httpGet Failed:java.net.UnknownHostException: Unable to resolve host "router.miwifi.com": No address associated with hostname
+8319-11-23 16:00:53.220   981   981 E IptablesRestoreController: iptables error:
+8320-11-23 16:00:53.221   981   981 E IptablesRestoreController: ------- COMMAND -------
+8321-11-23 16:00:53.221   981   981 E IptablesRestoreController: *filter
+8322-11-23 16:00:53.221   981   981 E IptablesRestoreController: -A INPUT -i wlan0 -j tc_limiter
+--
+8427-11-23 16:00:53.332  3207  3207 D MAML_MusicController: resetMediaController
+8428-11-23 16:00:53.332  3207  3207 D MAML_MusicController: clearMediaController
+8429-11-23 16:00:53.332  3207  3207 D MAML_MusicController: initMediaController
+8430-11-23 16:00:53.332  3207  3207 D MAML_MusicController: updateInfoToListener
+8431:11-23 16:00:53.351  3492  3684 W i.msa.global:ui: ClassLoaderContext classpath size mismatch. expected=1, found=0 (DLC[];PCL[base.apk*1374452227]{PCL[/system/framework/org.apache.http.legacy.jar*1414085461]#PCL[/system/framework/com.android.location.provider.jar*3868789109]#PCL[/system/framework/com.android.media.remotedisplay.jar*3886290638]} | DLC[];PCL[])
+8432-11-23 16:00:53.353  3492  3643 D FirebaseSessions: Initializing Firebase Sessions SDK.
+8433-11-23 16:00:53.357  3492  3643 D AndroidUtils: MCC MNC = 47004
+8434-11-23 16:00:53.358  3492  3684 I DynamiteModule: Considering local module com.google.android.gms.measurement.dynamite:117 and remote module com.google.android.gms.measurement.dynamite:220
+8435-11-23 16:00:53.358  3492  3684 I DynamiteModule: Selected remote version of com.google.android.gms.measurement.dynamite, version >= 220
+--
+8461-11-23 16:00:53.396  3207  3207 D BroadcastBinder: updateVariables: name:batteryLevel type:int value:34.000000
+8462-11-23 16:00:53.401  1834  6530 E AppOps  : Bad call made by uid 10261. Package "com.miui.weather2" does not belong to uid 1000.
+8463-11-23 16:00:53.405  1834  6530 E AppOps  : Bad call made by uid 10261. Package "com.miui.weather2" does not belong to uid 1000.
+8464-11-23 16:00:53.406  3207  3207 E ContentProviderBinder: java.lang.SecurityException: Failed to find provider com.miui.personalassistant.deviceinfo for user 0; expected to find a valid ContentProvider for this authority  uri:content://com.miui.personalassistant.deviceinfo
+8465:11-23 16:00:53.407  3492  3684 W i.msa.global:ui: ClassLoaderContext classpath element checksum mismatch. expected=1374452227, found=4142978640 (DLC[];PCL[base.apk*1374452227]{PCL[/system/framework/org.apache.http.legacy.jar*1414085461]#PCL[/system/framework/com.android.location.provider.jar*3868789109]#PCL[/system/framework/com.android.media.remotedisplay.jar*3886290638]} | DLC[];PCL[/data/app/~~L8MMpfjEBphX7HBfUqZGgg==/com.miui.msa.global-jRKD8-64ooCyOFonAjVjOg==/base.apk*4142978640])
+8466-11-23 16:00:53.407  3207  3207 D BroadcastBinder: updateVariables: Intent { act=android.intent.action.BATTERY_CHANGED flg=0x60000010 (has extras) }
+8467-11-23 16:00:53.407  3207  3207 D BroadcastBinder: updateVariables: name:batteryLevel type:int value:34.000000
+8468-11-23 16:00:53.407  3207  3207 D BroadcastBinder: updateVariables: name:batteryStatus type:int value:3.000000
+8469-11-23 16:00:53.407  3207  3207 D BroadcastBinder: updateVariables: name:batteryTemp type:int value:340.000000
+--
+9427-11-23 16:00:55.034  1834  6540 D PerfShielderService: com.android.systemui|StatusBar|1526|153892287694105|1349|0|3
+9428-11-23 16:00:55.034  5099  4333 W MiuiPerfServiceClient: interceptAndQueuing:3207|com.android.systemui|1526|1349|153892287694105|Slow main thread|3
+9429-11-23 16:00:55.038 31922 31988 I Finsky  : [1020] com.ea.gp.fifamobile: Account determined from installer data - [_lrSMcU8NzN7iT7yaxSj4ZU66cMO4c8ENAxy7Jm3a88]
+9430-11-23 16:00:55.038 31922 31988 I Finsky  : [1020] Billing preferred account via installer for com.ea.gp.fifamobile: [_lrSMcU8NzN7iT7yaxSj4ZU66cMO4c8ENAxy7Jm3a88]
+9431:11-23 16:00:55.039  3918  3918 D nativeloader: Configuring clns-shared-4 for other apk /system/framework/org.apache.http.legacy.jar. target_sdk_version=37, uses_libraries=ALL, library_path=/apex/com.android.permission/priv-app/GooglePermissionController@373041740/lib/arm64:/system/lib64:/system_ext/lib64, permitted_path=/data:/mnt/expand:/data/user_de/0/com.google.android.permissioncontroller:/apex/com.android.permission/priv-app/GooglePermissionController@373041740:/system/lib64:/system_ext/lib64
+9432-11-23 16:00:55.039  3918  3918 D nativeloader: Extending system_exposed_libraries: libbinauralrenderer_wrapper.qti.so:libhoaeffects.qti.so:libQOC.qti.so:libmisys_jni.xiaomi.so:libxiaomi_modemdumpsdx55_jni.modem.so:libxiaomi_modemdump_jni.modem.so:libupdateprof.qti.so:libthermalclient.qti.so:libQOC.qti.so:libdiag_system.qti.so:libqape.qti.so:liblistenjni.qti.so
+9433-11-23 16:00:55.043 31922 16538 I Finsky  : [1629] User is not an active Play Pass subscriber
+9434-11-23 16:00:55.046  1655  3940 D NuPlayer: kWhatSetDataSource Completed the initialization of mSource
+9435-11-23 16:00:55.046  1655  9408 I ExtendedNuUtils: printFileName fd(9) -> /data/app/~~64WK3y3VBjrP499mCOErog==/com.ea.gp.fifamobile-36mu9qy46rjd0ePvufwbVg==/base.apk
+--
+11142-11-23 16:00:57.071  1834  2653 I MiuiNetworkPolicy: removeUidState uid = 10219
+11143-11-23 16:00:57.071  5918  7219 D UidObserver: onUidGone entry uid = 10219
+11144-11-23 16:00:57.088  3435  3874 W Settings: Setting airplane_mode_on has moved from android.provider.Settings.System to android.provider.Settings.Global, returning read-only value.
+11145-11-23 16:00:57.193  3435  4032 I GluAnalytics: #evu["GeoLocation",{"IP":"103.13.192.241","Country":"BD"}]
+11146:11-23 16:00:57.193  3435  4032 I GluAnalytics: #evu["HTTP.GEO_PUBLISH.OK",{"url":"https:\/\/prod.geo.gluops.com\/geoservice\/v2\/publishdetailed?s=54EA438B-BA46-4844-BBCC-E8792D2DC9B3&gameName=FIFASoccer_ANDROID_PROD&revId=54EA438B-BA46-4844-BBCC-E8792D2DC9B3_1795417789&gameId=com.ea.fifamobile"}]
+11147-11-23 16:00:57.271  1834  2818 I SmartPower.com.qualcomm.qti.poweroffalarm/10184(3826): background->idle(3160ms) R(broadcast end Intent { act=org.codeaurora.poweroffalarm.action.CANCEL_ALARM flg=0x10000010 pkg=com.qualcomm.qti.poweroffalarm cmp=com.qualcomm.qti.poweroffalarm/.PowerOffAlarmBroadcastReceiver (has extras) }) adj=915.
+11148-11-23 16:00:57.295 30168 30168 D BoundBrokerSvc: onUnbind: Intent { act=com.google.android.gms.auth.aang.events.services.START dat=chimera-action:/... cmp=com.google.android.gms/.chimera.PersistentApiService }
+11149-11-23 16:00:57.395  1834  2654 D MiuiTcpSocketTracker: skip mismatch tcpInfo:TcpInfo{lost=0, retransmit=0, sent=1309}
+11150-11-23 16:00:57.395  1834  2654 D MiuiTcpSocketTracker: skip mismatch tcpInfo:TcpInfo{lost=0, retransmit=0, sent=52482}
+--
+12049-11-23 16:00:59.447 19271 19271 I InputMethodEntryManager: InputMethodEntryManager.loadAdditionalImeDefsForCurrentEntry():3228 loadAdditionalImeDefsForCurrentEntry(): aevc{languageTag=en-GB, variant=qwerty, hasLocalizedResources=true, conditionCacheKey=_android_software_xr_api_spatial=false_device=phone_device_size=default_enable_action_key_down=false_enable_free_cursor_by_long_press_space=true_enable_number_row=false_enable_number_row_in_password=true_enable_pk_simulator=false_enable_pk_simulator_setting=false_enable_scrub_move=true_enable_secondary_digits=true_enable_secondary_symbols=false_enable_simplified_expression_keyboard=false_expressions=normal_four_or_more_letter_rows=false_free_cursor=false_free_cursor_del_swipe_delete=false_free_cursor_in_split_keyboard_gap=false_keyboard_font_size_setting=_keyboard_mode=normal_language=en-GB_layout_9key_split=false_orientation=portrait_physical_keyboard=nokeys_pk_simulator_vk_ready=false_pref_enable_flick_symbols=false_rtl_layout=false_show_comma_key=true_show_period_key=true_show_secondary_digits=true_show_suggestion_strip=true_show_suggestions=true_split_with_duplicate_keys=true_true=true_variant=qwerty_writing_helper_enable_by_word_revert=false, imeDef.stringId=ime_english_great_britain, imeDef.className=com.google.android.apps.inputmethod.libs.latin5.LatinIme, imeDef.languageTag=en-GB}
+12050-11-23 16:00:59.447 19271 19271 I GoogleInputMethodService: GoogleInputMethodService.onCurrentInputMethodEntryChanged():2802 onCurrentInputMethodEntryChanged(): imeDefsChanged=false, entryLanguageVariantChanged=false, keyboardContextChanged=false
+12051-11-23 16:00:59.447 19271 19271 I GoogleInputMethodService: GoogleInputMethodService.onCurrentInputMethodEntryChanged():2829 Skip the entry change as the input method entry is consider as not changed.
+12052-11-23 16:00:59.448 19271 25608 I PerLanguageDataDownloader: PerLanguageDataDownloader.downloadDataInternal():166 downloading Data for en
+12053:11-23 16:00:59.448 19271 25608 I ManifestedDataDownloader: ManifestedDataDownloader.download():67 downloading manifest https://www.gstatic.com/android/keyboard/modelpack/proactiveek/embedding_gemma/2025120304/en_manifest.json
+12054-11-23 16:00:59.449 19271 26853 I KeyboardGroupDefParser: KeyboardGroupDefParser.parseKeyboardGroupDef():72 parseKeyboardGroupDef() 2132213838 -> 0_resource_name_obfuscated : WaitTime = 0 ms : RunTime = 15 ms
+12055-11-23 16:00:59.449 19271 28245 I Module  : DeviceLockedStatusModuleProvider$Module.updateDeviceLockedStatusInternal():119 repeatCheckTimes = 1, locked = false
+12056-11-23 16:00:59.449  1834  2622 D InputDispatcher: Dropping inconsistent motion pointer up/down or move event: deviceId=6, source=00001002, displayId=0, actionMasked=2
+12057-11-23 16:00:59.450 19271 19326 W ModuleManager: ModuleManager.loadModule():602 Module akof is not available
+12058-11-23 16:00:59.450 19271 19326 W LatinCommonMetricsProcessor: LatinCommonMetricsProcessor.processInputMethodEntryChanged():2745 The new entry is equal to the old entry
+12059-11-23 16:00:59.451 19271 19331 I SP      : Registering emoticon_content_description.2022081613, url: https://www.gstatic.com/android/keyboard/emoticon_content_desc/202208161305/superpacks_manifest.json, constraints: W:*:*:*, flags: bg, requested: 2022081613, current: 2022081613
+12060-11-23 16:00:59.451 19271 19331 I SuperpacksManagerImpl: SuperpacksManagerImpl$3$1.onSuccess():540 emoticon_content_description.registerManifest() succeeded
+12061:11-23 16:00:59.451 19271 19331 I SP      : Registering content_cache.2024032915, url: https://www.gstatic.com/android/keyboard/modelpack/contentcache/202403291544/superpacks_manifest.json, constraints: W:*:*:*, flags: bg, requested: 2024032915, current: 2024032915
+12062-11-23 16:00:59.451 19271 19331 I SuperpacksManagerImpl: SuperpacksManagerImpl$3$1.onSuccess():540 content_cache.registerManifest() succeeded
+12063-11-23 16:00:59.452 19271 19331 I SP      : Syncing emoticon_content_description (2022081613) with slices: [7a635888cb828dfa2fc744b7b9b50f04, 82203eaeaa17c7345d29b18e337a6f27], metadata: false
+12064-11-23 16:00:59.454 19271 19368 I DownloadManager: DownloadManager.completeDownload():530 Download for __PEKB_manifest_pek_blocklist__en scheduled with params aggh[allowMetered=true, requireCharging=false, foreground=false, immediately=true, priority=0]
+12065-11-23 16:00:59.454 19271 19368 I DownloadManager: DownloadManager.startDownload():630 start download of __PEKB_manifest_pek_blocklist__en

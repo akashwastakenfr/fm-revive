@@ -1,0 +1,20 @@
+# APKs, native binaries, and unpacked folders
+apk/
+work/
+jadx-out/
+*.apk
+*.apkm
+*.idsig
+*.so
+*.so.*
+
+# Logs and raw captures
+logs/
+server/data/captures/
+
+# Python cache & backups
+__pycache__/
+*.py[cod]
+*.bak
+*.backup
+*.capture-backup

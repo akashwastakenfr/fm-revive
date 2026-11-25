@@ -1,0 +1,184 @@
+{
+  "GET /test/ping": {
+    "file": "ping.json",
+    "status": 200
+  },
+  "POST /test/config": {
+    "file": "config-test.json",
+    "status": 200
+  },
+  "GET /config/Android/default/config.ini": {
+    "file": "default-config.ini",
+    "status": 200,
+    "content_type": "text/plain; charset=utf-8"
+  },
+  "GET /config/notice/": {
+    "file": "config-notice.json",
+    "status": 200
+  },
+  "GET /system/getServerTime": {
+    "file": "system-time.json",
+    "status": 200
+  },
+  "POST /system/getServerTime": {
+    "file": "system-time.json",
+    "status": 200
+  },
+  "GET /system/settings": {
+    "file": "system-settings.json",
+    "status": 200
+  },
+  "POST /system/settings": {
+    "file": "system-settings.json",
+    "status": 200
+  },
+  "GET /system/settings/authenticated": {
+    "file": "system-settings.json",
+    "status": 200
+  },
+  "POST /system/settings/authenticated": {
+    "file": "system-settings.json",
+    "status": 200
+  },
+  "GET /system/loc/get-client-overrides": {
+    "file": "loc-overrides.json",
+    "status": 200
+  },
+  "POST /system/loc/get-client-overrides": {
+    "file": "loc-overrides.json",
+    "status": 200
+  },
+  "POST /system/session/create": {
+    "file": "system-session.json",
+    "status": 200
+  },
+  "POST /system/ksession/create": {
+    "file": "system-session.json",
+    "status": 200
+  },
+  "POST /content/init": {
+    "file": "content-init.json",
+    "status": 200
+  },
+  "GET /content/records": {
+    "file": "content-records.json",
+    "status": 200
+  },
+  "POST /content/records": {
+    "file": "content-records.json",
+    "status": 200
+  },
+  "GET /versionupdate/version": {
+    "file": "version-info.json",
+    "status": 200
+  },
+  "POST /versionupdate/version": {
+    "file": "version-info.json",
+    "status": 200
+  },
+  "GET /user/age/get": {
+    "file": "user-age.json",
+    "status": 200
+  },
+  "POST /user/age/get": {
+    "file": "user-age.json",
+    "status": 200
+  },
+  "POST /user/login": {
+    "file": "user-login.json",
+    "status": 200
+  },
+  "GET /user/load": {
+    "file": "user-load.json",
+    "status": 200
+  },
+  "POST /user/load": {
+    "file": "user-load.json",
+    "status": 200
+  },
+  "GET /user/settings": {
+    "file": "system-settings.json",
+    "status": 200
+  },
+  "POST /user/settings": {
+    "file": "system-settings.json",
+    "status": 200
+  },
+  "GET /user/roster": {
+    "file": "user-load.json",
+    "status": 200
+  },
+  "GET /user/inventory": {
+    "file": "user-load.json",
+    "status": 200
+  },
+  "GET /director/api/android/getDirectionByPackage": {
+    "file": "synergy-director.json",
+    "status": 200
+  },
+  "GET /user/api/android/getDeviceID": {
+    "file": "synergy-device.json",
+    "status": 200
+  },
+  "POST /user/api/android/getDeviceID": {
+    "file": "synergy-device.json",
+    "status": 200
+  },
+  "GET /user/api/android/validateDeviceID": {
+    "file": "synergy-device.json",
+    "status": 200
+  },
+  "POST /user/api/android/validateDeviceID": {
+    "file": "synergy-device.json",
+    "status": 200
+  },
+  "GET /user/api/android/getAnonUid": {
+    "file": "synergy-anon.json",
+    "status": 200
+  },
+  "POST /user/api/android/getAnonUid": {
+    "file": "synergy-anon.json",
+    "status": 200
+  },
+  "GET /user/isVeteran": {
+    "file": "user-age.json",
+    "status": 200
+  },
+  "POST /user/isVeteran": {
+    "file": "user-age.json",
+    "status": 200
+  },
+  "GET /user/lineup/": {
+    "file": "empty-list.json",
+    "status": 200
+  },
+  "GET /unlockkey/getallkeys": {
+    "file": "empty-list.json",
+    "status": 200
+  },
+  "POST /unlockkey/getallkeys": {
+    "file": "empty-list.json",
+    "status": 200
+  },
+  "GET /stats/get": {
+    "file": "empty-list.json",
+    "status": 200
+  },
+  "POST /stats/get": {
+    "file": "empty-list.json",
+    "status": 200
+  },
+  "GET /loginvideo/getCurrentVideo": {
+    "file": "config-notice.json",
+    "status": 200
+  },
+  "GET /loginbonus/status": {
+    "file": "empty-list.json",
+    "status": 200
+  },
+  "POST /g/game/batch": {
+    "file": "batch-empty.bin",
+    "status": 200,
+    "content_type": "application/x.binary"
+  }
+}
