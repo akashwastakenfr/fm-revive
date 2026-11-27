@@ -15,5 +15,6 @@ Last updated: 2026-11-25
   - [x] **Root cause confirmed (discovery 005):** empty `resources` table → manifest load op has 0 entries (`0x556e77c..0x556e790` only takes the download branch when `count > 0`) → `Error_Resource_Header`.
   - [x] `server/modules/manifest.py` regenerates `manifest.db` from `server/data/assets/` (measured `length` + CRC32, absolute `src` URLs) and seeds the nine `.rodata` startup names; DB now has 9 rows and still fits one 12 KB page.
   - [x] `GET /assets/<rel>` serving added to `server/main.py` (containment check, `Range`/`206`, `416`, `[ASSET MISS]` logging); `server/test_server.py` covers `/assets/manifest.db` (22/22 pass).
+  - [x] `manifest.db` is now a generated artifact (`.gitignore`) rebuilt at startup by `ensure_manifest()` when missing, corrupt, or empty.
   - [ ] **Active Blocker:** the real startup bundles are not in the repo (APK-local, git-ignored), so seeded rows carry `length=0`/`crc=0`. Next: run the client, collect `[ASSET MISS]` names, copy the `.big` files into `server/data/assets/`, re-run the builder.
 - [ ] **Phase 6 — Main Menu & Offline Preservation:** Verify main-menu entry and offline gameplay.

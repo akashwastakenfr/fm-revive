@@ -30,5 +30,9 @@ Then regenerate the manifest so `length` and `crc` match the served bytes:
 python3 server/modules/manifest.py
 ```
 
+The server also rebuilds `server/data/responses/manifest.db` on startup when it
+is missing, unreadable, or has 0 rows, so a plain `python3 server/main.py` after
+dropping files in is usually enough (it prints `[MANIFEST] rebuilt ...`).
+
 Rows the client asks for that are still missing will appear in the server log as
 `[ASSET MISS] <name>` (and as a `404` in `server/data/captures/`).
