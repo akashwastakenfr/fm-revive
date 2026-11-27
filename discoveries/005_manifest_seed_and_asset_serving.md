@@ -16,6 +16,10 @@
   `icfiles.big`, `shaderboot.big`, `shaderboot_low.big`, `shaderboot_verylow.big`, `shader.big`, `shader_low.big`, `shader_verylow.big`, `data/attribdbgameplay/gameplayattribdb.big`, `setplaydata/setplaysbig.big`.
 - Usage: `python3 server/modules/manifest.py` (options `--db`, `--assets`, `--base-url`, `--no-seed`).
 
+### `manifest.db` is now a generated artifact
+- `server/data/responses/manifest.db` is listed in `.gitignore` and rebuilt by the server at startup via `ensure_manifest()` (`server/main.py`) whenever it is missing, unreadable, or has 0 rows. Starting the server is therefore enough to get a consistent manifest; `python3 server/modules/manifest.py` remains available to rebuild it by hand.
+- Rationale: a committed binary drifts from whatever `server/data/assets/` holds, and a stale/empty/corrupt DB reproduces the exact 85% failure this fix targets.
+
 ### `server/main.py`
 - New `GET /assets/<relative path>` handler with:
   - strict path containment (`resolve()` + `relative_to(ASSET_DIR)`), so `..` traversal cannot escape `server/data/assets/`;
@@ -43,11 +47,13 @@ With a synthetic 26-byte `server/data/assets/shader.big`:
 | `GET /assets/does-not-exist.big` | `404` + `[ASSET MISS] does-not-exist.big` |
 | `GET /assets/../../main.py` | rejected by containment check (falls through to `202 captured`, no file served) |
 | `python3 server/test_server.py` | 22/22 pass (after the binary-body fix) |
+| delete `manifest.db`, start server | rebuilt (`[MANIFEST] rebuilt manifest.db (missing or unreadable)...`), served DB has 9 rows |
+| overwrite `manifest.db` with garbage, start server | rebuilt (`0 rows`/unreadable path), served DB has 9 rows |
 
 `manifest.db` stays on a single 12 KB page after seeding, so the client's `12KB/12KB` download size is unchanged.
 
 ## 4. Confirmed vs Hypothesis vs Unknown
-- **Confirmed:** `/assets` serving, Range handling, containment, seeded DB contents, 12 KB page size, test suite.
+- **Confirmed:** `/assets` serving, Range handling, containment, seeded DB contents, 12 KB page size, test suite, startup rebuild on missing/corrupt/empty DB.
 - **Hypothesis:** CRC32 (zlib) is the algorithm the client validates `crc` against (`crc_file_corrupt` at `0x556ec44`); it is the only CRC in the codebase (`0x57015c0`), but the file-crc path itself is not yet disassembled.
 - **Unknown:** the exact resource **names** the client queries at startup. The nine seeded names come from `.rodata` string refs, not from an observed lookup.
 - **Unknown:** whether the client treats `length=0` as "skip download" or as an immediate failure; this is the first thing to watch when the device is retried.
