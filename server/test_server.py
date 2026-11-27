@@ -24,14 +24,21 @@ TESTS = [
     ("GET", "/stats/get"),
     ("GET", "/loginvideo/getCurrentVideo"),
     ("GET", "/loginbonus/status"),
+    ("GET", "/assets/manifest.db"),
 ]
+
+SQLITE_HEADER = b"SQLite format 3\x00"
 
 ok = 0
 for method, path in TESTS:
     req = urllib.request.Request(BASE + path, method=method, data=(b"{}" if method == "POST" else None))
     with urllib.request.urlopen(req, timeout=5) as resp:
-        body = resp.read().decode("utf-8")
+        raw = resp.read()
         assert resp.status == 200, f"{method} {path} -> {resp.status}"
+        if resp.headers.get("Content-Type", "").startswith("application/x.binary"):
+            assert raw.startswith(SQLITE_HEADER), f"{method} {path} -> not a SQLite database"
+        else:
+            raw.decode("utf-8")
         ok += 1
         print(f"[PASS] {method:4s} {path} ({resp.status})")
 print(f"All {ok}/{len(TESTS)} local server tests passed.")

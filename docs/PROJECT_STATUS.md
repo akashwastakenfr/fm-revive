@@ -12,5 +12,8 @@ Last updated: 2026-11-25
   - [x] SQLite3 `manifest.db` served, rekeyed with `aes256:mcryan`, and downloaded (`12KB/12KB`).
   - [x] Splash screen reached 85% (`KICKING OFF.....`).
   - [x] Mapped `DeviceManifestService` fields, `_parseStaticResources` (`0x558bca0 -> 0x5585ae4`), `_loadAllManifests` (`0x5589b68`), `_getUrlForName` (`0x558acb0`), error handler (`0x556e654`), and native `ManifestManager` (`0x1275000..0x128e000`).
-  - [ ] **Active Blocker:** Client throws `Error_Resource_Header` immediately after `GET /assets/manifest.db` without requesting `.xml` or `.big` files. Verifying exact failure point (`pf_manifest_url_db`/`manifest_paths` vs empty `resources` lookup) and adding `/assets/...` serving in `server/main.py`.
+  - [x] **Root cause confirmed (discovery 005):** empty `resources` table → manifest load op has 0 entries (`0x556e77c..0x556e790` only takes the download branch when `count > 0`) → `Error_Resource_Header`.
+  - [x] `server/modules/manifest.py` regenerates `manifest.db` from `server/data/assets/` (measured `length` + CRC32, absolute `src` URLs) and seeds the nine `.rodata` startup names; DB now has 9 rows and still fits one 12 KB page.
+  - [x] `GET /assets/<rel>` serving added to `server/main.py` (containment check, `Range`/`206`, `416`, `[ASSET MISS]` logging); `server/test_server.py` covers `/assets/manifest.db` (22/22 pass).
+  - [ ] **Active Blocker:** the real startup bundles are not in the repo (APK-local, git-ignored), so seeded rows carry `length=0`/`crc=0`. Next: run the client, collect `[ASSET MISS]` names, copy the `.big` files into `server/data/assets/`, re-run the builder.
 - [ ] **Phase 6 — Main Menu & Offline Preservation:** Verify main-menu entry and offline gameplay.

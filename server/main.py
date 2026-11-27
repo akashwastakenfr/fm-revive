@@ -16,10 +16,20 @@ PORT = 8080
 BASE = Path(__file__).resolve().parent
 CAPTURE_DIR = BASE / "data" / "captures"
 RESPONSE_DIR = BASE / "data" / "responses"
+ASSET_DIR = BASE / "data" / "assets"
 ROUTES_FILE = BASE / "config" / "routes.json"
 
 CAPTURE_DIR.mkdir(parents=True, exist_ok=True)
 RESPONSE_DIR.mkdir(parents=True, exist_ok=True)
+ASSET_DIR.mkdir(parents=True, exist_ok=True)
+
+ASSET_PREFIX = "/assets/"
+CONTENT_TYPES = {
+    ".big": "application/octet-stream",
+    ".xml": "application/xml",
+    ".db": "application/x.binary",
+    ".zip": "application/zip",
+}
 
 MAX_BODY = 1024 * 1024
 
@@ -64,6 +74,80 @@ class RevivalServer(BaseHTTPRequestHandler):
 
     def send_json(self, status, data):
         self.send_bytes(status, "application/json", json.dumps(data, indent=2).encode("utf-8"))
+
+    def resolve_asset(self, path):
+        """Map a /assets/<rel> URL to a file inside ASSET_DIR, or None.
+
+        /assets/manifest.db is a configured route, so it is left to the route
+        table and never served from here.
+        """
+        if not path.startswith(ASSET_PREFIX):
+            return None
+
+        rel = path[len(ASSET_PREFIX):]
+        if not rel or rel == "manifest.db":
+            return None
+
+        try:
+            target = (ASSET_DIR / rel).resolve()
+            target.relative_to(ASSET_DIR.resolve())
+        except (OSError, ValueError):
+            return None
+
+        return rel, target
+
+    def serve_asset(self, path):
+        """Serve an asset with byte-range support. Returns False if not an asset URL."""
+        resolved = self.resolve_asset(path)
+        if resolved is None:
+            return False
+
+        rel, target = resolved
+
+        if not target.is_file():
+            print(f"[ASSET MISS] {rel}")
+            self.send_json(404, {"error": "asset not found", "name": rel})
+            return True
+
+        data = target.read_bytes()
+        total = len(data)
+        content_type = CONTENT_TYPES.get(target.suffix.lower(), "application/octet-stream")
+
+        range_header = self.headers.get("Range", "")
+        if range_header.startswith("bytes="):
+            spec = range_header[len("bytes="):].split(",")[0].strip()
+            start_text, _, end_text = spec.partition("-")
+            try:
+                start = int(start_text) if start_text else 0
+                end = int(end_text) if end_text else total - 1
+            except ValueError:
+                start, end = 0, total - 1
+
+            if start >= total:
+                self.send_response(416)
+                self.send_header("Content-Range", f"bytes */{total}")
+                self.send_header("Content-Length", "0")
+                self.end_headers()
+                return True
+
+            end = min(end, total - 1)
+            chunk = data[start:end + 1]
+            self.send_response(206)
+            self.send_header("Content-Type", content_type)
+            self.send_header("Accept-Ranges", "bytes")
+            self.send_header("Content-Range", f"bytes {start}-{end}/{total}")
+            self.send_header("Content-Length", str(len(chunk)))
+            self.end_headers()
+            self.wfile.write(chunk)
+            return True
+
+        self.send_response(200)
+        self.send_header("Content-Type", content_type)
+        self.send_header("Accept-Ranges", "bytes")
+        self.send_header("Content-Length", str(total))
+        self.end_headers()
+        self.wfile.write(data)
+        return True
 
     def capture_request(self):
         length = int(self.headers.get("Content-Length", 0))
@@ -176,7 +260,8 @@ class RevivalServer(BaseHTTPRequestHandler):
                 "environment": "local-development"
             })
         else:
-            self.capture_request()
+            if not self.serve_asset(urlsplit(self.path).path):
+                self.capture_request()
 
     def do_POST(self):
         self.capture_request()
@@ -197,5 +282,6 @@ class RevivalServer(BaseHTTPRequestHandler):
 print(f"FIFA Revival server: http://{HOST}:{PORT}")
 print(f"Captures: {CAPTURE_DIR}")
 print(f"Responses: {RESPONSE_DIR}")
+print(f"Assets: {ASSET_DIR}")
 
 HTTPServer((HOST, PORT), RevivalServer).serve_forever()
