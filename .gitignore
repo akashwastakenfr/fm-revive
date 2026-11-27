@@ -18,3 +18,4 @@ __pycache__/
 *.bak
 *.backup
 *.capture-backup
+server/data/responses/manifest.db

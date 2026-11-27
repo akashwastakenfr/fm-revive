@@ -3,12 +3,15 @@ from datetime import datetime, timezone
 from urllib.parse import urlsplit, parse_qs
 from pathlib import Path
 import json
+import sqlite3
 import uuid
 
 try:
     from modules.batch import handle_batch, reset_session
+    from modules.manifest import build as build_manifest
 except ImportError:
     from server.modules.batch import handle_batch, reset_session
+    from server.modules.manifest import build as build_manifest
 
 HOST = "127.0.0.1"
 PORT = 8080
@@ -61,6 +64,35 @@ def load_routes():
         return json.loads(ROUTES_FILE.read_text(encoding="utf-8"))
     except (OSError, json.JSONDecodeError):
         return {}
+
+
+def ensure_manifest():
+    """Rebuild manifest.db when it is missing, corrupt, or has no rows.
+
+    The manifest is a generated artifact: it must list the assets this server
+    can actually serve, otherwise the client's manifest queue stays empty and
+    it raises Error_Resource_Header at 85% (discoveries/003, discoveries/005).
+    """
+    db_path = RESPONSE_DIR / "manifest.db"
+
+    try:
+        connection = sqlite3.connect(db_path)
+        try:
+            rows = connection.execute("SELECT count(*) FROM resources").fetchone()[0]
+        finally:
+            connection.close()
+        if rows:
+            return rows
+        reason = "0 rows"
+    except (sqlite3.Error, OSError):
+        reason = "missing or unreadable"
+
+    total, measured, seeded = build_manifest(db_path=db_path)
+    print(
+        f"[MANIFEST] rebuilt {db_path.name} ({reason}): {total} rows ({measured} measured, {seeded} seeded)",
+        flush=True,
+    )
+    return total
 
 
 class RevivalServer(BaseHTTPRequestHandler):
@@ -279,9 +311,10 @@ class RevivalServer(BaseHTTPRequestHandler):
         pass
 
 
-print(f"FIFA Revival server: http://{HOST}:{PORT}")
-print(f"Captures: {CAPTURE_DIR}")
-print(f"Responses: {RESPONSE_DIR}")
-print(f"Assets: {ASSET_DIR}")
+print(f"FIFA Revival server: http://{HOST}:{PORT}", flush=True)
+print(f"Captures: {CAPTURE_DIR}", flush=True)
+print(f"Responses: {RESPONSE_DIR}", flush=True)
+print(f"Assets: {ASSET_DIR}", flush=True)
+ensure_manifest()
 
 HTTPServer((HOST, PORT), RevivalServer).serve_forever()
