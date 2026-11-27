@@ -137,12 +137,13 @@ class RevivalServer(BaseHTTPRequestHandler):
         rel, target = resolved
 
         if not target.is_file():
-            print(f"[ASSET MISS] {rel}")
+            print(f"[ASSET MISS] {rel}", flush=True)
             self.send_json(404, {"error": "asset not found", "name": rel})
             return True
 
         data = target.read_bytes()
         total = len(data)
+        print(f"[ASSET] {rel} {total} bytes", flush=True)
         content_type = CONTENT_TYPES.get(target.suffix.lower(), "application/octet-stream")
 
         range_header = self.headers.get("Range", "")
@@ -198,6 +199,7 @@ class RevivalServer(BaseHTTPRequestHandler):
             body_type = "text"
 
         parsed = urlsplit(self.path)
+        print(f"[REQ] {self.command} {parsed.path}", flush=True)
 
         allowed_headers = {
             "content-type", "accept", "user-agent",
@@ -256,7 +258,9 @@ class RevivalServer(BaseHTTPRequestHandler):
                 if not 200 <= status <= 599:
                     raise ValueError("Invalid response status")
                 if ctype == "application/x.binary":
-                    self.send_bytes(status, ctype, template_path.read_bytes())
+                    body = template_path.read_bytes()
+                    print(f"[ROUTE] {route_key} -> {template_name} ({len(body)} bytes)", flush=True)
+                    self.send_bytes(status, ctype, body)
                 else:
                     text = template_path.read_text(encoding="utf-8")
                     if ctype.startswith("application/json"):
